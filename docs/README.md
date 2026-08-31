@@ -12,6 +12,11 @@
 - [项目笔记目录](project-notes/README.md)
 - [视觉与 PLC 工业闭环](project-notes/vision-plc/README.md)
 
+## Resources
+
+- [机器人学习资源导航](resources/README.md)
+- [ROS 2 Lyrical 官方教程索引](resources/03-ros/ros2-official-tutorials.md)
+
 ## Publication rules
 
 1. 每篇资料注明适用版本、来源、许可和最后核对日期。
