@@ -1,4 +1,4 @@
-# 08 SLAM 建图：slam_toolbox 数据链路
+# 03 SLAM 建图：slam_toolbox 数据链路
 
 > 状态：Draft
 > 适用环境：ROS 2 Lyrical、2D LaserScan、`slam_toolbox`
@@ -107,4 +107,4 @@ ros2 run nav2_map_server map_saver_cli -f ~/maps/amr_map
 - 机器人移动后地图连续，不出现明显撕裂或跳变。
 - 地图能保存，并能由 `nav2_map_server` 重新加载。
 
-[上一篇：Gazebo 桥接](../07-gazebo-bridge/07-Gazebo仿真与桥接.md) · [返回教程目录](../../README.md) · [下一篇：Nav2](../09-nav2/09-Nav2导航.md)
+[上一篇：差速底盘](../02-diff-drive/02-底盘控制专题.md) · [返回教程目录](../../README.md) · [下一篇：Nav2](../04-nav2/04-Nav2导航.md)

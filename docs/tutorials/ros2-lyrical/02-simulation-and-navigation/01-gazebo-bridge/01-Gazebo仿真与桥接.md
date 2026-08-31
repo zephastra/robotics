@@ -1,4 +1,4 @@
-# 07 Gazebo 与 ROS 2 桥接
+# 01 Gazebo 与 ROS 2 桥接
 
 > 状态：Draft
 > 适用环境：ROS 2 Lyrical、Gazebo Jetty、`ros_gz` 3.x
@@ -126,4 +126,4 @@ SLAM 和 Nav2 使用 `use_sim_time:=true` 时需要有效的 `/clock`。但是 `
 
 不要采用“新版本只能使用 `gpu_lidar`、不支持 `lidar`”这类笼统结论。应检查所用 Gazebo 版本、SDF 规范、具体传感器类型以及控制台错误，再决定使用 `lidar`、`gpu_lidar` 或其他实现。
 
-[上一篇：服务与客户端](../../fundamentals/06-service-client/06-服务客户端实战.md) · [返回教程目录](../../README.md) · [下一篇：SLAM](../08-slam/08-SLAM建图.md)
+[上一篇：服务与客户端](../../01-fundamentals/06-service-client/06-服务客户端实战.md) · [返回教程目录](../../README.md) · [下一篇：差速底盘](../02-diff-drive/02-底盘控制专题.md)

@@ -7,14 +7,14 @@
 - 来源仓库：<https://github.com/ros2/ros2_documentation>
 - 文档站：<https://docs.ros.org/en/lyrical/>
 - 上游许可：CC BY 4.0
-- 本目录中的 01–06 主要依据这些文档整理。
+- 模块 01（1.1–1.6）主要依据这些文档整理。
 
 ## Gazebo Documentation
 
 - 来源仓库：<https://github.com/gazebosim/docs>
 - Jetty 文档：<https://gazebosim.org/docs/jetty/>
 - 上游许可：CC BY 4.0
-- 第 07 篇包含对 Gazebo 与 ROS 2 集成方式的中文说明。
+- 第 2.1 篇包含对 Gazebo 与 ROS 2 集成方式的中文说明。
 
 ## ros_gz
 
@@ -48,4 +48,4 @@
 
 ## 原创项目资料
 
-原编号第 11 篇已移至 [`docs/project-notes/vision-plc/`](../../project-notes/vision-plc/11-视觉与PLC工业闭环.md)。它属于 Zephastra 的项目笔记，不是官方教程翻译。若其中引用 YOLO、OPC UA、PLC 软件或其他第三方资料，后续发布前还需要补充对应来源、商标与许可证说明。
+视觉与 PLC 资料位于 [`docs/project-notes/vision-plc/`](../../project-notes/vision-plc/README.md)。它属于 Zephastra 的项目笔记，不是官方教程翻译。若其中引用 YOLO、OPC UA、PLC 软件或其他第三方资料，后续发布前还需要补充对应来源、商标与许可证说明。

@@ -29,27 +29,27 @@
 
 ## 内容索引
 
-### 基础教程（Fundamentals）
+### 模块 01：基础教程（Fundamentals）
 
-- [01 环境准备](fundamentals/01-environment/01-环境准备.md) — Environment Verified
-- [02 节点与话题](fundamentals/02-node-topic/02-节点与话题.md) — Source Reviewed
-- [03 服务与动作](fundamentals/03-service-action/03-服务与动作.md) — Source Reviewed
-- [04 工作空间与包](fundamentals/04-workspace/04-工作空间与包.md) — Source Reviewed
-- [05 发布订阅实战（Python）](fundamentals/05-pub-sub/05-发布订阅实战.md) — Source Reviewed
-- [06 服务客户端实战（Python）](fundamentals/06-service-client/06-服务客户端实战.md) — Source Reviewed
+- [1.1 环境准备](01-fundamentals/01-environment/01-环境准备.md) — Environment Verified
+- [1.2 节点与话题](01-fundamentals/02-node-topic/02-节点与话题.md) — Source Reviewed
+- [1.3 服务与动作](01-fundamentals/03-service-action/03-服务与动作.md) — Source Reviewed
+- [1.4 工作空间与包](01-fundamentals/04-workspace/04-工作空间与包.md) — Source Reviewed
+- [1.5 发布订阅实战（Python）](01-fundamentals/05-pub-sub/05-发布订阅实战.md) — Source Reviewed
+- [1.6 服务客户端实战（Python）](01-fundamentals/06-service-client/06-服务客户端实战.md) — Source Reviewed
 
-### 仿真与导航（Simulation and Navigation）
+### 模块 02：仿真与导航（Simulation and Navigation）
 
-- [07 Gazebo 与 ROS 2 桥接](simulation-and-navigation/07-gazebo-bridge/07-Gazebo仿真与桥接.md) — Draft
-- [08 SLAM 建图](simulation-and-navigation/08-slam/08-SLAM建图.md) — Draft
-- [09 Nav2 导航](simulation-and-navigation/09-nav2/09-Nav2导航.md) — Draft
-- [12 差速底盘控制](simulation-and-navigation/12-diff-drive/12-底盘控制专题.md) — Draft
+- [2.1 Gazebo 与 ROS 2 桥接](02-simulation-and-navigation/01-gazebo-bridge/01-Gazebo仿真与桥接.md) — Draft
+- [2.2 差速底盘控制](02-simulation-and-navigation/02-diff-drive/02-底盘控制专题.md) — Draft
+- [2.3 SLAM 建图](02-simulation-and-navigation/03-slam/03-SLAM建图.md) — Draft
+- [2.4 Nav2 导航](02-simulation-and-navigation/04-nav2/04-Nav2导航.md) — Draft
 
-### 机械臂（Manipulation）
+### 模块 03：机械臂（Manipulation）
 
-- [10 MoveIt 2](manipulation/10-moveit2/10-机械臂MoveIt2.md) — Draft
+- [3.1 MoveIt 2](03-manipulation/01-moveit2/01-机械臂MoveIt2.md) — Draft
 
-原编号 11 属于项目设计笔记，已移至 [`docs/project-notes/vision-plc/`](../../project-notes/vision-plc/11-视觉与PLC工业闭环.md)。为保持既有引用稳定，第 12 篇暂不重新编号。
+不属于教程的内容不参与课程编号。视觉与 PLC 资料位于 [`docs/project-notes/vision-plc/`](../../project-notes/vision-plc/README.md)。
 
 ## 使用原则
 

@@ -1,4 +1,4 @@
-# 10 MoveIt 2：机械臂运动规划概览
+# 01 MoveIt 2：机械臂运动规划概览
 
 > 状态：Draft
 > 适用环境：ROS 2 Lyrical、单独构建的 MoveIt 2 工作空间
@@ -63,4 +63,4 @@ ros2 launch moveit_setup_assistant setup_assistant.launch.py
 
 原草稿中的 `<robot>`、待补报错和个人构建结论都不是可执行教程，因此本轮只保留为明确的验证路线。
 
-[上一篇：Nav2](../../simulation-and-navigation/09-nav2/09-Nav2导航.md) · [返回教程目录](../../README.md) · [下一篇：视觉与 PLC 项目笔记](../../../../project-notes/vision-plc/11-视觉与PLC工业闭环.md)
+[上一篇：Nav2](../../02-simulation-and-navigation/04-nav2/04-Nav2导航.md) · [返回教程目录](../../README.md) · [相关项目笔记：视觉与 PLC](../../../../project-notes/vision-plc/README.md)

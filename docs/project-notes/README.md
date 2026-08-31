@@ -6,4 +6,4 @@
 
 ## Notes
 
-- [视觉与 PLC 工业闭环](vision-plc/11-视觉与PLC工业闭环.md)
+- [视觉与 PLC 工业闭环](vision-plc/README.md)

@@ -10,7 +10,7 @@
 ## Project notes
 
 - [项目笔记目录](project-notes/README.md)
-- [视觉与 PLC 工业闭环](project-notes/vision-plc/11-视觉与PLC工业闭环.md)
+- [视觉与 PLC 工业闭环](project-notes/vision-plc/README.md)
 
 ## Publication rules
 

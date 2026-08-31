@@ -1,4 +1,4 @@
-# 11 视觉与 PLC 工业闭环：项目设计笔记
+# 视觉与 PLC 工业闭环：项目设计笔记
 
 > 状态：Project Note
 > 分类：原创项目架构草案，不属于 ROS 2 官方教程翻译
@@ -50,4 +50,4 @@
 
 原文引用了 `inspect_node.py`、`camera_info_pub.py`、`tf_broadcaster.py`、`write_m_area.py` 和 `sorting_station`，但这些文件在现有仓库中不存在。保留命令会让读者误以为可以运行，因此本轮审计将其改为接口与交付清单。
 
-[上一篇：MoveIt 2](../../tutorials/ros2-lyrical/manipulation/10-moveit2/10-机械臂MoveIt2.md) · [返回项目笔记目录](../README.md) · [下一篇：差速底盘](../../tutorials/ros2-lyrical/simulation-and-navigation/12-diff-drive/12-底盘控制专题.md)
+[返回项目笔记目录](../README.md) · [相关教程：MoveIt 2](../../tutorials/ros2-lyrical/03-manipulation/01-moveit2/01-机械臂MoveIt2.md) · [相关教程：差速底盘](../../tutorials/ros2-lyrical/02-simulation-and-navigation/02-diff-drive/02-底盘控制专题.md)
