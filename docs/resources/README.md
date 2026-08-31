@@ -4,6 +4,8 @@
 
 本目录不是无差别链接集合。每条资源应标明来源、主题、适用版本、语言、难度、评审状态和最后检查日期，帮助读者判断它是否适合当前任务。
 
+当前十个分类均已加入首批公开资源，优先采用项目官方文档、维护者资料、大学公开课程和制造商手册；第三方视频与频道单独标识，不因播放量自动获得推荐状态。首批资源最后集中检查日期为 **2026-08-31**。
+
 ## Categories
 
 | 分类 | 内容 |
@@ -38,7 +40,19 @@
 5. 同一资源只保留一个主条目，其他分类用相对链接引用。
 6. 每次检查链接时更新 `Last checked`。
 
-当前已建立：[ROS 2 Lyrical 官方教程索引](03-ros/ros2-official-tutorials.md)。
+## Current highlights
+
+- [ROS 2 Lyrical 官方教程索引](03-ros/ros2-official-tutorials.md)：按主题整理 94 个 ROS 2 官方教程链接。
+- [Robotics Fundamentals](01-fundamentals/README.md)：MIT、Stanford、Northwestern 等公开课程与教材入口。
+- [Simulation](04-simulation/README.md)：Gazebo、Isaac Sim、MuJoCo、Webots、CoppeliaSim 和 Drake 官方资料。
+- [Communities and Channels](10-communities-and-channels/README.md)：官方频道、社区，以及已明确版本风险的 YouTube/Bilibili 教程。
+
+## Maintenance cadence
+
+- 软件发行版相关链接：至少每 3 个月检查一次。
+- 课程、频道和视频：至少每 6 个月检查一次。
+- 发现 404、明显过时或项目停止维护时，先标为 `Archived`，不要静默删除；这样可以保留历史项目的查找线索。
+- `Recommended` 必须基于实际使用或完整审看，不可仅凭搜索摘要或播放量授予。
 
 ## Disclaimer
 
