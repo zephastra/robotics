@@ -14,14 +14,14 @@ robotics/
 
 ## Current content
 
-- [ROS 2 Lyrical 中文学习笔记](docs/learning-notes/ros2-lyrical/README.md)
+- [ROS 2 Lyrical 非官方中文教程](docs/tutorials/ros2-lyrical/README.md)
 - [文档目录说明](docs/README.md)
 - [项目目录说明](projects/README.md)
 
 ## Naming rules
 
 - 可运行项目放在 `projects/NN-project-name/`。
-- 跨项目资料放在 `docs/`，不复制进每个项目。
+- 正式教程放在 `docs/tutorials/`，项目复盘和设计记录放在 `docs/project-notes/`。
 - 使用小写英文和连字符作为路径名；中文可以用于 Markdown 标题和文档文件名。
 - 草稿必须明确标注 Draft，不能与已验证教程混淆。
 
