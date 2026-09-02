@@ -1,8 +1,21 @@
-# AMR SLAM Demo
+# ROS 2 AMR 建图与导航入门
 
-一个可直接运行的 ROS 2 差速 AMR 仿真项目：在 Gazebo Sim 中驾驶机器人，通过 `ros_gz_bridge` 接入激光与里程计数据，使用 `slam_toolbox` 在线构建二维栅格地图，并在 RViz 中观察结果。
+一个从仿真、控制、建图走向自主导航的 ROS 2 入门项目：在 Gazebo Sim 中驾驶差速 AMR，通过 `ros_gz_bridge` 接入激光与里程计数据，使用 `slam_toolbox` 构建二维栅格地图，再将地图交给 AMCL 与 Nav2 完成定位和导航。
 
-这是 Zephastra Robotics 的第一个完整演示项目，重点是让初学者看清楚从仿真传感器到地图的完整数据链路。
+这是 Zephastra Robotics 的第一个完整入门项目，重点是让学习者理解从仿真传感器、ROS 话题和 TF，到 SLAM 地图与 Nav2 导航的完整链路。
+
+![Gazebo Sim 与 RViz 中的 AMR 建图效果](docs/images/gazebo-rviz-mapping.png)
+
+*左侧为 Gazebo Sim 仿真环境，右侧为 RViz 中由激光数据实时构建的二维地图。*
+
+## 学习路线
+
+1. 在 Gazebo Sim 中理解差速机器人、激光雷达和室内环境。
+2. 使用键盘速度指令控制机器人运动。
+3. 理解 `/scan`、`/odom`、`/cmd_vel` 与 TF 数据链路。
+4. 使用 `slam_toolbox` 在线建图并保存地图。
+5. 使用 AMCL 在保存地图中定位。
+6. 使用 Nav2 设置目标点并完成自主导航。
 
 ## 功能
 
@@ -159,12 +172,12 @@ bash scripts/run_nav2.sh
 
 - 当前使用 Gazebo 差速驱动插件提供的轮式里程计，没有融合 IMU。
 - 机器人碰撞、轮胎打滑或长时间顶墙时，地图仍可能漂移。
-- Nav2 配置面向本演示环境，不代表真实机器人上的安全参数。
+- Nav2 配置面向本入门环境，不代表真实机器人上的安全参数。
 - Gazebo nightly 与 ROS vendor 版本存在差异时，应优先使用与 ROS 发行版配套的版本。
 
-## 项目状态
+## 学习范围与项目状态
 
-`v0.1.0`：建图主流程已经完成完整启动验证；Nav2 属于第二阶段功能，验收方法见单独文档。
+`v0.1.0`：建图主流程已经完成完整启动验证；Nav2 是后续学习阶段，操作方法和验收标准见单独文档。
 
 ## License
 

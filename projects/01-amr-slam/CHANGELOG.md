@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Reframed the project as a progressive ROS 2 AMR mapping and navigation tutorial.
+- Added a Gazebo Sim and RViz mapping screenshot to the project README.
+
 ## v0.1.0 — 2026-09-02
 
 - Added a complete Gazebo Sim differential-drive AMR world.

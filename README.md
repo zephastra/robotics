@@ -14,7 +14,7 @@ robotics/
 
 ## Current content
 
-- [01 AMR SLAM Demo](projects/01-amr-slam/README.md)
+- [01 ROS 2 AMR 建图与导航入门](projects/01-amr-slam/README.md)
 - [ROS 2 Lyrical 非官方中文教程](docs/tutorials/ros2-lyrical/README.md)
 - [机器人学习资源导航](docs/resources/README.md)
 - [文档目录说明](docs/README.md)
