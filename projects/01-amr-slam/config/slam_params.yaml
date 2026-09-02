@@ -1,0 +1,33 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: true
+
+    # TF 树：map -> odom -> base_link -> laser_link
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+
+    scan_topic: /scan
+    mode: mapping          # mapping | localization | lifelong
+
+    # 地图分辨率与更新
+    resolution: 0.05
+    map_update_interval: 5.0
+    transform_publish_period: 0.05
+
+    # 激光有效范围（要和 SDF 里的 lidar 一致）
+    # Stay just above the sensor's float32 range_min (nominally 0.15 m).
+    min_laser_range: 0.16
+    max_laser_range: 12.0
+
+    # 转弯时提高关键帧密度，避免在矩形环境中发生错误的旋转匹配。
+    # slam_toolbox 使用 minimum_travel_*，不是 angular_update / linear_update。
+    minimum_time_interval: 0.05
+    minimum_travel_heading: 0.05
+    minimum_travel_distance: 0.05
+    check_min_dist_and_heading_precisely: true
+    scan_buffer_size: 20
+    scan_buffer_maximum_scan_distance: 10.0
+    use_scan_matching: true
+    do_loop_closing: true
+    throttle_scans: 1

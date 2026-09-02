@@ -1,0 +1,84 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Map
+      Name: Map
+      Topic:
+        Depth: 5
+        Durability Policy: 1
+        Value: /map
+      Value: true
+    - Class: rviz_default_plugins/LaserScan
+      Name: LaserScan
+      Topic:
+        Depth: 5
+        Durability Policy: 2
+        Value: /scan
+      Size: 0.03
+      Value: true
+    - Class: rviz_default_plugins/PoseArray
+      Name: AMCL Particles
+      Topic:
+        Depth: 5
+        Durability Policy: 2
+        Value: /particlecloud
+      Color: 255, 25, 0
+      Value: true
+    - Class: rviz_default_plugins/Map
+      Name: Global Costmap
+      Topic:
+        Depth: 5
+        Durability Policy: 2
+        Value: /global_costmap/costmap
+      Color Scheme: costmap
+      Value: true
+    - Class: rviz_default_plugins/Map
+      Name: Local Costmap
+      Topic:
+        Depth: 5
+        Durability Policy: 2
+        Value: /local_costmap/costmap
+      Color Scheme: costmap
+      Value: true
+    - Class: rviz_default_plugins/Path
+      Name: Global Plan
+      Topic:
+        Depth: 5
+        Durability Policy: 2
+        Value: /plan
+      Value: true
+    - Class: rviz_default_plugins/Path
+      Name: Local Plan
+      Topic:
+        Depth: 5
+        Durability Policy: 2
+        Value: /local_plan
+      Color: 0, 255, 0
+      Value: true
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Show Names: false
+      Value: true
+  Global Options:
+    Fixed Frame: map
+    Frame Rate: 30
+  Tools:
+    - Class: rviz_default_plugins/MoveCamera
+      Name: Move Camera
+    - Class: rviz_default_plugins/SetInitialPose
+      Name: 2D Pose Estimate
+    - Class: rviz_default_plugins/GoalTool
+      Name: Nav2 Goal
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Name: Current View
+      Distance: 20
+      Focal Point: [0, 0, 0]
+      Yaw: 1.5707963
+      Pitch: 1.5707963

@@ -1,0 +1,18 @@
+# Runtime maps
+maps/*
+!maps/.gitkeep
+
+# Logs and generated diagnostics
+*.log
+*.orig
+frames_*.gv
+frames_*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+
+# ROS 2 / colcon
+build/
+install/
+log/
