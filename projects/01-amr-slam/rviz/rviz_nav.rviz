@@ -3,6 +3,8 @@ Panels:
     Name: Displays
   - Class: rviz_common/Views
     Name: Views
+  - Class: nav2_rviz_plugins/Navigation 2
+    Name: Navigation 2
 Visualization Manager:
   Class: ""
   Displays:
@@ -10,14 +12,18 @@ Visualization Manager:
       Name: Map
       Topic:
         Depth: 5
-        Durability Policy: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
         Value: /map
       Value: true
     - Class: rviz_default_plugins/LaserScan
       Name: LaserScan
       Topic:
         Depth: 5
-        Durability Policy: 2
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
         Value: /scan
       Size: 0.03
       Value: true
@@ -72,7 +78,7 @@ Visualization Manager:
       Name: Move Camera
     - Class: rviz_default_plugins/SetInitialPose
       Name: 2D Pose Estimate
-    - Class: rviz_default_plugins/GoalTool
+    - Class: nav2_rviz_plugins/GoalTool
       Name: Nav2 Goal
   Views:
     Current:

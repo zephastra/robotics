@@ -24,7 +24,8 @@
 - `slam_toolbox` 在线异步建图。
 - RViz 地图、LaserScan 和 TF 可视化。
 - 一键保存 `map.pgm` 与 `map.yaml`。
-- 使用保存地图启动 AMCL 与 Nav2 导航。
+- 使用保存地图启动 AMCL 与 Nav2，并在固定仿真出生点自动完成初始定位。
+- RViz Navigation 2 面板发送目标位姿，支持完整自主导航链路。
 - 启动脚本统一管理后台进程，退出时自动清理。
 
 ## 已验证环境
@@ -137,6 +138,8 @@ bash scripts/save_map.sh /tmp/my_map
 bash scripts/run_nav2.sh
 ```
 
+脚本会等待 AMCL 建立 `map→odom` 后再启动导航。正常情况下无需手动设置初始位姿，直接使用 RViz 的 **Nav2 Goal** 即可；如果显示位姿不准确，再使用一次 **2D Pose Estimate**。
+
 完整操作和验收标准见 [docs/nav2.md](docs/nav2.md)。建图与导航不要同时启动：`slam_toolbox` 和 AMCL 都会发布 `map→odom`。
 
 ## 建图建议
@@ -156,6 +159,7 @@ bash scripts/run_nav2.sh
 | 没有 `odom→base_link` | 确认 `nodes/odom_to_tf.py` 正在运行 |
 | RViz 地图不更新 | Map 的 Durability 应为 Transient Local，并确认使用仿真时间 |
 | LaserScan 不显示 | Reliability 应为 Best Effort；本项目 RViz 配置已预设 |
+| 设置 Nav2 Goal 后没有响应 | 确认 Navigation 2 面板存在，并等待终端显示导航已经启动 |
 | 机器人不动 | 检查 `/cmd_vel` 和 bridge 日志，并确认 Gazebo 没有暂停 |
 | 地图转弯后重影 | 降低转速、避免顶墙，确认没有修改 SLAM 关键帧参数 |
 | 提示已有 AMR/ROS 会话 | 回到上一次启动终端按 `Ctrl+C`，确认退出后再运行 |
@@ -177,7 +181,7 @@ bash scripts/run_nav2.sh
 
 ## 学习范围与项目状态
 
-`v0.1.0`：建图主流程已经完成完整启动验证；Nav2 是后续学习阶段，操作方法和验收标准见单独文档。
+`v0.1.0`：建图、地图保存、AMCL 定位与 Nav2 目标导航均已完成端到端验证。操作方法和验收标准见单独文档。
 
 ## License
 

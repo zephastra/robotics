@@ -25,6 +25,14 @@ amcl:
     odom_frame_id: "odom"
     pf_err: 0.05
     pf_z: 0.99
+    # The simulation always spawns the robot at the map origin. Supplying the
+    # matching pose lets AMCL publish map -> odom immediately on startup.
+    set_initial_pose: true
+    initial_pose:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      yaw: 0.0
     recovery_alpha_fast: 0.0
     recovery_alpha_slow: 0.0
     random_seed: -1
