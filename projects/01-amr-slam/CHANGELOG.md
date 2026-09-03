@@ -2,12 +2,15 @@
 
 ## Unreleased
 
+## v0.2.0 — 2026-09-03
+
 - Reframed the project as a progressive ROS 2 AMR mapping and navigation tutorial.
 - Added a Gazebo Sim and RViz mapping screenshot to the project README.
 - Added an automatic AMCL initial pose for the fixed simulation spawn point.
 - Staged Nav2 startup so navigation begins only after `map -> odom` is available.
 - Corrected RViz Map and LaserScan QoS settings.
 - Added the Navigation 2 panel and Nav2 goal tool required to send navigation actions.
+- Added `scripts/check_nav2.sh` for automated topic, TF, lifecycle, action, and RViz client diagnostics.
 
 ## v0.1.0 — 2026-09-02
 

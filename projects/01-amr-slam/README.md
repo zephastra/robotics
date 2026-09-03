@@ -140,6 +140,14 @@ bash scripts/run_nav2.sh
 
 脚本会等待 AMCL 建立 `map→odom` 后再启动导航。正常情况下无需手动设置初始位姿，直接使用 RViz 的 **Nav2 Goal** 即可；如果显示位姿不准确，再使用一次 **2D Pose Estimate**。
 
+导航运行期间，可以在另一个终端执行一键诊断：
+
+```bash
+bash scripts/check_nav2.sh
+```
+
+脚本会检查核心话题、完整 TF 链、Nav2 生命周期节点、`/navigate_to_pose` Action，以及 RViz 目标客户端，并用 `PASS`、`WARN` 和 `FAIL` 汇总结果。
+
 完整操作和验收标准见 [docs/nav2.md](docs/nav2.md)。建图与导航不要同时启动：`slam_toolbox` 和 AMCL 都会发布 `map→odom`。
 
 ## 建图建议
@@ -181,7 +189,7 @@ bash scripts/run_nav2.sh
 
 ## 学习范围与项目状态
 
-`v0.1.0`：建图、地图保存、AMCL 定位与 Nav2 目标导航均已完成端到端验证。操作方法和验收标准见单独文档。
+`v0.2.0`：建图、地图保存、AMCL 定位与 Nav2 目标导航均已完成端到端验证，并提供运行时自动诊断。操作方法和验收标准见单独文档。
 
 ## License
 

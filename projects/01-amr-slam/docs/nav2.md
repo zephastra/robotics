@@ -34,6 +34,27 @@ bash scripts/run_nav2.sh /absolute/path/to/map.yaml
 
 RViz 配置包含 **Navigation 2** 面板。该面板负责把 **Nav2 Goal** 工具设置的位姿发送给 `/navigate_to_pose` Action；不能只保留工具而删除面板。
 
+## 自动诊断
+
+保持导航程序运行，另开一个终端：
+
+```bash
+cd robotics/projects/01-amr-slam
+bash scripts/check_nav2.sh
+```
+
+脚本依次检查 ROS/Nav2 软件包、`/clock`、`/map`、`/scan`、`/odom`、`/cmd_vel`、完整 TF 链、核心生命周期节点、导航 Action 和 RViz 目标客户端。所有关键项目通过时会输出：
+
+```text
+Nav2 is ready.
+```
+
+每项检查默认最多等待 6 秒，可通过 `AMR_CHECK_TIMEOUT` 调整：
+
+```bash
+AMR_CHECK_TIMEOUT=10 bash scripts/check_nav2.sh
+```
+
 ## 关键关系
 
 - AMCL 负责在保存地图中的定位，并发布 `map→odom`。
@@ -54,7 +75,7 @@ RViz 配置包含 **Navigation 2** 面板。该面板负责把 **Nav2 Goal** 工
 | No valid plan | 将目标点移离墙壁或障碍物 |
 | 机器人绕圈 | 检查初始朝向、里程计和激光 TF |
 | 机器人撞障碍物 | 检查 `/scan` 是否进入局部代价地图 |
-| 没有响应 | 查看 `/tmp/amr_nav_logs/` 中的日志 |
+| 没有响应 | 运行 `bash scripts/check_nav2.sh`，再查看 `/tmp/amr_nav_logs/` 中的日志 |
 
 ## 验收标准
 
