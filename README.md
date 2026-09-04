@@ -15,6 +15,7 @@ robotics/
 ## Current content
 
 - [01 ROS 2 AMR 建图与导航入门](projects/01-amr-slam/README.md)
+- [02 AMR 仓库任务执行、异常恢复与自动返航](projects/02-amr-mission-executor/README.md)
 - [ROS 2 Lyrical 非官方中文教程](docs/tutorials/ros2-lyrical/README.md)
 - [机器人学习资源导航](docs/resources/README.md)
 - [文档目录说明](docs/README.md)

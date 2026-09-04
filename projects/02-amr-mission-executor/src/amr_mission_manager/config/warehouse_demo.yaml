@@ -1,0 +1,68 @@
+mission:
+  id: warehouse_mission_002
+  frame_id: map
+  failure_policy: skip
+  return_home: true
+  return_home_on_cancel: true
+  low_battery_threshold: 20.0
+  blocked_timeout_seconds: 15.0
+  minimum_progress_distance: 0.15
+  recovery_wait_seconds: 6.0
+  max_blocked_recoveries: 3
+
+  home:
+    name: charging_station
+    x: -11.0
+    y: -9.0
+    yaw: 3.14
+
+  tasks:
+    - id: inbound_confirmation
+      name: 入库区货物确认
+      x: -10.5
+      y: 7.0
+      yaw: 1.57
+      action: inspect
+      stay_seconds: 3.0
+      retries: 2
+      timeout_seconds: 150.0
+
+    - id: shelf_a_pickup
+      name: A 区货架取货
+      x: -5.0
+      y: 4.5
+      yaw: 1.57
+      action: pickup
+      stay_seconds: 4.0
+      retries: 2
+      timeout_seconds: 120.0
+
+    - id: shelf_d_inventory
+      name: D 区货架盘点
+      x: 3.0
+      y: -3.5
+      yaw: -1.57
+      action: inspect
+      stay_seconds: 4.0
+      retries: 2
+      timeout_seconds: 120.0
+
+    - id: quality_inspection
+      name: 质检区检查
+      x: 10.0
+      y: -6.5
+      yaw: -1.57
+      action: inspect
+      stay_seconds: 5.0
+      retries: 2
+      timeout_seconds: 120.0
+
+    - id: outbound_delivery
+      name: 出库区送货
+      x: 10.5
+      y: 7.0
+      yaw: 1.57
+      action: deliver
+      stay_seconds: 4.0
+      retries: 2
+      timeout_seconds: 150.0
