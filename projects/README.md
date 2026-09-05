@@ -24,5 +24,6 @@ projects/
 
 - [01-amr-slam](01-amr-slam/README.md) — 从 Gazebo Sim、SLAM Toolbox 建图到 AMCL 与 Nav2 自主导航的 ROS 2 AMR 入门项目。
 - [02-amr-mission-executor](02-amr-mission-executor/README.md) — 独立仓库 AMR 多目标任务执行、动态通道阻塞恢复、低电量中断与自动返航项目。
+- [03-mobile-manipulator](03-mobile-manipulator/README.md) — 独立移动机械臂视觉搬运仿真，包含导航取料、辅助抓放、托盘运输与视觉返航精对位；跨机器复现说明待补充。
 
 课程期数与项目编号是两件事。一个项目可以支撑多集视频；不要为了“第二期课程”复制一份几乎相同的项目。

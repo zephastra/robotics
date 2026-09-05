@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="mobile_manipulator">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.24" rpy="0 0 0" />
+      <geometry>
+        <box size="0.70 0.58 0.24" />
+      </geometry>
+      <material name="base_linkvisual">
+        <color rgba="0.9 0.38 0.08 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079632679 0 0" />
+      <geometry>
+        <cylinder radius="0.12" length="0.055" />
+      </geometry>
+      <material name="left_wheelvisual">
+        <color rgba="0.08 0.08 0.08 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079632679 0 0" />
+      <geometry>
+        <cylinder radius="0.12" length="0.055" />
+      </geometry>
+      <material name="right_wheelvisual">
+        <color rgba="0.08 0.08 0.08 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="front_caster">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.06" />
+      </geometry>
+      <material name="front_castervisual">
+        <color rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="rear_caster">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.06" />
+      </geometry>
+      <material name="rear_castervisual">
+        <color rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="tray">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.28 0.32 0.04" />
+      </geometry>
+      <material name="trayvisual">
+        <color rgba="0.25 0.65 0.25 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="column">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.12 0.30" />
+      </geometry>
+      <material name="columnvisual">
+        <color rgba="0.35 0.38 0.42 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="carriage">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.16 0.16 0.10" />
+      </geometry>
+      <material name="carriagevisual">
+        <color rgba="0.35 0.38 0.42 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="upper_arm">
+    <visual>
+      <origin xyz="0.21 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.42 0.065 0.065" />
+      </geometry>
+      <material name="upper_armvisual">
+        <color rgba="0.9 0.38 0.08 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="forearm">
+    <visual>
+      <origin xyz="0.2 0 0.065" rpy="0 0 0" />
+      <geometry>
+        <box size="0.40 0.055 0.055" />
+      </geometry>
+      <material name="forearmvisual">
+        <color rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="tool">
+    <visual>
+      <origin xyz="0 0 0.10" rpy="0 0 0" />
+      <geometry>
+        <box size="0.075 0.15 0.06" />
+      </geometry>
+      <material name="toolvisual">
+        <color rgba="0.35 0.38 0.42 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0.23" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.025" length="0.27" />
+      </geometry>
+      <material name="toolshaft">
+        <color rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="finger_left_link">
+    <visual>
+      <origin xyz="0 0.006 0.015" rpy="0 0 0" />
+      <geometry>
+        <box size="0.08 0.012 0.11" />
+      </geometry>
+      <material name="finger_left_linkvisual">
+        <color rgba="0.35 0.38 0.42 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="finger_right_link">
+    <visual>
+      <origin xyz="0 -0.006 0.015" rpy="0 0 0" />
+      <geometry>
+        <box size="0.08 0.012 0.11" />
+      </geometry>
+      <material name="finger_right_linkvisual">
+        <color rgba="0.35 0.38 0.42 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="laser_link" />
+  <link name="camera_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size=".12 .08 .06" />
+      </geometry>
+      <material name="camera_linkvisual">
+        <color rgba="0.35 0.38 0.42 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="camera_mast">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size=".04 .04 1.45" />
+      </geometry>
+      <material name="camera_mastvisual">
+        <color rgba="0.35 0.38 0.42 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="left_wheel_joint" type="revolute">
+    <parent link="base_link" />
+    <child link="left_wheel" />
+    <origin xyz="0 0.34 0.12" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1000000000000.0" upper="1000000000000.0" effort="1000" velocity="8.0" />
+  </joint>
+  <joint name="right_wheel_joint" type="revolute">
+    <parent link="base_link" />
+    <child link="right_wheel" />
+    <origin xyz="0 -0.34 0.12" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1000000000000.0" upper="1000000000000.0" effort="1000" velocity="8.0" />
+  </joint>
+  <joint name="front_caster_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="front_caster" />
+    <origin xyz="0.28 0 0.06" rpy="0 0 0" />
+  </joint>
+  <joint name="rear_caster_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="rear_caster" />
+    <origin xyz="-0.28 0 0.06" rpy="0 0 0" />
+  </joint>
+  <joint name="tray_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="tray" />
+    <origin xyz="-0.24 0 0.41" rpy="0 0 0" />
+  </joint>
+  <joint name="column_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="column" />
+    <origin xyz="0 0 0.48" rpy="0 0 0" />
+  </joint>
+  <joint name="lift" type="prismatic">
+    <parent link="base_link" />
+    <child link="carriage" />
+    <origin xyz="0 0 0.65" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0.55" effort="1000" velocity="0.6" />
+  </joint>
+  <joint name="shoulder" type="revolute">
+    <parent link="carriage" />
+    <child link="upper_arm" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="1000" velocity="0.6" />
+  </joint>
+  <joint name="elbow" type="revolute">
+    <parent link="upper_arm" />
+    <child link="forearm" />
+    <origin xyz="0.42 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="1000" velocity="0.6" />
+  </joint>
+  <joint name="wrist" type="revolute">
+    <parent link="forearm" />
+    <child link="tool" />
+    <origin xyz="0.40 0 -0.30" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="1000" velocity="0.6" />
+  </joint>
+  <joint name="finger_left" type="prismatic">
+    <parent link="tool" />
+    <child link="finger_left_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.05" upper="0.095" effort="1000" velocity="0.6" />
+  </joint>
+  <joint name="finger_right" type="prismatic">
+    <parent link="tool" />
+    <child link="finger_right_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit lower="0.05" upper="0.095" effort="1000" velocity="0.6" />
+  </joint>
+  <joint name="laser_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="laser_link" />
+    <origin xyz="0.14 0 0.60" rpy="0 0 0" />
+  </joint>
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="camera_link" />
+    <origin xyz="0.3 0 1.8" rpy="0 0 0" />
+  </joint>
+  <joint name="mast_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="camera_mast" />
+    <origin xyz="-0.34 -0.22 1.03" rpy="0 0 0" />
+  </joint>
+</robot>

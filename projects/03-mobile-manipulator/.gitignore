@@ -1,0 +1,9 @@
+build/
+install/
+log/
+logs/
+reports/
+__pycache__/
+.pytest_cache/
+*.pyc
+/camera_debug.png

@@ -1,0 +1,641 @@
+{
+  "status": "COMPLETED",
+  "events": [
+    {
+      "phase": "GRASP_GUARD_SELF_TEST",
+      "wall_elapsed": 2.69,
+      "physics": {
+        "sim_time": 1.062,
+        "base": [
+          1.00262e-18,
+          -1.0655e-19,
+          -3.77006e-11,
+          7.9004e-19
+        ],
+        "tool": [
+          0.82,
+          -5.85625e-12,
+          0.350056,
+          2.7146e-19
+        ],
+        "cargo": [
+          2.2,
+          3.95379e-23,
+          0.7,
+          -2.58695e-22
+        ],
+        "tray": [
+          -0.24,
+          3.04274e-13,
+          0.41,
+          7.9004e-19
+        ],
+        "holder": "none",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "NAVIGATE_SOURCE",
+      "wall_elapsed": 10.13,
+      "physics": {
+        "sim_time": 8.324,
+        "base": [
+          4.5355e-05,
+          -1.52929e-07,
+          -1.41282e-07,
+          -0.000119085
+        ],
+        "tool": [
+          -0.239955,
+          2.84276e-05,
+          0.859464,
+          -0.000119085
+        ],
+        "cargo": [
+          2.2,
+          3.95379e-23,
+          0.7,
+          -2.58695e-22
+        ],
+        "tray": [
+          -0.239954,
+          2.85857e-05,
+          0.41,
+          -0.000119085
+        ],
+        "holder": "none",
+        "rejection": "outside_capture_volume",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "LOCATE_SOURCE_BOX",
+      "wall_elapsed": 20.72,
+      "physics": {
+        "sim_time": 18.713,
+        "base": [
+          1.45784,
+          0.00788236,
+          -3.2033e-09,
+          0.0335858
+        ],
+        "tool": [
+          1.21797,
+          -0.000176637,
+          0.855048,
+          0.0335855
+        ],
+        "cargo": [
+          2.2,
+          3.95379e-23,
+          0.7,
+          -2.58695e-22
+        ],
+        "tray": [
+          1.21797,
+          -0.000176715,
+          0.41,
+          0.0335858
+        ],
+        "holder": "none",
+        "rejection": "outside_capture_volume",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "PICK_SOURCE",
+      "wall_elapsed": 21.17,
+      "physics": {
+        "sim_time": 19.116,
+        "base": [
+          1.45784,
+          0.00788236,
+          -3.2033e-09,
+          0.0335858
+        ],
+        "tool": [
+          1.21797,
+          -0.000176637,
+          0.854926,
+          0.0335855
+        ],
+        "cargo": [
+          2.2,
+          3.95379e-23,
+          0.7,
+          -2.58695e-22
+        ],
+        "tray": [
+          1.21797,
+          -0.000176715,
+          0.41,
+          0.0335858
+        ],
+        "holder": "none",
+        "rejection": "outside_capture_volume",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "LOAD_TRAY",
+      "wall_elapsed": 28.99,
+      "physics": {
+        "sim_time": 26.359,
+        "base": [
+          1.45785,
+          0.00788269,
+          -3.77459e-07,
+          0.0335622
+        ],
+        "tool": [
+          2.18582,
+          0.00140058,
+          0.85085,
+          0.0335622
+        ],
+        "cargo": [
+          2.2,
+          -6.93511e-11,
+          0.848854,
+          3.49926e-11
+        ],
+        "tray": [
+          1.21798,
+          -0.000170275,
+          0.41,
+          0.0335622
+        ],
+        "holder": "tool",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "TRANSPORT_TO_DESTINATION",
+      "wall_elapsed": 38.07,
+      "physics": {
+        "sim_time": 35.212,
+        "base": [
+          1.45792,
+          0.007885,
+          -2.08807e-07,
+          0.033407
+        ],
+        "tool": [
+          1.21806,
+          -0.000131195,
+          0.854035,
+          0.033407
+        ],
+        "cargo": [
+          1.23224,
+          -0.00153397,
+          0.471881,
+          -0.000155119
+        ],
+        "tray": [
+          1.21806,
+          -0.000130951,
+          0.41,
+          0.033407
+        ],
+        "holder": "tray",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "LOCATE_PLACE_MARKER",
+      "wall_elapsed": 69.8,
+      "physics": {
+        "sim_time": 59.459,
+        "base": [
+          1.49649,
+          2.98186,
+          -3.20591e-09,
+          0.0338492
+        ],
+        "tool": [
+          1.25663,
+          2.97374,
+          0.850902,
+          0.0338492
+        ],
+        "cargo": [
+          1.27081,
+          2.97235,
+          0.471881,
+          0.000287097
+        ],
+        "tray": [
+          1.25663,
+          2.97374,
+          0.41,
+          0.0338492
+        ],
+        "holder": "tray",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "UNLOAD_TRAY",
+      "wall_elapsed": 70.3,
+      "physics": {
+        "sim_time": 59.761,
+        "base": [
+          1.49649,
+          2.98186,
+          -3.20591e-09,
+          0.0338492
+        ],
+        "tool": [
+          1.25663,
+          2.97374,
+          0.850886,
+          0.0338492
+        ],
+        "cargo": [
+          1.27081,
+          2.97235,
+          0.471881,
+          0.000287097
+        ],
+        "tray": [
+          1.25663,
+          2.97374,
+          0.41,
+          0.0338492
+        ],
+        "holder": "tray",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "PICK_FROM_TRAY",
+      "wall_elapsed": 72.18,
+      "physics": {
+        "sim_time": 61.069,
+        "base": [
+          1.49649,
+          2.98186,
+          -3.20591e-09,
+          0.0338492
+        ],
+        "tool": [
+          1.25663,
+          2.97374,
+          0.473903,
+          0.0338492
+        ],
+        "cargo": [
+          1.27081,
+          2.97235,
+          0.472279,
+          0.000287098
+        ],
+        "tray": [
+          1.25663,
+          2.97374,
+          0.41,
+          0.0338492
+        ],
+        "holder": "none",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "PLACE_ON_DESTINATION",
+      "wall_elapsed": 77.92,
+      "physics": {
+        "sim_time": 64.894,
+        "base": [
+          1.49649,
+          2.98186,
+          -3.20591e-09,
+          0.0338492
+        ],
+        "tool": [
+          1.25663,
+          2.97374,
+          0.849999,
+          0.0338492
+        ],
+        "cargo": [
+          1.27081,
+          2.97235,
+          0.850275,
+          0.000287107
+        ],
+        "tray": [
+          1.25663,
+          2.97374,
+          0.41,
+          0.0338492
+        ],
+        "holder": "tool",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "RETURN_HOME",
+      "wall_elapsed": 88.1,
+      "physics": {
+        "sim_time": 72.866,
+        "base": [
+          1.49652,
+          2.98186,
+          -3.06378e-07,
+          0.0337751
+        ],
+        "tool": [
+          2.20133,
+          3.00153,
+          0.852372,
+          0.0337751
+        ],
+        "cargo": [
+          2.21551,
+          3.00013,
+          0.7,
+          0.000212948
+        ],
+        "tray": [
+          1.25666,
+          2.97376,
+          0.41,
+          0.0337751
+        ],
+        "holder": "none",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "LOCATE_HOME_MARKER_0",
+      "wall_elapsed": 137.9,
+      "physics": {
+        "sim_time": 119.988,
+        "base": [
+          0.0873455,
+          0.119747,
+          -3.2099e-09,
+          -0.0460149
+        ],
+        "tool": [
+          -0.1524,
+          0.130786,
+          0.850137,
+          -0.0460149
+        ],
+        "cargo": [
+          2.21551,
+          3.00013,
+          0.7,
+          0.000212948
+        ],
+        "tray": [
+          -0.1524,
+          0.130786,
+          0.41,
+          -0.0460149
+        ],
+        "holder": "none",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "ALIGN_HOME_0",
+      "wall_elapsed": 138.17,
+      "physics": {
+        "sim_time": 120.19,
+        "base": [
+          0.0873455,
+          0.119747,
+          -3.2099e-09,
+          -0.0460149
+        ],
+        "tool": [
+          -0.1524,
+          0.130786,
+          0.850136,
+          -0.0460149
+        ],
+        "cargo": [
+          2.21551,
+          3.00013,
+          0.7,
+          0.000212948
+        ],
+        "tray": [
+          -0.1524,
+          0.130786,
+          0.41,
+          -0.0460149
+        ],
+        "holder": "none",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "LOCATE_HOME_MARKER_1",
+      "wall_elapsed": 156.98,
+      "physics": {
+        "sim_time": 137.752,
+        "base": [
+          0.0312558,
+          0.0163136,
+          -3.21003e-09,
+          -0.044315
+        ],
+        "tool": [
+          -0.208509,
+          0.0269457,
+          0.850048,
+          -0.044315
+        ],
+        "cargo": [
+          2.21551,
+          3.00013,
+          0.7,
+          0.000212948
+        ],
+        "tray": [
+          -0.208509,
+          0.0269457,
+          0.41,
+          -0.044315
+        ],
+        "holder": "none",
+        "rejection": "",
+        "base_speed": 0
+      }
+    },
+    {
+      "phase": "COMPLETED",
+      "wall_elapsed": 157.34,
+      "physics": {
+        "sim_time": 138.055,
+        "base": [
+          0.0312558,
+          0.0163136,
+          -3.21003e-09,
+          -0.044315
+        ],
+        "tool": [
+          -0.208509,
+          0.0269457,
+          0.850047,
+          -0.044315
+        ],
+        "cargo": [
+          2.21551,
+          3.00013,
+          0.7,
+          0.000212948
+        ],
+        "tray": [
+          -0.208509,
+          0.0269457,
+          0.41,
+          -0.044315
+        ],
+        "holder": "none",
+        "rejection": "",
+        "base_speed": 0
+      }
+    }
+  ],
+  "checks": {
+    "distant_grasp_rejected": true,
+    "PICK_SOURCE_lifted": true,
+    "loaded_on_tray": true,
+    "cargo_arrived_on_tray": true,
+    "PICK_FROM_TRAY_lifted": true,
+    "placed_at_destination": true,
+    "home_visually_aligned": true,
+    "returned_home": true
+  },
+  "vision": [
+    {
+      "label": "LOCATE_SOURCE_BOX",
+      "base_xy": [
+        0.7273442030068624,
+        -0.030906172556636594
+      ],
+      "pixels": {
+        "u": 331.18265895953755,
+        "v": 85.3757225433526,
+        "pixels": 1730
+      },
+      "color": "blue",
+      "frame_stamps_ns": [
+        18625000000,
+        18750000000,
+        19000000000,
+        19125000000
+      ],
+      "method": "RGB marker + calibrated camera ray / known plane intersection"
+    },
+    {
+      "label": "LOCATE_PLACE_MARKER",
+      "base_xy": [
+        0.7050674373208381,
+        -0.004147529705726277
+      ],
+      "pixels": {
+        "u": 321.3725771715722,
+        "v": 105.94759511844939,
+        "pixels": 2786
+      },
+      "color": "red",
+      "frame_stamps_ns": [
+        59375000000,
+        59500000000,
+        59625000000,
+        59750000000
+      ],
+      "method": "RGB marker + calibrated camera ray / known plane intersection"
+    },
+    {
+      "label": "LOCATE_HOME_MARKER_0",
+      "base_xy": [
+        0.6195872663098487,
+        -0.08925599966894432
+      ],
+      "pixels": {
+        "u": 338.87028657616895,
+        "v": 172.4336349924585,
+        "pixels": 1326,
+        "yaw": 0.04437510836596152
+      },
+      "color": "magenta",
+      "frame_stamps_ns": [
+        119875000000,
+        120000000000,
+        120125000000,
+        120250000000
+      ],
+      "method": "RGB marker + calibrated camera ray / known plane intersection"
+    },
+    {
+      "label": "LOCATE_HOME_MARKER_1",
+      "base_xy": [
+        0.6709142804173395,
+        0.01545624836406094
+      ],
+      "pixels": {
+        "u": 316.7322775263952,
+        "v": 161.58220211161387,
+        "pixels": 1326,
+        "yaw": 0.039316953675925415
+      },
+      "color": "magenta",
+      "frame_stamps_ns": [
+        137750000000,
+        137875000000,
+        138000000000,
+        138125000000
+      ],
+      "method": "RGB marker + calibrated camera ray / known plane intersection"
+    }
+  ],
+  "grasp_model": "proximity-gated fixed constraint; not friction grasp",
+  "final_physics": {
+    "sim_time": 138.055,
+    "base": [
+      0.0312558,
+      0.0163136,
+      -3.21003e-09,
+      -0.044315
+    ],
+    "tool": [
+      -0.208509,
+      0.0269457,
+      0.850047,
+      -0.044315
+    ],
+    "cargo": [
+      2.21551,
+      3.00013,
+      0.7,
+      0.000212948
+    ],
+    "tray": [
+      -0.208509,
+      0.0269457,
+      0.41,
+      -0.044315
+    ],
+    "holder": "none",
+    "rejection": "",
+    "base_speed": 0
+  },
+  "wall_seconds": 157.34
+}

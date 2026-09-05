@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(mobile_manipulator_003 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(gz-sim REQUIRED)
+find_package(gz-plugin REQUIRED COMPONENTS register)
+add_library(guarded_grasp SHARED src/plugins/guarded_grasp.cc)
+target_link_libraries(guarded_grasp PRIVATE gz-sim::gz-sim gz-plugin::register)
+set_target_properties(guarded_grasp PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/plugins")

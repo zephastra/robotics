@@ -1,0 +1,13 @@
+mission_id: material_delivery_003
+source:
+  navigation: [1.5, 0.0, 0.0]
+  object_top_z: 0.75
+  table_center: [2.20, 0.0]
+destination:
+  navigation: [1.5, 3.0, 0.0]
+  place_center: [2.20, 3.0, 0.70]
+home: [0.0, 0.0, 0.0]
+navigation_timeout: 240.0
+wall_timeout: 900.0
+object_size: 0.10
+vision_timeout: 12.0
