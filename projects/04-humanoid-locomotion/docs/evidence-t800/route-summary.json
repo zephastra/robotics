@@ -1,0 +1,1491 @@
+{
+  "robot": "t800",
+  "suite": "route",
+  "planned": 20,
+  "finished": 20,
+  "completed": 20,
+  "controlled_stops": 0,
+  "cases": [
+    {
+      "name": "route-seed-0",
+      "exit_code": 0,
+      "report": "route/route-seed-0.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.589999999999467,
+          "position_error": 0.018878110345628533,
+          "yaw_error_degrees": 2.5492115918926914,
+          "hold_seconds": 10.009999999999264,
+          "hold_max_position_error": 0.299968310688507,
+          "hold_max_yaw_error_degrees": 3.4403037401841536,
+          "hold_mean_speed_mps": 0.039054847829749814
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.50000000000109,
+          "position_error": 0.021190486439824796,
+          "yaw_error_degrees": 2.3040412801839762,
+          "hold_seconds": 10.000000000006004,
+          "hold_max_position_error": 0.29985927179534383,
+          "hold_max_yaw_error_degrees": 3.203348385779743,
+          "hold_mean_speed_mps": 0.03831237354865381
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.11000000002733,
+          "position_error": 0.07529672349859325,
+          "yaw_error_degrees": 12.152310477617146,
+          "hold_seconds": 10.000000000004718,
+          "hold_max_position_error": 0.10634923953214244,
+          "hold_max_yaw_error_degrees": 14.926525210584426,
+          "hold_mean_speed_mps": 0.017441009513207657
+        }
+      ],
+      "max_tilt_degrees": 0.6732724995188174,
+      "sim_seconds": 66.11000000002733,
+      "final_pose": [
+        0.07165953469419717,
+        0.023119421641441568,
+        1.0156507004188797,
+        -0.9943814970247294,
+        -0.0006819670380329776,
+        0.000922412169727824,
+        0.10584952740378833
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07355328109158212,
+      "max_displacement_from_start_m": 3.5870811904272357,
+      "accumulated_yaw_degrees": 352.0559838664961,
+      "original_report": "reports/20260906T100822651777Z-t800-route-0/report.json"
+    },
+    {
+      "name": "route-seed-1",
+      "exit_code": 0,
+      "report": "route/route-seed-1.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.629999999999445,
+          "position_error": 0.02025103091924756,
+          "yaw_error_degrees": 2.4468213990281766,
+          "hold_seconds": 10.009999999999229,
+          "hold_max_position_error": 0.29837810368047957,
+          "hold_max_yaw_error_degrees": 3.2653074642321043,
+          "hold_mean_speed_mps": 0.03901675348799009
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.530000000001124,
+          "position_error": 0.020165971964407118,
+          "yaw_error_degrees": 2.3034268169503997,
+          "hold_seconds": 10.000000000006057,
+          "hold_max_position_error": 0.29818738948512946,
+          "hold_max_yaw_error_degrees": 3.1625041374598046,
+          "hold_mean_speed_mps": 0.03843289519670651
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.15000000002723,
+          "position_error": 0.07510485354523184,
+          "yaw_error_degrees": 12.254288747492932,
+          "hold_seconds": 10.000000000004576,
+          "hold_max_position_error": 0.10627046452318537,
+          "hold_max_yaw_error_degrees": 14.892438518781153,
+          "hold_mean_speed_mps": 0.016785811630229863
+        }
+      ],
+      "max_tilt_degrees": 0.6881678346371884,
+      "sim_seconds": 66.15000000002723,
+      "final_pose": [
+        0.07190328509047406,
+        0.02169462189688349,
+        1.015607765877514,
+        -0.9942869301341689,
+        -0.0006992325959683087,
+        0.000877751378613282,
+        0.10673444238231906
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 1,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07239254922150516,
+      "max_displacement_from_start_m": 3.566869036944625,
+      "accumulated_yaw_degrees": 351.00800553268385,
+      "original_report": "reports/20260906T100831068883Z-t800-route-1/report.json"
+    },
+    {
+      "name": "route-seed-2",
+      "exit_code": 0,
+      "report": "route/route-seed-2.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.769999999999367,
+          "position_error": 0.022572803904334734,
+          "yaw_error_degrees": 2.2746562043981533,
+          "hold_seconds": 10.009999999999105,
+          "hold_max_position_error": 0.298630771843002,
+          "hold_max_yaw_error_degrees": 3.22989099952206,
+          "hold_mean_speed_mps": 0.037805032065458426
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.69000000000132,
+          "position_error": 0.020255946509967555,
+          "yaw_error_degrees": 2.3059328107372097,
+          "hold_seconds": 10.000000000006342,
+          "hold_max_position_error": 0.2979137639776975,
+          "hold_max_yaw_error_degrees": 3.1775538917242403,
+          "hold_mean_speed_mps": 0.03866131515224571
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.31000000002686,
+          "position_error": 0.0751872723713299,
+          "yaw_error_degrees": 12.146251972116527,
+          "hold_seconds": 10.000000000004007,
+          "hold_max_position_error": 0.10714906519438346,
+          "hold_max_yaw_error_degrees": 14.919528907708152,
+          "hold_mean_speed_mps": 0.016530069354680654
+        }
+      ],
+      "max_tilt_degrees": 0.7187912429232156,
+      "sim_seconds": 66.31000000002686,
+      "final_pose": [
+        0.07111829249630064,
+        0.024399065536433468,
+        1.0156605504193916,
+        -0.9943871025360163,
+        -0.0006303308136924245,
+        0.0009448800817881449,
+        0.10579697630236129
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 2,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.09887348405418189,
+      "max_displacement_from_start_m": 3.612191977313505,
+      "accumulated_yaw_degrees": 344.9734189149218,
+      "original_report": "reports/20260906T100838206635Z-t800-route-2/report.json"
+    },
+    {
+      "name": "route-seed-3",
+      "exit_code": 0,
+      "report": "route/route-seed-3.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.809999999999345,
+          "position_error": 0.02319702437510471,
+          "yaw_error_degrees": 2.255754053008757,
+          "hold_seconds": 10.009999999999069,
+          "hold_max_position_error": 0.2978104544952168,
+          "hold_max_yaw_error_degrees": 3.25408549291325,
+          "hold_mean_speed_mps": 0.03724313589871606
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.710000000001344,
+          "position_error": 0.021528699863054876,
+          "yaw_error_degrees": 2.2416497052247144,
+          "hold_seconds": 10.000000000006377,
+          "hold_max_position_error": 0.29786267059957083,
+          "hold_max_yaw_error_degrees": 3.1158922108570484,
+          "hold_mean_speed_mps": 0.03843788117764671
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.33000000002681,
+          "position_error": 0.07587322728970246,
+          "yaw_error_degrees": 12.043282362063774,
+          "hold_seconds": 10.000000000003936,
+          "hold_max_position_error": 0.10663093694647628,
+          "hold_max_yaw_error_degrees": 14.919061861761017,
+          "hold_mean_speed_mps": 0.017574883879974478
+        }
+      ],
+      "max_tilt_degrees": 0.7117836658981845,
+      "sim_seconds": 66.33000000002681,
+      "final_pose": [
+        0.0720331011895689,
+        0.023832309002028672,
+        1.0156672407786227,
+        -0.9944817349850673,
+        -0.0006935921356433453,
+        0.0009408719092260544,
+        0.10490334823584194
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 3,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.11435892133808284,
+      "max_displacement_from_start_m": 3.6248818075819895,
+      "accumulated_yaw_degrees": 345.19511593529654,
+      "original_report": "reports/20260906T100845555776Z-t800-route-3/report.json"
+    },
+    {
+      "name": "route-seed-4",
+      "exit_code": 0,
+      "report": "route/route-seed-4.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.679999999999417,
+          "position_error": 0.027018725366796784,
+          "yaw_error_degrees": 2.013529339927683,
+          "hold_seconds": 10.009999999999184,
+          "hold_max_position_error": 0.29792319186977556,
+          "hold_max_yaw_error_degrees": 2.794138690660065,
+          "hold_mean_speed_mps": 0.04041697331406329
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.56000000000116,
+          "position_error": 0.019907555347522893,
+          "yaw_error_degrees": 2.346582561407381,
+          "hold_seconds": 10.00000000000611,
+          "hold_max_position_error": 0.299148674844203,
+          "hold_max_yaw_error_degrees": 3.2061764779898105,
+          "hold_mean_speed_mps": 0.03873362563414587
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.19000000002714,
+          "position_error": 0.07446857901123446,
+          "yaw_error_degrees": 12.02345077057444,
+          "hold_seconds": 10.000000000004434,
+          "hold_max_position_error": 0.10453052442019585,
+          "hold_max_yaw_error_degrees": 14.952666413729236,
+          "hold_mean_speed_mps": 0.016702243336125702
+        }
+      ],
+      "max_tilt_degrees": 0.6593941100796701,
+      "sim_seconds": 66.19000000002714,
+      "final_pose": [
+        0.07081113441004085,
+        0.023051084649438953,
+        1.0157089959474563,
+        -0.9944998800415151,
+        -0.0006062410225744449,
+        0.0009912883179582293,
+        0.1047312676171993
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 4,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.04172763323945903,
+      "max_displacement_from_start_m": 3.557917931338996,
+      "accumulated_yaw_degrees": 343.61100636151576,
+      "original_report": "reports/20260906T100853781479Z-t800-route-4/report.json"
+    },
+    {
+      "name": "route-seed-5",
+      "exit_code": 0,
+      "report": "route/route-seed-5.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.589999999999467,
+          "position_error": 0.02095643567058781,
+          "yaw_error_degrees": 2.4345528342817846,
+          "hold_seconds": 10.009999999999264,
+          "hold_max_position_error": 0.298572362537257,
+          "hold_max_yaw_error_degrees": 3.216642185194782,
+          "hold_mean_speed_mps": 0.03992005109055809
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.50000000000109,
+          "position_error": 0.02103697207241604,
+          "yaw_error_degrees": 2.356092538973258,
+          "hold_seconds": 10.000000000006004,
+          "hold_max_position_error": 0.2979743944312953,
+          "hold_max_yaw_error_degrees": 3.236567547157223,
+          "hold_mean_speed_mps": 0.038368521979512175
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.11000000002733,
+          "position_error": 0.07206450771107563,
+          "yaw_error_degrees": 12.508668717187575,
+          "hold_seconds": 10.000000000004718,
+          "hold_max_position_error": 0.10403391128314274,
+          "hold_max_yaw_error_degrees": 14.972608280325236,
+          "hold_mean_speed_mps": 0.01634556253574166
+        }
+      ],
+      "max_tilt_degrees": 0.7161373596624495,
+      "sim_seconds": 66.11000000002733,
+      "final_pose": [
+        0.06845371961363989,
+        0.022525131358037687,
+        1.0156666820444222,
+        -0.99404757821288,
+        -0.0005495255684783185,
+        0.0009330064905549375,
+        0.1089414511085924
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 5,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.04410399369508316,
+      "max_displacement_from_start_m": 3.5522264135623782,
+      "accumulated_yaw_degrees": 347.3510477417789,
+      "original_report": "reports/20260906T100902019351Z-t800-route-5/report.json"
+    },
+    {
+      "name": "route-seed-6",
+      "exit_code": 0,
+      "report": "route/route-seed-6.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.61999999999945,
+          "position_error": 0.019834003450388504,
+          "yaw_error_degrees": 2.503333829352511,
+          "hold_seconds": 10.009999999999238,
+          "hold_max_position_error": 0.2991572046911825,
+          "hold_max_yaw_error_degrees": 3.3557665566683514,
+          "hold_mean_speed_mps": 0.03936359277636623
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.530000000001124,
+          "position_error": 0.0207239400463807,
+          "yaw_error_degrees": 2.3096110978475615,
+          "hold_seconds": 10.000000000006057,
+          "hold_max_position_error": 0.2981685256671384,
+          "hold_max_yaw_error_degrees": 3.20303299877326,
+          "hold_mean_speed_mps": 0.03835662116248292
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.14000000002726,
+          "position_error": 0.07353356838276806,
+          "yaw_error_degrees": 12.268524353214477,
+          "hold_seconds": 10.000000000004611,
+          "hold_max_position_error": 0.10460181060278004,
+          "hold_max_yaw_error_degrees": 14.910565979137502,
+          "hold_mean_speed_mps": 0.016510316897968173
+        }
+      ],
+      "max_tilt_degrees": 0.7017917405125139,
+      "sim_seconds": 66.14000000002726,
+      "final_pose": [
+        0.06988949065721871,
+        0.022861425475629586,
+        1.0156787571091692,
+        -0.9942736607306412,
+        -0.0005975266784322089,
+        0.0009503591768101713,
+        0.1068579775056277
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 6,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07563226428690258,
+      "max_displacement_from_start_m": 3.5910531889218227,
+      "accumulated_yaw_degrees": 348.9320440895991,
+      "original_report": "reports/20260906T100910833584Z-t800-route-6/report.json"
+    },
+    {
+      "name": "route-seed-7",
+      "exit_code": 0,
+      "report": "route/route-seed-7.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.669999999999423,
+          "position_error": 0.0225657668323487,
+          "yaw_error_degrees": 2.3474857438579955,
+          "hold_seconds": 10.009999999999193,
+          "hold_max_position_error": 0.298506610146075,
+          "hold_max_yaw_error_degrees": 3.1588330238459172,
+          "hold_mean_speed_mps": 0.039354248445844585
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.56000000000116,
+          "position_error": 0.02000867229557927,
+          "yaw_error_degrees": 2.3600799696557315,
+          "hold_seconds": 10.00000000000611,
+          "hold_max_position_error": 0.29925055523535055,
+          "hold_max_yaw_error_degrees": 3.2300514765630552,
+          "hold_mean_speed_mps": 0.03843203164442802
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.19000000002714,
+          "position_error": 0.072715216622224,
+          "yaw_error_degrees": 12.492061950149354,
+          "hold_seconds": 10.000000000004434,
+          "hold_max_position_error": 0.1054602768601752,
+          "hold_max_yaw_error_degrees": 14.921930212280403,
+          "hold_mean_speed_mps": 0.016165076905053307
+        }
+      ],
+      "max_tilt_degrees": 0.7084093413703395,
+      "sim_seconds": 66.19000000002714,
+      "final_pose": [
+        0.06929459985973503,
+        0.022039989988567828,
+        1.0156385487529203,
+        -0.9940633579621777,
+        -0.0005866791578810392,
+        0.0009089005906754445,
+        0.10879738077840378
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 7,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.06008123930959856,
+      "max_displacement_from_start_m": 3.56185166988511,
+      "accumulated_yaw_degrees": 344.98081839144106,
+      "original_report": "reports/20260906T100921510565Z-t800-route-7/report.json"
+    },
+    {
+      "name": "route-seed-8",
+      "exit_code": 0,
+      "report": "route/route-seed-8.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.679999999999417,
+          "position_error": 0.02171306074105704,
+          "yaw_error_degrees": 2.3855219900017968,
+          "hold_seconds": 10.009999999999184,
+          "hold_max_position_error": 0.29813016071354664,
+          "hold_max_yaw_error_degrees": 3.221530492511589,
+          "hold_mean_speed_mps": 0.038882396995035116
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.57000000000117,
+          "position_error": 0.020679702261613593,
+          "yaw_error_degrees": 2.326226021639014,
+          "hold_seconds": 10.000000000006128,
+          "hold_max_position_error": 0.29899916293209117,
+          "hold_max_yaw_error_degrees": 3.1692576798852357,
+          "hold_mean_speed_mps": 0.03868618891580319
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.20000000002712,
+          "position_error": 0.07516093035384837,
+          "yaw_error_degrees": 12.0620616041753,
+          "hold_seconds": 10.000000000004398,
+          "hold_max_position_error": 0.10620207691803457,
+          "hold_max_yaw_error_degrees": 14.923494917285678,
+          "hold_mean_speed_mps": 0.016509326659827673
+        }
+      ],
+      "max_tilt_degrees": 0.7074093611699436,
+      "sim_seconds": 66.20000000002712,
+      "final_pose": [
+        0.07117462901156887,
+        0.02415238366541868,
+        1.0156774790930674,
+        -0.9944645508217436,
+        -0.0006400414636409676,
+        0.0009530210083479744,
+        0.1050663564457752
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 8,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.08630055705706804,
+      "max_displacement_from_start_m": 3.5770690625990698,
+      "accumulated_yaw_degrees": 349.60017428871123,
+      "original_report": "reports/20260906T100931950297Z-t800-route-8/report.json"
+    },
+    {
+      "name": "route-seed-9",
+      "exit_code": 0,
+      "report": "route/route-seed-9.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.579999999999472,
+          "position_error": 0.01980785011853553,
+          "yaw_error_degrees": 2.546892761699382,
+          "hold_seconds": 10.009999999999273,
+          "hold_max_position_error": 0.29851599080750657,
+          "hold_max_yaw_error_degrees": 3.3431147899599942,
+          "hold_mean_speed_mps": 0.03980580133369354
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.490000000001075,
+          "position_error": 0.020728775332108144,
+          "yaw_error_degrees": 2.332031147417219,
+          "hold_seconds": 10.000000000005986,
+          "hold_max_position_error": 0.2977999845020287,
+          "hold_max_yaw_error_degrees": 3.212055041360251,
+          "hold_mean_speed_mps": 0.03850981006692061
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.11000000002733,
+          "position_error": 0.07508394178710022,
+          "yaw_error_degrees": 11.90269569997775,
+          "hold_seconds": 10.000000000004718,
+          "hold_max_position_error": 0.10585475966468577,
+          "hold_max_yaw_error_degrees": 14.904433149186845,
+          "hold_mean_speed_mps": 0.015627847198402205
+        }
+      ],
+      "max_tilt_degrees": 0.7140513393211402,
+      "sim_seconds": 66.11000000002733,
+      "final_pose": [
+        0.07076194723672635,
+        0.025106675159315913,
+        1.015723229892936,
+        -0.9946096998363533,
+        -0.000537774288005076,
+        0.001018680161236549,
+        0.1036832584411968
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 9,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.05890874424028564,
+      "max_displacement_from_start_m": 3.5716781012088488,
+      "accumulated_yaw_degrees": 347.1521202365623,
+      "original_report": "reports/20260906T100943759301Z-t800-route-9/report.json"
+    },
+    {
+      "name": "route-seed-10",
+      "exit_code": 0,
+      "report": "route/route-seed-10.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.589999999999467,
+          "position_error": 0.020516961161118893,
+          "yaw_error_degrees": 2.501121969313234,
+          "hold_seconds": 10.009999999999264,
+          "hold_max_position_error": 0.2978282077835195,
+          "hold_max_yaw_error_degrees": 3.3017680365165125,
+          "hold_mean_speed_mps": 0.03980271028394567
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.50000000000109,
+          "position_error": 0.02085468120469847,
+          "yaw_error_degrees": 2.304268246739089,
+          "hold_seconds": 10.000000000006004,
+          "hold_max_position_error": 0.299664081016466,
+          "hold_max_yaw_error_degrees": 3.2257206997521815,
+          "hold_mean_speed_mps": 0.03845697036262277
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.14000000002726,
+          "position_error": 0.07461916188771299,
+          "yaw_error_degrees": 12.10383690788615,
+          "hold_seconds": 10.000000000004611,
+          "hold_max_position_error": 0.10520194928036627,
+          "hold_max_yaw_error_degrees": 14.892018953642204,
+          "hold_mean_speed_mps": 0.016158529041542517
+        }
+      ],
+      "max_tilt_degrees": 0.7170283664727518,
+      "sim_seconds": 66.14000000002726,
+      "final_pose": [
+        0.07098617835340447,
+        0.02299960442275844,
+        1.0156785586169945,
+        -0.9944261865007614,
+        -0.0006203225362638136,
+        0.0009600982819070375,
+        0.10542890027308435
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 10,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.05781211517798972,
+      "max_displacement_from_start_m": 3.5692913787502847,
+      "accumulated_yaw_degrees": 344.8855001359001,
+      "original_report": "reports/20260906T100954124070Z-t800-route-10/report.json"
+    },
+    {
+      "name": "route-seed-11",
+      "exit_code": 0,
+      "report": "route/route-seed-11.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.769999999999367,
+          "position_error": 0.02304051396026289,
+          "yaw_error_degrees": 2.2845922877210727,
+          "hold_seconds": 10.009999999999105,
+          "hold_max_position_error": 0.29792372128155914,
+          "hold_max_yaw_error_degrees": 3.278671109000735,
+          "hold_mean_speed_mps": 0.03759613633128593
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.670000000001295,
+          "position_error": 0.02083554928252223,
+          "yaw_error_degrees": 2.327189136840795,
+          "hold_seconds": 10.000000000006306,
+          "hold_max_position_error": 0.2984592566447849,
+          "hold_max_yaw_error_degrees": 3.168755477980851,
+          "hold_mean_speed_mps": 0.03892841609102812
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.29000000002691,
+          "position_error": 0.07414416265630457,
+          "yaw_error_degrees": 12.129434736146196,
+          "hold_seconds": 10.000000000004079,
+          "hold_max_position_error": 0.1049749243325917,
+          "hold_max_yaw_error_degrees": 14.91024862542563,
+          "hold_mean_speed_mps": 0.016528270510715804
+        }
+      ],
+      "max_tilt_degrees": 0.717717706053702,
+      "sim_seconds": 66.29000000002691,
+      "final_pose": [
+        0.07020691262970037,
+        0.023840014157088238,
+        1.0156915421865174,
+        -0.9944026173905681,
+        -0.0006171015105985632,
+        0.0009542935345868172,
+        0.10565104370692728
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 11,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.10273932845571639,
+      "max_displacement_from_start_m": 3.6119582755288038,
+      "accumulated_yaw_degrees": 346.9403889705692,
+      "original_report": "reports/20260906T101004063565Z-t800-route-11/report.json"
+    },
+    {
+      "name": "route-seed-12",
+      "exit_code": 0,
+      "report": "route/route-seed-12.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.669999999999423,
+          "position_error": 0.02136850259783549,
+          "yaw_error_degrees": 2.4467448237235425,
+          "hold_seconds": 10.009999999999193,
+          "hold_max_position_error": 0.29966857204418246,
+          "hold_max_yaw_error_degrees": 3.3108452884938533,
+          "hold_mean_speed_mps": 0.03900265178017866
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.56000000000116,
+          "position_error": 0.021217677669288167,
+          "yaw_error_degrees": 2.2703760293088466,
+          "hold_seconds": 10.00000000000611,
+          "hold_max_position_error": 0.2988352015132313,
+          "hold_max_yaw_error_degrees": 3.141451695528082,
+          "hold_mean_speed_mps": 0.038808387509197365
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.14000000002726,
+          "position_error": 0.07628187011640512,
+          "yaw_error_degrees": 11.997795632783136,
+          "hold_seconds": 10.000000000004611,
+          "hold_max_position_error": 0.10710383981324878,
+          "hold_max_yaw_error_degrees": 14.969501542365242,
+          "hold_mean_speed_mps": 0.017526487298298997
+        }
+      ],
+      "max_tilt_degrees": 0.6956416686103015,
+      "sim_seconds": 66.14000000002726,
+      "final_pose": [
+        0.07279693777013682,
+        0.02279319108301703,
+        1.0156534820619159,
+        -0.9945232922850107,
+        -0.0007081936345816721,
+        0.0009365620061189262,
+        0.10450857580106955
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 12,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.09363044813007818,
+      "max_displacement_from_start_m": 3.5835096025288036,
+      "accumulated_yaw_degrees": 350.8505853123603,
+      "original_report": "reports/20260906T101013846740Z-t800-route-12/report.json"
+    },
+    {
+      "name": "route-seed-13",
+      "exit_code": 0,
+      "report": "route/route-seed-13.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.629999999999445,
+          "position_error": 0.021441171142942382,
+          "yaw_error_degrees": 2.421937059085311,
+          "hold_seconds": 10.009999999999229,
+          "hold_max_position_error": 0.29793900848622223,
+          "hold_max_yaw_error_degrees": 3.2069395818161994,
+          "hold_mean_speed_mps": 0.039270432268918555
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.530000000001124,
+          "position_error": 0.02090328051205689,
+          "yaw_error_degrees": 2.3418472608228447,
+          "hold_seconds": 10.000000000006057,
+          "hold_max_position_error": 0.2992429204990889,
+          "hold_max_yaw_error_degrees": 3.2161230324431758,
+          "hold_mean_speed_mps": 0.03874124616188988
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.15000000002723,
+          "position_error": 0.07486461705577584,
+          "yaw_error_degrees": 12.053706476949472,
+          "hold_seconds": 10.000000000004576,
+          "hold_max_position_error": 0.10559819972063857,
+          "hold_max_yaw_error_degrees": 14.940226731598408,
+          "hold_mean_speed_mps": 0.016901768867580266
+        }
+      ],
+      "max_tilt_degrees": 0.7009068363549384,
+      "sim_seconds": 66.15000000002723,
+      "final_pose": [
+        0.07092988123586422,
+        0.023951259565504243,
+        1.0156922654319311,
+        -0.9944722022956681,
+        -0.0006280030254230439,
+        0.0009680654904206598,
+        0.10499384421293308
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 13,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.04198502023522398,
+      "max_displacement_from_start_m": 3.5467017933210427,
+      "accumulated_yaw_degrees": 345.0953547557339,
+      "original_report": "reports/20260906T101021478702Z-t800-route-13/report.json"
+    },
+    {
+      "name": "route-seed-14",
+      "exit_code": 0,
+      "report": "route/route-seed-14.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.629999999999445,
+          "position_error": 0.01993397266469031,
+          "yaw_error_degrees": 2.450615553916682,
+          "hold_seconds": 10.009999999999229,
+          "hold_max_position_error": 0.2997078954669671,
+          "hold_max_yaw_error_degrees": 3.2874905740817013,
+          "hold_mean_speed_mps": 0.039168895743377646
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.530000000001124,
+          "position_error": 0.020911328593999072,
+          "yaw_error_degrees": 2.3456615726072814,
+          "hold_seconds": 10.000000000006057,
+          "hold_max_position_error": 0.2995750659408033,
+          "hold_max_yaw_error_degrees": 3.1900827839393,
+          "hold_mean_speed_mps": 0.03895961098868213
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.16000000002721,
+          "position_error": 0.0738499388627051,
+          "yaw_error_degrees": 12.18529967523142,
+          "hold_seconds": 10.00000000000454,
+          "hold_max_position_error": 0.10509193851911422,
+          "hold_max_yaw_error_degrees": 14.831976747492567,
+          "hold_mean_speed_mps": 0.015829824474534564
+        }
+      ],
+      "max_tilt_degrees": 0.7207575172530323,
+      "sim_seconds": 66.16000000002721,
+      "final_pose": [
+        0.07049785401982185,
+        0.021996955439905107,
+        1.0156760070123305,
+        -0.9943510012586801,
+        -0.0005888425431667176,
+        0.0009614080187115053,
+        0.1061358339814673
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 14,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.05508815035838994,
+      "max_displacement_from_start_m": 3.5710004908228767,
+      "accumulated_yaw_degrees": 345.9564109308641,
+      "original_report": "reports/20260906T101028456860Z-t800-route-14/report.json"
+    },
+    {
+      "name": "route-seed-15",
+      "exit_code": 0,
+      "report": "route/route-seed-15.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.589999999999467,
+          "position_error": 0.02114954765210821,
+          "yaw_error_degrees": 2.4366555074264764,
+          "hold_seconds": 10.009999999999264,
+          "hold_max_position_error": 0.2978233176864064,
+          "hold_max_yaw_error_degrees": 3.2594815838638516,
+          "hold_mean_speed_mps": 0.039582394313555085
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.490000000001075,
+          "position_error": 0.021167005235418812,
+          "yaw_error_degrees": 2.2591016473491914,
+          "hold_seconds": 10.000000000005986,
+          "hold_max_position_error": 0.2988101555465804,
+          "hold_max_yaw_error_degrees": 3.107347917562905,
+          "hold_mean_speed_mps": 0.03891422850324817
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.13000000002728,
+          "position_error": 0.07394709439296171,
+          "yaw_error_degrees": 12.269149934833566,
+          "hold_seconds": 10.000000000004647,
+          "hold_max_position_error": 0.10600505356426454,
+          "hold_max_yaw_error_degrees": 14.86750144266367,
+          "hold_mean_speed_mps": 0.016216818722185722
+        }
+      ],
+      "max_tilt_degrees": 0.7079880584532723,
+      "sim_seconds": 66.13000000002728,
+      "final_pose": [
+        0.07028375341036326,
+        0.02298623013268683,
+        1.0156476204169924,
+        -0.9942730956073663,
+        -0.0006208080535636898,
+        0.0009142504694094862,
+        0.10686341794451287
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 15,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.05491160286714105,
+      "max_displacement_from_start_m": 3.559458226641714,
+      "accumulated_yaw_degrees": 349.1574544025671,
+      "original_report": "reports/20260906T101035445091Z-t800-route-15/report.json"
+    },
+    {
+      "name": "route-seed-16",
+      "exit_code": 0,
+      "report": "route/route-seed-16.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.609999999999456,
+          "position_error": 0.01971296294031162,
+          "yaw_error_degrees": 2.5017100141856234,
+          "hold_seconds": 10.009999999999247,
+          "hold_max_position_error": 0.2992330522562427,
+          "hold_max_yaw_error_degrees": 3.3617686276848198,
+          "hold_mean_speed_mps": 0.03905332767860965
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.530000000001124,
+          "position_error": 0.020660202115562167,
+          "yaw_error_degrees": 2.3223525124067943,
+          "hold_seconds": 10.000000000006057,
+          "hold_max_position_error": 0.299096339241105,
+          "hold_max_yaw_error_degrees": 3.208335906651244,
+          "hold_mean_speed_mps": 0.0386016916757215
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.15000000002723,
+          "position_error": 0.07295260933239452,
+          "yaw_error_degrees": 12.444673927381617,
+          "hold_seconds": 10.000000000004576,
+          "hold_max_position_error": 0.10492352974559196,
+          "hold_max_yaw_error_degrees": 14.957056017309128,
+          "hold_mean_speed_mps": 0.016274299429085638
+        }
+      ],
+      "max_tilt_degrees": 0.6782952239255071,
+      "sim_seconds": 66.15000000002723,
+      "final_pose": [
+        0.0692461793032725,
+        0.022957566515291013,
+        1.0156507542381272,
+        -0.9941082576276917,
+        -0.0005879256570678266,
+        0.0009169165159304439,
+        0.1083862801463309
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 16,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.0699602172483127,
+      "max_displacement_from_start_m": 3.5852138630449977,
+      "accumulated_yaw_degrees": 351.2767856769235,
+      "original_report": "reports/20260906T101042997372Z-t800-route-16/report.json"
+    },
+    {
+      "name": "route-seed-17",
+      "exit_code": 0,
+      "report": "route/route-seed-17.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.579999999999472,
+          "position_error": 0.019229143519761526,
+          "yaw_error_degrees": 2.5591433400518713,
+          "hold_seconds": 10.009999999999273,
+          "hold_max_position_error": 0.29996693047913214,
+          "hold_max_yaw_error_degrees": 3.3727343664963767,
+          "hold_mean_speed_mps": 0.03964936202854275
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.490000000001075,
+          "position_error": 0.021208164420305937,
+          "yaw_error_degrees": 2.2285212399563683,
+          "hold_seconds": 10.000000000005986,
+          "hold_max_position_error": 0.2983181411322807,
+          "hold_max_yaw_error_degrees": 3.1075567437933125,
+          "hold_mean_speed_mps": 0.03870600666811942
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.13000000002728,
+          "position_error": 0.07353105219791783,
+          "yaw_error_degrees": 12.300846799940842,
+          "hold_seconds": 10.000000000004647,
+          "hold_max_position_error": 0.1053557149487376,
+          "hold_max_yaw_error_degrees": 14.915709729287931,
+          "hold_mean_speed_mps": 0.01614819252624031
+        }
+      ],
+      "max_tilt_degrees": 0.7132471703173318,
+      "sim_seconds": 66.13000000002728,
+      "final_pose": [
+        0.06979137577624481,
+        0.023151231167951033,
+        1.015662217927669,
+        -0.994243497161063,
+        -0.0006020092391046927,
+        0.0009276009162055361,
+        0.10713844078740331
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 17,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.06562789387228604,
+      "max_displacement_from_start_m": 3.578470912115764,
+      "accumulated_yaw_degrees": 347.1700297359843,
+      "original_report": "reports/20260906T101050070636Z-t800-route-17/report.json"
+    },
+    {
+      "name": "route-seed-18",
+      "exit_code": 0,
+      "report": "route/route-seed-18.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.649999999999434,
+          "position_error": 0.020852415280393152,
+          "yaw_error_degrees": 2.431224173843192,
+          "hold_seconds": 10.009999999999211,
+          "hold_max_position_error": 0.2981466521378322,
+          "hold_max_yaw_error_degrees": 3.2862368847458328,
+          "hold_mean_speed_mps": 0.0390223892922811
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.540000000001136,
+          "position_error": 0.021462480473473846,
+          "yaw_error_degrees": 2.3129503687823707,
+          "hold_seconds": 10.000000000006075,
+          "hold_max_position_error": 0.2999410549345315,
+          "hold_max_yaw_error_degrees": 3.1971052397207296,
+          "hold_mean_speed_mps": 0.03892759456848967
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.17000000002719,
+          "position_error": 0.07492599616961852,
+          "yaw_error_degrees": 12.146179294815761,
+          "hold_seconds": 10.000000000004505,
+          "hold_max_position_error": 0.10615309308205358,
+          "hold_max_yaw_error_degrees": 14.886371768073317,
+          "hold_mean_speed_mps": 0.016657101875903656
+        }
+      ],
+      "max_tilt_degrees": 0.7017249997231165,
+      "sim_seconds": 66.17000000002719,
+      "final_pose": [
+        0.07125421859065695,
+        0.02316767651372417,
+        1.0156618168345775,
+        -0.9943871657522335,
+        -0.0006331119398233417,
+        0.0009476524404749335,
+        0.10579634072765819
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 18,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07951969843482025,
+      "max_displacement_from_start_m": 3.5831249835581005,
+      "accumulated_yaw_degrees": 349.8633639571667,
+      "original_report": "reports/20260906T101057332780Z-t800-route-18/report.json"
+    },
+    {
+      "name": "route-seed-19",
+      "exit_code": 0,
+      "report": "route/route-seed-19.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.659999999999428,
+          "position_error": 0.020995929775323118,
+          "yaw_error_degrees": 2.3900609602419323,
+          "hold_seconds": 10.009999999999202,
+          "hold_max_position_error": 0.29795059750627684,
+          "hold_max_yaw_error_degrees": 3.216844818305846,
+          "hold_mean_speed_mps": 0.03907230492579014
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.57000000000117,
+          "position_error": 0.020137357020224345,
+          "yaw_error_degrees": 2.337561448425063,
+          "hold_seconds": 10.000000000006128,
+          "hold_max_position_error": 0.2988533261692057,
+          "hold_max_yaw_error_degrees": 3.221095913360328,
+          "hold_mean_speed_mps": 0.03861720218403589
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.18000000002716,
+          "position_error": 0.07599642622383225,
+          "yaw_error_degrees": 12.000147115438537,
+          "hold_seconds": 10.00000000000447,
+          "hold_max_position_error": 0.10711655104870275,
+          "hold_max_yaw_error_degrees": 14.864224696073672,
+          "hold_mean_speed_mps": 0.017040780004242227
+        }
+      ],
+      "max_tilt_degrees": 0.7050964075963655,
+      "sim_seconds": 66.18000000002716,
+      "final_pose": [
+        0.07217762440533414,
+        0.023787545774982596,
+        1.0156734097072637,
+        -0.9945211509609436,
+        -0.0006533342801831902,
+        0.0009705312764301067,
+        0.10452899843908837
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 19,
+        "vary_initial": true,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07921742963363024,
+      "max_displacement_from_start_m": 3.5742340362008944,
+      "accumulated_yaw_degrees": 350.0731774702334,
+      "original_report": "reports/20260906T101104878333Z-t800-route-19/report.json"
+    }
+  ],
+  "note": "Simulation-only, fixed model/flat ground. Seeds vary initial xy +/-0.04 m and yaw +/-0.08 rad for route suite."
+}

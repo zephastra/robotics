@@ -1,0 +1,144 @@
+{
+  "status": "COMPLETED",
+  "reason": "",
+  "mode": "route",
+  "seed": 10,
+  "initial_pose": [
+    0.036480136770318035,
+    -0.02338545519366825,
+    0.793,
+    0.999654816523912,
+    0.0,
+    0.0,
+    0.02627256745245847
+  ],
+  "localization": "MuJoCo ground truth, not SLAM or a hardware estimator",
+  "upstream_commit": "276801e46c5d433564f24658bac64f254b7d2d4b",
+  "policy_sha256": "cf668f75b90d1abf73d2b87612a6e76bccc61ff7e083b63582d3f6aaa3c1759d",
+  "events": [
+    {
+      "goal": "A",
+      "sim_time": 19.060000000000315,
+      "position_error": 0.043870390659027675,
+      "yaw_error_degrees": 0.49316339210715554,
+      "hold_seconds": 10.00000000000062,
+      "hold_max_position_error": 0.29693342206701023,
+      "hold_max_yaw_error_degrees": 1.5181072113105405,
+      "hold_mean_speed_mps": 0.08736063330987161
+    },
+    {
+      "goal": "B",
+      "sim_time": 36.71999999999891,
+      "position_error": 0.040129681014027876,
+      "yaw_error_degrees": 0.4195664904801573,
+      "hold_seconds": 10.000000000002842,
+      "hold_max_position_error": 0.2984938741093277,
+      "hold_max_yaw_error_degrees": 6.692898354870134,
+      "hold_mean_speed_mps": 0.08740612183258781
+    },
+    {
+      "goal": "HOME",
+      "sim_time": 64.08000000003206,
+      "position_error": 0.025430437857651637,
+      "yaw_error_degrees": 0.3760899076367004,
+      "hold_seconds": 10.00000000001193,
+      "hold_max_position_error": 0.049007658276549564,
+      "hold_max_yaw_error_degrees": 14.892622401279832,
+      "hold_mean_speed_mps": 0.06797041124768906
+    }
+  ],
+  "pushes": [],
+  "stop_requested_at": null,
+  "arguments": {
+    "mode": "route",
+    "headless": true,
+    "realtime": false,
+    "snapshot": false,
+    "duration": 300,
+    "command": [
+      0,
+      0,
+      0
+    ],
+    "seed": 10,
+    "vary_initial": true,
+    "cancel_at": null,
+    "push_at": 8,
+    "push_force": 30,
+    "push_duration": 0.2
+  },
+  "source_sha256": {
+    "src/humanoid004/__init__.py": "3a6b03136d20d1d754fa03a24659cc3e179a12c5414934dd3b908476fb73ed26",
+    "src/humanoid004/app.py": "322d57c7776a66efa7b7f77f0637af1f5407109edaf11bb4b83217f09d7d37ee",
+    "src/humanoid004/core.py": "1b37e0fff50eae1d8df69b0350d2b4474b73ad867c6f80c14e913ca8f29d34e3",
+    "src/humanoid004/policy.py": "bfb2e5b06f68729b1e4aeb2cf2228f8c04ac6ee39776ee4bb672003e3f14fc4e"
+  },
+  "environment": {
+    "mujoco": "3.3.6",
+    "policy_device": "cpu"
+  },
+  "sim_seconds": 64.08000000003206,
+  "wall_seconds": 7.497832672999948,
+  "max_tilt_degrees": 4.44718837801363,
+  "min_pelvis_height_m": 0.7636082061961506,
+  "max_displacement_from_start_m": 3.723995305819459,
+  "accumulated_yaw_degrees": 356.6417768188025,
+  "foot_body_vertical_range_m": [
+    0.04379431950053615,
+    0.048845489807843145
+  ],
+  "final_pose": [
+    0.017694696031261677,
+    -0.0182648542833808,
+    0.778932189634088,
+    -0.9997833609262127,
+    0.013559531615857308,
+    -0.015489964996753126,
+    0.0030710424686794294
+  ],
+  "net_displacement_m": 0.019470832993044623,
+  "config": {
+    "simulation_dt": 0.002,
+    "control_decimation": 10,
+    "command_limits": [
+      0.5,
+      0.2,
+      0.6
+    ],
+    "command_acceleration": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "input_timeout": 0.6,
+    "warmup_seconds": 2.0,
+    "position_tolerance": 0.3,
+    "yaw_tolerance_degrees": 15.0,
+    "hold_seconds": 10.0,
+    "hold_mean_speed_limit": 0.15,
+    "waypoint_timeout": 90.0,
+    "fall_height": 0.45,
+    "fall_tilt_degrees": 60.0,
+    "fall_debounce_seconds": 0.12,
+    "route": [
+      {
+        "name": "A",
+        "x": 3.0,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      {
+        "name": "B",
+        "x": 3.0,
+        "y": 2.0,
+        "yaw": 1.5707963267948966
+      },
+      {
+        "name": "HOME",
+        "x": 0.0,
+        "y": 0.0,
+        "yaw": 0.0
+      }
+    ]
+  }
+}

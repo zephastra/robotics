@@ -1,0 +1,165 @@
+{
+  "status": "CANCELLED",
+  "reason": "CONTROLLED_STOP",
+  "robot": "t800",
+  "mode": "manual",
+  "seed": 0,
+  "initial_pose": [
+    0.0,
+    0.0,
+    1.03,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "localization": "MuJoCo ground truth, not SLAM or a hardware estimator",
+  "upstream_commit": "335c60e88772c26c7852d0abd6b3c7439037dd8f",
+  "policy_sha256": "cbcb90f86dbb2fde39bdc5a25c8d0530d5c79c7a8f84b1f90863d8c9065b6427",
+  "upstream_repository": "https://github.com/engineai-robotics/engineai_robotics_native_sdk",
+  "policy_file": "policies/t800/walking.mnn",
+  "events": [
+    {
+      "event": "CANCEL_REQUESTED",
+      "sim_time": 11.010000000000346
+    }
+  ],
+  "pushes": [],
+  "stop_requested_at": 11.010000000000346,
+  "arguments": {
+    "robot": "t800",
+    "mode": "manual",
+    "headless": false,
+    "realtime": true,
+    "snapshot": true,
+    "duration": 45.0,
+    "command": [
+      0,
+      0,
+      0
+    ],
+    "seed": 0,
+    "vary_initial": false,
+    "cancel_at": null,
+    "push_at": 8.0,
+    "push_force": 30.0,
+    "push_duration": 0.2
+  },
+  "source_sha256": {
+    "src/humanoid004/__init__.py": "3a6b03136d20d1d754fa03a24659cc3e179a12c5414934dd3b908476fb73ed26",
+    "src/humanoid004/app.py": "a5756ae50d536f15c298bd8066da653ab55a6d6092f07de2c6f55fd6ba596eb7",
+    "src/humanoid004/core.py": "1b37e0fff50eae1d8df69b0350d2b4474b73ad867c6f80c14e913ca8f29d34e3",
+    "src/humanoid004/manual_panel.py": "fc1d393b22c3107ced49021bd90e424ccb3626cf984aa3e760dc90d24549a556",
+    "src/humanoid004/policy.py": "bfb2e5b06f68729b1e4aeb2cf2228f8c04ac6ee39776ee4bb672003e3f14fc4e",
+    "src/humanoid004/robots.py": "88d55ed201bf453ba24a940a184e4ac168742694233f67eba0fa282c847e35a8",
+    "src/humanoid004/t800_policy.py": "27f262b0dcf61245b1988988543f1afcc180a9ec45611c008f1365a003669a4d"
+  },
+  "environment": {
+    "mujoco": "3.3.6",
+    "policy_device": "cpu",
+    "policy_runtime": "MNN",
+    "policy_runtime_version": "3.6.1"
+  },
+  "manual_input": "Dedicated Tk press/release panel; terminal and viewer only C/X; UI heartbeat watchdog 0.5 wall seconds",
+  "stop_check": {
+    "passed": true,
+    "hold_seconds": 10,
+    "max_drift_m": 0.005620264378259861,
+    "mean_speed_mps": 0.0013822151187378668
+  },
+  "input_events": [
+    {
+      "event": "PANEL_OPENED",
+      "wall_seconds": 1.835577085000068,
+      "sim_time": 0.0
+    },
+    {
+      "event": "KEY_DOWN",
+      "wall_seconds": 5.8250432030001775,
+      "sim_time": 2.509999999999945,
+      "key": "W"
+    },
+    {
+      "event": "KEY_UP",
+      "wall_seconds": 14.059798429000011,
+      "sim_time": 7.519999999999394,
+      "key": "W"
+    },
+    {
+      "event": "KEY_DOWN",
+      "wall_seconds": 19.672534277000068,
+      "sim_time": 11.000000000000343,
+      "key": "C"
+    },
+    {
+      "event": "ACTION",
+      "wall_seconds": 19.672548859000017,
+      "sim_time": 11.000000000000343,
+      "key": "C"
+    }
+  ],
+  "sim_seconds": 24.019999999997566,
+  "wall_seconds": 40.333827417000066,
+  "max_tilt_degrees": 0.6898790693863738,
+  "min_pelvis_height_m": 0.9947996744375073,
+  "max_displacement_from_start_m": 1.6037879627041236,
+  "accumulated_yaw_degrees": 6.299214778000137,
+  "foot_body_vertical_range_m": [
+    0.04123263452955507,
+    0.04598020078698917
+  ],
+  "final_pose": [
+    1.6025150513546236,
+    0.040405261193049845,
+    1.015829653170323,
+    0.9984891540841299,
+    -0.0004531036984610889,
+    0.0008125096280204314,
+    0.05494127502618162
+  ],
+  "net_displacement_m": 1.6030243525755279,
+  "config": {
+    "simulation_dt": 0.002,
+    "control_decimation": 5,
+    "command_limits": [
+      0.5,
+      0.2,
+      0.6
+    ],
+    "command_acceleration": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "input_timeout": 0.6,
+    "warmup_seconds": 2.0,
+    "position_tolerance": 0.3,
+    "yaw_tolerance_degrees": 15.0,
+    "hold_seconds": 10.0,
+    "hold_mean_speed_limit": 0.15,
+    "waypoint_timeout": 90.0,
+    "fall_height": 0.65,
+    "fall_tilt_degrees": 60.0,
+    "fall_debounce_seconds": 0.12,
+    "route": [
+      {
+        "name": "A",
+        "x": 3.0,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      {
+        "name": "B",
+        "x": 3.0,
+        "y": 2.0,
+        "yaw": 1.5707963267948966
+      },
+      {
+        "name": "HOME",
+        "x": 0.0,
+        "y": 0.0,
+        "yaw": 0.0
+      }
+    ]
+  }
+}

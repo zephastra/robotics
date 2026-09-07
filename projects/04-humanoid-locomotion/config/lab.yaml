@@ -1,0 +1,19 @@
+# Acceptance thresholds are not automatically relaxed after failed runs.
+simulation_dt: 0.002
+control_decimation: 10
+command_limits: [0.5, 0.2, 0.6]
+command_acceleration: [0.4, 0.4, 0.8]
+input_timeout: 0.6
+warmup_seconds: 2.0
+position_tolerance: 0.30
+yaw_tolerance_degrees: 15.0
+hold_seconds: 10.0
+hold_mean_speed_limit: 0.15
+waypoint_timeout: 90.0
+fall_height: 0.45
+fall_tilt_degrees: 60.0
+fall_debounce_seconds: 0.12
+route:
+  - {name: A, x: 3.0, y: 0.0, yaw: 0.0}
+  - {name: B, x: 3.0, y: 2.0, yaw: 1.5707963267948966}
+  - {name: HOME, x: 0.0, y: 0.0, yaw: 0.0}

@@ -1,0 +1,372 @@
+{
+  "robot": "t800",
+  "suite": "baseline",
+  "planned": 8,
+  "finished": 8,
+  "completed": 8,
+  "controlled_stops": 0,
+  "cases": [
+    {
+      "name": "zero",
+      "exit_code": 0,
+      "report": "baseline/zero.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 0.2964297231107456,
+      "sim_seconds": 30.00199999999425,
+      "final_pose": [
+        -0.04411150381640863,
+        0.00042526176955723404,
+        1.010880345281626,
+        0.9997948465760584,
+        0.001129182697393537,
+        0.001599977799425726,
+        -0.020160103606715447
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 30.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.044113553660045116,
+      "max_displacement_from_start_m": 0.04509682025742841,
+      "accumulated_yaw_degrees": -2.310019533200921,
+      "original_report": "reports/20260906T101206119239Z-t800-baseline-0/report.json"
+    },
+    {
+      "name": "stand",
+      "exit_code": 0,
+      "report": "baseline/stand.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "STAND",
+          "sim_time": 32.009999999993155,
+          "position_error": 0.023983802173469182,
+          "yaw_error_degrees": 1.492277606601779,
+          "hold_seconds": 30.009999999993155,
+          "hold_max_position_error": 0.02834804168751071,
+          "hold_max_yaw_error_degrees": 1.492277606601779,
+          "hold_mean_speed_mps": 0.0012422967908327788
+        }
+      ],
+      "max_tilt_degrees": 0.2964297231107456,
+      "sim_seconds": 32.009999999993155,
+      "final_pose": [
+        -0.023980625561275563,
+        -0.0003903388092442039,
+        1.011189534662515,
+        0.999913187708254,
+        0.0012461331213304433,
+        0.0015609487342237401,
+        -0.013024117567449211
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "stand",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 60.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.023983802173469182,
+      "max_displacement_from_start_m": 0.028541476661757763,
+      "accumulated_yaw_degrees": -1.4918719139455254,
+      "original_report": "reports/20260906T101211273420Z-t800-stand-0/report.json"
+    },
+    {
+      "name": "forward",
+      "exit_code": 0,
+      "report": "baseline/forward.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 0.6964110541140675,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        2.9167731712282636,
+        0.24094743458145582,
+        1.0144290545060806,
+        0.9938427593414922,
+        0.0004435965591023698,
+        -0.0012300796129583816,
+        0.11079196645393298
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.4,
+          0.0,
+          0.0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 2.9267082872449666,
+      "max_displacement_from_start_m": 2.9233348037305937,
+      "accumulated_yaw_degrees": 12.695520330047305,
+      "motion_response_passed": true,
+      "original_report": "reports/20260906T101216250118Z-t800-baseline-0/report.json"
+    },
+    {
+      "name": "backward",
+      "exit_code": 0,
+      "report": "baseline/backward.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 1.2724997527464585,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        -2.200473096923527,
+        -0.20079271621528902,
+        1.0158794607874302,
+        0.99664371716123,
+        -0.00028561650942381496,
+        0.0014153513281215937,
+        0.08184874004449913
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          -0.3,
+          0.0,
+          0.0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 2.2096152527463535,
+      "max_displacement_from_start_m": 2.2065279481018987,
+      "accumulated_yaw_degrees": 9.328819174626707,
+      "motion_response_passed": true,
+      "original_report": "reports/20260906T101220404818Z-t800-baseline-0/report.json"
+    },
+    {
+      "name": "left",
+      "exit_code": 0,
+      "report": "baseline/left.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 0.44156159646381965,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        -0.09874422800925661,
+        -0.05593801365200358,
+        1.0165186670285407,
+        -0.9284015685348851,
+        0.002066877942830907,
+        -0.000897056500686232,
+        0.3715715958562626
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.0,
+          0.0,
+          0.6
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.11348781404395715,
+      "max_displacement_from_start_m": 0.22592960924257283,
+      "accumulated_yaw_degrees": 316.04085550525855,
+      "motion_response_passed": true,
+      "original_report": "reports/20260906T101224363692Z-t800-baseline-0/report.json"
+    },
+    {
+      "name": "right",
+      "exit_code": 0,
+      "report": "baseline/right.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 0.5106629697396554,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        -0.29829047660035873,
+        -0.029520049242678315,
+        1.0160075982942036,
+        -0.7537640304932463,
+        -0.0035483720207385135,
+        1.1666571222890264e-05,
+        -0.6571355988336577
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.0,
+          0.0,
+          -0.6
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.29974763007863686,
+      "max_displacement_from_start_m": 0.3638067081405804,
+      "accumulated_yaw_degrees": -277.5138050938758,
+      "motion_response_passed": true,
+      "original_report": "reports/20260906T101228595489Z-t800-baseline-0/report.json"
+    },
+    {
+      "name": "side_left",
+      "exit_code": 0,
+      "report": "baseline/side_left.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 0.5833347967179621,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        -0.21222213131387127,
+        2.8721450953193335,
+        0.9990520039962705,
+        0.9997959260576399,
+        0.0019363861123089876,
+        0.0003374529730393653,
+        -0.0201057895358699
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.0,
+          0.2,
+          0.0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 2.8799749446108565,
+      "max_displacement_from_start_m": 2.8762097384363408,
+      "accumulated_yaw_degrees": -2.302506421375116,
+      "motion_response_passed": true,
+      "original_report": "reports/20260906T101232562093Z-t800-baseline-0/report.json"
+    },
+    {
+      "name": "side_right",
+      "exit_code": 0,
+      "report": "baseline/side_right.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 0.7376608583105816,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        0.4363342318472288,
+        -2.0892825808120272,
+        1.0110171142535909,
+        0.9830780521946286,
+        -0.003605775645523446,
+        0.0029903766944788324,
+        0.183127276292839
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.0,
+          -0.2,
+          0.0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 2.1343592163378395,
+      "max_displacement_from_start_m": 2.1341552378830886,
+      "accumulated_yaw_degrees": 21.033489845555867,
+      "motion_response_passed": true,
+      "original_report": "reports/20260906T101236997264Z-t800-baseline-0/report.json"
+    }
+  ],
+  "note": "Simulation-only, fixed model/flat ground. Seeds vary initial xy +/-0.04 m and yaw +/-0.08 rad for route suite."
+}

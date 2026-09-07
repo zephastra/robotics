@@ -1,0 +1,150 @@
+{
+  "status": "COMPLETED",
+  "reason": "",
+  "robot": "t800",
+  "mode": "route",
+  "seed": 7,
+  "initial_pose": [
+    0.010007637328373356,
+    0.031777104077566044,
+    1.03,
+    0.9997568015388422,
+    0.0,
+    0.0,
+    0.022053067288342644
+  ],
+  "localization": "MuJoCo ground truth, not SLAM or a hardware estimator",
+  "upstream_commit": "335c60e88772c26c7852d0abd6b3c7439037dd8f",
+  "policy_sha256": "cbcb90f86dbb2fde39bdc5a25c8d0530d5c79c7a8f84b1f90863d8c9065b6427",
+  "upstream_repository": "https://github.com/engineai-robotics/engineai_robotics_native_sdk",
+  "policy_file": "policies/t800/walking.mnn",
+  "events": [
+    {
+      "goal": "A",
+      "sim_time": 20.669999999999423,
+      "position_error": 0.0225657668323487,
+      "yaw_error_degrees": 2.3474857438579955,
+      "hold_seconds": 10.009999999999193,
+      "hold_max_position_error": 0.298506610146075,
+      "hold_max_yaw_error_degrees": 3.1588330238459172,
+      "hold_mean_speed_mps": 0.039354248445844585
+    },
+    {
+      "goal": "B",
+      "sim_time": 38.56000000000116,
+      "position_error": 0.02000867229557927,
+      "yaw_error_degrees": 2.3600799696557315,
+      "hold_seconds": 10.00000000000611,
+      "hold_max_position_error": 0.29925055523535055,
+      "hold_max_yaw_error_degrees": 3.2300514765630552,
+      "hold_mean_speed_mps": 0.03843203164442802
+    },
+    {
+      "goal": "HOME",
+      "sim_time": 66.19000000002714,
+      "position_error": 0.072715216622224,
+      "yaw_error_degrees": 12.492061950149354,
+      "hold_seconds": 10.000000000004434,
+      "hold_max_position_error": 0.1054602768601752,
+      "hold_max_yaw_error_degrees": 14.921930212280403,
+      "hold_mean_speed_mps": 0.016165076905053307
+    }
+  ],
+  "pushes": [],
+  "stop_requested_at": null,
+  "arguments": {
+    "robot": "t800",
+    "mode": "route",
+    "headless": true,
+    "realtime": false,
+    "snapshot": false,
+    "duration": 300,
+    "command": [
+      0,
+      0,
+      0
+    ],
+    "seed": 7,
+    "vary_initial": true,
+    "cancel_at": null,
+    "push_at": 8,
+    "push_force": 30,
+    "push_duration": 0.2
+  },
+  "source_sha256": {
+    "src/humanoid004/__init__.py": "3a6b03136d20d1d754fa03a24659cc3e179a12c5414934dd3b908476fb73ed26",
+    "src/humanoid004/app.py": "00246faabe7692052b1e57de73a2082bbfdd5daf806be3adac87a06aadae75d0",
+    "src/humanoid004/core.py": "1b37e0fff50eae1d8df69b0350d2b4474b73ad867c6f80c14e913ca8f29d34e3",
+    "src/humanoid004/policy.py": "bfb2e5b06f68729b1e4aeb2cf2228f8c04ac6ee39776ee4bb672003e3f14fc4e",
+    "src/humanoid004/robots.py": "450ecb56059b808920009ecf8b876188beb17e823535d5b95a855fc02dd6d6d1",
+    "src/humanoid004/t800_policy.py": "27f262b0dcf61245b1988988543f1afcc180a9ec45611c008f1365a003669a4d"
+  },
+  "environment": {
+    "mujoco": "3.3.6",
+    "policy_device": "cpu"
+  },
+  "sim_seconds": 66.19000000002714,
+  "wall_seconds": 5.230048119000003,
+  "max_tilt_degrees": 0.7084093413703395,
+  "min_pelvis_height_m": 0.9922760248352182,
+  "max_displacement_from_start_m": 3.56185166988511,
+  "accumulated_yaw_degrees": 344.98081839144106,
+  "foot_body_vertical_range_m": [
+    0.044693813259190654,
+    0.05492674666764917
+  ],
+  "final_pose": [
+    0.06929459985973503,
+    0.022039989988567828,
+    1.0156385487529203,
+    -0.9940633579621777,
+    -0.0005866791578810392,
+    0.0009089005906754445,
+    0.10879738077840378
+  ],
+  "net_displacement_m": 0.06008123930959856,
+  "config": {
+    "simulation_dt": 0.002,
+    "control_decimation": 5,
+    "command_limits": [
+      0.5,
+      0.2,
+      0.6
+    ],
+    "command_acceleration": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "input_timeout": 0.6,
+    "warmup_seconds": 2.0,
+    "position_tolerance": 0.3,
+    "yaw_tolerance_degrees": 15.0,
+    "hold_seconds": 10.0,
+    "hold_mean_speed_limit": 0.15,
+    "waypoint_timeout": 90.0,
+    "fall_height": 0.65,
+    "fall_tilt_degrees": 60.0,
+    "fall_debounce_seconds": 0.12,
+    "route": [
+      {
+        "name": "A",
+        "x": 3.0,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      {
+        "name": "B",
+        "x": 3.0,
+        "y": 2.0,
+        "yaw": 1.5707963267948966
+      },
+      {
+        "name": "HOME",
+        "x": 0.0,
+        "y": 0.0,
+        "yaw": 0.0
+      }
+    ]
+  }
+}

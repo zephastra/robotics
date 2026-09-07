@@ -1,0 +1,13 @@
+{
+  "robot": "t800",
+  "report": "reports/20260907T081804578445Z-t800-manual-0/report.json",
+  "checks": {
+    "one_w_press": true,
+    "sustained_command": true,
+    "released_command": true,
+    "actual_forward_motion": true,
+    "controlled_stop": true
+  },
+  "passed": true,
+  "scope": "Programmatically generated Tk events and actual GUI simulation, not a human keyboard acceptance test"
+}

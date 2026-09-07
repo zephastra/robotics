@@ -1,0 +1,357 @@
+{
+  "suite": "baseline",
+  "planned": 8,
+  "finished": 8,
+  "completed": 8,
+  "controlled_stops": 0,
+  "cases": [
+    {
+      "name": "zero",
+      "exit_code": 0,
+      "report": "baseline/zero.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 30.00199999999425,
+      "final_pose": [
+        0.33368745012641843,
+        -0.6267879614783395,
+        0.7753757435135109,
+        0.9898080814434951,
+        0.010971392726999651,
+        0.020255483746513862,
+        -0.1405322234541698
+      ],
+      "stop_check": null,
+      "arguments": {
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 30.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.7100777866023154,
+      "max_displacement_from_start_m": 0.7098459711989673,
+      "accumulated_yaw_degrees": -16.151548235277012,
+      "original_report": "reports/20260905T224945946494Z-baseline-0/report.json"
+    },
+    {
+      "name": "stand",
+      "exit_code": 0,
+      "report": "baseline/stand.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "STAND",
+          "sim_time": 32.01999999999317,
+          "position_error": 0.031106941244129573,
+          "yaw_error_degrees": 0.4862383863383978,
+          "hold_seconds": 30.019999999993168,
+          "hold_max_position_error": 0.053025238000058206,
+          "hold_max_yaw_error_degrees": 1.3854834027666105,
+          "hold_mean_speed_mps": 0.06726238932215492
+        }
+      ],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 32.01999999999317,
+      "final_pose": [
+        0.019186829896598867,
+        -0.024484839229300843,
+        0.7779727687684319,
+        0.9998798174469332,
+        -0.005483170969088152,
+        0.013889956132944465,
+        -0.004165887304632388
+      ],
+      "stop_check": null,
+      "arguments": {
+        "mode": "stand",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 60.0,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.031106941244129573,
+      "max_displacement_from_start_m": 0.053025238000058206,
+      "accumulated_yaw_degrees": -0.43422875697313285,
+      "original_report": "reports/20260905T224952742226Z-stand-0/report.json"
+    },
+    {
+      "name": "forward",
+      "exit_code": 0,
+      "report": "baseline/forward.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        3.5931011120785494,
+        -0.3976946844491026,
+        0.7739401266558865,
+        0.9974882232995079,
+        0.009755293846485555,
+        -0.0003810040758583218,
+        -0.0701564926193792
+      ],
+      "stop_check": null,
+      "arguments": {
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.4,
+          0.0,
+          0.0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 3.615043106749791,
+      "max_displacement_from_start_m": 3.6071054204552633,
+      "accumulated_yaw_degrees": -8.081071056198386,
+      "original_report": "reports/20260905T225000128811Z-baseline-0/report.json"
+    },
+    {
+      "name": "backward",
+      "exit_code": 0,
+      "report": "baseline/backward.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        -0.9083201038949151,
+        -0.13805017235206965,
+        0.7796949480669917,
+        0.9988691281319519,
+        0.0020707495292599243,
+        0.01683949187955368,
+        -0.044414056046942714
+      ],
+      "stop_check": null,
+      "arguments": {
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          -0.12,
+          0.0,
+          0.0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.918750924476327,
+      "max_displacement_from_start_m": 0.9172930489481319,
+      "accumulated_yaw_degrees": -5.012044537632162,
+      "original_report": "reports/20260905T225006986569Z-baseline-0/report.json"
+    },
+    {
+      "name": "left",
+      "exit_code": 0,
+      "report": "baseline/left.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        0.194740546723096,
+        0.05476344939140782,
+        0.778700369939017,
+        -0.2285045291930446,
+        -0.01603004851997899,
+        -0.00032697788183928003,
+        0.9734108129501009
+      ],
+      "stop_check": null,
+      "arguments": {
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.0,
+          0.0,
+          0.4
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.20229413221162798,
+      "max_displacement_from_start_m": 0.22012456682530487,
+      "accumulated_yaw_degrees": 206.00534883873362,
+      "original_report": "reports/20260905T225013242953Z-baseline-0/report.json"
+    },
+    {
+      "name": "right",
+      "exit_code": 0,
+      "report": "baseline/right.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        -0.0934719282131946,
+        -0.18730656477166716,
+        0.7789197529931771,
+        -0.32314734583765775,
+        0.01034757463232621,
+        -0.006975299916948205,
+        -0.9462663820343473
+      ],
+      "stop_check": null,
+      "arguments": {
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.0,
+          0.0,
+          -0.4
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.20933406452475753,
+      "max_displacement_from_start_m": 0.2415149396553278,
+      "accumulated_yaw_degrees": -217.21104907295484,
+      "original_report": "reports/20260905T225018670156Z-baseline-0/report.json"
+    },
+    {
+      "name": "side_left",
+      "exit_code": 0,
+      "report": "baseline/side_left.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        0.2761198719234467,
+        0.6325009066868793,
+        0.7805890371454894,
+        0.9989311450247426,
+        0.0027710635802610665,
+        0.013871034579365124,
+        -0.04400548949721967
+      ],
+      "stop_check": null,
+      "arguments": {
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.0,
+          0.12,
+          0.0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.6901446084921226,
+      "max_displacement_from_start_m": 0.6865067534454148,
+      "accumulated_yaw_degrees": -5.007478334048797,
+      "original_report": "reports/20260905T225025507816Z-baseline-0/report.json"
+    },
+    {
+      "name": "side_right",
+      "exit_code": 0,
+      "report": "baseline/side_right.json",
+      "status": "COMPLETED",
+      "reason": "BASELINE_DURATION_FINISHED",
+      "events": [],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 12.000000000000677,
+      "final_pose": [
+        0.06881732974609459,
+        -1.139363278806193,
+        0.7774615644295688,
+        0.9982167983818183,
+        0.004240982493539739,
+        0.012519976692418616,
+        -0.058210717908852946
+      ],
+      "stop_check": null,
+      "arguments": {
+        "mode": "baseline",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 12.0,
+        "command": [
+          0.0,
+          -0.12,
+          0.0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 1.141439663742846,
+      "max_displacement_from_start_m": 1.141288236402443,
+      "accumulated_yaw_degrees": -6.6303172055997415,
+      "original_report": "reports/20260905T225031103646Z-baseline-0/report.json"
+    }
+  ],
+  "note": "Simulation-only, fixed model/flat ground. Seeds vary initial xy +/-0.04 m and yaw +/-0.08 rad for route suite."
+}

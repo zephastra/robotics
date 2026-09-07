@@ -1,0 +1,572 @@
+{
+  "robot": "t800",
+  "suite": "push",
+  "planned": 8,
+  "finished": 8,
+  "completed": 7,
+  "controlled_stops": 0,
+  "cases": [
+    {
+      "name": "push-10N",
+      "exit_code": 0,
+      "report": "push/push-10N.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.649999999999434,
+          "position_error": 0.022215214970170472,
+          "yaw_error_degrees": 2.3993453207647484,
+          "hold_seconds": 10.009999999999211,
+          "hold_max_position_error": 0.2984894217145523,
+          "hold_max_yaw_error_degrees": 3.200429617026838,
+          "hold_mean_speed_mps": 0.039085078809311044
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.55000000000115,
+          "position_error": 0.020382363612116036,
+          "yaw_error_degrees": 2.291743091269089,
+          "hold_seconds": 10.000000000006093,
+          "hold_max_position_error": 0.297754358874546,
+          "hold_max_yaw_error_degrees": 3.186217199988771,
+          "hold_mean_speed_mps": 0.0383628883383785
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.16000000002721,
+          "position_error": 0.07402847252116633,
+          "yaw_error_degrees": 12.21999806968495,
+          "hold_seconds": 10.00000000000454,
+          "hold_max_position_error": 0.10566799358357738,
+          "hold_max_yaw_error_degrees": 14.975414646244165,
+          "hold_mean_speed_mps": 0.016543831255255843
+        }
+      ],
+      "max_tilt_degrees": 0.71111584816746,
+      "sim_seconds": 66.16000000002721,
+      "final_pose": [
+        0.07005699974498168,
+        0.02392136138577222,
+        1.015680146515471,
+        -0.994318820651687,
+        -0.0005854074061194641,
+        0.0009599692527347331,
+        0.10643692336327899
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "push",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 10.0,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07402847252116632,
+      "max_displacement_from_start_m": 3.587194522164081,
+      "accumulated_yaw_degrees": 347.78028994548066,
+      "original_report": "reports/20260906T101241476250Z-t800-push-0/report.json"
+    },
+    {
+      "name": "push-30N",
+      "exit_code": 0,
+      "report": "push/push-30N.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.649999999999434,
+          "position_error": 0.026008016064391952,
+          "yaw_error_degrees": 2.3357687674398124,
+          "hold_seconds": 10.009999999999211,
+          "hold_max_position_error": 0.29944992158340467,
+          "hold_max_yaw_error_degrees": 3.0784758939466212,
+          "hold_mean_speed_mps": 0.039156401372678264
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.55000000000115,
+          "position_error": 0.020731137364507442,
+          "yaw_error_degrees": 2.3069750107711844,
+          "hold_seconds": 10.000000000006093,
+          "hold_max_position_error": 0.29820526171134965,
+          "hold_max_yaw_error_degrees": 3.1811008322121617,
+          "hold_mean_speed_mps": 0.03853027283092404
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.17000000002719,
+          "position_error": 0.07502100939890571,
+          "yaw_error_degrees": 12.110146459723365,
+          "hold_seconds": 10.000000000004505,
+          "hold_max_position_error": 0.10633986711606426,
+          "hold_max_yaw_error_degrees": 14.931244874502939,
+          "hold_mean_speed_mps": 0.016332383459775838
+        }
+      ],
+      "max_tilt_degrees": 0.71111584816746,
+      "sim_seconds": 66.17000000002719,
+      "final_pose": [
+        0.07143949699095102,
+        0.022903059204189304,
+        1.0156422219209038,
+        -0.9944203988086632,
+        -0.0006654916822461961,
+        0.0009077940610210814,
+        0.1054836644413813
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "push",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 30.0,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07502100939890571,
+      "max_displacement_from_start_m": 3.5866155350351763,
+      "accumulated_yaw_degrees": 347.890104032439,
+      "original_report": "reports/20260906T101248523823Z-t800-push-0/report.json"
+    },
+    {
+      "name": "push-60N",
+      "exit_code": 0,
+      "report": "push/push-60N.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.63999999999944,
+          "position_error": 0.035226500467429187,
+          "yaw_error_degrees": 1.91686619282651,
+          "hold_seconds": 10.00999999999922,
+          "hold_max_position_error": 0.29876474020442984,
+          "hold_max_yaw_error_degrees": 3.564319706769122,
+          "hold_mean_speed_mps": 0.03898625022388722
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.50000000000109,
+          "position_error": 0.01927595751622231,
+          "yaw_error_degrees": 2.365168064960535,
+          "hold_seconds": 10.000000000006004,
+          "hold_max_position_error": 0.29769059639024775,
+          "hold_max_yaw_error_degrees": 3.1834346699935216,
+          "hold_mean_speed_mps": 0.03879771412911171
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.13000000002728,
+          "position_error": 0.07335307764547451,
+          "yaw_error_degrees": 12.155861627543228,
+          "hold_seconds": 10.000000000004647,
+          "hold_max_position_error": 0.10419997654685148,
+          "hold_max_yaw_error_degrees": 14.91126248904338,
+          "hold_mean_speed_mps": 0.015958557575217098
+        }
+      ],
+      "max_tilt_degrees": 0.71111584816746,
+      "sim_seconds": 66.13000000002728,
+      "final_pose": [
+        0.06949814846813379,
+        0.02346660093759308,
+        1.0157086870799255,
+        -0.9943782327344258,
+        -0.0005574080477964877,
+        0.0009802589928581027,
+        0.10588039786728198
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "push",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 60.0,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07335307764547451,
+      "max_displacement_from_start_m": 3.5890648802404552,
+      "accumulated_yaw_degrees": 347.8444609967533,
+      "original_report": "reports/20260906T101255630351Z-t800-push-0/report.json"
+    },
+    {
+      "name": "push-100N",
+      "exit_code": 0,
+      "report": "push/push-100N.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.589999999999467,
+          "position_error": 0.055391314703600154,
+          "yaw_error_degrees": 0.7736790381033465,
+          "hold_seconds": 10.009999999999264,
+          "hold_max_position_error": 0.2998894138112644,
+          "hold_max_yaw_error_degrees": 7.251416633818219,
+          "hold_mean_speed_mps": 0.04103406831217394
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.38000000000094,
+          "position_error": 0.017896452285509568,
+          "yaw_error_degrees": 2.4346775337732653,
+          "hold_seconds": 10.000000000005791,
+          "hold_max_position_error": 0.2993504571382062,
+          "hold_max_yaw_error_degrees": 3.262286501519016,
+          "hold_mean_speed_mps": 0.039475036669640265
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.01000000002756,
+          "position_error": 0.07667959277514493,
+          "yaw_error_degrees": 11.889053214361084,
+          "hold_seconds": 10.000000000005073,
+          "hold_max_position_error": 0.10742001387651894,
+          "hold_max_yaw_error_degrees": 14.844254334461285,
+          "hold_mean_speed_mps": 0.016521083398546917
+        }
+      ],
+      "max_tilt_degrees": 0.71111584816746,
+      "sim_seconds": 66.01000000002756,
+      "final_pose": [
+        0.0728936123489061,
+        0.023796664196678113,
+        1.0156676212827225,
+        -0.99462201691081,
+        -0.0006618888771679235,
+        0.0009708116492358846,
+        0.10356477636787297
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "push",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 100.0,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07667959277514493,
+      "max_displacement_from_start_m": 3.591079962499533,
+      "accumulated_yaw_degrees": 348.11128169196405,
+      "original_report": "reports/20260906T101302617039Z-t800-push-0/report.json"
+    },
+    {
+      "name": "push-150N",
+      "exit_code": 0,
+      "report": "push/push-150N.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 20.8899999999993,
+          "position_error": 0.059208294932987675,
+          "yaw_error_degrees": 0.6989661648045458,
+          "hold_seconds": 10.009999999998998,
+          "hold_max_position_error": 0.27196841659633936,
+          "hold_max_yaw_error_degrees": 14.966893880158509,
+          "hold_mean_speed_mps": 0.03445704751130756
+        },
+        {
+          "goal": "B",
+          "sim_time": 38.73000000000137,
+          "position_error": 0.019801609931965426,
+          "yaw_error_degrees": 2.3830261949536617,
+          "hold_seconds": 10.000000000006413,
+          "hold_max_position_error": 0.2987109878497468,
+          "hold_max_yaw_error_degrees": 3.3431612137668627,
+          "hold_mean_speed_mps": 0.038283850430982626
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 66.36000000002674,
+          "position_error": 0.0739955111428559,
+          "yaw_error_degrees": 12.340097552511155,
+          "hold_seconds": 10.00000000000383,
+          "hold_max_position_error": 0.10620550682531332,
+          "hold_max_yaw_error_degrees": 14.956746254961997,
+          "hold_mean_speed_mps": 0.016835726374839086
+        }
+      ],
+      "max_tilt_degrees": 0.71111584816746,
+      "sim_seconds": 66.36000000002674,
+      "final_pose": [
+        0.07059573232860882,
+        0.022171563911459337,
+        1.015641558863622,
+        -0.9942067322652485,
+        -0.000632550173910327,
+        0.0009185952559540028,
+        0.10747897274113079
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "push",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 150.0,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.0739955111428559,
+      "max_displacement_from_start_m": 3.5876869178889077,
+      "accumulated_yaw_degrees": 347.66011999170587,
+      "original_report": "reports/20260906T101309450360Z-t800-push-0/report.json"
+    },
+    {
+      "name": "push-250N",
+      "exit_code": 0,
+      "report": "push/push-250N.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 22.99999999999813,
+          "position_error": 0.043957412882712175,
+          "yaw_error_degrees": 8.479736383576949,
+          "hold_seconds": 10.009999999997124,
+          "hold_max_position_error": 0.059084838460402675,
+          "hold_max_yaw_error_degrees": 14.855176431719642,
+          "hold_mean_speed_mps": 0.0075880304072887105
+        },
+        {
+          "goal": "B",
+          "sim_time": 40.90000000000402,
+          "position_error": 0.028453431620548548,
+          "yaw_error_degrees": 1.490398739584334,
+          "hold_seconds": 10.000000000010267,
+          "hold_max_position_error": 0.2998767052359038,
+          "hold_max_yaw_error_degrees": 2.9917619889818847,
+          "hold_mean_speed_mps": 0.03842958672099461
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 68.51000000002173,
+          "position_error": 0.07608564397617164,
+          "yaw_error_degrees": 12.106713616770367,
+          "hold_seconds": 10.009999999996204,
+          "hold_max_position_error": 0.10708767602639338,
+          "hold_max_yaw_error_degrees": 14.99576031395693,
+          "hold_mean_speed_mps": 0.019493888428942594
+        }
+      ],
+      "max_tilt_degrees": 1.338905821987315,
+      "sim_seconds": 68.51000000002173,
+      "final_pose": [
+        0.07228726551792497,
+        0.023739765441338295,
+        1.0156384622211938,
+        -0.9944235239432754,
+        -0.0007531587962438084,
+        0.0008818050795878839,
+        0.10545382970696597
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "push",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 250.0,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07608564397617164,
+      "max_displacement_from_start_m": 3.5928219897922777,
+      "accumulated_yaw_degrees": 347.89350057716115,
+      "original_report": "reports/20260906T101316693251Z-t800-push-0/report.json"
+    },
+    {
+      "name": "push-400N",
+      "exit_code": 0,
+      "report": "push/push-400N.json",
+      "status": "COMPLETED",
+      "reason": "",
+      "events": [
+        {
+          "goal": "A",
+          "sim_time": 32.37999999999361,
+          "position_error": 0.06054857572833554,
+          "yaw_error_degrees": 13.404585833927841,
+          "hold_seconds": 10.009999999995127,
+          "hold_max_position_error": 0.10231174975050876,
+          "hold_max_yaw_error_degrees": 14.753431472276858,
+          "hold_mean_speed_mps": 0.009052543142692574
+        },
+        {
+          "goal": "B",
+          "sim_time": 49.86000000001497,
+          "position_error": 0.013024409855921855,
+          "yaw_error_degrees": 2.8130209821845575,
+          "hold_seconds": 10.000000000012221,
+          "hold_max_position_error": 0.2997481145702978,
+          "hold_max_yaw_error_degrees": 3.7903163652095926,
+          "hold_mean_speed_mps": 0.039121637256865814
+        },
+        {
+          "goal": "HOME",
+          "sim_time": 77.51000000000076,
+          "position_error": 0.07489131630702915,
+          "yaw_error_degrees": 12.10401960465465,
+          "hold_seconds": 10.009999999976671,
+          "hold_max_position_error": 0.10556803670539298,
+          "hold_max_yaw_error_degrees": 14.798174360146797,
+          "hold_mean_speed_mps": 0.016504204491070425
+        }
+      ],
+      "max_tilt_degrees": 6.498084294092559,
+      "sim_seconds": 77.51000000000076,
+      "final_pose": [
+        0.0715012557518975,
+        0.022277335659841257,
+        1.0156559632309938,
+        -0.9944260229925463,
+        -0.0006646092009330328,
+        0.0009257700172807063,
+        0.10543047965229745
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "push",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 400.0,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.07489131630702915,
+      "max_displacement_from_start_m": 4.304255992026967,
+      "accumulated_yaw_degrees": 347.89624300526185,
+      "original_report": "reports/20260906T101323894439Z-t800-push-0/report.json"
+    },
+    {
+      "name": "push-800N",
+      "exit_code": 1,
+      "report": "push/push-800N.json",
+      "status": "FAILED",
+      "reason": "FALL_DETECTED",
+      "events": [],
+      "max_tilt_degrees": 36.97093826939897,
+      "sim_seconds": 8.639999999999555,
+      "final_pose": [
+        1.993049884758181,
+        1.1954376907724698,
+        0.3467847682477267,
+        0.9485642235711,
+        -0.29948151987659416,
+        0.10215174047009014,
+        0.010087364982681465
+      ],
+      "stop_check": null,
+      "arguments": {
+        "robot": "t800",
+        "mode": "push",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": null,
+        "push_at": 8,
+        "push_force": 800.0,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 2.3240738188908745,
+      "max_displacement_from_start_m": 2.3081268837361657,
+      "accumulated_yaw_degrees": -1.114051804955787,
+      "original_report": "reports/20260906T101331606774Z-t800-push-0/report.json"
+    }
+  ],
+  "note": "Simulation-only, fixed model/flat ground. Seeds vary initial xy +/-0.04 m and yaw +/-0.08 rad for route suite."
+}

@@ -1,0 +1,2335 @@
+{
+  "status": "CANCELLED",
+  "reason": "CONTROLLED_STOP",
+  "robot": "t800",
+  "mode": "manual",
+  "seed": 0,
+  "initial_pose": [
+    0.0,
+    0.0,
+    1.03,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "localization": "MuJoCo ground truth, not SLAM or a hardware estimator",
+  "upstream_commit": "335c60e88772c26c7852d0abd6b3c7439037dd8f",
+  "policy_sha256": "cbcb90f86dbb2fde39bdc5a25c8d0530d5c79c7a8f84b1f90863d8c9065b6427",
+  "upstream_repository": "https://github.com/engineai-robotics/engineai_robotics_native_sdk",
+  "policy_file": "policies/t800/walking.mnn",
+  "events": [
+    {
+      "event": "CANCEL_REQUESTED",
+      "sim_time": 11.010000000000346
+    }
+  ],
+  "pushes": [],
+  "stop_requested_at": 11.010000000000346,
+  "arguments": {
+    "robot": "t800",
+    "mode": "manual",
+    "headless": false,
+    "realtime": true,
+    "snapshot": true,
+    "duration": 45.0,
+    "command": [
+      0,
+      0,
+      0
+    ],
+    "seed": 0,
+    "vary_initial": false,
+    "cancel_at": null,
+    "push_at": 8.0,
+    "push_force": 30.0,
+    "push_duration": 0.2
+  },
+  "source_sha256": {
+    "src/humanoid004/__init__.py": "3a6b03136d20d1d754fa03a24659cc3e179a12c5414934dd3b908476fb73ed26",
+    "src/humanoid004/app.py": "012eacc75222120a91f9b06bb3324db3952c5e733d83c0a99a9a571ab424a333",
+    "src/humanoid004/core.py": "1b37e0fff50eae1d8df69b0350d2b4474b73ad867c6f80c14e913ca8f29d34e3",
+    "src/humanoid004/manual_panel.py": "688969f9d96f33c045adeea93129a8c43d1e62320d4384788662fe3b9f6464f4",
+    "src/humanoid004/policy.py": "bfb2e5b06f68729b1e4aeb2cf2228f8c04ac6ee39776ee4bb672003e3f14fc4e",
+    "src/humanoid004/robots.py": "88d55ed201bf453ba24a940a184e4ac168742694233f67eba0fa282c847e35a8",
+    "src/humanoid004/t800_policy.py": "27f262b0dcf61245b1988988543f1afcc180a9ec45611c008f1365a003669a4d"
+  },
+  "environment": {
+    "mujoco": "3.3.6",
+    "policy_device": "cpu",
+    "policy_runtime": "MNN",
+    "policy_runtime_version": "3.6.1"
+  },
+  "manual_input": "Dedicated Tk press/release panel; terminal and viewer only C/X; UI heartbeat watchdog 0.5 wall seconds",
+  "stop_check": {
+    "passed": true,
+    "hold_seconds": 10,
+    "max_drift_m": 0.007609660857565065,
+    "mean_speed_mps": 0.0009894714769017514
+  },
+  "input_events": [
+    {
+      "event": "PANEL_OPENED",
+      "wall_seconds": 3.478104750000057,
+      "sim_time": 0.0
+    },
+    {
+      "event": "KEY_DOWN",
+      "wall_seconds": 6.234035090000134,
+      "sim_time": 2.509999999999945,
+      "key": "W"
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.419612915000016,
+      "sim_time": 3.619999999999823
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.419963628999994,
+      "sim_time": 3.619999999999823
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.443065467999986,
+      "sim_time": 3.6399999999998207
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.463261286000034,
+      "sim_time": 3.6599999999998185
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.485846970000011,
+      "sim_time": 3.6799999999998163
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.5128200440001365,
+      "sim_time": 3.699999999999814
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.540757061000022,
+      "sim_time": 3.719999999999812
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.568839472000036,
+      "sim_time": 3.7399999999998097
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.59330217500019,
+      "sim_time": 3.7599999999998075
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.615872685000113,
+      "sim_time": 3.7799999999998053
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.638572977000194,
+      "sim_time": 3.799999999999803
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.681460501000174,
+      "sim_time": 3.819999999999801
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.703759011000102,
+      "sim_time": 3.8399999999997987
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.73093572300013,
+      "sim_time": 3.8599999999997965
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.755008942000131,
+      "sim_time": 3.8799999999997943
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.784411228000181,
+      "sim_time": 3.899999999999792
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.81185749500014,
+      "sim_time": 3.91999999999979
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.847855141000082,
+      "sim_time": 3.9399999999997877
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.876704989000018,
+      "sim_time": 3.9599999999997855
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.907242021999991,
+      "sim_time": 3.9799999999997833
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.940202507000095,
+      "sim_time": 3.999999999999781
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 7.971705289000056,
+      "sim_time": 4.019999999999779
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.001103546000195,
+      "sim_time": 4.039999999999777
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.030250131999992,
+      "sim_time": 4.059999999999775
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.058959064000192,
+      "sim_time": 4.079999999999773
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.088673112000151,
+      "sim_time": 4.0999999999997705
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.11817946400015,
+      "sim_time": 4.119999999999768
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.147293054000102,
+      "sim_time": 4.139999999999766
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.174368735000144,
+      "sim_time": 4.159999999999764
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.199840774999984,
+      "sim_time": 4.179999999999762
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.226246218000142,
+      "sim_time": 4.1999999999997595
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.250558201000104,
+      "sim_time": 4.219999999999757
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.273124837000069,
+      "sim_time": 4.239999999999755
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.294200343000057,
+      "sim_time": 4.259999999999753
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.317193963000136,
+      "sim_time": 4.279999999999751
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.340896945000168,
+      "sim_time": 4.2999999999997485
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.361846379000099,
+      "sim_time": 4.319999999999746
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.38300973000014,
+      "sim_time": 4.339999999999744
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.404944606000072,
+      "sim_time": 4.359999999999742
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.425313513999981,
+      "sim_time": 4.37999999999974
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.446365554000067,
+      "sim_time": 4.3999999999997375
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.469195189000175,
+      "sim_time": 4.419999999999735
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.494460317000176,
+      "sim_time": 4.439999999999733
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.520250120000128,
+      "sim_time": 4.459999999999731
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.544355062000022,
+      "sim_time": 4.479999999999729
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.567649502999984,
+      "sim_time": 4.499999999999726
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.591366552000181,
+      "sim_time": 4.519999999999724
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.61319867300017,
+      "sim_time": 4.539999999999722
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.637380498000084,
+      "sim_time": 4.55999999999972
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.657864087999997,
+      "sim_time": 4.579999999999718
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.679592850000063,
+      "sim_time": 4.599999999999715
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.701840081,
+      "sim_time": 4.619999999999713
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.72274276500002,
+      "sim_time": 4.639999999999711
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.743960935000132,
+      "sim_time": 4.659999999999709
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.765664543000184,
+      "sim_time": 4.679999999999707
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.788166805000174,
+      "sim_time": 4.699999999999704
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.80999719500005,
+      "sim_time": 4.719999999999702
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.830016255000146,
+      "sim_time": 4.749999999999699
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.850103475000196,
+      "sim_time": 4.759999999999698
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.870668700000124,
+      "sim_time": 4.779999999999696
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.891270089000045,
+      "sim_time": 4.799999999999693
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.912328816000127,
+      "sim_time": 4.819999999999691
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.932338784000194,
+      "sim_time": 4.839999999999689
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.952928396000061,
+      "sim_time": 4.859999999999687
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.973994209000011,
+      "sim_time": 4.879999999999685
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 8.994058260000202,
+      "sim_time": 4.899999999999682
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.016373712000131,
+      "sim_time": 4.91999999999968
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.037186001999999,
+      "sim_time": 4.939999999999678
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.059014695000087,
+      "sim_time": 4.959999999999676
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.08083514000009,
+      "sim_time": 4.979999999999674
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.101332157000115,
+      "sim_time": 5.00999999999967
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.138632906000112,
+      "sim_time": 5.039999999999667
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.160325388000047,
+      "sim_time": 5.059999999999665
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.18059341900016,
+      "sim_time": 5.079999999999663
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.219340769000155,
+      "sim_time": 5.119999999999658
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.239290986000015,
+      "sim_time": 5.139999999999656
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.261963534000188,
+      "sim_time": 5.159999999999654
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.282007067999984,
+      "sim_time": 5.1799999999996515
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.320192540000107,
+      "sim_time": 5.219999999999647
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.340428251000048,
+      "sim_time": 5.249999999999644
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.36068569400004,
+      "sim_time": 5.269999999999642
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.380995338000048,
+      "sim_time": 5.2799999999996405
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.418467366000186,
+      "sim_time": 5.319999999999636
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.457384161000164,
+      "sim_time": 5.359999999999632
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.476771756000062,
+      "sim_time": 5.3799999999996295
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.497488114000134,
+      "sim_time": 5.409999999999626
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.51782302000015,
+      "sim_time": 5.429999999999624
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.553710777000106,
+      "sim_time": 5.459999999999621
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.585801109000158,
+      "sim_time": 5.499999999999616
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.620219572999986,
+      "sim_time": 5.539999999999612
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.65615687200011,
+      "sim_time": 5.5799999999996075
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.690006174000018,
+      "sim_time": 5.619999999999603
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.710044122,
+      "sim_time": 5.639999999999601
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.730892303000019,
+      "sim_time": 5.669999999999598
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.767396824000116,
+      "sim_time": 5.699999999999594
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.787625376000051,
+      "sim_time": 5.729999999999591
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.823773498000037,
+      "sim_time": 5.759999999999588
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.856473180000194,
+      "sim_time": 5.799999999999583
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.889921486000048,
+      "sim_time": 5.839999999999579
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.922773820000202,
+      "sim_time": 5.8799999999995745
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.955482242000016,
+      "sim_time": 5.91999999999957
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 9.989513846000136,
+      "sim_time": 5.959999999999566
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.023977292000154,
+      "sim_time": 5.999999999999561
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.060931090000167,
+      "sim_time": 6.039999999999557
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.097481173000006,
+      "sim_time": 6.079999999999552
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.132064424000191,
+      "sim_time": 6.119999999999548
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.152361607000103,
+      "sim_time": 6.149999999999545
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.188464062000094,
+      "sim_time": 6.179999999999541
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.22407221200001,
+      "sim_time": 6.219999999999537
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.244358018000185,
+      "sim_time": 6.249999999999534
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.264550477000057,
+      "sim_time": 6.2699999999995315
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.286484039000015,
+      "sim_time": 6.289999999999529
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.306351383999981,
+      "sim_time": 6.309999999999527
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.333176432000073,
+      "sim_time": 6.339999999999524
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.354531834999989,
+      "sim_time": 6.359999999999522
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.374336144000154,
+      "sim_time": 6.379999999999519
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.394512063000093,
+      "sim_time": 6.399999999999517
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.416322427000068,
+      "sim_time": 6.419999999999515
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.438330082999983,
+      "sim_time": 6.449999999999512
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.460539732000143,
+      "sim_time": 6.4699999999995095
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.480370599000025,
+      "sim_time": 6.489999999999507
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.500326405000123,
+      "sim_time": 6.509999999999505
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.522359977000178,
+      "sim_time": 6.529999999999503
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.544371438000098,
+      "sim_time": 6.549999999999501
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.566510848000007,
+      "sim_time": 6.5699999999994985
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.590614674000108,
+      "sim_time": 6.599999999999495
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.611054314000057,
+      "sim_time": 6.619999999999493
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.631152494000162,
+      "sim_time": 6.639999999999491
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.652515859000005,
+      "sim_time": 6.6599999999994886
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.672359100999984,
+      "sim_time": 6.679999999999486
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.693475944000056,
+      "sim_time": 6.699999999999484
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.714299992000178,
+      "sim_time": 6.719999999999482
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.736566812000092,
+      "sim_time": 6.73999999999948
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.801118839000083,
+      "sim_time": 6.7599999999994775
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.836920656000075,
+      "sim_time": 6.799999999999473
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.873061275000055,
+      "sim_time": 6.839999999999469
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.893381525999985,
+      "sim_time": 6.869999999999465
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.913366028000155,
+      "sim_time": 6.889999999999463
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.949358373999985,
+      "sim_time": 6.91999999999946
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 10.969428219000065,
+      "sim_time": 6.949999999999457
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.003247007000027,
+      "sim_time": 6.979999999999453
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.023036000000047,
+      "sim_time": 6.999999999999451
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.059609476000105,
+      "sim_time": 7.039999999999447
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.080189635000124,
+      "sim_time": 7.069999999999443
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.115065653000102,
+      "sim_time": 7.09999999999944
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.147878978000108,
+      "sim_time": 7.139999999999436
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.180657715000052,
+      "sim_time": 7.179999999999431
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.202343088000134,
+      "sim_time": 7.209999999999428
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.224352238000165,
+      "sim_time": 7.229999999999426
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.244364674000053,
+      "sim_time": 7.249999999999424
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.264707373000192,
+      "sim_time": 7.269999999999421
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.286317427000085,
+      "sim_time": 7.289999999999419
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.310874625999986,
+      "sim_time": 7.319999999999416
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.332337349,
+      "sim_time": 7.339999999999414
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.352617265000163,
+      "sim_time": 7.3599999999994115
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.37234582200017,
+      "sim_time": 7.379999999999409
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.39235389800001,
+      "sim_time": 7.399999999999407
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.414291348000006,
+      "sim_time": 7.419999999999405
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.434302743999979,
+      "sim_time": 7.439999999999403
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.456561992000161,
+      "sim_time": 7.4599999999994
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.478368697000178,
+      "sim_time": 7.489999999999397
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.50036689600006,
+      "sim_time": 7.509999999999395
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.522424868000144,
+      "sim_time": 7.529999999999393
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.544321754000066,
+      "sim_time": 7.5499999999993905
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.56649514600008,
+      "sim_time": 7.569999999999388
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.586261525000054,
+      "sim_time": 7.589999999999386
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.606279665000102,
+      "sim_time": 7.609999999999384
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.63061136500005,
+      "sim_time": 7.639999999999381
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.651151083000059,
+      "sim_time": 7.659999999999378
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.671228994000103,
+      "sim_time": 7.679999999999376
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.692312302000119,
+      "sim_time": 7.699999999999374
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.71431106099999,
+      "sim_time": 7.719999999999372
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.734347393999997,
+      "sim_time": 7.73999999999937
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.75651880700002,
+      "sim_time": 7.759999999999367
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.776348153000072,
+      "sim_time": 7.779999999999365
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.798341790999984,
+      "sim_time": 7.809999999999362
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.818416848000197,
+      "sim_time": 7.82999999999936
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.840401039000199,
+      "sim_time": 7.8499999999993575
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.862433981000095,
+      "sim_time": 7.869999999999355
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.884351444000004,
+      "sim_time": 7.889999999999353
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.904382941999984,
+      "sim_time": 7.909999999999351
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.924507271000039,
+      "sim_time": 7.929999999999349
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.946288328000037,
+      "sim_time": 7.9499999999993465
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.966580981000106,
+      "sim_time": 7.969999999999344
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 11.991441621000149,
+      "sim_time": 7.999999999999341
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.012257197000054,
+      "sim_time": 8.019999999999348
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.034311654000021,
+      "sim_time": 8.039999999999354
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.054506914000058,
+      "sim_time": 8.059999999999361
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.074332236000146,
+      "sim_time": 8.079999999999368
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.096263217000114,
+      "sim_time": 8.099999999999374
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.118568603000085,
+      "sim_time": 8.129999999999384
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.140384655000162,
+      "sim_time": 8.149999999999391
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.162567242000023,
+      "sim_time": 8.169999999999398
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.184325189999981,
+      "sim_time": 8.189999999999404
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.206327830000191,
+      "sim_time": 8.209999999999411
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.230536402000098,
+      "sim_time": 8.239999999999421
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.250976980000132,
+      "sim_time": 8.259999999999428
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.272869060000176,
+      "sim_time": 8.279999999999434
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.292405817000144,
+      "sim_time": 8.299999999999441
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.314343580000013,
+      "sim_time": 8.319999999999448
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.33429772300019,
+      "sim_time": 8.339999999999455
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.356570919000205,
+      "sim_time": 8.359999999999461
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.378351358000145,
+      "sim_time": 8.389999999999471
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.39834361300018,
+      "sim_time": 8.409999999999478
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.420328186000006,
+      "sim_time": 8.429999999999485
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.442365121000194,
+      "sim_time": 8.449999999999491
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.462739507000151,
+      "sim_time": 8.469999999999498
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.484401745000014,
+      "sim_time": 8.489999999999505
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.504378237000083,
+      "sim_time": 8.509999999999511
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.526307491000125,
+      "sim_time": 8.529999999999518
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.546400008000091,
+      "sim_time": 8.549999999999525
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.572391847000063,
+      "sim_time": 8.579999999999535
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.592664154000204,
+      "sim_time": 8.599999999999541
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.612369832000013,
+      "sim_time": 8.619999999999548
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.632342132000076,
+      "sim_time": 8.639999999999555
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.652547356000014,
+      "sim_time": 8.659999999999561
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.674331200000097,
+      "sim_time": 8.679999999999568
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.694302891000007,
+      "sim_time": 8.699999999999575
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.716499467000176,
+      "sim_time": 8.719999999999581
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.736312136000151,
+      "sim_time": 8.739999999999588
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.75654505500006,
+      "sim_time": 8.759999999999595
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.778268361000073,
+      "sim_time": 8.789999999999605
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.79832143900012,
+      "sim_time": 8.809999999999611
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.820353673,
+      "sim_time": 8.829999999999618
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.842335465000133,
+      "sim_time": 8.849999999999625
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.864530407000075,
+      "sim_time": 8.869999999999632
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.884283469000138,
+      "sim_time": 8.889999999999638
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.904361172000108,
+      "sim_time": 8.909999999999645
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.924424391999992,
+      "sim_time": 8.929999999999652
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.946467744000074,
+      "sim_time": 8.949999999999658
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.971075917000007,
+      "sim_time": 8.979999999999668
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 12.992348945000003,
+      "sim_time": 8.999999999999675
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.014289408000195,
+      "sim_time": 9.019999999999682
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.036389382000152,
+      "sim_time": 9.039999999999688
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.058508038000127,
+      "sim_time": 9.069999999999698
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.0783354900002,
+      "sim_time": 9.089999999999705
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.098346024000193,
+      "sim_time": 9.109999999999712
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.118370784000035,
+      "sim_time": 9.129999999999718
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.14040561600018,
+      "sim_time": 9.149999999999725
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.160546965000094,
+      "sim_time": 9.169999999999732
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.18230174900009,
+      "sim_time": 9.189999999999738
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.202299205000145,
+      "sim_time": 9.209999999999745
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.222301456000196,
+      "sim_time": 9.229999999999752
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.244340130000182,
+      "sim_time": 9.249999999999758
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.264662287000192,
+      "sim_time": 9.269999999999765
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.286279850000028,
+      "sim_time": 9.289999999999772
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.306331130999979,
+      "sim_time": 9.309999999999778
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.326343597999994,
+      "sim_time": 9.329999999999785
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.357497649000152,
+      "sim_time": 9.359999999999795
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.382410288000074,
+      "sim_time": 9.379999999999802
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.40708028600011,
+      "sim_time": 9.399999999999809
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.428460979000192,
+      "sim_time": 9.419999999999815
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.449166650000052,
+      "sim_time": 9.449999999999825
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.469765395000195,
+      "sim_time": 9.459999999999829
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.490173706000178,
+      "sim_time": 9.479999999999835
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.511642989000165,
+      "sim_time": 9.499999999999842
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.53506838200019,
+      "sim_time": 9.519999999999849
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.556681726000079,
+      "sim_time": 9.539999999999855
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.582201909000105,
+      "sim_time": 9.559999999999862
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.60748426300006,
+      "sim_time": 9.579999999999869
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 13.629614254999979,
+      "sim_time": 9.599999999999875
+    },
+    {
+      "event": "KEY_UP",
+      "wall_seconds": 14.269282420000081,
+      "sim_time": 10.120000000000049,
+      "key": "W"
+    },
+    {
+      "event": "KEY_DOWN",
+      "wall_seconds": 14.444052163000151,
+      "sim_time": 10.280000000000102,
+      "key": "W"
+    },
+    {
+      "event": "KEY_UP",
+      "wall_seconds": 14.671720285999982,
+      "sim_time": 10.54000000000019,
+      "key": "W"
+    },
+    {
+      "event": "KEY_DOWN",
+      "wall_seconds": 15.042493611000054,
+      "sim_time": 11.000000000000343,
+      "key": "C"
+    },
+    {
+      "event": "STOP_OR_PAUSE",
+      "wall_seconds": 15.042505167000172,
+      "sim_time": 11.000000000000343
+    },
+    {
+      "event": "ACTION",
+      "wall_seconds": 15.042511014000183,
+      "sim_time": 11.000000000000343,
+      "key": "C"
+    },
+    {
+      "event": "KEY_DOWN",
+      "wall_seconds": 15.299855983000043,
+      "sim_time": 11.26000000000043,
+      "key": "W"
+    },
+    {
+      "event": "KEY_UP",
+      "wall_seconds": 16.86238726600004,
+      "sim_time": 12.870000000000967,
+      "key": "W"
+    },
+    {
+      "event": "MOUSE_DOWN",
+      "wall_seconds": 17.53432806600017,
+      "sim_time": 13.540000000001191,
+      "key": "W"
+    },
+    {
+      "event": "MOUSE_UP",
+      "wall_seconds": 17.96247861500001,
+      "sim_time": 13.970000000001335,
+      "key": "W"
+    },
+    {
+      "event": "MOUSE_DOWN",
+      "wall_seconds": 18.660536637000178,
+      "sim_time": 14.670000000001568,
+      "key": "W"
+    },
+    {
+      "event": "MOUSE_UP",
+      "wall_seconds": 18.74440529100002,
+      "sim_time": 14.750000000001595,
+      "key": "W"
+    },
+    {
+      "event": "KEY_DOWN",
+      "wall_seconds": 19.678280687000097,
+      "sim_time": 15.690000000001909,
+      "key": "W"
+    },
+    {
+      "event": "KEY_UP",
+      "wall_seconds": 20.75862169700008,
+      "sim_time": 16.770000000001584,
+      "key": "W"
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.63875178400008,
+      "sim_time": 20.649999999999434
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.63908881300017,
+      "sim_time": 20.649999999999434
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.66069372800007,
+      "sim_time": 20.669999999999423
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.682285281000077,
+      "sim_time": 20.68999999999941
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.702340103000097,
+      "sim_time": 20.7099999999994
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.724348310000096,
+      "sim_time": 20.72999999999939
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.74634369400019,
+      "sim_time": 20.74999999999938
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.76656462599999,
+      "sim_time": 20.769999999999367
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.791611173000092,
+      "sim_time": 20.79999999999935
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.810937593000062,
+      "sim_time": 20.81999999999934
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.83188343100005,
+      "sim_time": 20.83999999999933
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.852527104000046,
+      "sim_time": 20.859999999999317
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.87424907400009,
+      "sim_time": 20.879999999999306
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.896340123000073,
+      "sim_time": 20.899999999999295
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.916341758000044,
+      "sim_time": 20.919999999999284
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.936345413000026,
+      "sim_time": 20.939999999999273
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.958488005000163,
+      "sim_time": 20.969999999999256
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.978304289000107,
+      "sim_time": 20.989999999999245
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 24.998290844000167,
+      "sim_time": 21.009999999999234
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.0203348120001,
+      "sim_time": 21.029999999999223
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.040561615000115,
+      "sim_time": 21.049999999999212
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.06260572600013,
+      "sim_time": 21.0699999999992
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.08426534,
+      "sim_time": 21.08999999999919
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.104417326000203,
+      "sim_time": 21.10999999999918
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.124445759000082,
+      "sim_time": 21.129999999999168
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.146335070000077,
+      "sim_time": 21.149999999999157
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.17091412800005,
+      "sim_time": 21.17999999999914
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.191200871000092,
+      "sim_time": 21.19999999999913
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.211572491000197,
+      "sim_time": 21.219999999999118
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.232283507000147,
+      "sim_time": 21.239999999999107
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.254570001000047,
+      "sim_time": 21.259999999999096
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.274275663000026,
+      "sim_time": 21.279999999999085
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.29429311800004,
+      "sim_time": 21.299999999999073
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.31435707200012,
+      "sim_time": 21.319999999999062
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.33635928700005,
+      "sim_time": 21.33999999999905
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.3565310150002,
+      "sim_time": 21.35999999999904
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.376355998000008,
+      "sim_time": 21.37999999999903
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.398296543000015,
+      "sim_time": 21.409999999999012
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.420350080000162,
+      "sim_time": 21.429999999999
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.440348790000144,
+      "sim_time": 21.44999999999899
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.462482361000184,
+      "sim_time": 21.46999999999898
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.484313895000014,
+      "sim_time": 21.489999999998968
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.506363275000012,
+      "sim_time": 21.509999999998957
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.526387199000055,
+      "sim_time": 21.529999999998946
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.551089293000132,
+      "sim_time": 21.55999999999893
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.570906835000187,
+      "sim_time": 21.57999999999892
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.592316013000072,
+      "sim_time": 21.599999999998907
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.614291085000104,
+      "sim_time": 21.619999999998896
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.63432217100012,
+      "sim_time": 21.639999999998885
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.65658640300012,
+      "sim_time": 21.659999999998874
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.676545696000176,
+      "sim_time": 21.679999999998863
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.698426067000128,
+      "sim_time": 21.709999999998846
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.720349395000085,
+      "sim_time": 21.729999999998835
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.740382915000055,
+      "sim_time": 21.749999999998824
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.762493275999987,
+      "sim_time": 21.769999999998813
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.782326710999996,
+      "sim_time": 21.789999999998802
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.80234445100018,
+      "sim_time": 21.80999999999879
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.82240303100002,
+      "sim_time": 21.82999999999878
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.844252818000086,
+      "sim_time": 21.84999999999877
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.864464494999993,
+      "sim_time": 21.869999999998758
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.884326539000085,
+      "sim_time": 21.889999999998746
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.906302950000054,
+      "sim_time": 21.909999999998735
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.92628870600015,
+      "sim_time": 21.929999999998724
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.950739237000107,
+      "sim_time": 21.959999999998708
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.97065455500001,
+      "sim_time": 21.979999999998697
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 25.990824784000097,
+      "sim_time": 21.999999999998685
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.012447573000145,
+      "sim_time": 22.019999999998674
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.034305414000073,
+      "sim_time": 22.039999999998663
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.054689025000016,
+      "sim_time": 22.059999999998652
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.07635877100006,
+      "sim_time": 22.07999999999864
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.09830835600019,
+      "sim_time": 22.109999999998625
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.118307684,
+      "sim_time": 22.129999999998613
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.14031679499999,
+      "sim_time": 22.149999999998602
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.160534993000056,
+      "sim_time": 22.16999999999859
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.18229881100001,
+      "sim_time": 22.18999999999858
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.2043173630002,
+      "sim_time": 22.20999999999857
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.224325474000125,
+      "sim_time": 22.229999999998558
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.24628423000013,
+      "sim_time": 22.249999999998547
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.270460478000132,
+      "sim_time": 22.27999999999853
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.29037985800005,
+      "sim_time": 22.29999999999852
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.311049225000033,
+      "sim_time": 22.319999999998508
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.33227709100015,
+      "sim_time": 22.339999999998497
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.354480414000136,
+      "sim_time": 22.359999999998486
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.37426517300014,
+      "sim_time": 22.379999999998475
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.3943137870001,
+      "sim_time": 22.399999999998464
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.416423745000202,
+      "sim_time": 22.419999999998453
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.438283512999988,
+      "sim_time": 22.449999999998436
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.460565007000014,
+      "sim_time": 22.469999999998425
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.482255659000202,
+      "sim_time": 22.489999999998414
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.50232316200004,
+      "sim_time": 22.509999999998403
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.522444205000056,
+      "sim_time": 22.52999999999839
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.54437324000014,
+      "sim_time": 22.54999999999838
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.566501275000064,
+      "sim_time": 22.56999999999837
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.586417422000068,
+      "sim_time": 22.58999999999836
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.610946168000055,
+      "sim_time": 22.619999999998342
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.632346762999987,
+      "sim_time": 22.63999999999833
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.654505409000194,
+      "sim_time": 22.65999999999832
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.67427459800001,
+      "sim_time": 22.67999999999831
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.696284676000005,
+      "sim_time": 22.699999999998298
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.71826564600019,
+      "sim_time": 22.72999999999828
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.740334698000197,
+      "sim_time": 22.74999999999827
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.760521023000138,
+      "sim_time": 22.76999999999826
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.783564906000038,
+      "sim_time": 22.789999999998248
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.802366010000014,
+      "sim_time": 22.809999999998237
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.82431628800009,
+      "sim_time": 22.829999999998225
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.846331056000054,
+      "sim_time": 22.849999999998214
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.870899724000083,
+      "sim_time": 22.879999999998198
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.890983072000154,
+      "sim_time": 22.899999999998187
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.912427337000054,
+      "sim_time": 22.919999999998176
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.934254233000047,
+      "sim_time": 22.939999999998165
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.956621408000046,
+      "sim_time": 22.959999999998153
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 26.978312691000156,
+      "sim_time": 22.989999999998137
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.000399617000085,
+      "sim_time": 23.009999999998126
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.02226864300019,
+      "sim_time": 23.029999999998115
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.04232427000011,
+      "sim_time": 23.049999999998104
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.06450605300006,
+      "sim_time": 23.069999999998092
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.086330020000105,
+      "sim_time": 23.08999999999808
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.10634621700001,
+      "sim_time": 23.10999999999807
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.130900941000164,
+      "sim_time": 23.139999999998054
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.15247374500018,
+      "sim_time": 23.159999999998043
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.172275150000132,
+      "sim_time": 23.17999999999803
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.192393116000176,
+      "sim_time": 23.19999999999802
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.21436685399999,
+      "sim_time": 23.21999999999801
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.236336373000086,
+      "sim_time": 23.239999999998
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.25847783800009,
+      "sim_time": 23.26999999999798
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.28028271700009,
+      "sim_time": 23.28999999999797
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.30230766600016,
+      "sim_time": 23.30999999999796
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.322315303000096,
+      "sim_time": 23.32999999999795
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.34433014199999,
+      "sim_time": 23.349999999997937
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.364581082000086,
+      "sim_time": 23.369999999997926
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.386267018000126,
+      "sim_time": 23.389999999997915
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.40632039900015,
+      "sim_time": 23.409999999997904
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.43119974299998,
+      "sim_time": 23.439999999997887
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.45145771500006,
+      "sim_time": 23.459999999997876
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.47227326799998,
+      "sim_time": 23.479999999997865
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.49228048100008,
+      "sim_time": 23.499999999997854
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.51438988100017,
+      "sim_time": 23.519999999997843
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.536282379000113,
+      "sim_time": 23.539999999997832
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.556492682999988,
+      "sim_time": 23.55999999999782
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.57628210100006,
+      "sim_time": 23.57999999999781
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.596678493000127,
+      "sim_time": 23.5999999999978
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.618250117000116,
+      "sim_time": 23.629999999997782
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.638310742000158,
+      "sim_time": 23.64999999999777
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.658549040000025,
+      "sim_time": 23.66999999999776
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.680318916000033,
+      "sim_time": 23.68999999999775
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.700318512000194,
+      "sim_time": 23.709999999997738
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.72226240400005,
+      "sim_time": 23.729999999997727
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.742348859000003,
+      "sim_time": 23.749999999997716
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.762544228000024,
+      "sim_time": 23.769999999997705
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.78234485600001,
+      "sim_time": 23.789999999997693
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.80428014600011,
+      "sim_time": 23.809999999997682
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.824329941000087,
+      "sim_time": 23.82999999999767
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.844263803000104,
+      "sim_time": 23.84999999999766
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.86458516000016,
+      "sim_time": 23.86999999999765
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.8863503340001,
+      "sim_time": 23.889999999997638
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.906369180000183,
+      "sim_time": 23.909999999997627
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.930418727000188,
+      "sim_time": 23.93999999999761
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.950875183000107,
+      "sim_time": 23.9599999999976
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.97235760600006,
+      "sim_time": 23.979999999997588
+    },
+    {
+      "event": "FOCUS_LOST",
+      "wall_seconds": 27.994273699000132,
+      "sim_time": 23.999999999997577
+    }
+  ],
+  "sim_seconds": 24.019999999997566,
+  "wall_seconds": 25.98569528600001,
+  "max_tilt_degrees": 0.7023715611435527,
+  "min_pelvis_height_m": 0.9950337023473371,
+  "max_displacement_from_start_m": 0.3685531686537951,
+  "accumulated_yaw_degrees": -2.109250351980505,
+  "foot_body_vertical_range_m": [
+    0.042074266721388184,
+    0.01701337807985013
+  ],
+  "final_pose": [
+    0.36809207672116495,
+    -0.01847687419063646,
+    1.0157166708385572,
+    0.9998300728535954,
+    3.367953418517091e-05,
+    0.0009707127831401296,
+    -0.018408747919289155
+  ],
+  "net_displacement_m": 0.3685555206814254,
+  "config": {
+    "simulation_dt": 0.002,
+    "control_decimation": 5,
+    "command_limits": [
+      0.5,
+      0.2,
+      0.6
+    ],
+    "command_acceleration": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "input_timeout": 0.6,
+    "warmup_seconds": 2.0,
+    "position_tolerance": 0.3,
+    "yaw_tolerance_degrees": 15.0,
+    "hold_seconds": 10.0,
+    "hold_mean_speed_limit": 0.15,
+    "waypoint_timeout": 90.0,
+    "fall_height": 0.65,
+    "fall_tilt_degrees": 60.0,
+    "fall_debounce_seconds": 0.12,
+    "route": [
+      {
+        "name": "A",
+        "x": 3.0,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      {
+        "name": "B",
+        "x": 3.0,
+        "y": 2.0,
+        "yaw": 1.5707963267948966
+      },
+      {
+        "name": "HOME",
+        "x": 0.0,
+        "y": 0.0,
+        "yaw": 0.0
+      }
+    ]
+  }
+}

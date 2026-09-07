@@ -1,0 +1,106 @@
+{
+  "status": "COMPLETED",
+  "reason": "",
+  "mode": "stand",
+  "seed": 0,
+  "initial_pose": [
+    0.0,
+    0.0,
+    0.793,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "localization": "MuJoCo ground truth, not SLAM or a hardware estimator",
+  "upstream_commit": "276801e46c5d433564f24658bac64f254b7d2d4b",
+  "policy_sha256": "cf668f75b90d1abf73d2b87612a6e76bccc61ff7e083b63582d3f6aaa3c1759d",
+  "events": [
+    {
+      "goal": "STAND",
+      "sim_time": 32.01999999999317,
+      "position_error": 0.031106941244129573,
+      "yaw_error_degrees": 0.4862383863383978,
+      "hold_seconds": 30.019999999993168,
+      "hold_max_position_error": 0.053025238000058206,
+      "hold_max_yaw_error_degrees": 1.3854834027666105,
+      "hold_mean_speed_mps": 0.06726238932215492
+    }
+  ],
+  "pushes": [],
+  "stop_requested_at": null,
+  "arguments": {
+    "mode": "stand",
+    "headless": true,
+    "realtime": false,
+    "snapshot": false,
+    "duration": 60.0,
+    "command": [
+      0,
+      0,
+      0
+    ],
+    "seed": 0,
+    "vary_initial": false,
+    "cancel_at": null,
+    "push_at": 8,
+    "push_force": 30,
+    "push_duration": 0.2
+  },
+  "environment": {
+    "mujoco": "3.3.6",
+    "policy_device": "cpu"
+  },
+  "sim_seconds": 32.01999999999317,
+  "wall_seconds": 1.4950448720000011,
+  "max_tilt_degrees": 4.440464990788734,
+  "min_pelvis_height_m": 0.7733351319935632,
+  "max_displacement_from_start_m": 0.053025238000058206,
+  "accumulated_yaw_degrees": -0.43422875697313285,
+  "foot_body_vertical_range_m": [
+    0.03275276572998127,
+    0.03838940748024969
+  ],
+  "final_pose": [
+    0.019186829896598867,
+    -0.024484839229300843,
+    0.7779727687684319,
+    0.9998798174469332,
+    -0.005483170969088152,
+    0.013889956132944465,
+    -0.004165887304632388
+  ],
+  "net_displacement_m": 0.031106941244129573,
+  "config": {
+    "simulation_dt": 0.002,
+    "control_decimation": 10,
+    "command_limits": [
+      0.5,
+      0.2,
+      0.6
+    ],
+    "command_acceleration": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "input_timeout": 0.6,
+    "warmup_seconds": 2.0,
+    "position_tolerance": 0.3,
+    "yaw_tolerance_degrees": 15.0,
+    "hold_seconds": 30.0,
+    "hold_mean_speed_limit": 0.15,
+    "waypoint_timeout": 90.0,
+    "fall_height": 0.45,
+    "fall_tilt_degrees": 60.0,
+    "fall_debounce_seconds": 0.12,
+    "route": [
+      {
+        "name": "STAND",
+        "x": 0.0,
+        "y": 0.0,
+        "yaw": 0.0
+      }
+    ]
+  }
+}

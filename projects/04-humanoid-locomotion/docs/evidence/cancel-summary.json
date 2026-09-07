@@ -1,0 +1,248 @@
+{
+  "suite": "cancel",
+  "planned": 4,
+  "finished": 4,
+  "completed": 0,
+  "controlled_stops": 4,
+  "cases": [
+    {
+      "name": "cancel-0s",
+      "exit_code": 0,
+      "report": "cancel/cancel-0s.json",
+      "status": "CANCELLED",
+      "reason": "CONTROLLED_STOP",
+      "events": [
+        {
+          "event": "CANCEL_REQUESTED",
+          "sim_time": 0.0
+        }
+      ],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 13.00000000000101,
+      "final_pose": [
+        0.07546337217700931,
+        -0.05788403262793144,
+        0.7814488113786645,
+        0.9993947700798735,
+        -0.023137521466172494,
+        0.017222549885004015,
+        -0.019445627088288436
+      ],
+      "stop_check": {
+        "passed": true,
+        "hold_seconds": 10,
+        "max_drift_m": 0.04609510917907776,
+        "mean_speed_mps": 0.0673848180585116
+      },
+      "arguments": {
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": 0.0,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 0.09510668627177195,
+      "max_displacement_from_start_m": 0.11293212284735127,
+      "accumulated_yaw_degrees": -2.2720159315224113,
+      "original_report": "reports/20260905T225036922255Z-route-0/report.json"
+    },
+    {
+      "name": "cancel-8s",
+      "exit_code": 0,
+      "report": "cancel/cancel-8s.json",
+      "status": "CANCELLED",
+      "reason": "CONTROLLED_STOP",
+      "events": [
+        {
+          "event": "CANCEL_REQUESTED",
+          "sim_time": 8.019999999999348
+        }
+      ],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 21.039999999999218,
+      "final_pose": [
+        2.692634017298077,
+        -0.10433860512516045,
+        0.7811908521903093,
+        0.9995739956173275,
+        -0.022946382784660865,
+        0.01795027828577471,
+        0.0017545119476966898
+      ],
+      "stop_check": {
+        "passed": true,
+        "hold_seconds": 10,
+        "max_drift_m": 0.04604304329261442,
+        "mean_speed_mps": 0.06727799339295375
+      },
+      "arguments": {
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": 8.0,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 2.6946548008289013,
+      "max_displacement_from_start_m": 2.6979585399013475,
+      "accumulated_yaw_degrees": 0.1613168087640277,
+      "original_report": "reports/20260905T225042714930Z-route-0/report.json"
+    },
+    {
+      "name": "cancel-30s",
+      "exit_code": 0,
+      "report": "cancel/cancel-30s.json",
+      "status": "CANCELLED",
+      "reason": "CONTROLLED_STOP",
+      "events": [
+        {
+          "event": "CANCEL_REQUESTED",
+          "sim_time": 30.01999999999424
+        },
+        {
+          "goal": "A",
+          "sim_time": 19.16000000000026,
+          "position_error": 0.03670949054465574,
+          "yaw_error_degrees": 0.3901309899749596,
+          "hold_seconds": 10.000000000000531,
+          "hold_max_position_error": 0.2957453213535074,
+          "hold_max_yaw_error_degrees": 1.028403934149227,
+          "hold_mean_speed_mps": 0.08744976611183695
+        }
+      ],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 43.02000000000661,
+      "final_pose": [
+        3.1153775485061463,
+        2.065781606759862,
+        0.7781053874486733,
+        0.7202927387502862,
+        0.009140357321041098,
+        0.03173811633397934,
+        0.6928834796293141
+      ],
+      "stop_check": {
+        "passed": true,
+        "hold_seconds": 10,
+        "max_drift_m": 0.046092874476578005,
+        "mean_speed_mps": 0.06769334899916507
+      },
+      "arguments": {
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": 30.0,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 3.738051754131224,
+      "max_displacement_from_start_m": 3.738529190957988,
+      "accumulated_yaw_degrees": 87.80967999809253,
+      "original_report": "reports/20260905T225048882167Z-route-0/report.json"
+    },
+    {
+      "name": "cancel-45s",
+      "exit_code": 0,
+      "report": "cancel/cancel-45s.json",
+      "status": "CANCELLED",
+      "reason": "CONTROLLED_STOP",
+      "events": [
+        {
+          "event": "CANCEL_REQUESTED",
+          "sim_time": 45.00000000000903
+        },
+        {
+          "goal": "A",
+          "sim_time": 19.16000000000026,
+          "position_error": 0.03670949054465574,
+          "yaw_error_degrees": 0.3901309899749596,
+          "hold_seconds": 10.000000000000531,
+          "hold_max_position_error": 0.2957453213535074,
+          "hold_max_yaw_error_degrees": 1.028403934149227,
+          "hold_mean_speed_mps": 0.08744976611183695
+        },
+        {
+          "goal": "B",
+          "sim_time": 36.79999999999901,
+          "position_error": 0.03296551060805468,
+          "yaw_error_degrees": 0.4339098856362369,
+          "hold_seconds": 10.000000000002984,
+          "hold_max_position_error": 0.299095734420411,
+          "hold_max_yaw_error_degrees": 6.378027265459216,
+          "hold_mean_speed_mps": 0.08776353352951513
+        }
+      ],
+      "max_tilt_degrees": 4.440464990788734,
+      "sim_seconds": 58.00000000002492,
+      "final_pose": [
+        1.3296421805221867,
+        1.1516171145610548,
+        0.7758394011213366,
+        -0.2961828758156818,
+        -0.023016982384824042,
+        -0.0001425672960254302,
+        0.9548538643530818
+      ],
+      "stop_check": {
+        "passed": true,
+        "hold_seconds": 10,
+        "max_drift_m": 0.04451003496970058,
+        "mean_speed_mps": 0.06754373512376183
+      },
+      "arguments": {
+        "mode": "route",
+        "headless": true,
+        "realtime": false,
+        "snapshot": false,
+        "duration": 300,
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "seed": 0,
+        "vary_initial": false,
+        "cancel_at": 45.0,
+        "push_at": 8,
+        "push_force": 30,
+        "push_duration": 0.2
+      },
+      "net_displacement_m": 1.7590253854830307,
+      "max_displacement_from_start_m": 3.7383025128432723,
+      "accumulated_yaw_degrees": 214.38317581993994,
+      "original_report": "reports/20260905T225058510580Z-route-0/report.json"
+    }
+  ],
+  "note": "Simulation-only, fixed model/flat ground. Seeds vary initial xy +/-0.04 m and yaw +/-0.08 rad for route suite."
+}

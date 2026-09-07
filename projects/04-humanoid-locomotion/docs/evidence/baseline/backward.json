@@ -1,0 +1,107 @@
+{
+  "status": "COMPLETED",
+  "reason": "BASELINE_DURATION_FINISHED",
+  "mode": "baseline",
+  "seed": 0,
+  "initial_pose": [
+    0.0,
+    0.0,
+    0.793,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "localization": "MuJoCo ground truth, not SLAM or a hardware estimator",
+  "upstream_commit": "276801e46c5d433564f24658bac64f254b7d2d4b",
+  "policy_sha256": "cf668f75b90d1abf73d2b87612a6e76bccc61ff7e083b63582d3f6aaa3c1759d",
+  "events": [],
+  "pushes": [],
+  "stop_requested_at": null,
+  "arguments": {
+    "mode": "baseline",
+    "headless": true,
+    "realtime": false,
+    "snapshot": false,
+    "duration": 12.0,
+    "command": [
+      -0.12,
+      0.0,
+      0.0
+    ],
+    "seed": 0,
+    "vary_initial": false,
+    "cancel_at": null,
+    "push_at": 8,
+    "push_force": 30,
+    "push_duration": 0.2
+  },
+  "environment": {
+    "mujoco": "3.3.6",
+    "policy_device": "cpu"
+  },
+  "sim_seconds": 12.000000000000677,
+  "wall_seconds": 0.5837795489999991,
+  "max_tilt_degrees": 4.440464990788734,
+  "min_pelvis_height_m": 0.7733351319935632,
+  "max_displacement_from_start_m": 0.9172930489481319,
+  "accumulated_yaw_degrees": -5.012044537632162,
+  "foot_body_vertical_range_m": [
+    0.032747893102955006,
+    0.037896040713939136
+  ],
+  "final_pose": [
+    -0.9083201038949151,
+    -0.13805017235206965,
+    0.7796949480669917,
+    0.9988691281319519,
+    0.0020707495292599243,
+    0.01683949187955368,
+    -0.044414056046942714
+  ],
+  "net_displacement_m": 0.918750924476327,
+  "config": {
+    "simulation_dt": 0.002,
+    "control_decimation": 10,
+    "command_limits": [
+      0.5,
+      0.2,
+      0.6
+    ],
+    "command_acceleration": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "input_timeout": 0.6,
+    "warmup_seconds": 2.0,
+    "position_tolerance": 0.3,
+    "yaw_tolerance_degrees": 15.0,
+    "hold_seconds": 10.0,
+    "hold_mean_speed_limit": 0.15,
+    "waypoint_timeout": 90.0,
+    "fall_height": 0.45,
+    "fall_tilt_degrees": 60.0,
+    "fall_debounce_seconds": 0.12,
+    "route": [
+      {
+        "name": "A",
+        "x": 3.0,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      {
+        "name": "B",
+        "x": 3.0,
+        "y": 2.0,
+        "yaw": 1.5707963267948966
+      },
+      {
+        "name": "HOME",
+        "x": 0.0,
+        "y": 0.0,
+        "yaw": 0.0
+      }
+    ]
+  }
+}

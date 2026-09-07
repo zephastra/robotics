@@ -1,0 +1,11 @@
+.venv/
+.cache/
+logs/
+reports/
+assets/g1/
+assets/t800/
+policies/t800/*.mnn
+policies/*.pt
+__pycache__/
+.pytest_cache/
+*.pyc

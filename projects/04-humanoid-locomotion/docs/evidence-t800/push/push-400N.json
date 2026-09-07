@@ -1,0 +1,162 @@
+{
+  "status": "COMPLETED",
+  "reason": "",
+  "robot": "t800",
+  "mode": "push",
+  "seed": 0,
+  "initial_pose": [
+    0.0,
+    0.0,
+    1.03,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "localization": "MuJoCo ground truth, not SLAM or a hardware estimator",
+  "upstream_commit": "335c60e88772c26c7852d0abd6b3c7439037dd8f",
+  "policy_sha256": "cbcb90f86dbb2fde39bdc5a25c8d0530d5c79c7a8f84b1f90863d8c9065b6427",
+  "upstream_repository": "https://github.com/engineai-robotics/engineai_robotics_native_sdk",
+  "policy_file": "policies/t800/walking.mnn",
+  "events": [
+    {
+      "goal": "A",
+      "sim_time": 32.37999999999361,
+      "position_error": 0.06054857572833554,
+      "yaw_error_degrees": 13.404585833927841,
+      "hold_seconds": 10.009999999995127,
+      "hold_max_position_error": 0.10231174975050876,
+      "hold_max_yaw_error_degrees": 14.753431472276858,
+      "hold_mean_speed_mps": 0.009052543142692574
+    },
+    {
+      "goal": "B",
+      "sim_time": 49.86000000001497,
+      "position_error": 0.013024409855921855,
+      "yaw_error_degrees": 2.8130209821845575,
+      "hold_seconds": 10.000000000012221,
+      "hold_max_position_error": 0.2997481145702978,
+      "hold_max_yaw_error_degrees": 3.7903163652095926,
+      "hold_mean_speed_mps": 0.039121637256865814
+    },
+    {
+      "goal": "HOME",
+      "sim_time": 77.51000000000076,
+      "position_error": 0.07489131630702915,
+      "yaw_error_degrees": 12.10401960465465,
+      "hold_seconds": 10.009999999976671,
+      "hold_max_position_error": 0.10556803670539298,
+      "hold_max_yaw_error_degrees": 14.798174360146797,
+      "hold_mean_speed_mps": 0.016504204491070425
+    }
+  ],
+  "pushes": [
+    {
+      "sim_time": 8.009999999999344,
+      "body": "LINK_BASE",
+      "force_world_N": [
+        0,
+        400.0,
+        0
+      ],
+      "duration_seconds": 0.2,
+      "impulse_Ns": 80.0
+    }
+  ],
+  "stop_requested_at": null,
+  "arguments": {
+    "robot": "t800",
+    "mode": "push",
+    "headless": true,
+    "realtime": false,
+    "snapshot": false,
+    "duration": 300,
+    "command": [
+      0,
+      0,
+      0
+    ],
+    "seed": 0,
+    "vary_initial": false,
+    "cancel_at": null,
+    "push_at": 8,
+    "push_force": 400.0,
+    "push_duration": 0.2
+  },
+  "source_sha256": {
+    "src/humanoid004/__init__.py": "3a6b03136d20d1d754fa03a24659cc3e179a12c5414934dd3b908476fb73ed26",
+    "src/humanoid004/app.py": "170ce8054409114ef57726ca2aa9b4de5ac5d95e974de77eb24d7a8af92f67de",
+    "src/humanoid004/core.py": "1b37e0fff50eae1d8df69b0350d2b4474b73ad867c6f80c14e913ca8f29d34e3",
+    "src/humanoid004/policy.py": "bfb2e5b06f68729b1e4aeb2cf2228f8c04ac6ee39776ee4bb672003e3f14fc4e",
+    "src/humanoid004/robots.py": "88d55ed201bf453ba24a940a184e4ac168742694233f67eba0fa282c847e35a8",
+    "src/humanoid004/t800_policy.py": "27f262b0dcf61245b1988988543f1afcc180a9ec45611c008f1365a003669a4d"
+  },
+  "environment": {
+    "mujoco": "3.3.6",
+    "policy_device": "cpu"
+  },
+  "sim_seconds": 77.51000000000076,
+  "wall_seconds": 4.360300613999982,
+  "max_tilt_degrees": 6.498084294092559,
+  "min_pelvis_height_m": 0.8506841959956069,
+  "max_displacement_from_start_m": 4.304255992026967,
+  "accumulated_yaw_degrees": 347.89624300526185,
+  "foot_body_vertical_range_m": [
+    0.3521264302695616,
+    0.19404732180687242
+  ],
+  "final_pose": [
+    0.0715012557518975,
+    0.022277335659841257,
+    1.0156559632309938,
+    -0.9944260229925463,
+    -0.0006646092009330328,
+    0.0009257700172807063,
+    0.10543047965229745
+  ],
+  "net_displacement_m": 0.07489131630702915,
+  "config": {
+    "simulation_dt": 0.002,
+    "control_decimation": 5,
+    "command_limits": [
+      0.5,
+      0.2,
+      0.6
+    ],
+    "command_acceleration": [
+      0.4,
+      0.4,
+      0.8
+    ],
+    "input_timeout": 0.6,
+    "warmup_seconds": 2.0,
+    "position_tolerance": 0.3,
+    "yaw_tolerance_degrees": 15.0,
+    "hold_seconds": 10.0,
+    "hold_mean_speed_limit": 0.15,
+    "waypoint_timeout": 90.0,
+    "fall_height": 0.65,
+    "fall_tilt_degrees": 60.0,
+    "fall_debounce_seconds": 0.12,
+    "route": [
+      {
+        "name": "A",
+        "x": 3.0,
+        "y": 0.0,
+        "yaw": 0.0
+      },
+      {
+        "name": "B",
+        "x": 3.0,
+        "y": 2.0,
+        "yaw": 1.5707963267948966
+      },
+      {
+        "name": "HOME",
+        "x": 0.0,
+        "y": 0.0,
+        "yaw": 0.0
+      }
+    ]
+  }
+}
