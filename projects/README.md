@@ -27,4 +27,7 @@ projects/
 - [03-mobile-manipulator](03-mobile-manipulator/README.md) — 独立移动机械臂视觉搬运仿真，包含导航取料、辅助抓放、托盘运输与视觉返航精对位；跨机器复现说明待补充。
 - [04-humanoid-locomotion](04-humanoid-locomotion/README.md) — 独立 G1 / T800 人形机器人运动控制仿真，包含手动操作、定点行走、位置保持、推力实验与停止验收；使用上游预训练策略和仿真真值定位，不含实物控制。
 
+- [05-dexterous-hand](05-dexterous-hand/README.md) — 四指灵巧手姿态、接触抓取、抬升、转移与释放验收；独立两轴夹具实验台，不依赖人形机器人项目。
+- [06-humanoid-transport](06-humanoid-transport/README.md) — T800 站立抓取、负载行走、停止和托盘放置；使用已知物体位置与上游步态策略，不含视觉识别或实物验证。
+
 课程期数与项目编号是两件事。一个项目可以支撑多集视频；不要为了“第二期课程”复制一份几乎相同的项目。

@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "widgets": true,
+    "demo_button": true,
+    "completed": true
+  },
+  "passed": true,
+  "scope": "Programmatically invoked real Tk widgets on WSLg, with actual MuJoCo viewer; not human mouse acceptance"
+}

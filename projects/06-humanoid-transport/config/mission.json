@@ -1,0 +1,12 @@
+{
+  "source": [0.20, -0.37, 0.85],
+  "destination": [1.20, -0.37, 0.85],
+  "settling_compensation": [0.0, -0.035],
+  "grasp_offset": [0.0, 0.0, 0.0],
+  "clearance": 0.15,
+  "approach": "direct",
+  "mount_pitch": 0.5,
+  "grip_feedback": false,
+  "thumb_grasp": [1.1135, 0.0672, 1.544, 0.0487],
+  "note": "Initial low-workstation integration scene, fixed 50g sphere. Not generic task planning."
+}

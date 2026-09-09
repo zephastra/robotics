@@ -18,6 +18,8 @@ robotics/
 - [02 AMR 仓库任务执行、异常恢复与自动返航](projects/02-amr-mission-executor/README.md)
 - [03 移动机械臂视觉搬运仿真](projects/03-mobile-manipulator/README.md) — 独立的导航、视觉抓放、运输与返航对位演示；仅在记录的本机环境验证。
 - [04 人形机器人运动控制与行走验证](projects/04-humanoid-locomotion/README.md) — 独立 MuJoCo 仿真，支持 Unitree G1 / EngineAI T800 预训练步态、手动控制、定点行走与受控停止；本机验证，跨机器复现待验收。
+- [05 灵巧手动作与接触抓取实验台](projects/05-dexterous-hand/README.md) — 独立 Allegro 四指抓放与接触验证；两轴手腕夹具，不是完整人形机器人。
+- [06 人形机器人抓取、负载行走与放置](projects/06-humanoid-transport/README.md) — 独立 T800 与右侧灵巧手搬运仿真；已知位置、轻载球体和固定托盘，本机有限场景验证。
 - [ROS 2 Lyrical 非官方中文教程](docs/tutorials/ros2-lyrical/README.md)
 - [机器人学习资源导航](docs/resources/README.md)
 - [文档目录说明](docs/README.md)

@@ -1,0 +1,10 @@
+.venv/
+.cache/
+assets/t800/
+assets/allegro/
+assets/combined.xml
+policies/t800/*.mnn
+reports/
+__pycache__/
+.pytest_cache/
+*.pyc

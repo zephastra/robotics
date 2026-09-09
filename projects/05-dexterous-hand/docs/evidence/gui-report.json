@@ -1,0 +1,108 @@
+{
+  "status": "CANCELLED",
+  "mode": "manual",
+  "seed": 0,
+  "offset_m": 0.0,
+  "object_mass_kg": 0.05,
+  "source_revision": "8161bba264d7fa7c99ca301e91e7fb44737676ad",
+  "limitations": [
+    "Simulated 2-axis wrist fixture; no arm or whole-body balance",
+    "Known sphere and scripted joint targets; no vision or learned policy",
+    "Contact force is simulation-derived, not hardware tactile sensing"
+  ],
+  "events": [
+    {
+      "time": 0.16600000000000012,
+      "action": "manual"
+    },
+    {
+      "time": 1.5040000000000011,
+      "action": "demo"
+    },
+    {
+      "time": 1.5040000000000011,
+      "action": "DEMO_ACCEPTED"
+    }
+  ],
+  "trials": [
+    {
+      "result": "COMPLETED",
+      "reason": "LIFT_HOLD_TRANSFER_RELEASE_VERIFIED",
+      "events": [
+        {
+          "time": 1.5040000000000011,
+          "phase": "SETTLE"
+        },
+        {
+          "time": 2.519999999999944,
+          "phase": "CLOSE"
+        },
+        {
+          "time": 5.539999999999612,
+          "phase": "VERIFY_GRASP"
+        },
+        {
+          "time": 6.079999999999552,
+          "phase": "LIFT"
+        },
+        {
+          "time": 9.079999999999702,
+          "phase": "HOLD"
+        },
+        {
+          "time": 11.08000000000037,
+          "phase": "TRANSFER"
+        },
+        {
+          "time": 14.580000000001538,
+          "phase": "LOWER"
+        },
+        {
+          "time": 17.600000000001124,
+          "phase": "RELEASE"
+        },
+        {
+          "time": 20.119999999999727,
+          "phase": "VERIFY_PLACE"
+        },
+        {
+          "time": 21.15999999999915,
+          "phase": "COMPLETED"
+        }
+      ],
+      "max_lift_m": 0.12404260475880996
+    }
+  ],
+  "mujoco_version": "3.3.6",
+  "reason": "WINDOW_CLOSED",
+  "sim_seconds": 21.18199999999914,
+  "wall_seconds": 26.417821729000025,
+  "final_observation": {
+    "object": [
+      0.08294992896228788,
+      0.22899980383982393,
+      0.20463281815753986
+    ],
+    "relative_object": [
+      0.08294992896228788,
+      0.02899980384029041,
+      -0.12730093118109292
+    ],
+    "speed": 1.6233588851227888e-07,
+    "finger_forces": {
+      "ff": 0.0,
+      "mf": 0.0,
+      "rf": 0.0,
+      "th": 0.0
+    },
+    "source_contact": false,
+    "tray_contact": true
+  },
+  "source_sha256": {
+    "src/hand005/__init__.py": "02c216d7361de7aac7ca3d46acdee41bc7e5d2c671b49e8b612738fa1db50a53",
+    "src/hand005/app.py": "1945501ac8a7d9863abc5ca9b2b9c9ea1765986850610b4f9f5fddd94ab7650a",
+    "src/hand005/core.py": "da96500996db2c9f31e45439e9b540fdb22e6a37cc0e7b15d169d7878a48000e",
+    "src/hand005/model.py": "797c95e7c0df2e353b8db74b4c04421e8bca0e4312b319fa78dbd1156d74002a",
+    "src/hand005/panel.py": "7645dce17404f32cf32c2a8803bfc224c4adceb59e362d6a4d2faf841e0ee27f"
+  }
+}

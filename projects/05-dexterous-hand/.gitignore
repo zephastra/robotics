@@ -1,0 +1,8 @@
+.venv/
+.cache/
+reports/
+assets/allegro/
+assets/scene.xml
+__pycache__/
+.pytest_cache/
+*.pyc

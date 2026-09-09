@@ -1,0 +1,7 @@
+mujoco==3.3.6
+numpy==2.2.6
+PyYAML==6.0.2
+MNN==3.6.1
+patchelf==0.19.1.0
+pillow==11.3.0
+pytest==8.4.2

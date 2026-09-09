@@ -1,0 +1,43 @@
+{
+  "offset_m": 0.002,
+  "trials": [
+    {
+      "seed": 0,
+      "status": "COMPLETED",
+      "reason": "LIFT_HOLD_TRANSFER_RELEASE_VERIFIED",
+      "exit_code": 0,
+      "report": "reports/20260907T102921540329Z"
+    },
+    {
+      "seed": 1,
+      "status": "COMPLETED",
+      "reason": "LIFT_HOLD_TRANSFER_RELEASE_VERIFIED",
+      "exit_code": 0,
+      "report": "reports/20260907T102922510319Z"
+    },
+    {
+      "seed": 2,
+      "status": "COMPLETED",
+      "reason": "LIFT_HOLD_TRANSFER_RELEASE_VERIFIED",
+      "exit_code": 0,
+      "report": "reports/20260907T102925749783Z"
+    },
+    {
+      "seed": 3,
+      "status": "COMPLETED",
+      "reason": "LIFT_HOLD_TRANSFER_RELEASE_VERIFIED",
+      "exit_code": 0,
+      "report": "reports/20260907T102927349295Z"
+    },
+    {
+      "seed": 4,
+      "status": "COMPLETED",
+      "reason": "LIFT_HOLD_TRANSFER_RELEASE_VERIFIED",
+      "exit_code": 0,
+      "report": "reports/20260907T102928410935Z"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "scope": "Fixed sphere, mass and nominal friction; bounded initial xy offsets, not hardware/generalization validation"
+}

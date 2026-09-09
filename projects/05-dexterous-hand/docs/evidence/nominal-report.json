@@ -1,0 +1,116 @@
+{
+  "status": "COMPLETED",
+  "mode": "demo",
+  "seed": 0,
+  "offset_m": 0.0,
+  "object_mass_kg": 0.05,
+  "source_revision": "8161bba264d7fa7c99ca301e91e7fb44737676ad",
+  "asset_sha256": {
+    "assets/scene.xml": "f406ba8ab5c3ccc32e778167497b504125ba39a9d4591614e278df4d782f2e51",
+    "assets/allegro/LICENSE": "09c187439ecece8b00330e71eb988d3d30f29373c580dc31ab54200d0aa4deb4",
+    "assets/allegro/README.md": "10d8795ad8682bdab403aab8fb7b5d4c051b68e025accfe58ebf0d440188665b",
+    "assets/allegro/assets/base_link.stl": "4060e1ae52bca21367e15a1dfab16bc7c2e81849566631b7f55e2cf376b7bc85",
+    "assets/allegro/assets/base_link_left.stl": "9f66c1cb8d27b9f07e49101a7997a49c60d3cc3ccbc8de96065322df68f47a0b",
+    "assets/allegro/assets/link_0.0.stl": "32b90a6744d472a6ffaee02cbf32eb8a5600b1da0944e86aeb9f53503a9f8ac9",
+    "assets/allegro/assets/link_1.0.stl": "e3dfb35b6682f62f18ca6ed0b39cb94ff627b68e0e3373cf7212390574604680",
+    "assets/allegro/assets/link_12.0_left.stl": "1749ba567bf36729a81eaecf384bc4f5483be8c496af54d230500b96f1d81dcc",
+    "assets/allegro/assets/link_12.0_right.stl": "c5418fc127311eefee1d8ee69dfcfde2157d038286900bee91608d2701b00f13",
+    "assets/allegro/assets/link_13.0.stl": "e906896afc078a12c9c377e3a2b07f375583d3b869581f9962030cabc888be29",
+    "assets/allegro/assets/link_14.0.stl": "a9e4983e4bff7fc7d868b4965c9865edb2669b946434095703766202b5de01ff",
+    "assets/allegro/assets/link_15.0.stl": "bf963adb775b79b27649f4f5dff4ced58ef676ce86cc677de49d3810382d11e0",
+    "assets/allegro/assets/link_15.0_tip.stl": "a7147c765d4b6d2eb16fa14bba2e8eceec4a750bc346260893ca02aca1fd7a63",
+    "assets/allegro/assets/link_2.0.stl": "9c98477c65b45f5a3de1df0e1b54281da2385f4eafd057d103ab40893771c2d0",
+    "assets/allegro/assets/link_3.0.stl": "fe333088176395aa7d8a913aa953d3cd649c4c77753224239b78b2c99e3e314c",
+    "assets/allegro/assets/link_3.0_tip.stl": "9c3fa04fea0dfa1257c8a1b02d2b7d982b0d985c1ddda1edf148827944835f39",
+    "assets/allegro/assets/link_4.0.stl": "f80ac4d443169c56507afaa0b3c72ec3679312bc80cbaebd03e73e96dd18c408",
+    "assets/allegro/right_hand.xml": "cec3efe34be49c8220c23afdae0cfacbce10164a5bc7c34075b6668ee0a862a6"
+  },
+  "limitations": [
+    "Simulated 2-axis wrist fixture; no arm or whole-body balance",
+    "Known sphere and scripted joint targets; no vision or learned policy",
+    "Contact force is simulation-derived, not hardware tactile sensing"
+  ],
+  "events": [],
+  "trials": [
+    {
+      "result": "COMPLETED",
+      "reason": "LIFT_HOLD_TRANSFER_RELEASE_VERIFIED",
+      "events": [
+        {
+          "time": 0.0,
+          "phase": "SETTLE"
+        },
+        {
+          "time": 1.0000000000000007,
+          "phase": "CLOSE"
+        },
+        {
+          "time": 4.019999999999779,
+          "phase": "VERIFY_GRASP"
+        },
+        {
+          "time": 4.55999999999972,
+          "phase": "LIFT"
+        },
+        {
+          "time": 7.579999999999387,
+          "phase": "HOLD"
+        },
+        {
+          "time": 9.579999999999869,
+          "phase": "TRANSFER"
+        },
+        {
+          "time": 13.080000000001037,
+          "phase": "LOWER"
+        },
+        {
+          "time": 16.080000000001966,
+          "phase": "RELEASE"
+        },
+        {
+          "time": 18.60000000000057,
+          "phase": "VERIFY_PLACE"
+        },
+        {
+          "time": 19.639999999999993,
+          "phase": "COMPLETED"
+        }
+      ],
+      "max_lift_m": 0.12367773392465506
+    }
+  ],
+  "mujoco_version": "3.3.6",
+  "reason": "LIFT_HOLD_TRANSFER_RELEASE_VERIFIED",
+  "sim_seconds": 19.639999999999993,
+  "wall_seconds": 2.4339002249998885,
+  "final_observation": {
+    "object": [
+      0.0847092317142077,
+      0.22940459201892263,
+      0.20463281815753986
+    ],
+    "relative_object": [
+      0.0847092317142077,
+      0.029404592019515535,
+      -0.12730093118165742
+    ],
+    "speed": 1.6238150942837098e-07,
+    "finger_forces": {
+      "ff": 0.0,
+      "mf": 0.0,
+      "rf": 0.0,
+      "th": 0.0
+    },
+    "source_contact": false,
+    "tray_contact": true
+  },
+  "source_sha256": {
+    "scripts/prepare_assets.py": "b4ed99f9f11d91a1786aae068b3637d012bf9c9b1b27bbd88f4e12f348982c1a",
+    "src/hand005/__init__.py": "02c216d7361de7aac7ca3d46acdee41bc7e5d2c671b49e8b612738fa1db50a53",
+    "src/hand005/app.py": "99069cffd2e8703f1d0b22e55eeaa5850081980ea488f70c8c5cf2740522e67a",
+    "src/hand005/core.py": "da96500996db2c9f31e45439e9b540fdb22e6a37cc0e7b15d169d7878a48000e",
+    "src/hand005/model.py": "797c95e7c0df2e353b8db74b4c04421e8bca0e4312b319fa78dbd1156d74002a",
+    "src/hand005/panel.py": "7645dce17404f32cf32c2a8803bfc224c4adceb59e362d6a4d2faf841e0ee27f"
+  }
+}
