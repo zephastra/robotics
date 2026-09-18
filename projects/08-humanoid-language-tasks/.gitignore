@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+
+# Local secrets
+.env
+
+# Downloaded assets / policies (not source-controlled; provenance lives in assets/baseline_manifest.json)
+/assets/*
+!/assets/.gitkeep
+!/assets/baseline_manifest.json
+!/assets/combined.xml
+!/assets/t800/
+/assets/t800/*
+!/assets/t800/lab.xml
+/policies/*
+!/policies/.gitkeep
+
+# Run evidence
+/reports/*
+!/reports/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.cache/
+_staging/

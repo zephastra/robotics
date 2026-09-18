@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "task_kind": "skill_split",
+  "seed": 7,
+  "duration": 120.0,
+  "tally": {
+    "FAILED": 8,
+    "SUCCEEDED": 4
+  },
+  "results": [
+    {
+      "id": "01-regression",
+      "group": "regression",
+      "verdict": "FAILED",
+      "wall_s": 55.1,
+      "report_dir": "20260913T232222194438Z"
+    },
+    {
+      "id": "02-regression",
+      "group": "regression",
+      "verdict": "FAILED",
+      "wall_s": 84.1,
+      "report_dir": "20260913T232316901896Z"
+    },
+    {
+      "id": "03-regression",
+      "group": "regression",
+      "verdict": "FAILED",
+      "wall_s": 130.2,
+      "report_dir": "20260913T232440959472Z"
+    },
+    {
+      "id": "04-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 48.0,
+      "report_dir": "20260913T232651142408Z"
+    },
+    {
+      "id": "05-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 70.2,
+      "report_dir": "20260913T232739161140Z"
+    },
+    {
+      "id": "06-box-grid",
+      "group": "box-grid",
+      "verdict": "FAILED",
+      "wall_s": 111.5,
+      "report_dir": "20260913T232849827385Z"
+    },
+    {
+      "id": "07-box-grid",
+      "group": "box-grid",
+      "verdict": "FAILED",
+      "wall_s": 55.0,
+      "report_dir": "20260913T233040879682Z"
+    },
+    {
+      "id": "08-box-grid",
+      "group": "box-grid",
+      "verdict": "FAILED",
+      "wall_s": 67.6,
+      "report_dir": "20260913T233135824970Z"
+    },
+    {
+      "id": "09-box-grid",
+      "group": "box-grid",
+      "verdict": "FAILED",
+      "wall_s": 134.4,
+      "report_dir": "20260913T233243445623Z"
+    },
+    {
+      "id": "10-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 57.3,
+      "report_dir": "20260913T233457875382Z"
+    },
+    {
+      "id": "11-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 62.9,
+      "report_dir": "20260913T233555204516Z"
+    },
+    {
+      "id": "12-box-grid",
+      "group": "box-grid",
+      "verdict": "FAILED",
+      "wall_s": 76.1,
+      "report_dir": "20260913T233658065625Z"
+    }
+  ],
+  "finished_utc": "2026-09-13T23:38:13.881954+00:00"
+}

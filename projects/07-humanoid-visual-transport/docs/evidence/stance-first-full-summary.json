@@ -1,0 +1,2299 @@
+{
+  "arguments": {
+    "seed": 7,
+    "workers": 4,
+    "wall_timeout": 300.0,
+    "duration": 180.0,
+    "list": false,
+    "case": null,
+    "stance": "auto"
+  },
+  "cases": [
+    {
+      "id": "01-regression",
+      "group": "regression",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "02-regression",
+      "group": "regression",
+      "box": [
+        0.02,
+        0.01
+      ],
+      "target": [
+        0.05,
+        0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "03-regression",
+      "group": "regression",
+      "box": [
+        -0.02,
+        -0.01
+      ],
+      "target": [
+        -0.05,
+        -0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "04-box-grid",
+      "group": "box-grid",
+      "box": [
+        -0.02,
+        -0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "05-box-grid",
+      "group": "box-grid",
+      "box": [
+        -0.02,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "06-box-grid",
+      "group": "box-grid",
+      "box": [
+        -0.02,
+        0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "07-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.0,
+        -0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "08-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "09-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.0,
+        0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "10-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.02,
+        -0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "11-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.02,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "12-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.02,
+        0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "13-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        -0.05,
+        -0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "14-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        -0.05,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "15-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        -0.05,
+        0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "16-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        -0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "17-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "18-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "19-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.05,
+        -0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "20-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.05,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "21-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.05,
+        0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "22-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.00705,
+        -0.00698
+      ],
+      "target": [
+        0.01509,
+        -0.02565
+      ],
+      "yaw": 0.359
+    },
+    {
+      "id": "23-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.00537,
+        -0.00884
+      ],
+      "target": [
+        0.00074,
+        -0.02775
+      ],
+      "yaw": -0.664
+    },
+    {
+      "id": "24-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.01721,
+        -0.00819
+      ],
+      "target": [
+        -0.00755,
+        0.01961
+      ],
+      "yaw": -3.762
+    },
+    {
+      "id": "25-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.01107,
+        0.00255
+      ],
+      "target": [
+        0.04477,
+        0.00463
+      ],
+      "yaw": -1.033
+    },
+    {
+      "id": "26-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        0.01905,
+        -0.00907
+      ],
+      "target": [
+        0.03585,
+        -0.01262
+      ],
+      "yaw": -3.557
+    },
+    {
+      "id": "27-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.01529,
+        -0.00383
+      ],
+      "target": [
+        0.03161,
+        -0.01916
+      ],
+      "yaw": 0.816
+    },
+    {
+      "id": "28-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        0.00556,
+        -0.00255
+      ],
+      "target": [
+        0.00477,
+        -0.02623
+      ],
+      "yaw": -4.404
+    },
+    {
+      "id": "29-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.01176,
+        0.00361
+      ],
+      "target": [
+        -0.00724,
+        -0.01115
+      ],
+      "yaw": 0.856
+    },
+    {
+      "id": "30-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.00187,
+        -0.004
+      ],
+      "target": [
+        0.02944,
+        0.01194
+      ],
+      "yaw": -2.559
+    }
+  ],
+  "fingerprint": {
+    "assets/allegro/CHANGELOG.md": "78268d42097269a81d5a84d7b4c45ce775c74454165288816cc8409a858935ac",
+    "assets/allegro/LICENSE": "09c187439ecece8b00330e71eb988d3d30f29373c580dc31ab54200d0aa4deb4",
+    "assets/allegro/README.md": "10d8795ad8682bdab403aab8fb7b5d4c051b68e025accfe58ebf0d440188665b",
+    "assets/allegro/allegro_hand.png": "c23b303879ca9db0a1e4291d7e5b41dac2a0cb4140f679cb0f7ed03f66c91906",
+    "assets/allegro/assets/base_link.stl": "4060e1ae52bca21367e15a1dfab16bc7c2e81849566631b7f55e2cf376b7bc85",
+    "assets/allegro/assets/base_link_left.stl": "9f66c1cb8d27b9f07e49101a7997a49c60d3cc3ccbc8de96065322df68f47a0b",
+    "assets/allegro/assets/link_0.0.stl": "32b90a6744d472a6ffaee02cbf32eb8a5600b1da0944e86aeb9f53503a9f8ac9",
+    "assets/allegro/assets/link_1.0.stl": "e3dfb35b6682f62f18ca6ed0b39cb94ff627b68e0e3373cf7212390574604680",
+    "assets/allegro/assets/link_12.0_left.stl": "1749ba567bf36729a81eaecf384bc4f5483be8c496af54d230500b96f1d81dcc",
+    "assets/allegro/assets/link_12.0_right.stl": "c5418fc127311eefee1d8ee69dfcfde2157d038286900bee91608d2701b00f13",
+    "assets/allegro/assets/link_13.0.stl": "e906896afc078a12c9c377e3a2b07f375583d3b869581f9962030cabc888be29",
+    "assets/allegro/assets/link_14.0.stl": "a9e4983e4bff7fc7d868b4965c9865edb2669b946434095703766202b5de01ff",
+    "assets/allegro/assets/link_15.0.stl": "bf963adb775b79b27649f4f5dff4ced58ef676ce86cc677de49d3810382d11e0",
+    "assets/allegro/assets/link_15.0_tip.stl": "a7147c765d4b6d2eb16fa14bba2e8eceec4a750bc346260893ca02aca1fd7a63",
+    "assets/allegro/assets/link_2.0.stl": "9c98477c65b45f5a3de1df0e1b54281da2385f4eafd057d103ab40893771c2d0",
+    "assets/allegro/assets/link_3.0.stl": "fe333088176395aa7d8a913aa953d3cd649c4c77753224239b78b2c99e3e314c",
+    "assets/allegro/assets/link_3.0_tip.stl": "9c3fa04fea0dfa1257c8a1b02d2b7d982b0d985c1ddda1edf148827944835f39",
+    "assets/allegro/assets/link_4.0.stl": "f80ac4d443169c56507afaa0b3c72ec3679312bc80cbaebd03e73e96dd18c408",
+    "assets/allegro/left_hand.xml": "4c604119947fc7f055247541effdb937e1648e92e17b16512a1593e1c37ef787",
+    "assets/allegro/right_hand.xml": "cec3efe34be49c8220c23afdae0cfacbce10164a5bc7c34075b6668ee0a862a6",
+    "assets/allegro/scene_left.xml": "032b28250a7d6fb27378d2de18c271666aa150fd9b58a869fb28443333a9b3b8",
+    "assets/allegro/scene_right.xml": "20bbff25303c67625d2052fc377cffa48c14a0785b028c023e16df89d96ca491",
+    "assets/combined.xml": "c8a1ac6d2cc853ebd4829f33ee8aba8ecb4a0ea165a384432ffc8ac0f58d806e",
+    "assets/manifest-t800.json": "cfaec93c878fc61097122642231fe01eb6edbefcdefae877445a101fa081dcaa",
+    "assets/manifest.json": "0445413f9696b74b9e437f94ff9c6fcfdbfc918fc5eedb2853f11857ec2d62e8",
+    "assets/t800/LICENSE-EngineAI.txt": "a3e5f08bf7ae0983cc7a9f602e9a555f5956a8dade26cf4cf9cc95c441fe0b6c",
+    "assets/t800/environment/ground.xml": "82a4f5ec2992d93409d78eb6a43ece88e73279ecd07bb4f4c2c6429db4f20c9e",
+    "assets/t800/lab.xml": "98cf27ab4da0e751a2e721b8b4db9faad08ce874af8d0afb9f768d231c101de9",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_PITCH_L.obj": "361c1edc788ab115451eecc8f64d40f18bc6972a8cf461309df8690acb162f65",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_PITCH_R.obj": "45f3b8647021cd277ae787c32fefd6a6649beb167cb0044da50c0c992fce5266",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_ROLL_L.obj": "3998dff5b3c8b37ff7f77f80b0462d5ae7908c048ee739c8e01896f9f2e5e5f0",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_ROLL_R.obj": "3db4719c148703f2255cd20dc33b420fb987c62a5834ab38d806e06dae448ebe",
+    "assets/t800/robot/t800/meshes/LINK_BASE.obj": "3783a874cc31798c2517d8d85b1e02c2a812aa77b473633ec80b7b94741742df",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_PITCH_L.obj": "817b78d26f933eff7383e42b403afc39069df203aa7b12f70e38fc57964dfbe6",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_PITCH_R.obj": "2c5b486b1578180b38b6bab9e377d2f41d5b2127ae420986788938e8eebd3eb4",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_YAW_L.obj": "4457ed570cacda6100f2a8d74c12ec010d23c1b4b4359a2ca956d6532303edf9",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_YAW_R.obj": "e11f97e6968f08fadf85c87f887b8cc6a1b33e11e08d4cb54e8e0764cdfbd562",
+    "assets/t800/robot/t800/meshes/LINK_HEAD_PITCH.obj": "c80bceaa6bcd5284e2a16e65a0ff79a507f77430bc7fb32ec5ce28f5118711ad",
+    "assets/t800/robot/t800/meshes/LINK_HEAD_YAW.obj": "239be7b1d8b1a806c60773db26385974c068de6712e66f00a7628532ecc32c3c",
+    "assets/t800/robot/t800/meshes/LINK_HIP_PITCH_L.obj": "cf42080daf0448b8c97e75558b18982ef145f7282b1d432b03aeae41116e9898",
+    "assets/t800/robot/t800/meshes/LINK_HIP_PITCH_R.obj": "652b5beff12b7a4b91a4a44dff33f07af390e0772d63b479da333ffc3a5c0c22",
+    "assets/t800/robot/t800/meshes/LINK_HIP_ROLL_L.obj": "c1be3f2006d98f6c16b98adad381949f2abba829f2459b808c4d041e08abdb9c",
+    "assets/t800/robot/t800/meshes/LINK_HIP_ROLL_R.obj": "d391e9d01423f9771ea824d559230d8b3602aa148ec1fc2aec7a6ad70b1807bd",
+    "assets/t800/robot/t800/meshes/LINK_HIP_YAW_L.obj": "2bec754092dc706d1ff6d963112560ca13289d7732e0cd0650e48267a5ca8fbd",
+    "assets/t800/robot/t800/meshes/LINK_HIP_YAW_R.obj": "66ef896cb1b5830df962cdfe3f5ef1eb0eb7c84487c626c78b08523e72a1a925",
+    "assets/t800/robot/t800/meshes/LINK_KNEE_PITCH_L.obj": "c36c26a037da8c366cbe440ec5f1726525f7d7e8691f32456380862d764aea62",
+    "assets/t800/robot/t800/meshes/LINK_KNEE_PITCH_R.obj": "177186194dd6b9e31699ce8bbebbce21a29eae01152fb3f2b830d67e15bae25f",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_PITCH_L.obj": "e84c23c833df40b364cc7702a39233a559f555d45130df2e7fd4e8ffe689a2f9",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_PITCH_R.obj": "3da8cdf8999d2802531e86e13446df62cb501f53cc27733207232930fd0ea523",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_ROLL_L.obj": "be84dbc117fab4da1f85d4684f8fb27dfb2a92006f18d3f8d97196e3c66219f6",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_ROLL_R.obj": "9f25bccf34b2265550d76bd1ee149df96decc0a132e0e700f15a909168302d3f",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_YAW_L.obj": "9a7fbc63936f571a606f828200f18fcd51218d2f15b33320127c5f1ece79758e",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_YAW_R.obj": "27ee25d4296161b0b80d7d58b71a258c14616210e17d56f67005a59ee2a8fc48",
+    "assets/t800/robot/t800/meshes/LINK_TORSO_YAW.obj": "9f4cda29017022b8988f1f10285446d5a0cfccbb5fdab3f05c6631048719030b",
+    "assets/t800/robot/t800/texture/LINK_ANKLE_ROLL_L.png": "c69f48f543389e72954d8ede6d93a9d4e96441576f3e35639454138d70b476b2",
+    "assets/t800/robot/t800/texture/LINK_BASE.png": "a298400671d0868d8a404801e280d2f9bd01b33ec76660354192baba7a9b12e0",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_PITCH_L.png": "cb9c31e56644890ba5e3c356bcc1ad266a3cf459104a82505aedd62efb66f260",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_PITCH_R.png": "8aa0572b3ef8e819f69937d4be0536e0854dc6ef39bd821668dea9b73b0f270c",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_YAW_L.png": "672b2be4bcdce1863424685a1f681f0d7b23d143fd910311d833268e1246c05c",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_YAW_R.png": "6283738a1be141cdb676ad3b93cfc2145bcf1f4c7ae39ce8f886fcdcaa3beee6",
+    "assets/t800/robot/t800/texture/LINK_HEAD_YAW.png": "65fc0f09e4bd0bfc5c910e2e7267ff598a1cf13f85845b56d51055150d53765f",
+    "assets/t800/robot/t800/texture/LINK_HIP_PITCH_L.png": "192c9753ad475eb1cd631c2de474e3f644dd2f1189a40ed25759299321265b08",
+    "assets/t800/robot/t800/texture/LINK_HIP_ROLL_L.png": "f123c3a3fed080c94c0296618e8a6712f7da7234a9a8611be3e08a7972fb58ab",
+    "assets/t800/robot/t800/texture/LINK_HIP_YAW_L.png": "97b5f5c52a05f8315ed07c531f5a8834e92fbae0f89cd21853428ae858eacc9a",
+    "assets/t800/robot/t800/texture/LINK_KNEE_PITCH_L.png": "ce66f28fc5dac742c73e9b4dfe735e20d2b89641afb4d6e033292a7e41a2de85",
+    "assets/t800/robot/t800/texture/LINK_SHOULDER_PITCH_L.png": "6bb410836ee6431783ee0f69429f9853c14e884f069b6466b9d4b8bda0a95fea",
+    "assets/t800/robot/t800/texture/LINK_SHOULDER_ROLL_L.png": "fb76b91c8155478cf6d92088d89914a6eb1b907f78a1dcf18128fffee8618311",
+    "assets/t800/robot/t800/texture/LINK_SHOULDER_YAW_L.png": "e7778698452bedb342bbaf198e5c782e17f1d2a9e10f94e2721b8a01fb815737",
+    "assets/t800/robot/t800/texture/LINK_TORSO_YAW.png": "b7f88ec8e9276ac9c62e19d52037ee30cbc4eefee44e36ca46974711cd8430f4",
+    "assets/t800/robot/t800/xml/assets.xml": "a5c5184a4897d53dccdbf10ef7a10aedc361d81e2d9819b9d281962434478ff9",
+    "assets/t800/robot/t800/xml/serial_actuators.xml": "0709d5538bb1ac417eea0a56803baaefac7844ace477b556da1d362061532904",
+    "assets/t800/robot/t800/xml/serial_links.xml": "e66c08deb7124d4a546352c044cd4d70613d5423f576ff0bf78e8d76a4f36b77",
+    "assets/t800/robot/t800/xml/serial_sensors.xml": "5195cca6d50a0dd57a0337e2278cc8f4b3ae4d824055c3a2de43469467d9d9fb",
+    "assets/t800/robot/t800/xml/serial_t800.xml": "6c3d0680c14d718450a75b40647a99481dbbaa46943871c4a5c2f762442be1f7",
+    "assets/t800/scene.xml": "fd9a48eda362a775aef1ace2d2c14c93e4ce2aabb64b384661521dd2c10ea602",
+    "config/scene.json": "f6faa2943eb16652c1a89cf3d1e28bc9c2e8bb488a9a40852fcc0c18f5a65313",
+    "config/t800/model.yaml": "76b607212aa4d2abd791ca020f9c011be752068660faeeaa97eec3c9adab057f",
+    "config/t800/stand.yaml": "ed524e302ff92958930c9fd5f14e5fe77e525f29bea66489d1bbc316556c8da1",
+    "config/t800/walking.yaml": "5492d7877215c9253d8e35ca8732383d8a7fbdb5046ba4ee86b54df4b6ef9f2d",
+    "config/task.json": "654d1994a6bef5fa5ea022fc9473585682622fda7b9bd0d3d0c898a55dc34f7e",
+    "config/workcell.json": "8717cd381555eb58fb75ba9921a7f7656edcea54b9321afd22085b0da21a3bf6",
+    "policies/t800/LICENSE-EngineAI.txt": "a3e5f08bf7ae0983cc7a9f602e9a555f5956a8dade26cf4cf9cc95c441fe0b6c",
+    "policies/t800/walking.mnn": "cbcb90f86dbb2fde39bdc5a25c8d0530d5c79c7a8f84b1f90863d8c9065b6427",
+    "requirements.txt": "885889516e254ca226f8ab20e996ed4b20f74b0282353bad14234a330613fad4",
+    "run_demo.sh": "b704be13025e28c005ce31701543611d9feb35ae2f89ada1b3aa114b6d015c1e",
+    "scripts/batch.py": "24af935a645976f9c47d0bead1cc340048db067216678bd732d00eea6ea55d7f",
+    "src/humanoid007/__init__.py": "21ce0db8737ddf803232f2a1ea1e6ab918a38425bb9d6d6fd296ebe641e3279b",
+    "src/humanoid007/app.py": "0dec69f2848505dd9317549dfadb6cdc05f3e480be5e4e6cba5fb149bbe5eec8",
+    "src/humanoid007/camera.py": "53a925651e76b5942e4a296b9474ae0a114afdf2a2b1836f4d767552171193a2",
+    "src/humanoid007/diagnostics.py": "4770a3ba2183af5b60b024db57432cb0a6003f4fba2d328a62d84dd7f49ac12d",
+    "src/humanoid007/policy.py": "27f262b0dcf61245b1988988543f1afcc180a9ec45611c008f1365a003669a4d",
+    "src/humanoid007/runtime.py": "b48be5d3519a4ec74dfc54a523160690618b5579414a933cb34a4fec19c39488",
+    "src/humanoid007/stance.py": "00dfcaa0d6078d5722b5900f220d5b5437ad358cad326757a11d369ceddb18f1",
+    "src/humanoid007/tactile.py": "5a5c05f4502c2ceca915ddbb010be1eeb717f525d45ece12d8c09705a657aefc",
+    "src/humanoid007/task.py": "7a4b37675c5700db77646e6072fa49de1298e267f1bf0152cccc78dcda7930ad",
+    "src/humanoid007/vision.py": "2510f003d1f38be2b7aacdf1a8ca587e77c77100fd73bae7c9bbccf8cd050cee"
+  },
+  "results": [
+    {
+      "case": {
+        "id": "01-regression",
+        "group": "regression",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 68.50311761900002,
+      "log": "01-regression.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114139776520Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.263234363740207,
+          -0.00671047436616923,
+          0.8499638291537566
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.03390506451012007,
+        "height_error": 3.6170846243410715e-05,
+        "speed": 5.3120752622963977e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010760517912551258,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 58.90000000002602,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "02-regression",
+        "group": "regression",
+        "box": [
+          0.02,
+          0.01
+        ],
+        "target": [
+          0.05,
+          0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 68.37729712500004,
+      "log": "02-regression.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114139868002Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.260810888277955,
+          0.040336395584776495,
+          0.8499562653595335
+        ],
+        "target": [
+          1.28,
+          0.03,
+          0.85
+        ],
+        "xy_error": 0.021795941878389073,
+        "height_error": 4.373464046647513e-05,
+        "speed": 5.7967994041573196e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010590617433068764,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 62.60000000003054,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "03-regression",
+        "group": "regression",
+        "box": [
+          -0.02,
+          -0.01
+        ],
+        "target": [
+          -0.05,
+          -0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 74.3518926050001,
+      "log": "03-regression.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114139776928Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2007394051574478,
+          -0.04022624558199712,
+          0.8499625921978993
+        ],
+        "target": [
+          1.18,
+          -0.03,
+          0.85
+        ],
+        "xy_error": 0.023123559954905108,
+        "height_error": 3.740780210070849e-05,
+        "speed": 1.4560279559174805e-07,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011105550547508747,
+        "visual_age": 0.001999999999995339
+      },
+      "last_event": {
+        "time": 67.25000000002467,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "04-box-grid",
+        "group": "box-grid",
+        "box": [
+          -0.02,
+          -0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 70.64427859899979,
+      "log": "04-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114139852067Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2686686711791497,
+          -0.0189626942142817,
+          0.8499642193245764
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.04306796840606204,
+        "height_error": 3.578067542353569e-05,
+        "speed": 3.6645274641971455e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011532644452558053,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 63.700000000031885,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "05-box-grid",
+        "group": "box-grid",
+        "box": [
+          -0.02,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 73.44139948899965,
+      "log": "05-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114248210811Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2289382976565584,
+          -0.005541472949019046,
+          0.8499563474208717
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.005642263225938617,
+        "height_error": 4.3652579128306e-05,
+        "speed": 3.107764672909227e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011538541942669005,
+        "visual_age": 0.01799999999995805
+      },
+      "last_event": {
+        "time": 65.6500000000284,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "06-box-grid",
+        "group": "box-grid",
+        "box": [
+          -0.02,
+          0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 69.28686564600002,
+      "log": "06-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114248377276Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2290571990682098,
+          -0.01824850471154255,
+          0.8499560215860044
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.01827284317790133,
+        "height_error": 4.397841399561564e-05,
+        "speed": 1.0234372419601159e-07,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011423909102274536,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 61.20000000002883,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "07-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.0,
+          -0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 67.19778812100003,
+      "log": "07-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114250471085Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2225052093876818,
+          -0.008870619300639407,
+          0.8499562957048185
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.011612914065787662,
+        "height_error": 4.3704295181523634e-05,
+        "speed": 4.974775581576534e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011557917888448534,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 58.250000000025224,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "08-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 68.84041249300026,
+      "log": "08-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114254140399Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.263234363740207,
+          -0.00671047436616923,
+          0.8499638291537566
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.03390506451012007,
+        "height_error": 3.6170846243410715e-05,
+        "speed": 5.3120752622963977e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010760517912551258,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 58.90000000002602,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "09-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.0,
+          0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 62.87091250799995,
+      "log": "09-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114357610331Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2485344304136194,
+          -0.0017968675001305448,
+          0.8499563770399257
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.018621327653267034,
+        "height_error": 4.362296007431876e-05,
+        "speed": 1.0077158684690057e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011444856423711873,
+        "visual_age": 0.13400000000016377
+      },
+      "last_event": {
+        "time": 56.3500000000229,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "10-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.02,
+          -0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 70.22507126600021,
+      "log": "10-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114357721589Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2429163580288953,
+          -0.0013334839797889781,
+          0.8499563786034399
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.012985009982859588,
+        "height_error": 4.362139656011177e-05,
+        "speed": 7.478420984673332e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011851925270415118,
+        "visual_age": 0.023999999999944066
+      },
+      "last_event": {
+        "time": 65.0500000000298,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 1,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "11-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.02,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 66.70010574600019,
+      "log": "11-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114401662136Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2296841539260894,
+          -0.0042782362623007796,
+          0.8499563607914531
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.004289879282505518,
+        "height_error": 4.363920854688619e-05,
+        "speed": 2.3993099847309232e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0012679550660902165,
+        "visual_age": 0.13400000000016377
+      },
+      "last_event": {
+        "time": 60.35000000002779,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 7,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": false,
+        "pairs": {
+          "destination_table / LINK_HIP_YAW_L": {
+            "peak_normal_force_n": 831.417686129111,
+            "contact_seconds": 3.227999999999866,
+            "normal_impulse_ns": 429.3403036240998,
+            "first_time": 32.97799999999434,
+            "phases": [
+              "CARRY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "12-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.02,
+          0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 1,
+      "wall_seconds": 69.41331554699991,
+      "log": "12-box-grid.log",
+      "status": "FAILED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114403009511Z/report.json",
+      "reason": "PHASE_TIMEOUT_STOP",
+      "evaluation": {
+        "payload": [
+          1.257527763626914,
+          -0.032199624163532975,
+          0.969326992367841
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.042362643526720874,
+        "height_error": 0.11932699236784106,
+        "speed": 0.1069390597499055,
+        "touch": {
+          "left": 1.5646132021192958,
+          "right": 2.3728911231531473,
+          "source": false,
+          "destination": false
+        },
+        "visual_position_error": 0.03352001956833703,
+        "visual_age": 24.034000000029373
+      },
+      "last_event": {
+        "time": 63.45000000003158,
+        "phase": "FAILED"
+      },
+      "last_working_phase": "STOP",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 1,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": false,
+        "pairs": {
+          "destination_table / LINK_HIP_YAW_L": {
+            "peak_normal_force_n": 325.71271491970754,
+            "contact_seconds": 0.03600000000000002,
+            "normal_impulse_ns": 5.503470866062451,
+            "first_time": 36.33199999999844,
+            "phases": [
+              "CARRY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "13-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          -0.05,
+          -0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 75.74495575900028,
+      "log": "13-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114500533688Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.1931330189822127,
+          -0.031159527505310227,
+          0.8499563790708877
+        ],
+        "target": [
+          1.18,
+          -0.03,
+          0.85
+        ],
+        "xy_error": 0.013184107539865238,
+        "height_error": 4.362092911225357e-05,
+        "speed": 6.502839507886919e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010997289162566102,
+        "visual_age": 0.11999999999972033
+      },
+      "last_event": {
+        "time": 65.55000000002863,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "14-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          -0.05,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 1,
+      "wall_seconds": 71.0054658250001,
+      "log": "14-target-grid.log",
+      "status": "FAILED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114507890721Z/report.json",
+      "reason": "PHASE_TIMEOUT_STOP",
+      "evaluation": {
+        "payload": [
+          1.1722034077183046,
+          0.06115550828372623,
+          0.9732259762081076
+        ],
+        "target": [
+          1.18,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.06165049103330726,
+        "height_error": 0.1232259762081076,
+        "speed": 0.30341215875806343,
+        "touch": {
+          "left": 1.9228152942608727,
+          "right": 2.6394573786506053,
+          "source": false,
+          "destination": false
+        },
+        "visual_position_error": 0.030602660881565855,
+        "visual_age": 24.084000000029434
+      },
+      "last_event": {
+        "time": 60.500000000027974,
+        "phase": "FAILED"
+      },
+      "last_working_phase": "STOP",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "15-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          -0.05,
+          0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 69.86218700900008,
+      "log": "15-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114508367929Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.1832405077729402,
+          0.015952242945620837,
+          0.8499561678152654
+        ],
+        "target": [
+          1.18,
+          0.03,
+          0.85
+        ],
+        "xy_error": 0.014416669826466368,
+        "height_error": 4.383218473458239e-05,
+        "speed": 7.878111529686118e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001093634479672797,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 60.40000000002785,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "16-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          -0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 68.79623076100006,
+      "log": "16-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114512454559Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2564107129858038,
+          -0.03410391675418363,
+          0.8499627081550977
+        ],
+        "target": [
+          1.23,
+          -0.03,
+          0.85
+        ],
+        "xy_error": 0.026727661572681086,
+        "height_error": 3.7291844902309634e-05,
+        "speed": 1.2936149603764298e-07,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010964280397074166,
+        "visual_age": 0.13400000000016377
+      },
+      "last_event": {
+        "time": 59.150000000026324,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "17-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 68.71060571399994,
+      "log": "17-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114616259667Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.263234363740207,
+          -0.00671047436616923,
+          0.8499638291537566
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.03390506451012007,
+        "height_error": 3.6170846243410715e-05,
+        "speed": 5.3120752622963977e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010760517912551258,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 58.90000000002602,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "18-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 67.37820701999999,
+      "log": "18-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114618209695Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2787468085403413,
+          0.03325632918648009,
+          0.8499639156243353
+        ],
+        "target": [
+          1.23,
+          0.03,
+          0.85
+        ],
+        "xy_error": 0.048855450285913996,
+        "height_error": 3.608437566471334e-05,
+        "speed": 1.1697336834586729e-07,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010569401891464098,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 58.300000000025285,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "19-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.05,
+          -0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 69.27819896900019,
+      "log": "19-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114618904870Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.3016606611520214,
+          -0.02805883309980426,
+          0.8499563764585244
+        ],
+        "target": [
+          1.28,
+          -0.03,
+          0.85
+        ],
+        "xy_error": 0.02174746813946633,
+        "height_error": 4.362354147557923e-05,
+        "speed": 1.0886416519011333e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001126215618237458,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 59.650000000026935,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "20-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.05,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 67.85901517899993,
+      "log": "20-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114621254127Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2658308676246237,
+          -0.01221247608599128,
+          0.8499562197623244
+        ],
+        "target": [
+          1.28,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.018705851609104734,
+        "height_error": 4.378023767559469e-05,
+        "speed": 6.848890771920591e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010846568436978644,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 58.45000000002547,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "21-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.05,
+          0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 66.64382133000026,
+      "log": "21-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114725005155Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2888210281435226,
+          0.047630053420270886,
+          0.8499560455022612
+        ],
+        "target": [
+          1.28,
+          0.03,
+          0.85
+        ],
+        "xy_error": 0.01971368360074856,
+        "height_error": 4.395449773875182e-05,
+        "speed": 9.887203014832607e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010888516912722897,
+        "visual_age": 0.13400000000016377
+      },
+      "last_event": {
+        "time": 58.35000000002535,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "22-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.00705,
+          -0.00698
+        ],
+        "target": [
+          0.01509,
+          -0.02565
+        ],
+        "yaw": 0.359
+      },
+      "returncode": 0,
+      "wall_seconds": 61.55349786099987,
+      "log": "22-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114725637695Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2621977419570145,
+          -0.05032483399046935,
+          0.8499557242810775
+        ],
+        "target": [
+          1.24509,
+          -0.02565,
+          0.85
+        ],
+        "xy_error": 0.03002536040291632,
+        "height_error": 4.427571892251514e-05,
+        "speed": 1.3838025447155096e-07,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011077910965826806,
+        "visual_age": 0.13400000000016377
+      },
+      "last_event": {
+        "time": 54.95000000002119,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "23-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.00537,
+          -0.00884
+        ],
+        "target": [
+          0.00074,
+          -0.02775
+        ],
+        "yaw": -0.664
+      },
+      "returncode": 0,
+      "wall_seconds": 64.21835697000006,
+      "log": "23-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114728177859Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2526875154753734,
+          -0.03142394114666383,
+          0.8499623993185511
+        ],
+        "target": [
+          1.23074,
+          -0.02775,
+          0.85
+        ],
+        "xy_error": 0.022252893723983543,
+        "height_error": 3.76006814488683e-05,
+        "speed": 1.4211318007916827e-07,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.00111027683571362,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 57.05000000002376,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "24-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.01721,
+          -0.00819
+        ],
+        "target": [
+          -0.00755,
+          0.01961
+        ],
+        "yaw": -3.762
+      },
+      "returncode": 0,
+      "wall_seconds": 69.04065485399997,
+      "log": "24-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114729121035Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.226145300306689,
+          0.024935822097429814,
+          0.8499563499469075
+        ],
+        "target": [
+          1.22245,
+          0.01961,
+          0.85
+        ],
+        "xy_error": 0.006482254651746293,
+        "height_error": 4.3650053092481045e-05,
+        "speed": 2.986834890690861e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010518442489169844,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 61.65000000002938,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "25-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.01107,
+          0.00255
+        ],
+        "target": [
+          0.04477,
+          0.00463
+        ],
+        "yaw": -1.033
+      },
+      "returncode": 0,
+      "wall_seconds": 71.62636500400004,
+      "log": "25-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114827203465Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.261182920755748,
+          -0.002410588690401098,
+          0.849956327090134
+        ],
+        "target": [
+          1.27477,
+          0.00463,
+          0.85
+        ],
+        "xy_error": 0.01530289552656585,
+        "height_error": 4.3672909865954956e-05,
+        "speed": 3.948495431855227e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0012634361813218843,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 63.250000000031335,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "26-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          0.01905,
+          -0.00907
+        ],
+        "target": [
+          0.03585,
+          -0.01262
+        ],
+        "yaw": -3.557
+      },
+      "returncode": 0,
+      "wall_seconds": 83.17129289100012,
+      "log": "26-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114831621539Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2734270625283368,
+          -0.016623345730946145,
+          0.8499563632452594
+        ],
+        "target": [
+          1.26585,
+          -0.01262,
+          0.85
+        ],
+        "xy_error": 0.00856963555816768,
+        "height_error": 4.36367547406169e-05,
+        "speed": 2.2451537829023537e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010460873330432165,
+        "visual_age": 0.09999999999976694
+      },
+      "last_event": {
+        "time": 72.6000000000122,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 1,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "27-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.01529,
+          -0.00383
+        ],
+        "target": [
+          0.03161,
+          -0.01916
+        ],
+        "yaw": 0.816
+      },
+      "returncode": 0,
+      "wall_seconds": 69.29741239300029,
+      "log": "27-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114832414879Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.295715892488044,
+          -0.02234656237203739,
+          0.8499639149909622
+        ],
+        "target": [
+          1.26161,
+          -0.01916,
+          0.85
+        ],
+        "xy_error": 0.03425443156960736,
+        "height_error": 3.608500903773404e-05,
+        "speed": 2.9303151423225183e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010994593060592724,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 60.90000000002846,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "28-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          0.00556,
+          -0.00255
+        ],
+        "target": [
+          0.00477,
+          -0.02623
+        ],
+        "yaw": -4.404
+      },
+      "returncode": 0,
+      "wall_seconds": 65.85287698000002,
+      "log": "28-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114838130332Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.247532338111251,
+          -0.05120555901657946,
+          0.8499606634353102
+        ],
+        "target": [
+          1.23477,
+          -0.02623,
+          0.85
+        ],
+        "xy_error": 0.028047385301602307,
+        "height_error": 3.933656468979585e-05,
+        "speed": 2.3017994340515644e-07,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001081206451994318,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 60.45000000002791,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": false,
+        "pairs": {
+          "destination_table / LINK_HIP_YAW_L": {
+            "peak_normal_force_n": 612.4125182395259,
+            "contact_seconds": 0.02600000000000001,
+            "normal_impulse_ns": 6.67110385960402,
+            "first_time": 34.54799999999626,
+            "phases": [
+              "CARRY"
+            ]
+          },
+          "destination_table / lh_rf_distal": {
+            "peak_normal_force_n": 1.090080035768321,
+            "contact_seconds": 0.054000000000000034,
+            "normal_impulse_ns": 0.03866207224659954,
+            "first_time": 50.412000000015645,
+            "phases": [
+              "RELEASE"
+            ]
+          },
+          "destination_table / lh_rf_tip": {
+            "peak_normal_force_n": 0.46290407731560135,
+            "contact_seconds": 0.1320000000000001,
+            "normal_impulse_ns": 0.018692065553967952,
+            "first_time": 50.558000000015824,
+            "phases": [
+              "RELEASE"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "29-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.01176,
+          0.00361
+        ],
+        "target": [
+          -0.00724,
+          -0.01115
+        ],
+        "yaw": 0.856
+      },
+      "returncode": 0,
+      "wall_seconds": 59.75633833399979,
+      "log": "29-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114938835667Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2363527694354322,
+          -0.011630217036162703,
+          0.8499563802715269
+        ],
+        "target": [
+          1.22276,
+          -0.01115,
+          0.85
+        ],
+        "xy_error": 0.01360124955019345,
+        "height_error": 4.361972847310991e-05,
+        "speed": 2.6931449168606015e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011799603114062422,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 60.70000000002822,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "30-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.00187,
+          -0.004
+        ],
+        "target": [
+          0.02944,
+          0.01194
+        ],
+        "yaw": -2.559
+      },
+      "returncode": 0,
+      "wall_seconds": 61.899695456000245,
+      "log": "30-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T114941737559Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.309593010622736,
+          0.010166576530225927,
+          0.8499644868383421
+        ],
+        "target": [
+          1.25944,
+          0.01194,
+          0.85
+        ],
+        "xy_error": 0.05018435518493218,
+        "height_error": 3.55131616578408e-05,
+        "speed": 8.399751818929261e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001045433256576151,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 63.650000000031824,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 1,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": false,
+        "pairs": {
+          "destination_table / LINK_HIP_YAW_L": {
+            "peak_normal_force_n": 169.96968300097515,
+            "contact_seconds": 0.11600000000000009,
+            "normal_impulse_ns": 3.957026245119693,
+            "first_time": 51.34000000001678,
+            "phases": [
+              "LOWER",
+              "RETRACT",
+              "VERIFY"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "counts": {
+    "COMPLETED": 28,
+    "FAILED": 2
+  },
+  "groups": {
+    "box-grid": {
+      "COMPLETED": 8,
+      "FAILED": 1
+    },
+    "combined-yaw": {
+      "COMPLETED": 9
+    },
+    "regression": {
+      "COMPLETED": 3
+    },
+    "target-grid": {
+      "COMPLETED": 8,
+      "FAILED": 1
+    }
+  },
+  "failure_phases": {
+    "STOP": 2
+  },
+  "station_contact_cases": 2,
+  "force_contact_cases": 4,
+  "inputs_unchanged": true
+}

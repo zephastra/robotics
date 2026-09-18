@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "humanoid008"
+version = "0.0.1"
+description = "008 - language-instruction-driven humanoid task execution, feedback replanning and execution supervision (offline core)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+
+dependencies = [
+  "PyYAML==6.0.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.4.2",
+]
+sim = [
+  "mujoco==3.3.6",
+  "numpy==2.2.6",
+  "MNN==3.6.1",
+  "patchelf==0.19.1.0",
+  "pillow==11.3.0",
+]
+
+[project.scripts]
+h008 = "humanoid008.app:cli"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -m 'not slow'"
+markers = [
+  "slow: long-running physics tests (opt-in with -m slow)",
+]

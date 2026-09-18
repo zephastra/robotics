@@ -1,0 +1,4 @@
+{
+  "source_table_center": [0.23, 0.0, 0.803],
+  "note": "Known fixed source fixture map. Destination fixture translation comes from visual marker pose; fixture dimensions and orientation are known. Not an obstacle perception system."
+}

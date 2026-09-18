@@ -1,0 +1,5 @@
+# 008 core profile - locked.
+# Pure Python plus PyYAML/pytest. No MuJoCo, no MNN, no downloaded assets,
+# so this profile can be installed and tested offline.
+PyYAML==6.0.2
+pytest==8.4.2

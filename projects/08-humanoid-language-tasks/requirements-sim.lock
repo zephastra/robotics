@@ -1,0 +1,11 @@
+# 008 simulation profile - locked to the currently working combination.
+# This is NOT "latest recommended". Do not upgrade without re-validating the
+# physics baseline. Core dependencies are repeated here on purpose instead of
+# using "-r" so installation does not depend on the working directory.
+PyYAML==6.0.2
+pytest==8.4.2
+mujoco==3.3.6
+numpy==2.2.6
+MNN==3.6.1
+patchelf==0.19.1.0
+pillow==11.3.0

@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.0",
+  "task_kind": "skill_split",
+  "seed": 7,
+  "duration": 120.0,
+  "tally": {
+    "SUCCEEDED": 21,
+    "FAILED": 9
+  },
+  "results": [
+    {
+      "id": "01-regression",
+      "group": "regression",
+      "verdict": "SUCCEEDED",
+      "wall_s": 37.9,
+      "report_dir": "20260913T140022729535Z"
+    },
+    {
+      "id": "02-regression",
+      "group": "regression",
+      "verdict": "SUCCEEDED",
+      "wall_s": 47.0,
+      "report_dir": "20260913T140100563908Z"
+    },
+    {
+      "id": "03-regression",
+      "group": "regression",
+      "verdict": "FAILED",
+      "wall_s": 48.9,
+      "report_dir": "20260913T140147544893Z"
+    },
+    {
+      "id": "04-box-grid",
+      "group": "box-grid",
+      "verdict": "FAILED",
+      "wall_s": 53.5,
+      "report_dir": "20260913T140236413714Z"
+    },
+    {
+      "id": "05-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 45.6,
+      "report_dir": "20260913T140329888560Z"
+    },
+    {
+      "id": "06-box-grid",
+      "group": "box-grid",
+      "verdict": "FAILED",
+      "wall_s": 44.7,
+      "report_dir": "20260913T140415491576Z"
+    },
+    {
+      "id": "07-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 40.2,
+      "report_dir": "20260913T140500158668Z"
+    },
+    {
+      "id": "08-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 37.1,
+      "report_dir": "20260913T140540343319Z"
+    },
+    {
+      "id": "09-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 38.5,
+      "report_dir": "20260913T140617407624Z"
+    },
+    {
+      "id": "10-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 39.8,
+      "report_dir": "20260913T140655939733Z"
+    },
+    {
+      "id": "11-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 50.0,
+      "report_dir": "20260913T140735766992Z"
+    },
+    {
+      "id": "12-box-grid",
+      "group": "box-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 47.8,
+      "report_dir": "20260913T140825773933Z"
+    },
+    {
+      "id": "13-target-grid",
+      "group": "target-grid",
+      "verdict": "FAILED",
+      "wall_s": 43.9,
+      "report_dir": "20260913T140913558114Z"
+    },
+    {
+      "id": "14-target-grid",
+      "group": "target-grid",
+      "verdict": "FAILED",
+      "wall_s": 43.0,
+      "report_dir": "20260913T140957477581Z"
+    },
+    {
+      "id": "15-target-grid",
+      "group": "target-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 35.8,
+      "report_dir": "20260913T141040475172Z"
+    },
+    {
+      "id": "16-target-grid",
+      "group": "target-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 38.8,
+      "report_dir": "20260913T141116306462Z"
+    },
+    {
+      "id": "17-target-grid",
+      "group": "target-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 37.2,
+      "report_dir": "20260913T141155092285Z"
+    },
+    {
+      "id": "18-target-grid",
+      "group": "target-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 44.3,
+      "report_dir": "20260913T141232299537Z"
+    },
+    {
+      "id": "19-target-grid",
+      "group": "target-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 40.9,
+      "report_dir": "20260913T141316580933Z"
+    },
+    {
+      "id": "20-target-grid",
+      "group": "target-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 40.6,
+      "report_dir": "20260913T141357490232Z"
+    },
+    {
+      "id": "21-target-grid",
+      "group": "target-grid",
+      "verdict": "SUCCEEDED",
+      "wall_s": 41.7,
+      "report_dir": "20260913T141438132326Z"
+    },
+    {
+      "id": "22-combined-yaw",
+      "group": "combined-yaw",
+      "verdict": "SUCCEEDED",
+      "wall_s": 37.8,
+      "report_dir": "20260913T141519812637Z"
+    },
+    {
+      "id": "23-combined-yaw",
+      "group": "combined-yaw",
+      "verdict": "SUCCEEDED",
+      "wall_s": 39.0,
+      "report_dir": "20260913T141557609820Z"
+    },
+    {
+      "id": "24-combined-yaw",
+      "group": "combined-yaw",
+      "verdict": "FAILED",
+      "wall_s": 69.3,
+      "report_dir": "20260913T141636574118Z"
+    },
+    {
+      "id": "25-combined-yaw",
+      "group": "combined-yaw",
+      "verdict": "SUCCEEDED",
+      "wall_s": 38.7,
+      "report_dir": "20260913T141745881202Z"
+    },
+    {
+      "id": "26-combined-yaw",
+      "group": "combined-yaw",
+      "verdict": "FAILED",
+      "wall_s": 59.5,
+      "report_dir": "20260913T141824576342Z"
+    },
+    {
+      "id": "27-combined-yaw",
+      "group": "combined-yaw",
+      "verdict": "FAILED",
+      "wall_s": 43.7,
+      "report_dir": "20260913T141924116764Z"
+    },
+    {
+      "id": "28-combined-yaw",
+      "group": "combined-yaw",
+      "verdict": "SUCCEEDED",
+      "wall_s": 42.0,
+      "report_dir": "20260913T142007822419Z"
+    },
+    {
+      "id": "29-combined-yaw",
+      "group": "combined-yaw",
+      "verdict": "FAILED",
+      "wall_s": 43.8,
+      "report_dir": "20260913T142049814002Z"
+    },
+    {
+      "id": "30-combined-yaw",
+      "group": "combined-yaw",
+      "verdict": "SUCCEEDED",
+      "wall_s": 39.1,
+      "report_dir": "20260913T142133547284Z"
+    }
+  ],
+  "finished_utc": "2026-09-13T14:22:12.457245+00:00"
+}

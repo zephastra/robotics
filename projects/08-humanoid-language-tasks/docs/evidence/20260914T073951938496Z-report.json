@@ -1,0 +1,513 @@
+{
+  "schema_version": "1.0",
+  "execution_backend": "mujoco",
+  "task_kind": "skill_split",
+  "planner_backend": "rule",
+  "clock_mode": "realtime",
+  "status": "FAILED",
+  "reason_code": "PLACEMENT_OUT_OF_TOLERANCE",
+  "skills": [
+    "OBSERVE_OBJECT",
+    "OBSERVE_TARGET",
+    "APPROACH_OBJECT",
+    "GRASP_OBJECT",
+    "LIFT_OBJECT",
+    "CARRY_TO_TARGET",
+    "PLACE_OBJECT"
+  ],
+  "skill_results": [
+    {
+      "schema_version": "1.0",
+      "skill_run_id": "9cee19a8f81f",
+      "task_id": "task-20260914T073951938496Z",
+      "skill": "OBSERVE_OBJECT",
+      "status": "SUCCEEDED",
+      "reason_code": "OK",
+      "started_at_s": 0.0,
+      "finished_at_s": 8.4,
+      "world_delta": {}
+    },
+    {
+      "schema_version": "1.0",
+      "skill_run_id": "e8745de0214c",
+      "task_id": "task-20260914T073951938496Z",
+      "skill": "OBSERVE_TARGET",
+      "status": "SUCCEEDED",
+      "reason_code": "OK",
+      "started_at_s": 8.4,
+      "finished_at_s": 9.0,
+      "world_delta": {}
+    },
+    {
+      "schema_version": "1.0",
+      "skill_run_id": "8454156e9fbc",
+      "task_id": "task-20260914T073951938496Z",
+      "skill": "APPROACH_OBJECT",
+      "status": "SUCCEEDED",
+      "reason_code": "OK",
+      "started_at_s": 9.0,
+      "finished_at_s": 9.85,
+      "world_delta": {}
+    },
+    {
+      "schema_version": "1.0",
+      "skill_run_id": "5b890061f023",
+      "task_id": "task-20260914T073951938496Z",
+      "skill": "GRASP_OBJECT",
+      "status": "SUCCEEDED",
+      "reason_code": "OK",
+      "started_at_s": 9.85,
+      "finished_at_s": 16.75,
+      "world_delta": {}
+    },
+    {
+      "schema_version": "1.0",
+      "skill_run_id": "7130aa7d3c3e",
+      "task_id": "task-20260914T073951938496Z",
+      "skill": "LIFT_OBJECT",
+      "status": "SUCCEEDED",
+      "reason_code": "OK",
+      "started_at_s": 16.75,
+      "finished_at_s": 22.85,
+      "world_delta": {}
+    },
+    {
+      "schema_version": "1.0",
+      "skill_run_id": "34ad50957d66",
+      "task_id": "task-20260914T073951938496Z",
+      "skill": "CARRY_TO_TARGET",
+      "status": "SUCCEEDED",
+      "reason_code": "OK",
+      "started_at_s": 22.85,
+      "finished_at_s": 37.25,
+      "world_delta": {}
+    },
+    {
+      "schema_version": "1.0",
+      "skill_run_id": "01cffefc2bb3",
+      "task_id": "task-20260914T073951938496Z",
+      "skill": "PLACE_OBJECT",
+      "status": "FAILED",
+      "reason_code": "PLACEMENT_OUT_OF_TOLERANCE",
+      "started_at_s": 37.25,
+      "finished_at_s": 61.65,
+      "world_delta": {
+        "place_failures": [
+          {
+            "t": 40.75000000000384,
+            "box_offset": 0.0485,
+            "arm_error": 0.0006,
+            "body_clearance": 0.0007254002456152196,
+            "perr": 0.1925,
+            "aim_xy": [
+              1.1961,
+              -0.5006
+            ],
+            "achieved_xy": [
+              1.3871,
+              -0.4765
+            ],
+            "err_xy": [
+              0.191,
+              0.0241
+            ],
+            "yaw_deg": -7.684,
+            "pelvis_xyz": [
+              1.3871,
+              -0.4765,
+              1.0156
+            ],
+            "feet_xyz": {
+              "left": [
+                1.4157,
+                -0.3345,
+                0.0637
+              ],
+              "right": [
+                1.3692,
+                -0.625,
+                0.0637
+              ]
+            },
+            "foot_mid_xy": [
+              1.3924,
+              -0.4798
+            ],
+            "foot_to_target": 0.2054,
+            "target_xy": [
+              1.5967,
+              -0.5008
+            ],
+            "fail_reason": "CLEARANCE",
+            "retries": 1
+          },
+          {
+            "t": 51.40000000001685,
+            "box_offset": 0.0382,
+            "arm_error": 0.0003,
+            "body_clearance": 0.002933312824471126,
+            "perr": 0.1028,
+            "aim_xy": [
+              1.2767,
+              -0.5008
+            ],
+            "achieved_xy": [
+              1.3762,
+              -0.4748
+            ],
+            "err_xy": [
+              0.0995,
+              0.026
+            ],
+            "yaw_deg": -6.883,
+            "pelvis_xyz": [
+              1.3762,
+              -0.4748,
+              1.0154
+            ],
+            "feet_xyz": {
+              "left": [
+                1.4178,
+                -0.3387,
+                0.0637
+              ],
+              "right": [
+                1.368,
+                -0.6238,
+                0.0637
+              ]
+            },
+            "foot_mid_xy": [
+              1.3929,
+              -0.4813
+            ],
+            "foot_to_target": 0.2088,
+            "target_xy": [
+              1.6009,
+              -0.5002
+            ],
+            "fail_reason": "CLEARANCE",
+            "retries": 2
+          },
+          {
+            "t": 61.65000000002938,
+            "box_offset": 0.0344,
+            "arm_error": 0.0002,
+            "body_clearance": 0.008975409687398085,
+            "perr": 0.0984,
+            "aim_xy": [
+              1.2809,
+              -0.5002
+            ],
+            "achieved_xy": [
+              1.3757,
+              -0.4739
+            ],
+            "err_xy": [
+              0.0948,
+              0.0262
+            ],
+            "yaw_deg": -6.419,
+            "pelvis_xyz": [
+              1.3757,
+              -0.4739,
+              1.0154
+            ],
+            "feet_xyz": {
+              "left": [
+                1.4185,
+                -0.3408,
+                0.0637
+              ],
+              "right": [
+                1.3671,
+                -0.6226,
+                0.0637
+              ]
+            },
+            "foot_mid_xy": [
+              1.3928,
+              -0.4817
+            ],
+            "foot_to_target": 0.2073,
+            "target_xy": [
+              1.5992,
+              -0.5003
+            ],
+            "fail_reason": "CLEARANCE",
+            "retries": 3
+          }
+        ],
+        "stance_operation": "place",
+        "stance_geometry_source": "known source map + visually located destination fixture",
+        "stance_candidates": [
+          {
+            "xy": [
+              1.3762,
+              -0.4748
+            ],
+            "feasible": false,
+            "reason": "FIXTURE_CLEARANCE",
+            "body_clearance": 0.00293,
+            "error": null
+          },
+          {
+            "xy": [
+              1.3609,
+              -0.5002
+            ],
+            "feasible": false,
+            "reason": "FIXTURE_CLEARANCE",
+            "body_clearance": 0.01808,
+            "error": null
+          },
+          {
+            "xy": [
+              1.3609,
+              -0.5402
+            ],
+            "feasible": false,
+            "reason": "FIXTURE_CLEARANCE",
+            "body_clearance": 0.01808,
+            "error": null
+          },
+          {
+            "xy": [
+              1.3609,
+              -0.4602
+            ],
+            "feasible": false,
+            "reason": "FIXTURE_CLEARANCE",
+            "body_clearance": 0.01909,
+            "error": null
+          },
+          {
+            "xy": [
+              1.3209,
+              -0.5002
+            ],
+            "feasible": true,
+            "reason": null,
+            "body_clearance": 0.03891,
+            "error": 0.00097
+          },
+          {
+            "xy": [
+              1.3209,
+              -0.5402
+            ],
+            "feasible": true,
+            "reason": null,
+            "body_clearance": 0.03891,
+            "error": 0.001
+          },
+          {
+            "xy": [
+              1.3209,
+              -0.4602
+            ],
+            "feasible": true,
+            "reason": null,
+            "body_clearance": 0.03891,
+            "error": 0.00089
+          },
+          {
+            "xy": [
+              1.2809,
+              -0.5002
+            ],
+            "feasible": true,
+            "reason": null,
+            "body_clearance": 0.07891,
+            "error": 0.00036
+          },
+          {
+            "xy": [
+              1.2809,
+              -0.5402
+            ],
+            "feasible": true,
+            "reason": null,
+            "body_clearance": 0.07891,
+            "error": 0.00047
+          },
+          {
+            "xy": [
+              1.2809,
+              -0.4602
+            ],
+            "feasible": true,
+            "reason": null,
+            "body_clearance": 0.07338,
+            "error": 0.00045
+          },
+          {
+            "xy": [
+              1.2409,
+              -0.5002
+            ],
+            "feasible": true,
+            "reason": null,
+            "body_clearance": 0.11338,
+            "error": 0.00876
+          },
+          {
+            "xy": [
+              1.2409,
+              -0.5402
+            ],
+            "feasible": false,
+            "reason": "BILATERAL_REACH",
+            "body_clearance": null,
+            "error": 0.01535
+          },
+          {
+            "xy": [
+              1.2409,
+              -0.4602
+            ],
+            "feasible": true,
+            "reason": null,
+            "body_clearance": 0.07338,
+            "error": 0.00633
+          },
+          {
+            "xy": [
+              1.2009,
+              -0.5002
+            ],
+            "feasible": false,
+            "reason": "BILATERAL_REACH",
+            "body_clearance": null,
+            "error": 0.03225
+          },
+          {
+            "xy": [
+              1.2009,
+              -0.5402
+            ],
+            "feasible": false,
+            "reason": "BILATERAL_REACH",
+            "body_clearance": null,
+            "error": 0.03862
+          },
+          {
+            "xy": [
+              1.2009,
+              -0.4602
+            ],
+            "feasible": false,
+            "reason": "BILATERAL_REACH",
+            "body_clearance": null,
+            "error": 0.02913
+          },
+          {
+            "xy": [
+              1.1609,
+              -0.5002
+            ],
+            "feasible": false,
+            "reason": "BILATERAL_REACH",
+            "body_clearance": null,
+            "error": 0.05718
+          },
+          {
+            "xy": [
+              1.1609,
+              -0.5402
+            ],
+            "feasible": false,
+            "reason": "BILATERAL_REACH",
+            "body_clearance": null,
+            "error": 0.06334
+          },
+          {
+            "xy": [
+              1.1609,
+              -0.4602
+            ],
+            "feasible": false,
+            "reason": "BILATERAL_REACH",
+            "body_clearance": null,
+            "error": 0.05342
+          }
+        ],
+        "stance_feasible_count": 8,
+        "stance_candidate_count": 19,
+        "carry_arrivals": [
+          {
+            "t": 26.65,
+            "tolerance": 0.08,
+            "arrival_err": 0.0642,
+            "speed": 0.2333,
+            "retries": 0,
+            "goal_xy": [
+              -0.0451,
+              -0.65
+            ],
+            "actual_xy": [
+              0.0154,
+              -0.6285
+            ],
+            "recovery": false
+          },
+          {
+            "t": 31.15,
+            "tolerance": 0.08,
+            "arrival_err": 0.0143,
+            "speed": 0.4124,
+            "retries": 0,
+            "goal_xy": [
+              1.1961,
+              -0.65
+            ],
+            "actual_xy": [
+              1.187,
+              -0.661
+            ],
+            "recovery": false
+          },
+          {
+            "t": 33.55,
+            "tolerance": 0.08,
+            "arrival_err": 0.075,
+            "speed": 0.0498,
+            "retries": 0,
+            "goal_xy": [
+              1.1961,
+              -0.5006
+            ],
+            "actual_xy": [
+              1.265,
+              -0.5303
+            ],
+            "recovery": false
+          }
+        ]
+      }
+    }
+  ],
+  "args": {
+    "mode": "transport",
+    "headless": true,
+    "duration": 120.0,
+    "box_offset": [
+      0.0,
+      0.0
+    ],
+    "target_offset": [
+      0.0,
+      0.0
+    ],
+    "box_yaw": 0.0,
+    "stance": "auto",
+    "split": true,
+    "instruction": "把箱子搬到 C 台。",
+    "planner": "rule",
+    "replay_file": null,
+    "clock_mode": null
+  },
+  "physical_outcome": "NOT_APPLICABLE",
+  "evaluation": null,
+  "wall_seconds": 72.75935193599997
+}

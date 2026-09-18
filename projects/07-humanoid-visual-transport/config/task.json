@@ -1,0 +1,12 @@
+{
+  "known_box_halfheight": 0.04,
+  "destination_marker_offset_y": 0.75,
+  "handle_y": 0.30,
+  "marker_height_above_center": 0.041,
+  "lift_height": 0.12,
+  "camera_width": 320,
+  "camera_height": 240,
+  "vision_period": 0.20,
+  "max_detection_age": 0.8,
+  "phase_timeout": 25.0
+}

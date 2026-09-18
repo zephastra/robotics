@@ -1,0 +1,30 @@
+# 008 fake scene: two targets, primary occupied.
+#
+# The primary destination (station_b) is already OCCUPIED, so a transport goal
+# can only complete if the user authorised an alternative in their own words
+# (section 1.2). Without such authorisation the run must ask or refuse.
+#
+# Fake world: no physics, no renderer, no MuJoCo.
+
+schema_version: "1.0"
+scene_id: two_targets
+description: One box on a source station, primary destination occupied, one free alternative.
+
+entities:
+  box_01:
+    category: box
+    x: 1.20
+    y: 0.40
+    visible: true
+
+stations:
+  station_a:
+    occupied: false
+  station_b:
+    occupied: true
+  station_c:
+    occupied: false
+
+robot:
+  holding_object_id: null
+  hand_contact_n: 0.0

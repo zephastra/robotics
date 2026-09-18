@@ -20,6 +20,8 @@ robotics/
 - [04 人形机器人运动控制与行走验证](projects/04-humanoid-locomotion/README.md) — 独立 MuJoCo 仿真，支持 Unitree G1 / EngineAI T800 预训练步态、手动控制、定点行走与受控停止；本机验证，跨机器复现待验收。
 - [05 灵巧手动作与接触抓取实验台](projects/05-dexterous-hand/README.md) — 独立 Allegro 四指抓放与接触验证；两轴手腕夹具，不是完整人形机器人。
 - [06 人形机器人抓取、负载行走与放置](projects/06-humanoid-transport/README.md) — 独立 T800 与右侧灵巧手搬运仿真；已知位置、轻载球体和固定托盘，本机有限场景验证。
+- [07 主动视觉与人形机器人双手搬运](projects/07-humanoid-visual-transport/README.md) — **实验性快照**；头部 RGB-D、双手接触搬运、自动站位与诊断；当前完整物理回归尚未通过。
+- [08 语言指令与受约束的人形机器人技能执行](projects/08-humanoid-language-tasks/README.md) — **实验性快照**；规则/回放规划、技能监督与 MuJoCo 后端；B/C 搬运仍有失败，真实 LLM 未实测。
 - [ROS 2 Lyrical 非官方中文教程](docs/tutorials/ros2-lyrical/README.md)
 - [机器人学习资源导航](docs/resources/README.md)
 - [文档目录说明](docs/README.md)

@@ -1,0 +1,33 @@
+# 008 application configuration.
+# P1 scope only: paths, backend/planner selection and report layout.
+# Nothing here may weaken the safety/supervision rules in docs/MASTER_PLAN.md.
+
+schema_version: "1.0"
+
+app:
+  name: humanoid008
+  # Only this tree (relative to the project root, or an absolute path under an
+  # approved output root) may ever be written by a run.
+  report_root: reports
+
+backends:
+  default: fake            # fake | mujoco
+  available: [fake]        # mujoco is added in P4
+
+planners:
+  default: rule            # rule | replay | llm
+  available: [rule]        # replay / llm are added in P3
+
+clock:
+  default: fake_clock      # fake_clock | planning_pause | realtime
+
+budgets:
+  # Design defaults from docs/MASTER_PLAN.md section 13.
+  # These are NOT yet validated by implementation.
+  model_request_timeout_s: 15
+  output_repair_attempts: 1
+  model_calls_per_task: 20
+  replans_per_task: 3
+  retries_per_skill: 2
+  stance_realign_per_task: 2
+  clarification_wait_s: 120

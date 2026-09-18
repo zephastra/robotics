@@ -1,0 +1,416 @@
+{
+  "arguments": {
+    "seed": 7,
+    "workers": 4,
+    "wall_timeout": 300.0,
+    "duration": 180.0,
+    "list": false,
+    "case": [
+      "01-regression",
+      "11-box-grid",
+      "12-box-grid",
+      "14-target-grid"
+    ],
+    "stance": "auto"
+  },
+  "cases": [
+    {
+      "id": "01-regression",
+      "group": "regression",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "11-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.02,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "12-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.02,
+        0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "14-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        -0.05,
+        0.0
+      ],
+      "yaw": 0.0
+    }
+  ],
+  "fingerprint": {
+    "assets/allegro/CHANGELOG.md": "78268d42097269a81d5a84d7b4c45ce775c74454165288816cc8409a858935ac",
+    "assets/allegro/LICENSE": "09c187439ecece8b00330e71eb988d3d30f29373c580dc31ab54200d0aa4deb4",
+    "assets/allegro/README.md": "10d8795ad8682bdab403aab8fb7b5d4c051b68e025accfe58ebf0d440188665b",
+    "assets/allegro/allegro_hand.png": "c23b303879ca9db0a1e4291d7e5b41dac2a0cb4140f679cb0f7ed03f66c91906",
+    "assets/allegro/assets/base_link.stl": "4060e1ae52bca21367e15a1dfab16bc7c2e81849566631b7f55e2cf376b7bc85",
+    "assets/allegro/assets/base_link_left.stl": "9f66c1cb8d27b9f07e49101a7997a49c60d3cc3ccbc8de96065322df68f47a0b",
+    "assets/allegro/assets/link_0.0.stl": "32b90a6744d472a6ffaee02cbf32eb8a5600b1da0944e86aeb9f53503a9f8ac9",
+    "assets/allegro/assets/link_1.0.stl": "e3dfb35b6682f62f18ca6ed0b39cb94ff627b68e0e3373cf7212390574604680",
+    "assets/allegro/assets/link_12.0_left.stl": "1749ba567bf36729a81eaecf384bc4f5483be8c496af54d230500b96f1d81dcc",
+    "assets/allegro/assets/link_12.0_right.stl": "c5418fc127311eefee1d8ee69dfcfde2157d038286900bee91608d2701b00f13",
+    "assets/allegro/assets/link_13.0.stl": "e906896afc078a12c9c377e3a2b07f375583d3b869581f9962030cabc888be29",
+    "assets/allegro/assets/link_14.0.stl": "a9e4983e4bff7fc7d868b4965c9865edb2669b946434095703766202b5de01ff",
+    "assets/allegro/assets/link_15.0.stl": "bf963adb775b79b27649f4f5dff4ced58ef676ce86cc677de49d3810382d11e0",
+    "assets/allegro/assets/link_15.0_tip.stl": "a7147c765d4b6d2eb16fa14bba2e8eceec4a750bc346260893ca02aca1fd7a63",
+    "assets/allegro/assets/link_2.0.stl": "9c98477c65b45f5a3de1df0e1b54281da2385f4eafd057d103ab40893771c2d0",
+    "assets/allegro/assets/link_3.0.stl": "fe333088176395aa7d8a913aa953d3cd649c4c77753224239b78b2c99e3e314c",
+    "assets/allegro/assets/link_3.0_tip.stl": "9c3fa04fea0dfa1257c8a1b02d2b7d982b0d985c1ddda1edf148827944835f39",
+    "assets/allegro/assets/link_4.0.stl": "f80ac4d443169c56507afaa0b3c72ec3679312bc80cbaebd03e73e96dd18c408",
+    "assets/allegro/left_hand.xml": "4c604119947fc7f055247541effdb937e1648e92e17b16512a1593e1c37ef787",
+    "assets/allegro/right_hand.xml": "cec3efe34be49c8220c23afdae0cfacbce10164a5bc7c34075b6668ee0a862a6",
+    "assets/allegro/scene_left.xml": "032b28250a7d6fb27378d2de18c271666aa150fd9b58a869fb28443333a9b3b8",
+    "assets/allegro/scene_right.xml": "20bbff25303c67625d2052fc377cffa48c14a0785b028c023e16df89d96ca491",
+    "assets/combined.xml": "c8a1ac6d2cc853ebd4829f33ee8aba8ecb4a0ea165a384432ffc8ac0f58d806e",
+    "assets/manifest-t800.json": "cfaec93c878fc61097122642231fe01eb6edbefcdefae877445a101fa081dcaa",
+    "assets/manifest.json": "0445413f9696b74b9e437f94ff9c6fcfdbfc918fc5eedb2853f11857ec2d62e8",
+    "assets/t800/LICENSE-EngineAI.txt": "a3e5f08bf7ae0983cc7a9f602e9a555f5956a8dade26cf4cf9cc95c441fe0b6c",
+    "assets/t800/environment/ground.xml": "82a4f5ec2992d93409d78eb6a43ece88e73279ecd07bb4f4c2c6429db4f20c9e",
+    "assets/t800/lab.xml": "98cf27ab4da0e751a2e721b8b4db9faad08ce874af8d0afb9f768d231c101de9",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_PITCH_L.obj": "361c1edc788ab115451eecc8f64d40f18bc6972a8cf461309df8690acb162f65",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_PITCH_R.obj": "45f3b8647021cd277ae787c32fefd6a6649beb167cb0044da50c0c992fce5266",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_ROLL_L.obj": "3998dff5b3c8b37ff7f77f80b0462d5ae7908c048ee739c8e01896f9f2e5e5f0",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_ROLL_R.obj": "3db4719c148703f2255cd20dc33b420fb987c62a5834ab38d806e06dae448ebe",
+    "assets/t800/robot/t800/meshes/LINK_BASE.obj": "3783a874cc31798c2517d8d85b1e02c2a812aa77b473633ec80b7b94741742df",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_PITCH_L.obj": "817b78d26f933eff7383e42b403afc39069df203aa7b12f70e38fc57964dfbe6",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_PITCH_R.obj": "2c5b486b1578180b38b6bab9e377d2f41d5b2127ae420986788938e8eebd3eb4",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_YAW_L.obj": "4457ed570cacda6100f2a8d74c12ec010d23c1b4b4359a2ca956d6532303edf9",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_YAW_R.obj": "e11f97e6968f08fadf85c87f887b8cc6a1b33e11e08d4cb54e8e0764cdfbd562",
+    "assets/t800/robot/t800/meshes/LINK_HEAD_PITCH.obj": "c80bceaa6bcd5284e2a16e65a0ff79a507f77430bc7fb32ec5ce28f5118711ad",
+    "assets/t800/robot/t800/meshes/LINK_HEAD_YAW.obj": "239be7b1d8b1a806c60773db26385974c068de6712e66f00a7628532ecc32c3c",
+    "assets/t800/robot/t800/meshes/LINK_HIP_PITCH_L.obj": "cf42080daf0448b8c97e75558b18982ef145f7282b1d432b03aeae41116e9898",
+    "assets/t800/robot/t800/meshes/LINK_HIP_PITCH_R.obj": "652b5beff12b7a4b91a4a44dff33f07af390e0772d63b479da333ffc3a5c0c22",
+    "assets/t800/robot/t800/meshes/LINK_HIP_ROLL_L.obj": "c1be3f2006d98f6c16b98adad381949f2abba829f2459b808c4d041e08abdb9c",
+    "assets/t800/robot/t800/meshes/LINK_HIP_ROLL_R.obj": "d391e9d01423f9771ea824d559230d8b3602aa148ec1fc2aec7a6ad70b1807bd",
+    "assets/t800/robot/t800/meshes/LINK_HIP_YAW_L.obj": "2bec754092dc706d1ff6d963112560ca13289d7732e0cd0650e48267a5ca8fbd",
+    "assets/t800/robot/t800/meshes/LINK_HIP_YAW_R.obj": "66ef896cb1b5830df962cdfe3f5ef1eb0eb7c84487c626c78b08523e72a1a925",
+    "assets/t800/robot/t800/meshes/LINK_KNEE_PITCH_L.obj": "c36c26a037da8c366cbe440ec5f1726525f7d7e8691f32456380862d764aea62",
+    "assets/t800/robot/t800/meshes/LINK_KNEE_PITCH_R.obj": "177186194dd6b9e31699ce8bbebbce21a29eae01152fb3f2b830d67e15bae25f",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_PITCH_L.obj": "e84c23c833df40b364cc7702a39233a559f555d45130df2e7fd4e8ffe689a2f9",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_PITCH_R.obj": "3da8cdf8999d2802531e86e13446df62cb501f53cc27733207232930fd0ea523",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_ROLL_L.obj": "be84dbc117fab4da1f85d4684f8fb27dfb2a92006f18d3f8d97196e3c66219f6",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_ROLL_R.obj": "9f25bccf34b2265550d76bd1ee149df96decc0a132e0e700f15a909168302d3f",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_YAW_L.obj": "9a7fbc63936f571a606f828200f18fcd51218d2f15b33320127c5f1ece79758e",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_YAW_R.obj": "27ee25d4296161b0b80d7d58b71a258c14616210e17d56f67005a59ee2a8fc48",
+    "assets/t800/robot/t800/meshes/LINK_TORSO_YAW.obj": "9f4cda29017022b8988f1f10285446d5a0cfccbb5fdab3f05c6631048719030b",
+    "assets/t800/robot/t800/texture/LINK_ANKLE_ROLL_L.png": "c69f48f543389e72954d8ede6d93a9d4e96441576f3e35639454138d70b476b2",
+    "assets/t800/robot/t800/texture/LINK_BASE.png": "a298400671d0868d8a404801e280d2f9bd01b33ec76660354192baba7a9b12e0",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_PITCH_L.png": "cb9c31e56644890ba5e3c356bcc1ad266a3cf459104a82505aedd62efb66f260",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_PITCH_R.png": "8aa0572b3ef8e819f69937d4be0536e0854dc6ef39bd821668dea9b73b0f270c",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_YAW_L.png": "672b2be4bcdce1863424685a1f681f0d7b23d143fd910311d833268e1246c05c",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_YAW_R.png": "6283738a1be141cdb676ad3b93cfc2145bcf1f4c7ae39ce8f886fcdcaa3beee6",
+    "assets/t800/robot/t800/texture/LINK_HEAD_YAW.png": "65fc0f09e4bd0bfc5c910e2e7267ff598a1cf13f85845b56d51055150d53765f",
+    "assets/t800/robot/t800/texture/LINK_HIP_PITCH_L.png": "192c9753ad475eb1cd631c2de474e3f644dd2f1189a40ed25759299321265b08",
+    "assets/t800/robot/t800/texture/LINK_HIP_ROLL_L.png": "f123c3a3fed080c94c0296618e8a6712f7da7234a9a8611be3e08a7972fb58ab",
+    "assets/t800/robot/t800/texture/LINK_HIP_YAW_L.png": "97b5f5c52a05f8315ed07c531f5a8834e92fbae0f89cd21853428ae858eacc9a",
+    "assets/t800/robot/t800/texture/LINK_KNEE_PITCH_L.png": "ce66f28fc5dac742c73e9b4dfe735e20d2b89641afb4d6e033292a7e41a2de85",
+    "assets/t800/robot/t800/texture/LINK_SHOULDER_PITCH_L.png": "6bb410836ee6431783ee0f69429f9853c14e884f069b6466b9d4b8bda0a95fea",
+    "assets/t800/robot/t800/texture/LINK_SHOULDER_ROLL_L.png": "fb76b91c8155478cf6d92088d89914a6eb1b907f78a1dcf18128fffee8618311",
+    "assets/t800/robot/t800/texture/LINK_SHOULDER_YAW_L.png": "e7778698452bedb342bbaf198e5c782e17f1d2a9e10f94e2721b8a01fb815737",
+    "assets/t800/robot/t800/texture/LINK_TORSO_YAW.png": "b7f88ec8e9276ac9c62e19d52037ee30cbc4eefee44e36ca46974711cd8430f4",
+    "assets/t800/robot/t800/xml/assets.xml": "a5c5184a4897d53dccdbf10ef7a10aedc361d81e2d9819b9d281962434478ff9",
+    "assets/t800/robot/t800/xml/serial_actuators.xml": "0709d5538bb1ac417eea0a56803baaefac7844ace477b556da1d362061532904",
+    "assets/t800/robot/t800/xml/serial_links.xml": "e66c08deb7124d4a546352c044cd4d70613d5423f576ff0bf78e8d76a4f36b77",
+    "assets/t800/robot/t800/xml/serial_sensors.xml": "5195cca6d50a0dd57a0337e2278cc8f4b3ae4d824055c3a2de43469467d9d9fb",
+    "assets/t800/robot/t800/xml/serial_t800.xml": "6c3d0680c14d718450a75b40647a99481dbbaa46943871c4a5c2f762442be1f7",
+    "assets/t800/scene.xml": "fd9a48eda362a775aef1ace2d2c14c93e4ce2aabb64b384661521dd2c10ea602",
+    "config/scene.json": "f6faa2943eb16652c1a89cf3d1e28bc9c2e8bb488a9a40852fcc0c18f5a65313",
+    "config/t800/model.yaml": "76b607212aa4d2abd791ca020f9c011be752068660faeeaa97eec3c9adab057f",
+    "config/t800/stand.yaml": "ed524e302ff92958930c9fd5f14e5fe77e525f29bea66489d1bbc316556c8da1",
+    "config/t800/walking.yaml": "5492d7877215c9253d8e35ca8732383d8a7fbdb5046ba4ee86b54df4b6ef9f2d",
+    "config/task.json": "654d1994a6bef5fa5ea022fc9473585682622fda7b9bd0d3d0c898a55dc34f7e",
+    "config/workcell.json": "8717cd381555eb58fb75ba9921a7f7656edcea54b9321afd22085b0da21a3bf6",
+    "policies/t800/LICENSE-EngineAI.txt": "a3e5f08bf7ae0983cc7a9f602e9a555f5956a8dade26cf4cf9cc95c441fe0b6c",
+    "policies/t800/walking.mnn": "cbcb90f86dbb2fde39bdc5a25c8d0530d5c79c7a8f84b1f90863d8c9065b6427",
+    "requirements.txt": "885889516e254ca226f8ab20e996ed4b20f74b0282353bad14234a330613fad4",
+    "run_demo.sh": "b704be13025e28c005ce31701543611d9feb35ae2f89ada1b3aa114b6d015c1e",
+    "scripts/batch.py": "24af935a645976f9c47d0bead1cc340048db067216678bd732d00eea6ea55d7f",
+    "src/humanoid007/__init__.py": "21ce0db8737ddf803232f2a1ea1e6ab918a38425bb9d6d6fd296ebe641e3279b",
+    "src/humanoid007/app.py": "b2e351fd350292528cc229fa435232a1a07991d34d55a284e88a20d0c7067717",
+    "src/humanoid007/camera.py": "53a925651e76b5942e4a296b9474ae0a114afdf2a2b1836f4d767552171193a2",
+    "src/humanoid007/diagnostics.py": "4770a3ba2183af5b60b024db57432cb0a6003f4fba2d328a62d84dd7f49ac12d",
+    "src/humanoid007/policy.py": "27f262b0dcf61245b1988988543f1afcc180a9ec45611c008f1365a003669a4d",
+    "src/humanoid007/runtime.py": "b48be5d3519a4ec74dfc54a523160690618b5579414a933cb34a4fec19c39488",
+    "src/humanoid007/stance.py": "246b2c41e1c62ede4e3530612892f84455711e616b18dfe7492ae24fc87bea9e",
+    "src/humanoid007/tactile.py": "5a5c05f4502c2ceca915ddbb010be1eeb717f525d45ece12d8c09705a657aefc",
+    "src/humanoid007/task.py": "99d14a00ab91ac9a311730d20837232865f3968c4c0bfbfccf7cf16400dd1268",
+    "src/humanoid007/vision.py": "2510f003d1f38be2b7aacdf1a8ca587e77c77100fd73bae7c9bbccf8cd050cee"
+  },
+  "results": [
+    {
+      "case": {
+        "id": "01-regression",
+        "group": "regression",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 154.34829484,
+      "log": "01-regression.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260910T014222954942Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2293287889704216,
+          0.003887169240158101,
+          0.849956364233337
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.003944693771113156,
+        "height_error": 4.363576666299718e-05,
+        "speed": 2.1799971378772412e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0014022071923912006,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 57.60000000002443,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "11-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.02,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 159.14103800599992,
+      "log": "11-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260910T014222921973Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2347914906308217,
+          -0.0019397932588401368,
+          0.8499563764642707
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.00516925336507064,
+        "height_error": 4.36235357292869e-05,
+        "speed": 1.0878712755429087e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001213127445912326,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 62.10000000002993,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "12-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.02,
+          0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 162.20639470100002,
+      "log": "12-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260910T014222913294Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.241719231432317,
+          -0.0021976967271318142,
+          0.8499625353032303
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.011923516942104605,
+        "height_error": 3.746469676968456e-05,
+        "speed": 1.356057621672776e-07,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011550780230815685,
+        "visual_age": 0.027999999999934744
+      },
+      "last_event": {
+        "time": 64.65000000003073,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 1,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    },
+    {
+      "case": {
+        "id": "14-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          -0.05,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 154.696354025,
+      "log": "14-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260910T014222902070Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.1831294638499623,
+          0.0013027207608012651,
+          0.8499563786908535
+        ],
+        "target": [
+          1.18,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.0033897824958017547,
+        "height_error": 4.362130914647988e-05,
+        "speed": 7.305896735248433e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011905902720134045,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 57.60000000002443,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0,
+      "station_contact_diagnostics": {
+        "sample": "every physics step",
+        "force_threshold_n": 0.01,
+        "contact_free": true,
+        "pairs": {}
+      }
+    }
+  ],
+  "counts": {
+    "COMPLETED": 4
+  },
+  "groups": {
+    "box-grid": {
+      "COMPLETED": 2
+    },
+    "regression": {
+      "COMPLETED": 1
+    },
+    "target-grid": {
+      "COMPLETED": 1
+    }
+  },
+  "failure_phases": {},
+  "station_contact_cases": 0,
+  "force_contact_cases": 0,
+  "inputs_unchanged": true
+}

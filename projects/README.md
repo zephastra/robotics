@@ -29,5 +29,9 @@ projects/
 
 - [05-dexterous-hand](05-dexterous-hand/README.md) — 四指灵巧手姿态、接触抓取、抬升、转移与释放验收；独立两轴夹具实验台，不依赖人形机器人项目。
 - [06-humanoid-transport](06-humanoid-transport/README.md) — T800 站立抓取、负载行走、停止和托盘放置；使用已知物体位置与上游步态策略，不含视觉识别或实物验证。
+- [07-humanoid-visual-transport](07-humanoid-visual-transport/README.md) — 实验性快照：头部标记视觉、双手搬运、自动站位和接触诊断；完整物理回归未通过。
+- [08-humanoid-language-tasks](08-humanoid-language-tasks/README.md) — 实验性快照：规则/回放技能规划、受约束执行与物理后端；B/C 搬运不稳定，未做真实 LLM 实测。
+
+07、08 的上传用于公开研究实现和证据，不代表完成全部设计目标。请先阅读各工程的 `docs/RELEASE_AUDIT.md`。
 
 课程期数与项目编号是两件事。一个项目可以支撑多集视频；不要为了“第二期课程”复制一份几乎相同的项目。

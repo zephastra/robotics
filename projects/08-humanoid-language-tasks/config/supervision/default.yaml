@@ -1,0 +1,31 @@
+# 008 supervision policy.
+#
+# Everything here is a *policy* value, kept in config so that no planner, and no
+# model, can invent or change a threshold at runtime (docs/MASTER_PLAN.md
+# section 13). A proposal cannot carry its own timeout or retry limit.
+
+schema_version: "1.0"
+
+observation:
+  # An observation older than this is stale and may not justify an action.
+  max_age_s: 5.0
+
+budgets:
+  # Design defaults from section 13. They are validated by implementation, not
+  # by assumption; changing them is an experiment, not a fix.
+  max_steps_per_task: 32
+  model_request_timeout_s: 15
+  output_repair_attempts: 1
+  model_calls_per_task: 20
+  replans_per_task: 3
+  retries_per_skill: 2
+  stance_realign_per_task: 2
+  clarification_wait_s: 120
+  max_ticks_per_skill: 500
+
+runtime_guard:
+  # Command validity window: an actuator command older than this must not be
+  # applied (section 13, layer 3).
+  command_ttl_s: 0.5
+  # Robot tilt beyond this is treated as a base/body fault.
+  max_tilt_rad: 1.0

@@ -1,0 +1,2049 @@
+{
+  "arguments": {
+    "seed": 7,
+    "workers": 4,
+    "wall_timeout": 300.0,
+    "duration": 180.0,
+    "list": false,
+    "case": null
+  },
+  "cases": [
+    {
+      "id": "01-regression",
+      "group": "regression",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "02-regression",
+      "group": "regression",
+      "box": [
+        0.02,
+        0.01
+      ],
+      "target": [
+        0.05,
+        0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "03-regression",
+      "group": "regression",
+      "box": [
+        -0.02,
+        -0.01
+      ],
+      "target": [
+        -0.05,
+        -0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "04-box-grid",
+      "group": "box-grid",
+      "box": [
+        -0.02,
+        -0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "05-box-grid",
+      "group": "box-grid",
+      "box": [
+        -0.02,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "06-box-grid",
+      "group": "box-grid",
+      "box": [
+        -0.02,
+        0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "07-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.0,
+        -0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "08-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "09-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.0,
+        0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "10-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.02,
+        -0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "11-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.02,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "12-box-grid",
+      "group": "box-grid",
+      "box": [
+        0.02,
+        0.01
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "13-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        -0.05,
+        -0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "14-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        -0.05,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "15-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        -0.05,
+        0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "16-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        -0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "17-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "18-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "19-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.05,
+        -0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "20-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.05,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "21-target-grid",
+      "group": "target-grid",
+      "box": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.05,
+        0.03
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "22-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.00705,
+        -0.00698
+      ],
+      "target": [
+        0.01509,
+        -0.02565
+      ],
+      "yaw": 0.359
+    },
+    {
+      "id": "23-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.00537,
+        -0.00884
+      ],
+      "target": [
+        0.00074,
+        -0.02775
+      ],
+      "yaw": -0.664
+    },
+    {
+      "id": "24-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.01721,
+        -0.00819
+      ],
+      "target": [
+        -0.00755,
+        0.01961
+      ],
+      "yaw": -3.762
+    },
+    {
+      "id": "25-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.01107,
+        0.00255
+      ],
+      "target": [
+        0.04477,
+        0.00463
+      ],
+      "yaw": -1.033
+    },
+    {
+      "id": "26-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        0.01905,
+        -0.00907
+      ],
+      "target": [
+        0.03585,
+        -0.01262
+      ],
+      "yaw": -3.557
+    },
+    {
+      "id": "27-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.01529,
+        -0.00383
+      ],
+      "target": [
+        0.03161,
+        -0.01916
+      ],
+      "yaw": 0.816
+    },
+    {
+      "id": "28-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        0.00556,
+        -0.00255
+      ],
+      "target": [
+        0.00477,
+        -0.02623
+      ],
+      "yaw": -4.404
+    },
+    {
+      "id": "29-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.01176,
+        0.00361
+      ],
+      "target": [
+        -0.00724,
+        -0.01115
+      ],
+      "yaw": 0.856
+    },
+    {
+      "id": "30-combined-yaw",
+      "group": "combined-yaw",
+      "box": [
+        -0.00187,
+        -0.004
+      ],
+      "target": [
+        0.02944,
+        0.01194
+      ],
+      "yaw": -2.559
+    }
+  ],
+  "fingerprint": {
+    "assets/allegro/CHANGELOG.md": "78268d42097269a81d5a84d7b4c45ce775c74454165288816cc8409a858935ac",
+    "assets/allegro/LICENSE": "09c187439ecece8b00330e71eb988d3d30f29373c580dc31ab54200d0aa4deb4",
+    "assets/allegro/README.md": "10d8795ad8682bdab403aab8fb7b5d4c051b68e025accfe58ebf0d440188665b",
+    "assets/allegro/allegro_hand.png": "c23b303879ca9db0a1e4291d7e5b41dac2a0cb4140f679cb0f7ed03f66c91906",
+    "assets/allegro/assets/base_link.stl": "4060e1ae52bca21367e15a1dfab16bc7c2e81849566631b7f55e2cf376b7bc85",
+    "assets/allegro/assets/base_link_left.stl": "9f66c1cb8d27b9f07e49101a7997a49c60d3cc3ccbc8de96065322df68f47a0b",
+    "assets/allegro/assets/link_0.0.stl": "32b90a6744d472a6ffaee02cbf32eb8a5600b1da0944e86aeb9f53503a9f8ac9",
+    "assets/allegro/assets/link_1.0.stl": "e3dfb35b6682f62f18ca6ed0b39cb94ff627b68e0e3373cf7212390574604680",
+    "assets/allegro/assets/link_12.0_left.stl": "1749ba567bf36729a81eaecf384bc4f5483be8c496af54d230500b96f1d81dcc",
+    "assets/allegro/assets/link_12.0_right.stl": "c5418fc127311eefee1d8ee69dfcfde2157d038286900bee91608d2701b00f13",
+    "assets/allegro/assets/link_13.0.stl": "e906896afc078a12c9c377e3a2b07f375583d3b869581f9962030cabc888be29",
+    "assets/allegro/assets/link_14.0.stl": "a9e4983e4bff7fc7d868b4965c9865edb2669b946434095703766202b5de01ff",
+    "assets/allegro/assets/link_15.0.stl": "bf963adb775b79b27649f4f5dff4ced58ef676ce86cc677de49d3810382d11e0",
+    "assets/allegro/assets/link_15.0_tip.stl": "a7147c765d4b6d2eb16fa14bba2e8eceec4a750bc346260893ca02aca1fd7a63",
+    "assets/allegro/assets/link_2.0.stl": "9c98477c65b45f5a3de1df0e1b54281da2385f4eafd057d103ab40893771c2d0",
+    "assets/allegro/assets/link_3.0.stl": "fe333088176395aa7d8a913aa953d3cd649c4c77753224239b78b2c99e3e314c",
+    "assets/allegro/assets/link_3.0_tip.stl": "9c3fa04fea0dfa1257c8a1b02d2b7d982b0d985c1ddda1edf148827944835f39",
+    "assets/allegro/assets/link_4.0.stl": "f80ac4d443169c56507afaa0b3c72ec3679312bc80cbaebd03e73e96dd18c408",
+    "assets/allegro/left_hand.xml": "4c604119947fc7f055247541effdb937e1648e92e17b16512a1593e1c37ef787",
+    "assets/allegro/right_hand.xml": "cec3efe34be49c8220c23afdae0cfacbce10164a5bc7c34075b6668ee0a862a6",
+    "assets/allegro/scene_left.xml": "032b28250a7d6fb27378d2de18c271666aa150fd9b58a869fb28443333a9b3b8",
+    "assets/allegro/scene_right.xml": "20bbff25303c67625d2052fc377cffa48c14a0785b028c023e16df89d96ca491",
+    "assets/combined.xml": "c8a1ac6d2cc853ebd4829f33ee8aba8ecb4a0ea165a384432ffc8ac0f58d806e",
+    "assets/manifest-t800.json": "cfaec93c878fc61097122642231fe01eb6edbefcdefae877445a101fa081dcaa",
+    "assets/manifest.json": "0445413f9696b74b9e437f94ff9c6fcfdbfc918fc5eedb2853f11857ec2d62e8",
+    "assets/t800/LICENSE-EngineAI.txt": "a3e5f08bf7ae0983cc7a9f602e9a555f5956a8dade26cf4cf9cc95c441fe0b6c",
+    "assets/t800/environment/ground.xml": "82a4f5ec2992d93409d78eb6a43ece88e73279ecd07bb4f4c2c6429db4f20c9e",
+    "assets/t800/lab.xml": "98cf27ab4da0e751a2e721b8b4db9faad08ce874af8d0afb9f768d231c101de9",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_PITCH_L.obj": "361c1edc788ab115451eecc8f64d40f18bc6972a8cf461309df8690acb162f65",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_PITCH_R.obj": "45f3b8647021cd277ae787c32fefd6a6649beb167cb0044da50c0c992fce5266",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_ROLL_L.obj": "3998dff5b3c8b37ff7f77f80b0462d5ae7908c048ee739c8e01896f9f2e5e5f0",
+    "assets/t800/robot/t800/meshes/LINK_ANKLE_ROLL_R.obj": "3db4719c148703f2255cd20dc33b420fb987c62a5834ab38d806e06dae448ebe",
+    "assets/t800/robot/t800/meshes/LINK_BASE.obj": "3783a874cc31798c2517d8d85b1e02c2a812aa77b473633ec80b7b94741742df",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_PITCH_L.obj": "817b78d26f933eff7383e42b403afc39069df203aa7b12f70e38fc57964dfbe6",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_PITCH_R.obj": "2c5b486b1578180b38b6bab9e377d2f41d5b2127ae420986788938e8eebd3eb4",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_YAW_L.obj": "4457ed570cacda6100f2a8d74c12ec010d23c1b4b4359a2ca956d6532303edf9",
+    "assets/t800/robot/t800/meshes/LINK_ELBOW_YAW_R.obj": "e11f97e6968f08fadf85c87f887b8cc6a1b33e11e08d4cb54e8e0764cdfbd562",
+    "assets/t800/robot/t800/meshes/LINK_HEAD_PITCH.obj": "c80bceaa6bcd5284e2a16e65a0ff79a507f77430bc7fb32ec5ce28f5118711ad",
+    "assets/t800/robot/t800/meshes/LINK_HEAD_YAW.obj": "239be7b1d8b1a806c60773db26385974c068de6712e66f00a7628532ecc32c3c",
+    "assets/t800/robot/t800/meshes/LINK_HIP_PITCH_L.obj": "cf42080daf0448b8c97e75558b18982ef145f7282b1d432b03aeae41116e9898",
+    "assets/t800/robot/t800/meshes/LINK_HIP_PITCH_R.obj": "652b5beff12b7a4b91a4a44dff33f07af390e0772d63b479da333ffc3a5c0c22",
+    "assets/t800/robot/t800/meshes/LINK_HIP_ROLL_L.obj": "c1be3f2006d98f6c16b98adad381949f2abba829f2459b808c4d041e08abdb9c",
+    "assets/t800/robot/t800/meshes/LINK_HIP_ROLL_R.obj": "d391e9d01423f9771ea824d559230d8b3602aa148ec1fc2aec7a6ad70b1807bd",
+    "assets/t800/robot/t800/meshes/LINK_HIP_YAW_L.obj": "2bec754092dc706d1ff6d963112560ca13289d7732e0cd0650e48267a5ca8fbd",
+    "assets/t800/robot/t800/meshes/LINK_HIP_YAW_R.obj": "66ef896cb1b5830df962cdfe3f5ef1eb0eb7c84487c626c78b08523e72a1a925",
+    "assets/t800/robot/t800/meshes/LINK_KNEE_PITCH_L.obj": "c36c26a037da8c366cbe440ec5f1726525f7d7e8691f32456380862d764aea62",
+    "assets/t800/robot/t800/meshes/LINK_KNEE_PITCH_R.obj": "177186194dd6b9e31699ce8bbebbce21a29eae01152fb3f2b830d67e15bae25f",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_PITCH_L.obj": "e84c23c833df40b364cc7702a39233a559f555d45130df2e7fd4e8ffe689a2f9",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_PITCH_R.obj": "3da8cdf8999d2802531e86e13446df62cb501f53cc27733207232930fd0ea523",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_ROLL_L.obj": "be84dbc117fab4da1f85d4684f8fb27dfb2a92006f18d3f8d97196e3c66219f6",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_ROLL_R.obj": "9f25bccf34b2265550d76bd1ee149df96decc0a132e0e700f15a909168302d3f",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_YAW_L.obj": "9a7fbc63936f571a606f828200f18fcd51218d2f15b33320127c5f1ece79758e",
+    "assets/t800/robot/t800/meshes/LINK_SHOULDER_YAW_R.obj": "27ee25d4296161b0b80d7d58b71a258c14616210e17d56f67005a59ee2a8fc48",
+    "assets/t800/robot/t800/meshes/LINK_TORSO_YAW.obj": "9f4cda29017022b8988f1f10285446d5a0cfccbb5fdab3f05c6631048719030b",
+    "assets/t800/robot/t800/texture/LINK_ANKLE_ROLL_L.png": "c69f48f543389e72954d8ede6d93a9d4e96441576f3e35639454138d70b476b2",
+    "assets/t800/robot/t800/texture/LINK_BASE.png": "a298400671d0868d8a404801e280d2f9bd01b33ec76660354192baba7a9b12e0",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_PITCH_L.png": "cb9c31e56644890ba5e3c356bcc1ad266a3cf459104a82505aedd62efb66f260",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_PITCH_R.png": "8aa0572b3ef8e819f69937d4be0536e0854dc6ef39bd821668dea9b73b0f270c",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_YAW_L.png": "672b2be4bcdce1863424685a1f681f0d7b23d143fd910311d833268e1246c05c",
+    "assets/t800/robot/t800/texture/LINK_ELBOW_YAW_R.png": "6283738a1be141cdb676ad3b93cfc2145bcf1f4c7ae39ce8f886fcdcaa3beee6",
+    "assets/t800/robot/t800/texture/LINK_HEAD_YAW.png": "65fc0f09e4bd0bfc5c910e2e7267ff598a1cf13f85845b56d51055150d53765f",
+    "assets/t800/robot/t800/texture/LINK_HIP_PITCH_L.png": "192c9753ad475eb1cd631c2de474e3f644dd2f1189a40ed25759299321265b08",
+    "assets/t800/robot/t800/texture/LINK_HIP_ROLL_L.png": "f123c3a3fed080c94c0296618e8a6712f7da7234a9a8611be3e08a7972fb58ab",
+    "assets/t800/robot/t800/texture/LINK_HIP_YAW_L.png": "97b5f5c52a05f8315ed07c531f5a8834e92fbae0f89cd21853428ae858eacc9a",
+    "assets/t800/robot/t800/texture/LINK_KNEE_PITCH_L.png": "ce66f28fc5dac742c73e9b4dfe735e20d2b89641afb4d6e033292a7e41a2de85",
+    "assets/t800/robot/t800/texture/LINK_SHOULDER_PITCH_L.png": "6bb410836ee6431783ee0f69429f9853c14e884f069b6466b9d4b8bda0a95fea",
+    "assets/t800/robot/t800/texture/LINK_SHOULDER_ROLL_L.png": "fb76b91c8155478cf6d92088d89914a6eb1b907f78a1dcf18128fffee8618311",
+    "assets/t800/robot/t800/texture/LINK_SHOULDER_YAW_L.png": "e7778698452bedb342bbaf198e5c782e17f1d2a9e10f94e2721b8a01fb815737",
+    "assets/t800/robot/t800/texture/LINK_TORSO_YAW.png": "b7f88ec8e9276ac9c62e19d52037ee30cbc4eefee44e36ca46974711cd8430f4",
+    "assets/t800/robot/t800/xml/assets.xml": "a5c5184a4897d53dccdbf10ef7a10aedc361d81e2d9819b9d281962434478ff9",
+    "assets/t800/robot/t800/xml/serial_actuators.xml": "0709d5538bb1ac417eea0a56803baaefac7844ace477b556da1d362061532904",
+    "assets/t800/robot/t800/xml/serial_links.xml": "e66c08deb7124d4a546352c044cd4d70613d5423f576ff0bf78e8d76a4f36b77",
+    "assets/t800/robot/t800/xml/serial_sensors.xml": "5195cca6d50a0dd57a0337e2278cc8f4b3ae4d824055c3a2de43469467d9d9fb",
+    "assets/t800/robot/t800/xml/serial_t800.xml": "6c3d0680c14d718450a75b40647a99481dbbaa46943871c4a5c2f762442be1f7",
+    "assets/t800/scene.xml": "fd9a48eda362a775aef1ace2d2c14c93e4ce2aabb64b384661521dd2c10ea602",
+    "config/scene.json": "f6faa2943eb16652c1a89cf3d1e28bc9c2e8bb488a9a40852fcc0c18f5a65313",
+    "config/t800/model.yaml": "76b607212aa4d2abd791ca020f9c011be752068660faeeaa97eec3c9adab057f",
+    "config/t800/stand.yaml": "ed524e302ff92958930c9fd5f14e5fe77e525f29bea66489d1bbc316556c8da1",
+    "config/t800/walking.yaml": "5492d7877215c9253d8e35ca8732383d8a7fbdb5046ba4ee86b54df4b6ef9f2d",
+    "config/task.json": "654d1994a6bef5fa5ea022fc9473585682622fda7b9bd0d3d0c898a55dc34f7e",
+    "policies/t800/LICENSE-EngineAI.txt": "a3e5f08bf7ae0983cc7a9f602e9a555f5956a8dade26cf4cf9cc95c441fe0b6c",
+    "policies/t800/walking.mnn": "cbcb90f86dbb2fde39bdc5a25c8d0530d5c79c7a8f84b1f90863d8c9065b6427",
+    "requirements.txt": "885889516e254ca226f8ab20e996ed4b20f74b0282353bad14234a330613fad4",
+    "run_demo.sh": "b704be13025e28c005ce31701543611d9feb35ae2f89ada1b3aa114b6d015c1e",
+    "scripts/batch.py": "5d3bc1bebb4abbff90789d3ab9568fe5aeb999ea8458cef5a8ad4cdf1949b6f1",
+    "src/humanoid007/__init__.py": "21ce0db8737ddf803232f2a1ea1e6ab918a38425bb9d6d6fd296ebe641e3279b",
+    "src/humanoid007/app.py": "034f4879bbab23694606ccc1a95c3b090e2ecb19f7654ff678e7f68f8e298c81",
+    "src/humanoid007/camera.py": "53a925651e76b5942e4a296b9474ae0a114afdf2a2b1836f4d767552171193a2",
+    "src/humanoid007/policy.py": "27f262b0dcf61245b1988988543f1afcc180a9ec45611c008f1365a003669a4d",
+    "src/humanoid007/runtime.py": "ba8681378b26bb89022da117294835c2745cf70ae5a40431d3b741124f1bd557",
+    "src/humanoid007/tactile.py": "5a5c05f4502c2ceca915ddbb010be1eeb717f525d45ece12d8c09705a657aefc",
+    "src/humanoid007/task.py": "bc9d5360cf79df0442fc7db50ae0bd7b99d58b2762ea56303a68151ff0fe5381",
+    "src/humanoid007/vision.py": "2510f003d1f38be2b7aacdf1a8ca587e77c77100fd73bae7c9bbccf8cd050cee"
+  },
+  "results": [
+    {
+      "case": {
+        "id": "01-regression",
+        "group": "regression",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 59.83137134500021,
+      "log": "01-regression.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044537670728Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2358542479640766,
+          -0.002680797888451233,
+          0.8499563727737623
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.006438858326102537,
+        "height_error": 4.362722623763027e-05,
+        "speed": 1.503439358696472e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001166069710884619,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 53.00000000001881,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 11,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "02-regression",
+        "group": "regression",
+        "box": [
+          0.02,
+          0.01
+        ],
+        "target": [
+          0.05,
+          0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 65.49820833900003,
+      "log": "02-regression.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044537670716Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.28204725707813,
+          0.02697858665657487,
+          0.8499563706802501
+        ],
+        "target": [
+          1.28,
+          0.03,
+          0.85
+        ],
+        "xy_error": 0.003649684936509029,
+        "height_error": 4.362931974988271e-05,
+        "speed": 1.6944622416725204e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011584566166447441,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 59.00000000002614,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 7,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "03-regression",
+        "group": "regression",
+        "box": [
+          -0.02,
+          -0.01
+        ],
+        "target": [
+          -0.05,
+          -0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 64.68994858099995,
+      "log": "03-regression.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044537670712Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.1855237697619012,
+          -0.03499402420632166,
+          0.8499563536376488
+        ],
+        "target": [
+          1.18,
+          -0.03,
+          0.85
+        ],
+        "xy_error": 0.007446630792232255,
+        "height_error": 4.3646362351212886e-05,
+        "speed": 2.8007400485563893e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010715062452915974,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 58.90000000002602,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 4,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "04-box-grid",
+        "group": "box-grid",
+        "box": [
+          -0.02,
+          -0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 61.68700436600011,
+      "log": "04-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044537670688Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2440430701615566,
+          0.0005034048779710462,
+          0.8499563802469432
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.014052090094842337,
+        "height_error": 4.361975305677834e-05,
+        "speed": 2.8231865548023147e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011472921525099676,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 54.85000000002107,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 1,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "05-box-grid",
+        "group": "box-grid",
+        "box": [
+          -0.02,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 62.026925796999876,
+      "log": "05-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044637084806Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2307188573750354,
+          -0.0019331597660060262,
+          0.8499563764919625
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.002062489419741898,
+        "height_error": 4.3623508037438086e-05,
+        "speed": 1.0841510506875533e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011269160816018441,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 55.600000000021986,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "06-box-grid",
+        "group": "box-grid",
+        "box": [
+          -0.02,
+          0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 61.22252907200027,
+      "log": "06-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044638902233Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2308585009180624,
+          -0.0008683920770455075,
+          0.849956379707264
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.0012211177771981594,
+        "height_error": 4.362029273596857e-05,
+        "speed": 4.870101433355452e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010470017978534293,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 54.40000000002052,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "07-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.0,
+          -0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 64.90337810499977,
+      "log": "07-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044641950510Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2276159269220868,
+          0.00012025754544288271,
+          0.8499563805045063
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.0023871041699235814,
+        "height_error": 4.361949549369637e-05,
+        "speed": 6.744263092382994e-10,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0012544435365298085,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 57.70000000002455,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 6,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "08-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 60.62895236700024,
+      "log": "08-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044642738675Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2358542479640766,
+          -0.002680797888451233,
+          0.8499563727737623
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.006438858326102537,
+        "height_error": 4.362722623763027e-05,
+        "speed": 1.503439358696472e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001166069710884619,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 53.00000000001881,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 11,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "09-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.0,
+          0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 61.92280818299969,
+      "log": "09-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044739115174Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.227855477194066,
+          -0.004451336208586508,
+          0.8499563591626931
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.004940988980664139,
+        "height_error": 4.3640837306901936e-05,
+        "speed": 2.4963855302362494e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011748811954443725,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 56.65000000002327,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 6,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "10-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.02,
+          -0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 59.31284222700015,
+      "log": "10-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044740168255Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2425696818242704,
+          -0.0016425804432607242,
+          0.8499563776119129
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.012676552042096343,
+        "height_error": 4.362238808708341e-05,
+        "speed": 9.211889010877132e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010852596990192692,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 57.20000000002394,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 1,
+      "waypoint_recoveries": 1
+    },
+    {
+      "case": {
+        "id": "11-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.02,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 60.47513924900068,
+      "log": "11-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044743346475Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2385373544252893,
+          -0.001981295278668889,
+          0.8499563762888648
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.008764242783280446,
+        "height_error": 4.362371113519892e-05,
+        "speed": 1.11114633615889e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011920692276621197,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 57.0000000000237,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 1,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "12-box-grid",
+        "group": "box-grid",
+        "box": [
+          0.02,
+          0.01
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 70.42348419499922,
+      "log": "12-box-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044746845938Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2450343644045816,
+          0.0010739526930427159,
+          0.8499563792769014
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.015072673533140839,
+        "height_error": 4.362072309860299e-05,
+        "speed": 6.022922486697575e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011354849631676218,
+        "visual_age": 0.03399999999992076
+      },
+      "last_event": {
+        "time": 64.05000000003213,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 16,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "13-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          -0.05,
+          -0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 59.82566389200019,
+      "log": "13-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044839468816Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.186220182441177,
+          -0.030464789213229232,
+          0.8499563802872422
+        ],
+        "target": [
+          1.18,
+          -0.03,
+          0.85
+        ],
+        "xy_error": 0.0062375234359690395,
+        "height_error": 4.361971275779197e-05,
+        "speed": 2.606622857386117e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001079523028537242,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 53.45000000001936,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 12,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "14-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          -0.05,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 60.02829973500047,
+      "log": "14-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044841042407Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.1810799976377744,
+          0.0015725454101934726,
+          0.8499563778546195
+        ],
+        "target": [
+          1.18,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.0019076933623407445,
+        "height_error": 4.362214538045084e-05,
+        "speed": 8.81911999509469e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010595819761820898,
+        "visual_age": 0.13400000000016377
+      },
+      "last_event": {
+        "time": 53.95000000001997,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "15-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          -0.05,
+          0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 58.869296541999574,
+      "log": "15-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044843834169Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.188270357676294,
+          0.030283203612079743,
+          0.8499563804336443
+        ],
+        "target": [
+          1.18,
+          0.03,
+          0.85
+        ],
+        "xy_error": 0.008275205156353067,
+        "height_error": 4.361956635567932e-05,
+        "speed": 1.588257641680912e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010793450941573419,
+        "visual_age": 0.08400000000010266
+      },
+      "last_event": {
+        "time": 52.70000000001844,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 4,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "16-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          -0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 60.07103597999958,
+      "log": "16-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044857274204Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2371478589329665,
+          -0.032279867825908796,
+          0.8499563749175243
+        ],
+        "target": [
+          1.23,
+          -0.03,
+          0.85
+        ],
+        "xy_error": 0.00750264517548336,
+        "height_error": 4.362508247568453e-05,
+        "speed": 1.2785909864964842e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011237851866117345,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 53.60000000001954,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "17-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 62.82870833199922,
+      "log": "17-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044939281748Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2358542479640766,
+          -0.002680797888451233,
+          0.8499563727737623
+        ],
+        "target": [
+          1.23,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.006438858326102537,
+        "height_error": 4.362722623763027e-05,
+        "speed": 1.503439358696472e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001166069710884619,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 53.00000000001881,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 11,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "18-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 71.67119508300038,
+      "log": "18-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044941084347Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2287910528542536,
+          0.02796848301745259,
+          0.8499563760716407
+        ],
+        "target": [
+          1.23,
+          0.03,
+          0.85
+        ],
+        "xy_error": 0.002364025053079352,
+        "height_error": 4.362392835932649e-05,
+        "speed": 1.1393113755305997e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0012149674298248577,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 58.65000000002571,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 6,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "19-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.05,
+          -0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 65.38756760900014,
+      "log": "19-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044942710175Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2838318599042675,
+          -0.03138006380483505,
+          0.8499563784672002
+        ],
+        "target": [
+          1.28,
+          -0.03,
+          0.85
+        ],
+        "xy_error": 0.004072803264503288,
+        "height_error": 4.362153279979797e-05,
+        "speed": 7.739648678494537e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001080104334119074,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 54.80000000002101,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 5,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "20-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.05,
+          0.0
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 66.29245598199941,
+      "log": "20-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T044957426213Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2865675678864525,
+          -0.0007575992617023388,
+          0.8499563799014411
+        ],
+        "target": [
+          1.28,
+          0.0,
+          0.85
+        ],
+        "xy_error": 0.006611119767822569,
+        "height_error": 4.362009855884974e-05,
+        "speed": 4.248754967345369e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001061892195570728,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 53.00000000001881,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 1,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "21-target-grid",
+        "group": "target-grid",
+        "box": [
+          0.0,
+          0.0
+        ],
+        "target": [
+          0.05,
+          0.03
+        ],
+        "yaw": 0.0
+      },
+      "returncode": 0,
+      "wall_seconds": 64.08750646299995,
+      "log": "21-target-grid.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045042168477Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2856974482064905,
+          0.02638074290013051,
+          0.849956366401005
+        ],
+        "target": [
+          1.28,
+          0.03,
+          0.85
+        ],
+        "xy_error": 0.00674981022108005,
+        "height_error": 4.3633598994952116e-05,
+        "speed": 2.0297428811304995e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011128435183606505,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 53.00000000001881,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 10,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "22-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.00705,
+          -0.00698
+        ],
+        "target": [
+          0.01509,
+          -0.02565
+        ],
+        "yaw": 0.359
+      },
+      "returncode": 0,
+      "wall_seconds": 68.71462508500008,
+      "log": "22-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045048169747Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2458986203226932,
+          -0.03186928664661615,
+          0.849956338828519
+        ],
+        "target": [
+          1.24509,
+          -0.02565,
+          0.85
+        ],
+        "xy_error": 0.006271634015075365,
+        "height_error": 4.366117148102422e-05,
+        "speed": 3.4878786485320665e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011780124989112582,
+        "visual_age": 0.13400000000016377
+      },
+      "last_event": {
+        "time": 56.15000000002266,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 2,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "23-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.00537,
+          -0.00884
+        ],
+        "target": [
+          0.00074,
+          -0.02775
+        ],
+        "yaw": -0.664
+      },
+      "returncode": 0,
+      "wall_seconds": 83.53355740200004,
+      "log": "23-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045052820146Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2287126424076187,
+          -0.0322938529342215,
+          0.8499563582656819
+        ],
+        "target": [
+          1.23074,
+          -0.02775,
+          0.85
+        ],
+        "xy_error": 0.004975618383198138,
+        "height_error": 4.3641734318033976e-05,
+        "speed": 2.5482702460055974e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011299660523662954,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 63.05000000003109,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 15,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "24-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.01721,
+          -0.00819
+        ],
+        "target": [
+          -0.00755,
+          0.01961
+        ],
+        "yaw": -3.762
+      },
+      "returncode": 0,
+      "wall_seconds": 73.39027806000013,
+      "log": "24-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045103658391Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2299927599376934,
+          0.014699778828900927,
+          0.8499563545322887
+        ],
+        "target": [
+          1.22245,
+          0.01961,
+          0.85
+        ],
+        "xy_error": 0.009000194410499238,
+        "height_error": 4.364546771129518e-05,
+        "speed": 2.7537536195149068e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011864318487093512,
+        "visual_age": 0.18400000000022487
+      },
+      "last_event": {
+        "time": 55.80000000002223,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 8,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "25-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.01107,
+          0.00255
+        ],
+        "target": [
+          0.04477,
+          0.00463
+        ],
+        "yaw": -1.033
+      },
+      "returncode": 0,
+      "wall_seconds": 109.4064538069997,
+      "log": "25-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045146275575Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.266809856133882,
+          -0.0037361213608528595,
+          0.8499563050778282
+        ],
+        "target": [
+          1.27477,
+          0.00463,
+          0.85
+        ],
+        "xy_error": 0.011547981511667419,
+        "height_error": 4.3694922171821915e-05,
+        "speed": 4.691909564964312e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010939785567087533,
+        "visual_age": 0.03399999999992076
+      },
+      "last_event": {
+        "time": 79.19999999999682,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 23,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "26-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          0.01905,
+          -0.00907
+        ],
+        "target": [
+          0.03585,
+          -0.01262
+        ],
+        "yaw": -3.557
+      },
+      "returncode": 0,
+      "wall_seconds": 84.08727958800046,
+      "log": "26-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045156902704Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.3017747079388637,
+          -0.018778262351469694,
+          0.8499647106635859
+        ],
+        "target": [
+          1.26585,
+          -0.01262,
+          0.85
+        ],
+        "xy_error": 0.03644871514446283,
+        "height_error": 3.528933641405718e-05,
+        "speed": 2.5107622593626727e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.001123513930893049,
+        "visual_age": 0.17199999999959914
+      },
+      "last_event": {
+        "time": 65.40000000002898,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 8,
+      "waypoint_recoveries": 1
+    },
+    {
+      "case": {
+        "id": "27-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.01529,
+          -0.00383
+        ],
+        "target": [
+          0.03161,
+          -0.01916
+        ],
+        "yaw": 0.816
+      },
+      "returncode": 0,
+      "wall_seconds": 90.60147978700024,
+      "log": "27-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045216431916Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2760230107998207,
+          -0.021088827055848296,
+          0.8499563765099984
+        ],
+        "target": [
+          1.26161,
+          -0.01916,
+          0.85
+        ],
+        "xy_error": 0.014541501096074095,
+        "height_error": 4.3623490001531984e-05,
+        "speed": 1.081721061156702e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010748003219518262,
+        "visual_age": 0.003999999999990678
+      },
+      "last_event": {
+        "time": 77.1500000000016,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 21,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "28-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          0.00556,
+          -0.00255
+        ],
+        "target": [
+          0.00477,
+          -0.02623
+        ],
+        "yaw": -4.404
+      },
+      "returncode": 0,
+      "wall_seconds": 68.60701704000076,
+      "log": "28-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045217236117Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2452351020213468,
+          -0.02929000024670433,
+          0.8499563704273152
+        ],
+        "target": [
+          1.23477,
+          -0.02623,
+          0.85
+        ],
+        "xy_error": 0.01090330050154672,
+        "height_error": 4.362957268477796e-05,
+        "speed": 1.716104015710851e-08,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011606737396755483,
+        "visual_age": 0.13400000000016377
+      },
+      "last_event": {
+        "time": 57.15000000002388,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 0,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "29-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.01176,
+          0.00361
+        ],
+        "target": [
+          -0.00724,
+          -0.01115
+        ],
+        "yaw": 0.856
+      },
+      "returncode": 0,
+      "wall_seconds": 75.04855867600054,
+      "log": "29-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045320933829Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.222018387964474,
+          -0.010137127423224371,
+          0.8499563794142911
+        ],
+        "target": [
+          1.22276,
+          -0.01115,
+          0.85
+        ],
+        "xy_error": 0.0012553482656304294,
+        "height_error": 4.3620585708836757e-05,
+        "speed": 5.6803741399859244e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0011576802729475122,
+        "visual_age": 0.057999999999864826
+      },
+      "last_event": {
+        "time": 81.84999999999064,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 30,
+      "waypoint_recoveries": 0
+    },
+    {
+      "case": {
+        "id": "30-combined-yaw",
+        "group": "combined-yaw",
+        "box": [
+          -0.00187,
+          -0.004
+        ],
+        "target": [
+          0.02944,
+          0.01194
+        ],
+        "yaw": -2.559
+      },
+      "returncode": 0,
+      "wall_seconds": 50.58863901699988,
+      "log": "30-combined-yaw.log",
+      "status": "COMPLETED",
+      "report": "/home/ziling/projects/007_humanoid_visual_transport/reports/20260909T045325662565Z/report.json",
+      "reason": "VISUAL_BIMANUAL_TRANSPORT",
+      "evaluation": {
+        "payload": [
+          1.2678198131158638,
+          0.010956540051657285,
+          0.8499563794775813
+        ],
+        "target": [
+          1.25944,
+          0.01194,
+          0.85
+        ],
+        "xy_error": 0.00843732548422773,
+        "height_error": 4.362052241868586e-05,
+        "speed": 5.5154228856243e-09,
+        "touch": {
+          "left": 0.0,
+          "right": 0.0,
+          "source": false,
+          "destination": true
+        },
+        "visual_position_error": 0.0010992398542773003,
+        "visual_age": 0.03400000000004155
+      },
+      "last_event": {
+        "time": 55.4500000000218,
+        "phase": "COMPLETED"
+      },
+      "last_working_phase": "VERIFY",
+      "station_contact_samples": 1,
+      "waypoint_recoveries": 0
+    }
+  ],
+  "counts": {
+    "COMPLETED": 30
+  },
+  "groups": {
+    "box-grid": {
+      "COMPLETED": 9
+    },
+    "combined-yaw": {
+      "COMPLETED": 9
+    },
+    "regression": {
+      "COMPLETED": 3
+    },
+    "target-grid": {
+      "COMPLETED": 9
+    }
+  },
+  "failure_phases": {},
+  "station_contact_cases": 25,
+  "inputs_unchanged": true
+}

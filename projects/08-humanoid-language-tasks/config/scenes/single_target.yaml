@@ -1,0 +1,27 @@
+# 008 fake scene: single target.
+#
+# IMPORTANT: this is a **fake** world. There is no physics, no renderer and no
+# MuJoCo behind it. It exists so the offline P2 loop can be exercised
+# deterministically. Any run using it must report execution_backend=fake and
+# physical_outcome=NOT_EVALUATED (docs/MASTER_PLAN.md section 25.4).
+
+schema_version: "1.0"
+scene_id: single_target
+description: One box on a source station, one free destination station.
+
+entities:
+  box_01:
+    category: box
+    x: 1.20
+    y: 0.40
+    visible: true
+
+stations:
+  station_a:
+    occupied: false
+  station_b:
+    occupied: false
+
+robot:
+  holding_object_id: null
+  hand_contact_n: 0.0

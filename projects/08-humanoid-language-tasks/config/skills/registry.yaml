@@ -1,0 +1,24 @@
+# 008 skill registry -- the closed set of proposable skills.
+#
+# Section 10: a proposal naming anything that is not listed here is rejected.
+# `args` declares the argument names a proposal must supply.
+
+schema_version: "1.0"
+
+skills:
+  - name: OBSERVE_OBJECT
+    args: [object_id]
+  - name: OBSERVE_TARGET
+    args: [target_id]
+  - name: APPROACH_OBJECT
+    args: [object_id]
+  - name: GRASP_OBJECT
+    args: [object_id]
+  - name: LIFT_OBJECT
+    args: [object_id, target_id]
+  - name: CARRY_TO_TARGET
+    args: [target_id]
+  - name: PLACE_OBJECT
+    args: [object_id, target_id]
+  - name: VERIFY_RESULT
+    args: [object_id, target_id]

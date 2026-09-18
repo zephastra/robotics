@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "task_kind": "skill_split",
+  "seed": 7,
+  "duration": 120.0,
+  "tally": {
+    "FAILED": 3,
+    "SUCCEEDED": 1
+  },
+  "results": [
+    {
+      "id": "01-regression",
+      "group": "regression",
+      "verdict": "FAILED",
+      "wall_s": 73.1,
+      "report_dir": "20260914T073951938496Z"
+    },
+    {
+      "id": "02-regression",
+      "group": "regression",
+      "verdict": "SUCCEEDED",
+      "wall_s": 74.8,
+      "report_dir": "20260914T074105042536Z"
+    },
+    {
+      "id": "03-regression",
+      "group": "regression",
+      "verdict": "FAILED",
+      "wall_s": 50.4,
+      "report_dir": "20260914T074219796737Z"
+    },
+    {
+      "id": "04-box-grid",
+      "group": "box-grid",
+      "verdict": "FAILED",
+      "wall_s": 60.3,
+      "report_dir": "20260914T074310228872Z"
+    }
+  ],
+  "finished_utc": "2026-09-14T07:44:10.249885+00:00"
+}

@@ -1,0 +1,59 @@
+{
+  "scope": "publication snapshot; existing interpreter; no full transport, GUI, LLM or 009 execution",
+  "checks": [
+    {
+      "name": "008 core and short simulation tests",
+      "command": [
+        "nice",
+        "-n",
+        "15",
+        "/home/ziling/projects/008_humanoid_language_tasks/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/unit",
+        "tests/simulation",
+        "-m",
+        "not slow",
+        "-o",
+        "addopts=",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "returncode": 0,
+      "output": "........................................................................ [ 34%]\n........................................................................ [ 69%]\n...............................................................          [100%]\n207 passed, 4 deselected in 82.46s (0:01:22)\nThe device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\nMNN use high precision\n"
+    },
+    {
+      "name": "008 independence scanner",
+      "command": [
+        "/home/ziling/projects/008_humanoid_language_tasks/.venv/bin/python",
+        "scripts/check_independence.py"
+      ],
+      "returncode": 0,
+      "output": "independence scan clean: no 007 import, path, or out-of-tree symlink found\n"
+    },
+    {
+      "name": "008 existing asset integrity",
+      "command": [
+        "/home/ziling/projects/008_humanoid_language_tasks/.venv/bin/python",
+        "scripts/prepare_assets.py"
+      ],
+      "returncode": 0,
+      "output": "Assets verified: 83 existing, 0 restored; no manifest changes\n"
+    },
+    {
+      "name": "008 restore from tracked files and pinned upstream cache (no 007 runtime)",
+      "command": [
+        "/home/ziling/projects/008_humanoid_language_tasks/.venv/bin/python",
+        "scripts/prepare_assets.py",
+        "--engineai-repo",
+        "/home/ziling/projects/007_humanoid_visual_transport/.cache/engineai_native_sdk",
+        "--menagerie-repo",
+        "/home/ziling/projects/007_humanoid_visual_transport/.cache/menagerie"
+      ],
+      "returncode": 0,
+      "output": "Assets verified: 10 existing, 73 restored; no manifest changes\n"
+    }
+  ],
+  "all_checks_passed": true
+}

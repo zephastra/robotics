@@ -1,0 +1,12 @@
+{
+  "source": [0.23, 0.0, 0.85],
+  "destination": [1.23, 0.0, 0.85],
+  "destination_marker_offset_y": 0.75,
+  "box_halfsize": [0.065, 0.23, 0.04],
+  "handle_y": 0.30,
+  "handle_radius": 0.035,
+  "box_mass": 0.15,
+  "hand_mount_pitch": 0.5,
+  "camera_mount_down_degrees": 35,
+  "note": "Scene construction/evaluation only. Visual task must not import source/destination coordinates."
+}

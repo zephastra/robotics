@@ -1,0 +1,7 @@
+{
+  "source_table_center": [0.23, 0.0, 0.803],
+  "destination_marker_b": [1.23, 0.75, 0.8105],
+  "destination_marker_c": [1.6, 0.25, 0.8105],
+  "marker_offset_y": {"station_b": 0.75, "station_c": 0.75},
+  "note": "Known fixed fixture map. Marker positions are approximate bearings used only to orient the head for OBSERVE_TARGET (section 11: fixture position may come from a known map; exact pose comes from the visual marker, never from this map). marker_offset_y is the per-station SIGNED installation offset from the table centre to the marker, along the table's long axis under the fixed-orientation assumption; it must match the scene geometry, the vision conversion and the planning collision model. A NEGATIVE offset is supported by the code but was tested for station_c (-0.75, marker at y=-1.25) and OBSERVE_TARGET failed: the marker sits almost at table height on the far side, so the table occludes it from the approach direction. Not an obstacle perception system, and not a claim of arbitrary-rotation support."
+}

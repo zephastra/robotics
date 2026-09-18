@@ -1,0 +1,96 @@
+# 008 RulePlanner -- declared coverage.
+#
+# Everything the rule planner can understand lives in this file. Text outside
+# this vocabulary is never guessed at: it becomes a clarification or a refusal.
+#
+# The language vocabulary lives here together with the planner policy because
+# both are part of the same declared-coverage contract (docs/MASTER_PLAN.md
+# section 12). All terms are matched after normalisation (NFKC, lower-cased,
+# punctuation stripped).
+
+transport_verbs:
+  - 搬
+  - 搬运
+  - 拿
+  - 送
+  - 运
+  - 移到
+  - 放到
+  - 放上
+  - move
+  - carry
+  - deliver
+  - take
+  - put
+
+inspect_verbs:
+  - 看看
+  - 看一下
+  - 看一眼
+  - 查看
+  - 观察
+  - 检查
+  - look
+  - inspect
+  - check
+  - observe
+
+negation_markers:
+  - 不要
+  - 别
+  - 不用
+  - 先别
+  - do not
+  - don't
+  - without
+
+alternative_markers:
+  - 如果
+  - 要是
+  - if
+
+occupied_markers:
+  - 占用
+  - 被占
+  - 满
+  - occupied
+  - full
+  - busy
+
+# entity id -> spoken/typed aliases
+object_aliases:
+  box_01:
+    - 箱子
+    - 盒子
+    - 盒
+    - 物料
+    - 零件
+    - box
+    - part
+    - item
+
+# station id -> spoken/typed aliases
+station_aliases:
+  station_a:
+    - 取料台
+    - 源台
+    - 上料台
+    - a台
+    - a 台
+    - station a
+    - a station
+    - source
+  station_b:
+    - 目的台
+    - 目标台
+    - 卸料台
+    - b台
+    - b 台
+    - station b
+    - b station
+    - target
+  station_c:
+    - c台
+    - c 台
+    - station c
+    - c station
