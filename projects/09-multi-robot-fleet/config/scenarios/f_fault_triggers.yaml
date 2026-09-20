@@ -1,0 +1,42 @@
+# The world for the fault cases F06-F14.
+#
+# WHY ONE FILE AND NOT NINE. Each N-case carries its own scenario because each one arranges a
+# different ORDER of robots in the corridor, and the order is a property of the case. The fault
+# cases share the property that matters to the budgets here instead: a leg is EXPECTED to fail,
+# so `leg_timeout_s` is what the numbers are about. A scenario tuned for a successful crossing
+# would make every one of them park on a budget that has nothing to do with the fault, and the
+# report would show a timeout rather than a robot that was stopped.
+#
+# 120 s rather than the 240 s the crossing scenarios use: the fault is what should end the leg,
+# and `max_retries: 1` says the same thing from the other side -- a fault that heals itself and
+# succeeds on the second attempt is not being tested.
+schema_version: "1"
+name: f_fault_triggers
+description: >
+  One world for the fault cases: healthy robots, the shared corridor, and a leg budget short
+  enough that a fault ends a leg rather than the budget.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 120.0
+    max_retries: 1
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 120.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0
+    crossing_timeout_s: 300.0
+    crossing_queue_s: 90.0
+
+robots:
+  r01:
+    start_battery_fraction: 1.0
+  r02:
+    start_battery_fraction: 1.0
+  r03:
+    start_battery_fraction: 1.0

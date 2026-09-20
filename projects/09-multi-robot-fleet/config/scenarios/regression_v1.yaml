@@ -1,0 +1,1692 @@
+# 009 regression_v1 -- the frozen case list from TEST_AND_ACCEPTANCE section 5.
+#
+# WHY A FILE AND NOT A LOOP IN A SCRIPT
+# -------------------------------------
+# Section 5 freezes 30 cases, and section 5's batch strategy adds two extra seeds for four of
+# them (N04, N05, N07, N08) -- 38 runs in total. A case list that lives inside a Python loop
+# cannot be checked against the contract, and "case/seed 不能因失败被替换" is unenforceable if
+# the list can be edited without anyone noticing. So the list is data, and
+# `scripts/check_batch_manifest.py` parses section 5's own table and requires this file to
+# cover **exactly** those ids -- no more, no fewer, no renames.
+#
+# WHAT A CASE HAS TO DECLARE
+# --------------------------
+# Either it can be RUN, i.e. it declares what to submit and what outcome is expected:
+#
+#     truth: fleet_recorder
+#     submit: [{pick: ..., drop: ..., cargo: ...}]
+#     expect: {task: SUCCEEDED, safety: PASS, behavior: PASS}
+#
+# or it is BLOCKED, i.e. it names the capability it is waiting for:
+#
+#     requires: [<key>, ...]
+#
+# Every `requires` key must be declared under `prerequisites:` below, and its key must appear
+# in `docs/LIMITATIONS.md`. That coupling is the point: a case cannot be quietly marked
+# "not run" without the reason being written in the register a reader already looks at.
+#
+# `expect` is the three-outcome split section 1 requires, and it is per case on purpose: a
+# fault case that correctly parks a task has `task: NEEDS_ATTENTION` and `behavior: PASS`.
+#
+# SAFETY IS DECLARED, AND THE DECLARATION CAN FAIL. Section 1: "缺真值或采样中断时为
+# UNKNOWN，最终物理验收不能通过". A runnable case therefore names its truth source:
+#
+#     truth: fleet_recorder
+#     expect: {task: SUCCEEDED, safety: PASS, behavior: PASS}
+#
+# `scripts/batch.py` now starts `fleet_evaluation`'s recorder beside every case and judges the
+# recording with `fleet_evaluation.judge`, which reads Gazebo's own body poses. `safety` here is
+# the verdict EXPECTED, and the runner treats a disagreement as a case failure: FAIL is exit 4,
+# and "the recording could not establish it" is exit 5. A blocked case still says UNKNOWN,
+# because it is not run at all and so has no recording.
+#
+# The guard checks the name against the sources `scripts/batch.py` actually implements, so a
+# case cannot declare a collector that does not exist.
+
+schema_version: "1"
+frozen_on: "2026-09-16"
+backend: gazebo_nav2
+description: >
+  The 30 frozen cases of TEST_AND_ACCEPTANCE section 5 plus the 8 seeded repeats of section
+  5's batch strategy. Six cases can run against the machinery that exists today; the rest name
+  the capability they are waiting for.
+
+#: Extra seeds: section 5 names these four cases for two additional frozen seeds each.
+seed_repeats:
+  cases: [N04, N05, N07, N08]
+  seeds: [2, 3]
+
+#: Capabilities a blocked case may be waiting for. `docs/LIMITATIONS.md` carries a section
+#: with one entry per key; the guard checks that.
+prerequisites:
+  # `crossing_scenarios` was retired in round 16 (2026-09-18): N04, N05, N06 and N07 are
+  # runnable and no case declares this key any more. The register keeps its entry as the record
+  # of what it was and what filled it -- see the P7 batch prerequisites section of
+  # docs/LIMITATIONS.md and docs/DECISIONS.md D-P16-01. A comment rather than a deleted line,
+  # because a reader searching this file for the name should find out where it went.
+  # --- what round 17 left of this key -------------------------------------- #
+  #
+  # Round 17 (2026-09-18) built the vocabulary this paragraph was asking for: `steps:`, an
+  # ordered list of `when <predicate> do <action>`, with the predicates taken from
+  # `fleet_core.wait_for` and the actions from `fleet_core.trigger`. F05, F06, F07, F08, F09,
+  # F11, F12, F13, F14 and N08 moved onto it and no longer declare this key.
+  #
+  # Two cases still declare this key, and neither is waiting for the vocabulary: I03 needs a
+  # stale goal result injected at the ROS integration boundary, and I08 needs a whole run
+  # terminated and another started. F03 used to be listed here as "needs a robot parked on
+  # the exit buffer (nothing can drive a robot to a pose)"; `drive_to_pose` was built for it
+  # and does NOT close that gap, because a pad is not a legal arrival point (D-P17-30), so F03
+  # now declares `pad_occupation_by_crossing` instead. See docs/DECISIONS.md D-P17-01.
+  batch_driver_extended:
+    summary: >
+      PARTLY RETIRED. I03 and I08 are runnable and still declare this key. F03 was moved off
+      it on 2026-09-20 (D-P17-30) to `pad_occupation_by_crossing`, because the mechanism
+      built for it does not do what this entry claims: `drive_to_pose` can drive a robot to a
+      POSE, but not onto a pad -- arriving there is refused by the traffic contract itself, so
+      F03's fault could never be delivered and both candidate targets timed out. Two of the
+      three mechanisms are real:
+      (`inject_stale_goal_result` (I03: a stale success
+      callback delivered to a cancelled task whose goal handle is still live), and
+      `terminate_run` (I08: this run ends and another starts in its own directory, with the
+      epoch compared and the second ledger checked for tasks inherited from the first).
+      Each has a precondition that refuses a delivery which would make its case test
+      nothing, in `fleet_core.stage2_capabilities`.
+  pad_occupation_by_crossing:
+    summary: >
+      OPEN (2026-09-20, D-P17-30). F03 declares this key. This is NOT a missing action --
+      `drive_to_pose` exists and `scripts/batch.py:fire_step` dispatches it -- it is a missing
+      LEGAL ARRIVAL POINT. config/resources.yaml records that arriving at a pad is refused
+      (`RESOURCE_UNKNOWN` on `mid`) while a robot standing there is allowed, so a robot cannot
+      be driven onto an exit buffer directly; it has to earn its way there through a granted
+      crossing. F03 wants a body ON the pad, so the capability it needs is "occupy a buffer by
+      completing a crossing and staying", which nothing provides.
+      Do NOT close this by pointing `drive_to_pose` at `align_east`: that IS a legal asking
+      point, so the robot would stop beside the pad and the case would no longer test what its
+      title says. The two candidate targets tried so far (exit_west on 2026-09-18, exit_east on
+      2026-09-19) both timed out with error_code 105, and the driver's message reads as a
+      navigation fault while the cause is the traffic contract.
+  low_battery_while_executing:
+    summary: >
+      RETIRED in round 17 (2026-09-18, stage 2). CONTRACTS section 5's second half is
+      implemented in `fleet_core.loaded_battery_policy` and wired into
+      `task_service_node._service_loaded_battery`. The skip `D-P17-02` named --
+      `if state.executing or not self._fresh(rid, now): continue` -- is split: an executing
+      robot still gets no charge run, but a LOADED one is asked what to do and parks at a
+      legal reachable point with the task raised. The rule's three parts are separable and
+      separately tested: the branch order (a loaded robot's outcome does not move when an
+      unloaded robot's rule would fire), the parking geometry (footprint plus margin must
+      clear every protected rectangle, and an unreachable point is refused rather than
+      promised), and custody (`ownership_preserved`, which catches a re-homed cargo that a
+      "was it delivered" check would pass).
+  obstacle_injection:
+    summary: >
+      RETIRED in round 17 (2026-09-18, stage 2). F01 and F02 are runnable and no case
+      declares this key. `spawn_obstacle` / `despawn_obstacle` place and remove a body,
+      with the section 5 rule enforced as a precondition: a body centred inside the
+      robot's footprint plus its own radius is refused, because a robot already inside an
+      obstacle is never routed around it. The width is what separates the two cases and it
+      is arithmetic rather than prose -- `obstacle_leaves_a_route` returns False for a body
+      that fills the corridor (F02) and True for one that does not (F01), so the same width
+      cannot silently serve both.
+  truth_collector_control:
+    summary: >
+      RETIRED in round 17 (2026-09-18, stage 2). I06 is runnable and no case declares this
+      key. `stop_truth_collector` / `start_truth_collector` act mid-run. The precondition
+      refuses to stop a collector that has recorded NOTHING: an empty truth stream has no
+      unauthorised entry in it, so every truth-based safety check would pass on it, and I06
+      would turn the rest of the run's safety verdict into a statement about nothing. The
+      assertion is on the record rather than the fleet -- `truth_absence_is_reported`
+      requires the gap to be named, because a run whose truth stopped and whose report does
+      not say so has an UNREADABLE safety verdict, not a passing one.
+  world_pause_control:
+    summary: >
+      RETIRED in round 17 (2026-09-18, stage 2). I04 and I05 are runnable and no case
+      declares this key. `pause_world` / `resume_world` freeze and unfreeze the world and
+      `clock_jump_precondition` covers I05's different fault. Two refusals carry the
+      weight: pausing an already-paused world is refused as IMPOSSIBLE (a second pause
+      changes nothing, so "the fleet survived the pause" would be about a world that never
+      paused), and I04 is only proven if something actually aged past the freshness window
+      -- `PauseObservation.staleness_was_observable` fails when nothing ever read as stale,
+      which means the pause did not reach the task layer.
+  db_fault_injection:
+    summary: >
+      RETIRED in round 17 (2026-09-18, stage 2). I07 is runnable and no case declares this
+      key. Three controlled modes (`write_denied`, `db_locked`, `disk_full_sim`) against a
+      dedicated TEST database. The test-database requirement is a safety property and not
+      tidiness: a write denial aimed at the shipped ledger outlives the case and surfaces
+      as an unrelated case failing later in the same batch. A refusal before any write has
+      been attempted is also refused, because a ledger nothing was asked of looks healthy.
+      Section 6 requires a controlled failure rather than a full disk for the same reason
+      -- a real full disk also breaks the event log, the recorder and the batch runner.
+  permit_renewal_interrupt:
+    summary: >
+      RETIRED in round 17 (2026-09-18, stage 2). F10 is runnable and no case declares this
+      key. `suspend_permit_renewal` / `resume_permit_renewal` stop renewal while the robot
+      keeps reporting. The second half is the one that matters and it is a precondition:
+      a robot that had ALSO gone quiet would have its permit withdrawn for staleness, so
+      the case would be exercising the stale-state path rather than F10's own clause
+      (机器人持续上报), and `permit_interrupt_precondition` refuses that setup. The
+      assertion requires three things together -- the permit lapsed, the robot stayed
+      fresh, and the fleet ACTED, because a lapse nobody notices is not a safety
+      property.
+
+cases:
+  # REBUILT in round 17 (stage 2) from TEST_AND_ACCEPTANCE section 5's table row and the
+  # `obstacle_injection` register entry. This case has never run, so no archive holds it.
+  F01:
+    title: block the corridor, then remove the blockage
+    runners: [r01]
+    scenario: f_fault_triggers
+    submit:
+      - {pick: S_left_a, drop: S_right_b, cargo: f01-cargo, request_id: f01-run}
+    steps:
+      # The body must leave a route, or this is F02. `obstacle_leaves_a_route` is the
+      # arithmetic that keeps the two apart: 0.25 m of radius leaves 0.40 m of corridor,
+      # against the 0.20 m minimum. Sequenced so the robot is INSIDE the passage before the
+      # body appears, which is what makes the route it takes afterwards evidence.
+      - when: {request_id: f01-run, state: EXECUTING}
+        do: {action: spawn_obstacle, name: f01-block, x: 0.60, y: 0.10, radius_m: 0.25}
+      # Then taken away again, and the case asserts the run finished: section 5's claim for
+      # the removable half is that the fleet re-plans rather than stranding.
+      - when: {request_id: f01-run, state: EXECUTING}
+        do: {action: despawn_obstacle, name: f01-block}
+    observe_s: 1200.0
+    truth: fleet_recorder
+    observe: obstacle_removed
+    expect: {task: SUCCEEDED, safety: PASS, behavior: PASS}
+    note: >
+      Section 5: 走廊内出现可移除障碍 -> 重新规划、不碰撞、不卡死. The third clause is the one
+      this runner reads from truth rather than from the ledger -- `no_simultaneous_occupancy_from_truth`
+      is what says the robot did not drive through the body -- and the second is
+      `obstacle_leaves_a_route`, evaluated before the body is placed rather than after.
+      The body is spawned only once the robot is EXECUTING: a body placed while the robot is
+      idle is a body the planner routes around before it ever has a plan to revise.
+
+  # REBUILT in round 17 (stage 2) -- see F01's marker. Same sources.
+  F02:
+    title: the only corridor is blocked for good
+    runners: [r01]
+    scenario: f_fault_triggers
+    submit:
+      - {pick: S_left_a, drop: S_right_b, cargo: f02-cargo, request_id: f02-run}
+    steps:
+      # The same mechanism as F01 with a body that fills the corridor: 0.65 m of radius
+      # against a 0.65 m half-height means `obstacle_leaves_a_route` is False and the case
+      # is about refusing rather than re-planning. Never despawned -- the title says 永久.
+      - when: {request_id: f02-run, state: EXECUTING}
+        do: {action: spawn_obstacle, name: f02-block, x: 0.60, y: 0.00, radius_m: 0.65}
+    observe_s: 900.0
+    truth: fleet_recorder
+    expect: {task: NEEDS_ATTENTION, safety: PASS, behavior: PASS}
+    note: >
+      Section 5: 障碍永久阻塞 -> 任务进入 NEEDS_ATTENTION，不允许假成功. `expect.task` is
+      NEEDS_ATTENTION and that is the assertion, not a shortfall: a task that reached
+      SUCCEEDED with its only corridor filled would be the fake success the clause forbids.
+      The safety verdict comes from truth, and the check that matters is on the BODY as much
+      as the robot -- the robot must not be inside the block, which is why
+      `obstacle_precondition` refuses a body placed within the robot's own footprint.
+
+  # REBUILT in round 17 (stage 2) -- see F01's marker. The mechanism this case waited for
+  # (`drive_to_pose`) was built this round; the row comes from section 5's table.
+  F03:
+    title: the correct exit buffer is occupied
+    # BLOCKED 2026-09-20 (D-P17-30). `drive_to_pose` to a pad CANNOT work, and that is
+    # decidable from the contract rather than from another run: config/resources.yaml records
+    # that ARRIVING at a pad is refused (`RESOURCE_UNKNOWN` on `mid`) while a robot STANDING
+    # there is allowed, so the permit can never be requested and the driver reports
+    # `Failed to make progress` (error_code 105) -- "which reads as a navigation fault and is
+    # not one". Measured: the 2026-09-19 fix moved the target from `exit_west` to `exit_east`
+    # and BOTH time out, so the target was never the problem. A pad can only be occupied by a
+    # robot that earned its way there through a granted crossing, and no action arranges that.
+    # The intended workload is kept under intended_steps, so the case's content survives.
+    requires: [pad_occupation_by_crossing]
+    runners: [r01, r02]
+    scenario: f_fault_triggers
+    intended_submit:
+      - {pick: S_left_a, drop: S_right_b, cargo: f03-cargo, request_id: f03-run}
+    intended_steps:
+      # Something must be ON the pad before the task needs it. `drive_to_pose` is the
+      # capability this case was waiting for: nothing could previously put a body at a
+      # chosen pose, and the pad is named explicitly because occupying a protected
+      # rectangle ON PURPOSE and doing it BY ACCIDENT must not look alike.
+      # `exit_east`, not `exit_west`. r01 picks on the west (S_left_a) and drops on the
+      # east (S_right_b), so the buffer it needs after leaving the gap is the FAR-side one
+      # -- config/resources.yaml calls both pads `exit_west`/`exit_east` at :144-145 and
+      # names `exit_node: exit_east` for this direction at :156. Until 2026-09-19 this
+      # pointed at `exit_west`, which asked r02 -- spawned at (6.0, -2.0) on the EAST side
+      # -- to cross the whole map to occupy a buffer it does not need; the run measured it
+      # as unreachable (`Failed to make progress`, error_code 105), so the fault was never
+      # delivered. Occupying `exit_east` is what the title says and is a same-side hop.
+      - do: {action: drive_to_pose, runner: r02, x: 2.5, y: -1.4, tolerance_m: 0.20}
+    observe_s: 1200.0
+    intended_truth: fleet_recorder
+    intended_expect: {task: NEEDS_ATTENTION, safety: PASS, behavior: PASS}
+    note: >
+      Section 5: 出口垫被占 -> 选择正确出口缓冲，不占用别人的. `expect.task` is
+      NEEDS_ATTENTION because a pad that stays occupied for the whole run is a task that
+      cannot finish, and section 9 is explicit that a correctly parked case is still not a
+      transport success. NOT asserted: that the fleet chose the OTHER pad rather than
+      waiting. That would need the ledger's chosen node compared against the pad r02 is
+      standing on, and this runner reads the outcome rather than the choice -- unasserted,
+      not passing. See D-P17-03.
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  F04:
+
+    title: low battery before pickup, with a reachable charger
+
+    runners:
+
+    - r01
+
+    scenario: p5_low_battery
+
+    submit: []
+
+    observe: charge_run
+
+    truth: fleet_recorder
+
+    faults:
+
+    - fraction: 0.15
+
+      kind: battery_inject
+
+      runner: r01
+
+      when: immediate
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+    note: 'The charge run is GENERATED by the task service from the battery state, so this case submits
+
+      nothing and the runner checks for a `return_to_charge` task that reaches EXECUTING or SUCCEEDED. The
+
+      directed scenario D is the fuller version of this case: it also submits an ordinary CARRY task and
+
+      asserts the low robot is never named for it, and that half is NOT established by this runner.
+
+  
+
+      '
+
+  # REBUILT in round 17 (stage 2). This case was F05's own blocker: the policy it needs
+  # (`fleet_core.loaded_battery_policy`) was written this round. See item 8b.
+  F05:
+    title: low battery while carrying
+    runners: [r01]
+    scenario: f_fault_triggers
+    submit:
+      - {pick: S_left_a, drop: S_right_b, cargo: f05-cargo, request_id: f05-run}
+    steps:
+      # The trigger is CARRYING, not EXECUTING. A robot on its way to pickup is executing
+      # and empty, and forcing the charge then exercises the UNLOADED half of the rule --
+      # the half that already worked. `robot_carrying` reads the ledger's own payload rows
+      # rather than the robot's report, because "the payload is mine" is the party under
+      # test answering for itself.
+      - when: {robot_carrying: r01}
+        do: {action: battery_inject, runner: r01, fraction: 0.05}
+    observe_s: 900.0
+    truth: fleet_recorder
+    behavior_checks: [payload_not_rehomed]
+    expect: {task: NEEDS_ATTENTION, safety: PASS, behavior: PASS}
+    note: >
+      Section 5: 持货低电：v1 不自动卸货、不自动把货带到不支持载货的充电位；安全停到可达合法位并
+      NEEDS_ATTENTION. All three clauses are now implemented and each is testable alone:
+      `decide()` checks the loaded branch BEFORE the unloaded one (a loaded robot's outcome
+      must not move when an unloaded robot's rule would fire), `legal_park_point()` refuses
+      a spot inside a protected rectangle and refuses an unreachable one rather than
+      promising it, and `payload_not_rehomed` catches a cargo that quietly changed hands --
+      a check that only asked "was it delivered" would pass on a fleet that re-homed the
+      load, which is the failure this case exists to catch.
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  F06:
+
+    title: an idle robot goes offline
+
+    runners:
+
+    - r01
+
+    - r02
+
+    scenario: f_fault_triggers
+
+    submit:
+
+    - cargo: f06-cargo
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+      request_id: f06-r01-work
+
+    steps:
+
+    - do:
+
+        action: kill_process
+
+        node: all
+
+        runner: r02
+
+    observe_s: 600.0
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+    note: 'Section 5''s claim is 不再分配，其他车执行可行任务, and both halves are checked and both can fail: the stopped
+
+      robot must not appear as any task''s robot in the final ledger, and r01''s task has to reach SUCCEEDED
+
+      while its neighbour is gone. Recorded because it is the honest measure: r02 was never doing anything,
+
+      so "the fleet carried on" is the whole content of this case.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  F07:
+
+    title: the adapter of a robot on its way to pickup dies
+
+    runners:
+
+    - r01
+
+    scenario: f_fault_triggers
+
+    submit:
+
+    - cargo: f07-cargo
+
+      drop: S_right_b
+
+      pick: S_left_a
+
+      request_id: f07-run
+
+    steps:
+
+    - do:
+
+        action: kill_process
+
+        node: nav2_adapter
+
+        runner: r01
+
+      when:
+
+        request_id: f07-run
+
+        state: EXECUTING
+
+    observe_s: 900.0
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: NEEDS_ATTENTION
+
+    note: 'Section 6: Adapter 退出只终止该 run 目标进程，Gate 保持运行. That is why the target is `nav2_adapter` and not
+
+      `all`: the gate, the bridge and Nav2 keep running, and it is the TASK LAYER that has to notice the
+
+      robot has gone quiet and park the run. What ends the leg is the state going stale, not a timeout --
+
+      `f_fault_triggers` sets `leg_timeout_s: 120` and the freshness window is much shorter than that, so
+
+      a park inside the budget is the adapter''s death being noticed rather than the budget expiring.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  F08:
+
+    title: a robot carrying a payload goes offline
+
+    runners:
+
+    - r01
+
+    - r02
+
+    scenario: f_fault_triggers
+
+    submit:
+
+    - cargo: f08-cargo
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+      request_id: f08-run
+
+    steps:
+
+    - do:
+
+        action: kill_process
+
+        node: all
+
+        runner: r01
+
+      when:
+
+        robot_carrying: r01
+
+    observe_s: 900.0
+
+    truth: fleet_recorder
+
+    behavior_checks:
+
+    - payload_not_rehomed
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: NEEDS_ATTENTION
+
+    note: 'Section 5''s claim is 不把货物瞬移给另一台, and that is what `payload_not_rehomed` decides: every payload
+
+      the dead robot was holding is still held BY IT at the end. A check that only asked "was it delivered"
+
+      would pass on a fleet that quietly re-homed the cargo, which is the failure this case exists to catch.
+
+      `expect.task` is NEEDS_ATTENTION and section 9 is explicit that a correctly parked fault case is still
+
+      not a transport success.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  F09:
+
+    title: a robot is lost inside the corridor
+
+    runners:
+
+    - r01
+
+    - r02
+
+    scenario: f_fault_triggers
+
+    submit:
+
+    - cargo: f09-r01
+
+      drop: S_right_a
+
+      pick: S_left_b
+
+      request_id: f09-r01
+
+      runner: r01
+
+    - cargo: f09-r02
+
+      drop: S_left_a
+
+      pick: S_right_b
+
+      request_id: f09-r02
+
+      runner: r02
+
+      wait_for:
+
+        robot_crossing: r01
+
+    steps:
+
+    - do:
+
+        action: kill_process
+
+        node: all
+
+        runner: r01
+
+      when:
+
+        robot_crossing: r01
+
+    observe_s: 1200.0
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: NEEDS_ATTENTION
+
+    note: 'Section 5''s claim is 停车、资源 UNKNOWN、其他车不进入. The third clause is decided by truth and not by the
+
+      ledger: the judge''s own `no_simultaneous_occupancy_from_truth` and `no_unauthorised_entry_from_truth`,
+
+      read from the simulator''s body poses. r02''s task is NOT required to finish -- a corridor whose occupant
+
+      has died is a corridor nobody may enter, so a stalled task is the correct outcome and the safety verdict
+
+      is the evidence. `expect.task` is NEEDS_ATTENTION, which §9 requires even when the run was correct.
+
+  
+
+      '
+
+  # REBUILT in round 17 (stage 2) -- see F01's marker. `permit_renewal_interrupt` was
+  # filled this round; the row comes from section 5's table.
+  F10:
+    title: permit renewal stops while the robot keeps reporting
+    # RE-ACTIVATED 2026-09-19 (D-P17-26). This key was marked RETIRED in round 17
+    # on the claim that the mechanism had been built. It had not: permit_renewal_interrupt
+    # appears ONLY in the declaration layer (trigger.py, stage2_capabilities.py) and
+    # nowhere in the implementation, so this case's fault could never be delivered.
+    # Measured 2026-09-19: the case reported NOT_RUN -- the honest outcome -- while the
+    # manifest said it was runnable. This makes the manifest say so before the run.
+    # The intended workload is kept under intended_submit / intended_expect, so the
+    # case's content is preserved rather than deleted while it is blocked.
+    requires: [permit_renewal_interrupt]
+    runners: [r01, r02]
+    scenario: f_fault_triggers
+    intended_submit:
+      - {pick: S_left_a, drop: S_right_b, cargo: f10-r01, request_id: f10-r01, runner: r01}
+      - {pick: S_right_a, drop: S_left_b, cargo: f10-r02, request_id: f10-r02, runner: r02,
+         wait_for: {robot_crossing: r01}}
+    intended_steps:
+      # The robot must be INSIDE the passage for its permit to be live, and the interrupt
+      # must not also stop it reporting -- `permit_interrupt_precondition` refuses a setup
+      # where the robot went quiet, because that is the stale-state path and not this case.
+      - when: {robot_crossing: r01}
+        do: {action: suspend_permit_renewal, runner: r01}
+    observe_s: 900.0
+    intended_truth: fleet_recorder
+    intended_expect: {task: NEEDS_ATTENTION, safety: PASS, behavior: PASS}
+    note: >
+      Section 5: 许可停止续约且车持续上报 -> 停车、资源回收、其他车不被骗. The third clause is
+      the one worth naming: r02's own request is held until r01 is inside, so what is being
+      observed is a robot that must not be admitted to a corridor whose occupant's permit
+      has silently lapsed. `permit_withdrawal_confirm` requires all three together -- the
+      permit lapsed, the robot stayed fresh, and the fleet ACTED -- because a lapse nobody
+      notices is not a safety property. NOT asserted: that the resource was formally
+      recycled before the run ended; that is read from the ledger timing and this runner
+      asserts the safety outcome. Unasserted, not passing. See D-P17-03.
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  F11:
+
+    title: the central task service restarts
+
+    runners:
+
+    - r01
+
+    scenario: f_fault_triggers
+
+    submit:
+
+    - cargo: f11-cargo
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+      request_id: f11-run
+
+    steps:
+
+    - do:
+
+        action: restart_process
+
+        node: fleet_task_service
+
+      when:
+
+        request_id: f11-run
+
+        state: EXECUTING
+
+    observe_s: 900.0
+
+    truth: fleet_recorder
+
+    behavior_checks:
+
+    - no_duplicate_task
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: NEEDS_ATTENTION
+
+    note: 'Section 5''s claim is 新 epoch 对账，旧任务不重复执行, and both halves are checked from the service''s own
+
+      report rather than from the runner''s intentions: the epoch is a fresh random per process, so a value
+
+      that did not change means the process never came back; and every task that was IN SERVICE when it
+
+      died must be accounted for at the end -- parked by the boot reconciliation with `INTERRUPTED_BY_RESTART`,
+
+      which is the only thing that writes task state outside the state machine, or legitimately finished.
+
+      `no_duplicate_task` is the second half: one ledger row per request id.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  F12:
+
+    title: Nav2 refuses a goal, or its server exits
+
+    runners:
+
+    - r01
+
+    scenario: f_fault_triggers
+
+    submit:
+
+    - cargo: f12-cargo
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+      request_id: f12-run
+
+    steps:
+
+    - do:
+
+        action: kill_process
+
+        node: bt_navigator
+
+        runner: r01
+
+      when:
+
+        request_id: f12-run
+
+        state: EXECUTING
+
+    observe_s: 900.0
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: NEEDS_ATTENTION
+
+    note: 'Section 5''s claim is 明确 nav fault，本地停车，无 fake 成功. The last clause is what makes this evidence
+
+      rather than a formality: `expect.task: NEEDS_ATTENTION` means the run was parked, and a task that
+
+      reached SUCCEEDED with its navigator gone would be exactly the fake success the contract forbids.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  F13:
+
+    title: the final Gate process exits
+
+    runners:
+
+    - r01
+
+    scenario: f_fault_triggers
+
+    submit:
+
+    - cargo: f13-cargo
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+      request_id: f13-run
+
+    steps:
+
+    - do:
+
+        action: kill_process
+
+        node: safety_gate
+
+        runner: r01
+
+      when:
+
+        request_id: f13-run
+
+        state: EXECUTING
+
+    observe_s: 900.0
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: NEEDS_ATTENTION
+
+    note: 'Section 5''s claim is 下游保护确实生效；否则 FAIL, and this is the one case in this batch whose central
+
+      clause is only HALF asserted, which is written here rather than left implied. Asserted: the task could
+
+      not succeed (there is no gate left to let it move) and the truth-based safety properties hold. NOT
+
+      asserted: that nothing downstream of the gate publishes `cmd_vel`. That would need a check on the
+
+      command stream, which is `commands.jsonl` per section 7 and not something this runner reads. This
+
+      is unasserted, not passing; see D-P17-03.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  F14:
+
+    title: localization messages expire and TF is lost
+
+    runners:
+
+    - r01
+
+    scenario: f_fault_triggers
+
+    submit:
+
+    - cargo: f14-cargo
+
+      drop: S_right_b
+
+      pick: S_left_a
+
+      request_id: f14-run
+
+    steps:
+
+    - do:
+
+        action: kill_process
+
+        node: gz_bridge
+
+        runner: r01
+
+      when:
+
+        request_id: f14-run
+
+        state: EXECUTING
+
+    observe_s: 900.0
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: NEEDS_ATTENTION
+
+    note: 'Section 5''s claim is 停车封锁相关区域，拒绝真值代驾. The second clause is the one this batch does not decide:
+
+      "did the controller make do with a substitute pose" needs a check on which pose the gate trusted,
+
+      and `batch.py` records `err_gate_truth` in the judge''s summary but asserts nothing from it. Unasserted,
+
+      not passing -- see D-P17-03.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  I01:
+
+    title: the same submission ten times
+
+    runners:
+
+    - r01
+
+    scenario: n02_transfer_round_trip
+
+    submit:
+
+    - cargo: i01-cargo
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+      repeat: 10
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  I02:
+
+    title: same request_id, different content
+
+    runners:
+
+    - r01
+
+    scenario: n02_transfer_round_trip
+
+    submit:
+
+    - cargo: i02-cargo
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+      request_id: p7-I02-s1
+
+    - cargo: i02-cargo-other
+
+      drop: S_left_b
+
+      expect: IDEMPOTENCY_CONFLICT
+
+      pick: S_left_a
+
+      request_id: p7-I02-s1
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+  # REBUILT in round 17 (stage 2) -- see F01's marker.
+  I03:
+    title: a stale success callback arrives after a cancel
+    # RE-ACTIVATED 2026-09-19 (D-P17-26). This key was marked RETIRED in round 17
+    # on the claim that the mechanism had been built. It had not: batch_driver_extended
+    # appears ONLY in the declaration layer (trigger.py, stage2_capabilities.py) and
+    # nowhere in the implementation, so this case's fault could never be delivered.
+    # Measured 2026-09-19: the case reported NOT_RUN -- the honest outcome -- while the
+    # manifest said it was runnable. This makes the manifest say so before the run.
+    # The intended workload is kept under intended_submit / intended_expect, so the
+    # case's content is preserved rather than deleted while it is blocked.
+    requires: [batch_driver_extended]
+    runners: [r01]
+    scenario: f_fault_triggers
+    intended_submit:
+      - {pick: S_left_a, drop: S_right_b, cargo: i03-cargo, request_id: i03-run}
+    intended_steps:
+      # The cancel comes first -- a late result on a task that was never cancelled is not
+      # stale, it is the result. `stale_result_precondition` also refuses a task that has
+      # already reached a terminal state, because then the TERMINAL check catches the
+      # result and the staleness guard this case is about never runs.
+      - when: {request_id: i03-run, state: EXECUTING}
+        do: {action: cancel_task, request_id: i03-run}
+      - when: {request_id: i03-run, state: CANCELED}
+        do: {action: inject_stale_goal_result, request_id: i03-run}
+    observe_s: 600.0
+    intended_truth: fleet_recorder
+    intended_expect: {task: CANCELED, safety: PASS, behavior: PASS}
+    note: >
+      Section 5: 取消后迟到的成功回调 -> 不得被当作成功. `expect.task` is CANCELED and that
+      IS the assertion -- `stale_result_confirm` fails if the task reached SUCCEEDED after
+      being cancelled, because that is 假成功 by another route. The injection targets a
+      goal handle that is still live: a second injection into the same handle is refused,
+      since the guard has already run for it and the case would be watching nothing.
+
+  # REBUILT in round 17 (stage 2) -- see F01's marker.
+  I04:
+    title: pause the world, cut the link, restore both
+    runners: [r01]
+    scenario: f_fault_triggers
+    submit:
+      - {pick: S_left_a, drop: S_right_b, cargo: i04-cargo, request_id: i04-run}
+    steps:
+      # Pausing an ALREADY paused world is refused as impossible: a second pause changes
+      # nothing, so "the fleet survived the pause" would be a statement about a world that
+      # never paused. The resume is a separate step for the same reason in reverse.
+      - when: {request_id: i04-run, state: EXECUTING}
+        do: {action: pause_world}
+      - when: {request_id: i04-run, state: EXECUTING}
+        do: {action: resume_world}
+    observe_s: 900.0
+    truth: fleet_recorder
+    expect: {task: NEEDS_ATTENTION, safety: PASS, behavior: PASS}
+    note: >
+      Section 5: 世界暂停、链路切断再恢复 -> 超时与 STALE 处理正确，恢复后不臆造成功. The case
+      is only evidence if the pause REACHED the task layer: `PauseObservation.staleness_was_observable`
+      fails when nothing ever aged past the freshness window, which is the runner's way of
+      saying it paused a world whose freeze nobody could see. `expect.task` is
+      NEEDS_ATTENTION because a run that was interrupted does not retroactively succeed.
+
+  # REBUILT in round 17 (stage 2) -- see F01's marker.
+  I05:
+    title: the clock resets mid-run
+    runners: [r01]
+    scenario: f_fault_triggers
+    submit:
+      - {pick: S_left_a, drop: S_right_b, cargo: i05-cargo, request_id: i05-run}
+    steps:
+      # I05 shares the pause mechanism with I04 and NOT the assertion: I04 freezes time, I05
+      # moves it backwards. `clock_jump_precondition` refuses a zero-second jump, because a
+      # jump of zero is I05 asserting nothing, and refuses one that would take the clock
+      # negative, which is a different fault.
+      - when: {request_id: i05-run, state: EXECUTING}
+        do: {action: pause_world}
+      - when: {request_id: i05-run, state: EXECUTING}
+        do: {action: jump_clock, seconds: -30.0}
+      - when: {request_id: i05-run, state: EXECUTING}
+        do: {action: resume_world}
+    observe_s: 900.0
+    truth: fleet_recorder
+    expect: {task: NEEDS_ATTENTION, safety: PASS, behavior: PASS}
+    note: >
+      Section 5: 时钟回拨 -> 不产生假超时、不提前释放许可. Both halves are about time arithmetic
+      rather than about the robot: a deadline computed after a backwards jump must not fire
+      early (a 假超时) and a permit held with a pre-jump expiry must not be released as if it
+      had expired. The clock is the simulator's, so the injection is a world operation and
+      needs no node to cooperate.
+
+  # REBUILT in round 17 (stage 2) -- see F01's marker.
+  I06:
+    title: the ground-truth collector stops
+    # RE-ACTIVATED 2026-09-19 (D-P17-26). This key was marked RETIRED in round 17
+    # on the claim that the mechanism had been built. It had not: truth_collector_control
+    # appears ONLY in the declaration layer (trigger.py, stage2_capabilities.py) and
+    # nowhere in the implementation, so this case's fault could never be delivered.
+    # Measured 2026-09-19: the case reported NOT_RUN -- the honest outcome -- while the
+    # manifest said it was runnable. This makes the manifest say so before the run.
+    # The intended workload is kept under intended_submit / intended_expect, so the
+    # case's content is preserved rather than deleted while it is blocked.
+    requires: [truth_collector_control]
+    runners: [r01]
+    scenario: f_fault_triggers
+    intended_submit:
+      - {pick: S_left_a, drop: S_right_b, cargo: i06-cargo, request_id: i06-run}
+    intended_steps:
+      # Stopping a collector that has recorded NOTHING is refused, and that is the sharpest
+      # precondition in this group: an empty truth stream has no unauthorised entry in it,
+      # so every truth-based safety check would pass on it and the rest of the run's safety
+      # verdict would become a statement about nothing.
+      - when: {request_id: i06-run, state: EXECUTING}
+        do: {action: stop_truth_collector}
+    observe_s: 600.0
+    intended_truth: fleet_recorder
+    intended_expect: {task: NEEDS_ATTENTION, safety: PASS, behavior: PASS}
+    note: >
+      Section 5: 真值采集中断 -> 该区间安全判 UNKNOWN，不产生假 PASS. The assertion is on the
+      RECORD rather than on the fleet: `truth_absence_is_reported` requires the report to
+      name the gap, because a run whose truth stopped and whose report does not say so has
+      an UNREADABLE safety verdict and not a passing one. This is the one case in the group
+      whose `expect.safety` the runner cannot fully decide on its own -- see the note on
+      D-P17-03's unasserted clauses in F13 and F14 for the same shape.
+
+  # REBUILT in round 17 (stage 2) -- see F01's marker.
+  I07:
+    title: the ledger cannot be written
+    # RE-ACTIVATED 2026-09-19 (D-P17-26). This key was marked RETIRED in round 17
+    # on the claim that the mechanism had been built. It had not: db_fault_injection
+    # appears ONLY in the declaration layer (trigger.py, stage2_capabilities.py) and
+    # nowhere in the implementation, so this case's fault could never be delivered.
+    # Measured 2026-09-19: the case reported NOT_RUN -- the honest outcome -- while the
+    # manifest said it was runnable. This makes the manifest say so before the run.
+    # The intended workload is kept under intended_submit / intended_expect, so the
+    # case's content is preserved rather than deleted while it is blocked.
+    requires: [db_fault_injection]
+    runners: [r01]
+    scenario: f_fault_triggers
+    intended_submit:
+      - {pick: S_left_a, drop: S_left_b, cargo: i07-cargo, request_id: i07-run}
+    intended_steps:
+      # A write denial leaves the ledger unusable for the rest of the BATCH, not just this
+      # case, so the mode is aimed at a dedicated test database and `db_fault_precondition`
+      # refuses anything else. A refusal before any write has been attempted is also
+      # refused, because a ledger nothing was asked of looks healthy.
+      - when: {request_id: i07-run, state: EXECUTING}
+        do: {action: fail_ledger_writes, mode: write_denied}
+      - when: {request_id: i07-run, state: NEEDS_ATTENTION}
+        do: {action: heal_ledger_writes}
+    observe_s: 600.0
+    intended_truth: fleet_recorder
+    intended_expect: {task: NEEDS_ATTENTION, safety: PASS, behavior: PASS}
+    note: >
+      Section 6: 账本写失败 -> 不静默、不放行、可恢复. The `heal_ledger_writes` step is what makes
+      the third clause evidence rather than a claim: a run that ends with the database
+      still refusing writes cannot distinguish a fleet that recovered from one that merely
+      stopped. Three controlled modes are offered (`write_denied`, `db_locked`,
+      `disk_full_sim`) and section 6 requires exactly that rather than a real full disk,
+      because a full disk also breaks the event log, the recorder and the batch runner, so
+      the run would die for reasons that are not this case.
+
+  # REBUILT in round 17 (stage 2) -- see F01's marker.
+  I08:
+    title: terminate this run, then start another
+    # RE-ACTIVATED 2026-09-19 (D-P17-26). This key was marked RETIRED in round 17
+    # on the claim that the mechanism had been built. It had not: batch_driver_extended
+    # appears ONLY in the declaration layer (trigger.py, stage2_capabilities.py) and
+    # nowhere in the implementation, so this case's fault could never be delivered.
+    # Measured 2026-09-19: the case reported NOT_RUN -- the honest outcome -- while the
+    # manifest said it was runnable. This makes the manifest say so before the run.
+    # The intended workload is kept under intended_submit / intended_expect, so the
+    # case's content is preserved rather than deleted while it is blocked.
+    requires: [batch_driver_extended]
+    runners: [r01]
+    scenario: f_fault_triggers
+    intended_submit:
+      - {pick: S_left_a, drop: S_left_b, cargo: i08-cargo, request_id: i08-run}
+    intended_steps:
+      # The second run gets its OWN directory. Two runs sharing one would let the second
+      # inherit the first's recordings, and the state that leaked is indistinguishable from
+      # the state that was rebuilt -- `terminate_precondition` refuses it for that reason.
+      - when: {request_id: i08-run, state: EXECUTING}
+        do: {action: terminate_run, second_run_dir: i08_second}
+    observe_s: 900.0
+    intended_truth: fleet_recorder
+    intended_expect: {task: NEEDS_ATTENTION, safety: PASS, behavior: PASS}
+    note: >
+      Section 6: 终止当前轮次并重启另一轮 -> 状态可重建、无残留. `TerminateOutcome.verdict`
+      compares the two epochs and refuses a match -- the same epoch means the process was
+      reused rather than restarted -- and it checks the second run's ledger for tasks and
+      permits inherited from the first. That second check is what makes I08 different from
+      F11: F11 restarts one service and keeps its database on purpose (中央重启保留 SQLite),
+      while this case must start CLEAN, so a carried-over row is the failure and not the
+      feature.
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  N01:
+
+    title: single robot crosses the barrier to visit a station
+
+    runners:
+
+    - r01
+
+    scenario: n01_crossing
+
+    submit:
+
+    - cargo: n01-cross-east
+
+      drop: S_right_b
+
+      pick: S_right_a
+
+    - cargo: n01-cross-back-west
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+    observe_s: 900.0
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+    note: 'The behaviour this case asserts is the one the task layer was blocked on for a whole phase: a
+
+      route that crosses the shared corridor is accepted and DRIVEN through the passage protocol. The runner''s
+
+      behaviour checks do not add anything specific for it -- what makes this case evidence is that the
+
+      tasks reach SUCCEEDED at all, which they cannot do while the dispatcher refuses to route a crossing.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  N02:
+
+    title: single robot, logical transfer away and back, same half
+
+    runners:
+
+    - r01
+
+    scenario: n02_transfer_round_trip
+
+    submit:
+
+    - cargo: n02-cargo-out
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+    - cargo: n02-cargo-back
+
+      drop: S_left_a
+
+      pick: S_left_b
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  N03:
+
+    title: two robots serving their own half at the same time
+
+    runners:
+
+    - r01
+
+    - r02
+
+    scenario: n03_two_halves
+
+    submit:
+
+    - cargo: n03-cargo-west
+
+      drop: S_left_b
+
+      pick: S_left_a
+
+      runner: r01
+
+    - cargo: n03-cargo-east
+
+      drop: S_right_b
+
+      pick: S_right_a
+
+      runner: r02
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  N04:
+
+    title: two robots face to face, r01 asks first
+
+    runners:
+
+    - r01
+
+    - r02
+
+    scenario: n04_face_to_face_r01_first
+
+    submit:
+
+    - cargo: n04-r01-cross-east
+
+      drop: S_right_a
+
+      pick: S_left_b
+
+      runner: r01
+
+    - cargo: n04-r02-cross-west
+
+      drop: S_left_a
+
+      pick: S_right_b
+
+      runner: r02
+
+      wait_for:
+
+        robot_crossing: r01
+
+    observe_s: 1200.0
+
+    truth: fleet_recorder
+
+    crossing_order:
+
+    - r01
+
+    - r02
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+    note: 'Section 5''s claim is "r02 waits; r02 crosses only after r01 has fully released", and two half
+
+      of it this runner can decide is the ORDER: `crossing_order` requires r01''s first crossing to open
+
+      before r02''s, and it holds no threshold (it compares two timestamps from one file, so there is no
+
+      margin anyone could widen). Exclusivity is NOT asserted here. The interval the events give is the
+
+      driver''s whole episode, which begins at process launch and therefore includes waiting for the permit,
+
+      so the check would report correct queueing as a violation; docs/DECISIONS.md D-P16-04 records that
+
+      and names the replacement. The acquire request count for each robot is recorded instead, because "r02
+
+      waited" also means "r02 was refused at least once" -- measured on this case: 1 request for r01, 86
+
+      for r02.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  N05:
+
+    title: two robots face to face, r02 asks first
+
+    runners:
+
+    - r01
+
+    - r02
+
+    scenario: n05_face_to_face_r02_first
+
+    submit:
+
+    - cargo: n05-r02-cross-west
+
+      drop: S_left_a
+
+      pick: S_right_b
+
+      runner: r02
+
+    - cargo: n05-r01-cross-east
+
+      drop: S_right_a
+
+      pick: S_left_b
+
+      runner: r01
+
+      wait_for:
+
+        robot_crossing: r02
+
+    observe_s: 1200.0
+
+    truth: fleet_recorder
+
+    crossing_order:
+
+    - r02
+
+    - r01
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+    note: 'Read with N04: same world, same tasks, opposite order, and `crossing_order` is the opposite list.
+
+      A fleet that always let one robot go first would fail one of the two cases whichever robot it preferred.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  N06:
+
+    title: two robots, same direction, batched
+
+    runners:
+
+    - r01
+
+    - r03
+
+    scenario: n06_two_west_queue
+
+    submit:
+
+    - cargo: n06-r01-queue-east
+
+      drop: S_right_a
+
+      pick: S_left_b
+
+      runner: r01
+
+    - cargo: n06-r03-queue-east
+
+      drop: S_right_b
+
+      pick: S_left_a
+
+      runner: r03
+
+      wait_for:
+
+        robot_crossing: r01
+
+    observe_s: 1200.0
+
+    truth: fleet_recorder
+
+    crossing_order:
+
+    - r01
+
+    - r03
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+    note: 'Section 5''s "ordered use of the protected area, no rear-ending". Exclusivity IS the no-rear-ending
+
+      property, and it is the same check as N04''s, read from the same event stream.
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  N07:
+
+    title: three robots, six tasks across both halves
+
+    runners:
+
+    - r01
+
+    - r02
+
+    - r03
+
+    scenario: n07_three_robots_six_tasks
+
+    submit:
+
+    - cargo: n07-west-local
+
+      drop: S_left_a
+
+      pick: S_left_b
+
+    - cargo: n07-east-local
+
+      drop: S_right_a
+
+      pick: S_right_b
+
+    - cargo: n07-west-to-east-a
+
+      drop: S_right_b
+
+      pick: S_left_a
+
+    - cargo: n07-east-to-west-a
+
+      drop: S_left_b
+
+      pick: S_right_a
+
+    - cargo: n07-west-to-east-b
+
+      drop: S_right_a
+
+      pick: S_left_b
+
+    - cargo: n07-east-to-west-b
+
+      drop: S_left_a
+
+      pick: S_right_b
+
+    observe_s: 1800.0
+
+    truth: fleet_recorder
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+    note: 'No `crossing_order`: this case is not about who goes first, and declaring an order it does not
+
+      arrange would make it fail for a reason it is not testing. Exclusivity is NOT asserted either -- the
+
+      note here said it was, for a round, while the case declared nothing, which is the same defect as declaring
+
+      a check that cannot decide what it claims. It is checked by the truth-based safety properties, and
+
+      the interval-based `crossing_exclusive` cannot decide it (D-P16-04).
+
+  
+
+      '
+
+  # recovered from a batch archive (normalised YAML, comments lost)
+
+  N08:
+
+    title: three robots, limited task stream, station and charger competition
+
+    runners:
+
+    - r01
+
+    - r02
+
+    - r03
+
+    scenario: n08_three_robots_task_stream
+
+    submit:
+
+    - cargo: n08-a
+
+      drop: S_right_b
+
+      pick: S_right_a
+
+      request_id: n08-a
+
+    - cargo: n08-b
+
+      drop: S_right_a
+
+      pick: S_right_b
+
+      request_id: n08-b
+
+      wait_for:
+
+        request_id: n08-a
+
+        state: SUCCEEDED
+
+    - cargo: n08-c
+
+      drop: S_right_b
+
+      pick: S_right_a
+
+      request_id: n08-c
+
+      wait_for:
+
+        request_id: n08-b
+
+        state: SUCCEEDED
+
+    - cargo: n08-d
+
+      drop: S_right_a
+
+      pick: S_right_b
+
+      request_id: n08-d
+
+      wait_for:
+
+        request_id: n08-c
+
+        state: SUCCEEDED
+
+    observe_s: 1800.0
+
+    truth: fleet_recorder
+
+    behavior_checks:
+
+    - charger_capacity_respected
+
+    - charger_contended
+
+    - no_duplicate_task
+
+    expect:
+
+      behavior: PASS
+
+      safety: PASS
+
+      task: SUCCEEDED
+
+    note: 'Section 5''s claim is 队列有推进、无无限饥饿、容量不超. 队列有推进 is the three checks named above plus `await_charge`
+
+      -- the queue that advanced includes the generated charge runs, and "no charge run was ever created"
+
+      is not a queue. 无无限饥饿 is `expect.task: SUCCEEDED` on every submitted request. 容量不超 is `charger_capacity_respected`,
+
+      which is read from the charging book''s own occupant map over EVERY poll rather than only at the end:
+
+      a pad that was over-subscribed for a minute and then emptied would leave nothing to see at the end.
+
+  
+
+      '
+
+    await_charge: true

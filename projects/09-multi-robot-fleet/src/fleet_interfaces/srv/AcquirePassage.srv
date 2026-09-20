@@ -1,0 +1,52 @@
+# Request authority to cross a protected passage, as one atomic bundle.
+# CONTRACTS section 7.
+#
+# The pose fields are DIAGNOSTIC. The coordinator judges the request against the
+# pose it has itself observed from the robot's odometry, not against the pose the
+# caller reports. A robot that could assert its own position could assert its way
+# past the entry precondition.
+#
+# There is deliberately no `epoch` field in this request. A grant is scoped to the
+# coordinator incarnation that issued it, and an epoch chosen by the supervised
+# party cannot detect a restarted supervisor -- it can only switch the check off.
+# The coordinator stamps its own epoch on the grant and returns it; the client
+# echoes that back on renew and clear, where it does identify an existing permit.
+# See docs/DECISIONS.md D-P4-10.
+
+string robot_id
+string boot_id
+int32 revision
+int32 generation
+
+string task_id
+string direction          # "west_to_east" or "east_to_west"
+
+# Caller-chosen, unique per attempt. Used for idempotency and for correlating logs;
+# it is not a sequence number.
+string request_id
+
+float64 x
+float64 y
+float64 yaw
+bool localization_valid
+---
+bool granted
+string permit_id
+string task_id
+string reason_code
+string detail
+
+string direction
+string[] resources
+
+# Remaining life of the grant in seconds, measured on the SERVER's wall clock.
+# The client must treat it as a duration; see ResourcePermit.msg.
+float64 valid_for_wall_s
+
+# Tasks already ahead of this one in the queue, oldest first. Empty when granted.
+string[] queued_behind
+
+# The coordinator's epoch at the moment of the grant. EVERY later renew and clear
+# must be scoped to this value. A grant carries the epoch of the coordinator that
+# made it, so a permit minted under a different epoch is not renewable.
+int32 epoch

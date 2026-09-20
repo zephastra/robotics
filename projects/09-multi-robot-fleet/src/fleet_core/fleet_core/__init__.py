@@ -1,0 +1,316 @@
+"""009 fleet core -- pure Python coordination. No ROS imports anywhere, ever.
+
+Import rule (enforced by tests/test_p1_adapter_no_ros.py): nothing under
+fleet_core or fleet_adapter may import rclpy or any ROS package. The ROS-facing
+nodes live in fleet_ros and are thin; every rule they enforce is decided here,
+where it can be tested with a fake clock and no simulator.
+
+Module map, in dependency order:
+
+  domain / geometry   the vocabulary and the arithmetic
+  validation          config -> typed structures, fail closed
+  ledger              the single writer for task, permit and payload state
+  task_machine        guarded transitions, so `accepted` is never `succeeded`
+  allocator           which robot runs a task
+  battery / charging  simulated energy model and charge-pad admission
+  legs                task -> leg decomposition, and corridor direction
+  recovery            the fault-takeover table from CONTRACTS section 5
+  events / clock      append-only log and the sim/monotonic clock split
+  resources / traffic the P4 corridor reservation protocol
+"""
+
+from .allocator import Allocator, REASON_PRECEDENCE, reported_reason
+from .battery import BatteryModel, BatteryStep, Reach
+from .charging import ChargeGrant, ChargerAllocator, charge_request_id
+from .clock import Clock, FakeClock, SimClock
+from .crossing_ledger import (  # noqa: F401
+    crossing_intervals,
+    exclusive as corridor_exclusive,
+    first_crossing_order,
+    read_events,
+)
+from .crossing_release import (
+    STOP_BUSY,
+    STOP_INFRA_TIMEOUT,
+    STOP_NAV_ABSENT,
+    STOP_RETREAT_REFUSED,
+    STOP_RUN_DEADLINE,
+    STOP_SIGNAL,
+    ReleasePolicy,
+    stop_is_early_enough,
+)
+from .retreat_policy import (
+    RetreatDecision,
+    needs_retreat,
+    progress as retreat_progress,
+    retreat_command,
+)
+from .pose_source import (
+    DEFAULT_REFRESH_INTERVAL_S,
+    RefreshNeed,
+    needs_refresh,
+)
+from .domain import (
+    AcquireResult,
+    Band,
+    BatteryConfig,
+    CancelResult,
+    Capability,
+    ClearanceOutcome,
+    ConflictError,
+    DirectionSpec,
+    FleetConfig,
+    NodePose,
+    OperatingState,
+    PayloadMode,
+    PayloadState,
+    Permit,
+    PermitCheck,
+    ReasonCode,
+    ResourceId,
+    ResourceKind,
+    ResourceSpec,
+    ResourceState,
+    RobotSpec,
+    RobotState,
+    StaleCommandError,
+    StationSpec,
+    Task,
+    TaskKind,
+    TaskSpec,
+    TaskState,
+    TrafficConfig,
+)
+from .events import Event, EventLog
+from .geometry import (
+    Rect,
+    Region,
+    StopModel,
+    compose_2d,
+    footprint_corners,
+    footprint_radius,
+    wrap_angle,
+)
+from .ledger import Ledger, LedgerError
+from .loaded_battery_policy import (  # noqa: F401
+    ACTION_CANCEL_AND_CHARGE,
+    ACTION_CONTINUE,
+    ACTION_PARK_AND_ATTEND,
+    LOADED_PARK_BANDS,
+    PROTECTED_RECTS,
+    LoadedBatteryDecision,
+    decide as decide_loaded_battery,
+    legal_park_point,
+    ownership_preserved,
+)
+from .legs import (
+    Leg,
+    LegRole,
+    PlanError,
+    approach_direction,
+    corridor_direction,
+    plan_legs,
+    reachable_chargers,
+    split_by_passage,
+    target_of,
+    total_distance_m,
+)
+from .recovery import (
+    FaultContext,
+    InCorridorKnowledge,
+    TakeoverDecision,
+    classify,
+    decide,
+)
+from .resources import ResourceBook
+from .stage2_capabilities import (  # noqa: F401
+    ACTION_FIELDS,
+    ACTION_NEEDS_RUNNER,
+    CAPABILITY_KEYS,
+    CORRIDOR_HALF_HEIGHT_M,
+    LEDGER_FAULT_MODES,
+    MIN_OBSTACLE_RADIUS_M,
+    NEW_ACTIONS,
+    Check,
+    ObstacleSpec,
+    PauseObservation,
+    TerminateOutcome,
+    all_actions,
+    all_needs_runner,
+    all_required_fields,
+    clock_jump_precondition,
+    collector_precondition,
+    db_fault_confirm,
+    db_fault_precondition,
+    drive_to_pose_confirm,
+    drive_to_pose_precondition,
+    obstacle_confirm,
+    obstacle_leaves_a_route,
+    obstacle_precondition,
+    pause_precondition,
+    permit_interrupt_precondition,
+    permit_withdrawal_confirm,
+    stale_result_confirm,
+    stale_result_precondition,
+    terminate_precondition,
+    truth_absence_is_reported,
+)
+from .task_machine import TaskMachine
+from .traffic import (  # noqa: F401
+    ClearanceScan,
+    CrossingManager,
+    regions_overlapping,
+)
+from .wait_for import (  # noqa: F401
+    WaitVerdict,
+    condition_holds as wait_condition_holds,
+)
+from .validation import (
+    ConfigError,
+    load_traffic_config,
+    parse_battery,
+    parse_task_request,
+    validate_fleet_config,
+    validate_task_spec,
+    validate_traffic_config,
+)
+
+__all__ = [
+    "AcquireResult",
+    "Allocator",
+    "REASON_PRECEDENCE",
+    "reported_reason",
+    "Band",
+    "BatteryConfig",
+    "BatteryModel",
+    "BatteryStep",
+    "CancelResult",
+    "Capability",
+    "ChargeGrant",
+    "ChargerAllocator",
+    "charge_request_id",
+    "ClearanceOutcome",
+    "ClearanceScan",
+    "Clock",
+    "ConfigError",
+    "ConflictError",
+    "CrossingManager",
+    "DEFAULT_REFRESH_INTERVAL_S",
+    "RefreshNeed",
+    "needs_refresh",
+    "ReleasePolicy",
+    "STOP_BUSY",
+    "STOP_NAV_ABSENT",
+    "STOP_RUN_DEADLINE",
+    "STOP_SIGNAL",
+    "stop_is_early_enough",
+    "regions_overlapping",
+    "DirectionSpec",
+    "Event",
+    "EventLog",
+    "FakeClock",
+    "FaultContext",
+    "FleetConfig",
+    "InCorridorKnowledge",
+    "Ledger",
+    "LedgerError",
+    "Leg",
+    "LegRole",
+    "NodePose",
+    "OperatingState",
+    "PayloadMode",
+    "PayloadState",
+    "Permit",
+    "PermitCheck",
+    "PlanError",
+    "Reach",
+    "ReasonCode",
+    "Rect",
+    "Region",
+    "ResourceBook",
+    "ResourceId",
+    "ResourceKind",
+    "ResourceSpec",
+    "ResourceState",
+    "RobotSpec",
+    "RobotState",
+    "SimClock",
+    "StaleCommandError",
+    "StationSpec",
+    "StopModel",
+    "TakeoverDecision",
+    "Task",
+    "TaskKind",
+    "TaskMachine",
+    "TaskSpec",
+    "TaskState",
+    "TrafficConfig",
+    "classify",
+    "compose_2d",
+    "corridor_direction",
+    "split_by_passage",
+    "decide",
+    "footprint_corners",
+    "footprint_radius",
+    "load_traffic_config",
+    "parse_battery",
+    "parse_task_request",
+    "plan_legs",
+    "reachable_chargers",
+    "target_of",
+    "total_distance_m",
+    "validate_fleet_config",
+    "validate_task_spec",
+    "validate_traffic_config",
+    "wrap_angle",
+    # Round 16: the corridor's use reconstructed from the event stream, and the snapshot
+    # predicate a case uses to state its own arrival order.
+    "corridor_exclusive",
+    "crossing_intervals",
+    "first_crossing_order",
+    "read_events",
+    "WaitVerdict",
+    "wait_condition_holds",
+    # Round 17: CONTRACTS section 5's second half -- the rule a robot carrying cargo
+    # follows when its battery goes critical. Nothing implemented it before (D-P17-02).
+    "ACTION_CANCEL_AND_CHARGE",
+    "ACTION_CONTINUE",
+    "ACTION_PARK_AND_ATTEND",
+    "LOADED_PARK_BANDS",
+    "PROTECTED_RECTS",
+    "LoadedBatteryDecision",
+    "decide_loaded_battery",
+    "legal_park_point",
+    "ownership_preserved",
+    # Round 17 (stage 2): the six capabilities the last eleven cases waited for.
+    "ACTION_FIELDS",
+    "ACTION_NEEDS_RUNNER",
+    "CAPABILITY_KEYS",
+    "CORRIDOR_HALF_HEIGHT_M",
+    "LEDGER_FAULT_MODES",
+    "MIN_OBSTACLE_RADIUS_M",
+    "NEW_ACTIONS",
+    "Check",
+    "ObstacleSpec",
+    "PauseObservation",
+    "TerminateOutcome",
+    "all_actions",
+    "all_needs_runner",
+    "all_required_fields",
+    "clock_jump_precondition",
+    "collector_precondition",
+    "db_fault_confirm",
+    "db_fault_precondition",
+    "drive_to_pose_confirm",
+    "drive_to_pose_precondition",
+    "obstacle_confirm",
+    "obstacle_leaves_a_route",
+    "obstacle_precondition",
+    "pause_precondition",
+    "permit_interrupt_precondition",
+    "permit_withdrawal_confirm",
+    "stale_result_confirm",
+    "stale_result_precondition",
+    "terminate_precondition",
+    "truth_absence_is_reported",
+]

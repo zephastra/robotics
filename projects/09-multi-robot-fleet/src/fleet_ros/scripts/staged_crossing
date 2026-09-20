@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+"""Console entry point for the staged corridor crossing driver (P4.4).
+
+Thin wrapper; the sequence lives in fleet_ros/staged_crossing.py.
+"""
+
+from fleet_ros.staged_crossing import main
+
+if __name__ == "__main__":
+    raise SystemExit(main())

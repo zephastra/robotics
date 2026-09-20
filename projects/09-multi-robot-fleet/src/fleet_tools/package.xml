@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<package format="3">
+  <!--
+    fleet_tools: the operator entry point. Submitting, cancelling and fault
+    injection live here, per MASTER_PLAN section 9 (P6), where the read-only web
+    page explicitly must NOT have control buttons.
+
+    Separate from fleet_ros so the fleet runs without it.
+  -->
+  <name>fleet_tools</name>
+  <version>0.1.0</version>
+  <description>009 operator tools: the CLI (status, submit, cancel, wait, fault, events) and the read-only localhost dashboard plus its RViz markers.</description>
+  <maintainer email="ziling@zephastra.local">ziling</maintainer>
+  <license>Apache-2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>std_srvs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>fleet_interfaces</depend>
+  <depend>fleet_core</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

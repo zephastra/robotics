@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fleet-core"
+version = "0.1.0"
+description = "009 multi-robot fleet coordination core (ROS-free). P1."
+requires-python = ">=3.14"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "PyYAML>=6"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# The repo uses the ament_python layout: src/<pkg>/<pkg>/*.py. The importable
+# package is the INNER directory, so these two dirs go on sys.path -- not `src`.
+pythonpath = ["src/fleet_core", "src/fleet_adapter"]
+addopts = "-q"
+# P1 core tests must never need ROS. If an import pulls ROS in, fail loudly
+# rather than silently skipping.
+filterwarnings = ["error::DeprecationWarning"]

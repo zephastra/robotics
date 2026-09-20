@@ -1,0 +1,20 @@
+schema_version: "1"
+description: >
+  N03 -- two robots serving their own half of the barrier at the same time. The claim is about
+  concurrency and control separation, not about traffic: each robot is given a task inside its
+  own half, so no crossing is needed and no reservation should be requested. What it exercises
+  is that two adapters, two Nav2 stacks and two Gates run in one world without a command
+  crossing over -- the failure mode this project has already seen once, when
+  `self.clients` shadowed a read-only rclpy member and the second robot's goals went nowhere.
+budgets:
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 180.0
+  leg_executor:
+    leg_timeout_s: 180.0
+    max_retries: 2
+robots:
+  r01:
+    start_battery_fraction: 1.0
+  r02:
+    start_battery_fraction: 1.0

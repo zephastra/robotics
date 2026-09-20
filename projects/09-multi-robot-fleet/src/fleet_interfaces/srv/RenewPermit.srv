@@ -1,0 +1,31 @@
+# Extend a live permit. CONTRACTS section 7.
+#
+# A renewal must identify the same owner and the same command generation as the
+# original grant. A permit that lapsed into UNKNOWN occupancy is NOT renewable: it
+# must be re-acquired, otherwise a renewal would launder an unauthorised occupancy
+# into a legal one.
+
+string robot_id
+string boot_id
+int32 revision
+int32 generation
+int32 epoch
+
+string task_id
+string direction
+string permit_id
+---
+bool granted
+string reason_code
+string detail
+
+# Remaining life in seconds on the SERVER's wall clock; a duration, not an instant.
+float64 valid_for_wall_s
+
+# The coordinator's current epoch. Scope a renewal to the epoch the grant came with:
+# a permit minted under a different one is not renewable.
+#
+# Within a session this is a scope tag, not a restart detector. The coordinator's
+# lease book lives in memory, so a restart loses every permit anyway and there is
+# nothing left to be stale about.
+int32 epoch

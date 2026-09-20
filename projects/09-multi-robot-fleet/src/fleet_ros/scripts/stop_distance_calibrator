@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+"""Console entry point for the 009 stop distance calibrator.
+
+A thin wrapper: the measurement logic lives in fleet_ros/stop_distance_calibrator.py, and
+this file is only the executable ROS tooling resolves.
+
+Exit codes, which the run scripts depend on:
+    0  every commanded speed was measured
+    3  the safety gate refused motion (a result, not a reason to retry)
+    4  a measurement did not settle, or odom was never available
+    5  something else was already commanding the velocity input
+"""
+
+from fleet_ros.stop_distance_calibrator import main
+
+if __name__ == "__main__":
+    raise SystemExit(main())

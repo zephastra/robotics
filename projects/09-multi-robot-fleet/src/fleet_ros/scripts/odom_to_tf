@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+"""Console entry point for the 009 odometry-to-transform publisher.
+
+A thin wrapper: the node lives in fleet_ros/odom_to_tf.py, and this file exists only to
+be the executable ROS tooling resolves.
+
+WHY THIS EXISTS AT ALL. gz's DiffDrive plugin emits the transform `odom ->
+base_footprint` on a gz topic, and the obvious way to get it into the ROS transform tree
+is to bridge that topic. Doing so gives the edge one publisher per robot, all writing into
+the single shared /tf, arriving out of stamp order under load. tf2's response to an
+out-of-order message is not to drop it but to clear its entire buffer, after which the
+`odom` frame ceases to exist and the next tf2 consumer to ask for it throws
+`tf2::LookupException`. AMCL does not catch that and aborts. This node publishes the same
+edge from the odometry that is already bridged, so the edge has one writer and one clock.
+"""
+
+from fleet_ros.odom_to_tf import main
+
+if __name__ == "__main__":
+    raise SystemExit(main())

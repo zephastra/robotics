@@ -1,0 +1,50 @@
+# N07 scenario: three robots, six tasks spread over both halves.
+#
+# The claim is section 5's "sensible allocation, no duplicates, every normal task completes",
+# so this case does NOT pin a robot to a task: which robot takes which task IS the thing under
+# test. Two of the six tasks stay inside one half and four cross, which is what makes the mix
+# interesting -- the crossing tasks have to queue for `mid` while the local ones do not.
+#
+# Spawns: r01 west at y = -2.0, r02 east at y = -2.0, r03 west at y = +0.6. Six tasks means each
+# robot takes two, and by proximity the natural split is r01 two-west-then-east, r02
+# two-east-then-west, r03 the remaining pair. The case asserts only that all six reach
+# SUCCEEDED and that the corridor was never used by two robots at once.
+#
+# BUDGET NOTE. `observe_s` in the manifest is an estimate: this is the longest case in the
+# frozen list (six tasks, four of them crossing a capacity-1 corridor, serialised), and it has
+# not been run yet. The first run calibrates it. A budget quoted as measured when it is not is
+# the same shape as every other number this project has had to withdraw.
+schema_version: "1"
+name: n07_three_robots_six_tasks
+description: >
+  Three robots and six tasks across both halves of the barrier, four of which need the shared
+  corridor. Prove that the tasks are allocated without duplication, that all six complete, and
+  that the corridor never held two robots at once.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 240.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 240.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0
+    crossing_timeout_s: 300.0
+    # How long a robot may be queued for the permit before the wait counts against it.
+    # Declared here because this case EXPECTS a queue -- a scoped one costs the corridor
+    # one full crossing, and N04 quantifies it: r02 waited 42.9 s / 86 requests.
+    crossing_queue_s: 90.0
+
+robots:
+  r01:
+    start_battery_fraction: 1.0
+  r02:
+    start_battery_fraction: 1.0
+  r03:
+    start_battery_fraction: 1.0

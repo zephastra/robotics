@@ -1,0 +1,31 @@
+# Fault injection, CONTRACTS-style: the CLI is the only entry point, and the
+# injected fault is confirmed rather than assumed. MASTER_PLAN section 9 (P5)
+# requires that "the expected fault actually fired" be printed; a fault that was
+# merely requested and never took effect turns a pass into a silent no-op, so the
+# response says whether the adapter acknowledged it.
+
+string schema_version
+string robot_id
+string fault_code
+float64 duration_s
+
+# --- state-of-charge override (added for P5's battery scenarios) -------------
+#
+# Why an explicit boolean instead of "battery_fraction < 0 means unset": a
+# sentinel inside a numeric field is a second meaning for a number, and a caller
+# that forgets to set the field would otherwise EMPTY the pack. SoC 0.0 is a
+# legitimate state; "not requested" is not a state of charge at all.
+#
+# This injects a STATE, not a decision. Every downstream rule -- the low/critical
+# bands, the allocator's finishability test, the charge admission -- still reads
+# the same simulated battery model, so a scenario that injects 15% exercises the
+# real policy rather than a bypass of it.
+#
+# duration_s is reused for its ordinary meaning here: > 0 restores the previous
+# charge after that many wall seconds, <= 0 makes the injection last for the
+# session. The restore is done by the adapter's own timer, and it is logged.
+bool inject_battery
+float64 battery_fraction
+---
+bool ok
+string message

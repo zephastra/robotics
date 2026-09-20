@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  009 DDS configuration: pin discovery to loopback, and raise the participant ceiling.
+
+  WHY LOOPBACK
+
+  Without this file, 009 nodes see each other only some of the time. The symptom is
+  non-deterministic, and therefore expensive: `ros2 node list` returns /r01/safety_gate
+  but not /r01/gz_bridge on one run, and the exact opposite on the next, while `ros2 topic
+  echo` on the missing node's topic says "does not appear to be published yet". Nothing has
+  crashed. The graph is simply incomplete, and an incomplete graph reads exactly like a
+  broken bridge.
+
+  The cause is the network this runs on. WSL2 exposes several interfaces at once:
+
+      lo      127.0.0.1
+      eth1    169.254.83.107/16    link local, no peer
+      eth3    192.168.31.199/24    the LAN
+      eth5    169.254.226.131/16   link local, no peer
+
+  Default multicast discovery sends from whichever interface the routing table prefers.
+  Two participants that choose differently never meet, and which pairs meet is a race,
+  precisely the observed behaviour. Pinning discovery to `lo` removes the choice.
+
+  WHY THE PARTICIPANT CEILING IS RAISED, AND WHY THAT WAS NOT OPTIONAL
+
+  This file used to say that the participant index was deliberately left at its library
+  default. That was a guess, and P3 falsified it. Measured on this machine, with this file
+  at the default:
+
+      concurrent node processes created and held : 32
+      refused                                    : the 33rd
+      error   create: Failed to find a free participant index for domain 42
+              rmw_cyclonedds_cpp: rmw_create_node: failed to create domain
+
+  A two-robot 009 stack is about 30 processes: two Nav2 stacks, two gates, two robot
+  bridges, the world launch, the clock and truth bridges, and the spawn helpers. That sits
+  just under the ceiling, so P3 landed exactly on the limit and failed in an
+  order-dependent way. `ros_gz_sim create` for the SECOND robot could not join the domain,
+  aborted with SIGABRT, and that robot was never spawned at all. None of the visible
+  symptoms pointed at the cause: the log said
+
+      Invalid frame ID "r02/odom" passed to canTransform argument target_frame
+      Failed to activate local_costmap because transform from r02/base_link to r02/odom
+      Failed to change state for node: controller_server
+      Failed to bring up all requested nodes. Aborting bringup.
+
+  which reads like a TF or costmap bug, and cost a P3 run to trace back to DDS.
+
+  So the ceiling is raised, and the element has to go in the right place. This is a
+  Discovery setting, not a Domain one, and the library says so plainly once you ask it:
+
+      <Domain><Discovery><MaxAutoParticipantIndex>200</MaxAutoParticipantIndex></Discovery>
+      accepted, node starts
+
+      <Domain><Ports><MaxAutoParticipantIndex>200</...></Ports>
+      config: //CycloneDDS/Domain: Ports: unknown element
+      -> and then EVERY process fails to create a node, so the ceiling becomes zero
+
+  The placement was found by reading the element names out of libddsc.so.11, where
+  MaxAutoParticipantIndex appears between Peers, SPDPMulticastAddress and SPDPInterval,
+  i.e. in the Discovery group. Worth recording because the obvious guess (a "Ports"
+  section, which does exist as a name elsewhere in that table) is silently wrong, and
+  silently wrong here means zero participants rather than a warning.
+
+  scripts/_dds_capacity_node.py holds one participant per process and reports how many
+  fit, so this number is measured rather than assumed.
+
+  A NOTE ON THIS FILE ITSELF: XML comments may not contain a double hyphen. An earlier
+  version of this comment did, the file stopped being well formed XML, CycloneDDS fell
+  back to a broken configuration, and the measured ceiling became ZERO participants. That
+  is the same mistake this project already made twice in SDF files, which is why
+  scripts/check_xml_wellformed.py now parses every XML file in the tree during the build.
+
+  IMPORTANT LIMITATION
+
+  Loopback-only discovery is correct for a single-host simulation and WRONG for a real
+  multi-machine fleet, where the robots are separate hosts. When 009 moves beyond one
+  machine, this file must gain the real interface, or be replaced by a discovery server.
+  It is not a harmless default to leave in place unexamined.
+-->
+<CycloneDDS xmlns="https://cdds.io/config">
+  <Domain id="any">
+    <General>
+      <Interfaces>
+        <NetworkInterface name="lo" />
+      </Interfaces>
+    </General>
+    <Discovery>
+      <MaxAutoParticipantIndex>200</MaxAutoParticipantIndex>
+    </Discovery>
+  </Domain>
+</CycloneDDS>

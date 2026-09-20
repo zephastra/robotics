@@ -1,0 +1,215 @@
+# 009 P4 -- protected crossing: who may occupy what, and where they must stop.
+#
+# Consumers:
+#   fleet_core.validation.validate_traffic_config   -> TrafficConfig
+#   scripts/validate_assets.py                      -> cross-checks this file
+#                                                      against warehouse.sdf
+#   fleet_ros/fleet_ros/gate_node.py                -> the geofence
+#   fleet_adapter/fleet_adapter/traffic_adapter.py  -> staged navigation
+#
+# Design notes that are load-bearing:
+#
+# 1. Regions are unions of AXIS-ALIGNED RECTANGLES, not polygons. The gate asks
+#    the containment question at 50 Hz and a unit test has to be able to falsify
+#    one rectangle without reasoning about winding order.
+#
+# 2. Rectangles are the resource's OWN extent. There is no separate "protected
+#    region" that could drift out of sync with the resource list: the forbidden
+#    area for a robot is exactly the union of the polygons of the resources it
+#    does not hold. One list, one truth.
+#
+# 3. Geometry is derived from assets/worlds/warehouse.sdf, and validate_assets.py
+#    re-derives it from the SDF and compares. Do not hand-edit a number here
+#    without re-running that check:
+#      barrier_north  pose(0, 2.8) size(0.2,4.4)   wall over y in [ 0.6,  5.0]
+#      barrier_south  pose(0,-2.8) size(0.2,4.4)   wall over y in [-5.0, -0.6]
+#      corridor_marker pose(0,0)   size(3.0,1.2)   the gap, x in [-1.5, 1.5]
+#      pad_wait_west(-2.5, 1.4)  pad_wait_east( 2.5, 1.4)
+#      pad_exit_west(-2.5,-1.4)  pad_exit_east( 2.5,-1.4)
+#      pad_release_west(-4.5,-1.4) pad_release_east(4.5,-1.4)
+#
+# 4. The corridor rectangle is 0.25 m wider than the physical gap on each side
+#    (x in [-1.75, 1.75] rather than [-1.5, 1.5]) so the entry throat is covered:
+#    a robot that stops straddling the mouth of the gap has, in a real sense,
+#    already entered it. The alignment nodes are placed far enough back that a
+#    stopped robot's footprint plus margin still clears this rectangle.
+
+schema_version: 1
+
+# --------------------------------------------------------------------------- #
+# resources: the corridor and the two exit buffers
+# --------------------------------------------------------------------------- #
+#
+# The corridor and ONE exit buffer are reserved together, atomically. The exit
+# buffer is the slot the robot will occupy after it leaves the gap; admitting a
+# robot to the corridor without it is how a fleet deadlocks with one robot
+# parked in the passage it cannot back out of (MASTER_PLAN section 7.2).
+resources:
+  mid:
+    kind: CORRIDOR
+    capacity: 1
+    rects:
+      - {name: gap, x_min: -1.75, y_min: -0.65, x_max: 1.75, y_max: 0.65}
+
+  mid_left:
+    kind: EXIT_BUFFER
+    capacity: 1
+    rects:
+      - {name: pad, x_min: -2.85, y_min: -1.75, x_max: -2.15, y_max: -1.05}
+
+  mid_right:
+    kind: EXIT_BUFFER
+    capacity: 1
+    rects:
+      - {name: pad, x_min: 2.15, y_min: -1.75, x_max: 2.85, y_max: -1.05}
+
+# direction -> the exact resource tuple to request as one unit
+bundles:
+  west_to_east: [mid, mid_right]
+  east_to_west: [mid, mid_left]
+
+# --------------------------------------------------------------------------- #
+# nodes: the only poses the traffic logic is allowed to name
+# --------------------------------------------------------------------------- #
+#
+# `wait`    -- a robot with no permit may drive here and no further.
+# `align`   -- the last point from which the crossing leg is a short straight run.
+# `exit`    -- the exit buffer pad centre; still INSIDE the bundle.
+# `release` -- outside every rectangle with room to spare. Only here may the
+#              robot offer a clearance proof.
+#
+#              "Room to spare" is a derived quantity, not a preference, and
+#              tests/test_p4_release.py re-derives it from this file:
+#
+#                release |x| >= buffer_outer_x              (2.85)
+#                            + stopping_reserve             (0.323)
+#                            + footprint_margin_m           (0.15)
+#                            + max(half_length, half_width) (0.30)
+#                            + node_reach_tolerance_m       (0.80)
+#                          = 4.423
+#
+#              The tolerance term is the point. The robot may stop anywhere within
+#              the arrival tolerance, and a release point that only clears the
+#              rectangle for a PERFECT arrival is not a release point. At 3.5 m the
+#              clearance was 0.20 m against a tolerance of 0.80 m, and a live run
+#              refused ConfirmClear for both robots in both directions, with
+#              "footprint plus 0.15 m margin still overlaps ['pad']".
+#
+#              The stopping_reserve term was ADDED on 2026-09-17 and the nodes moved
+#              with it (4.2 -> 4.5). It was missing because this derivation and the
+#              gate's refusal were two different expressions of one boundary: the
+#              refusal grows the rectangle by the distance the robot cannot stop
+#              within, and ConfirmClear did not, so at 4.2 the proof and the refusal
+#              disagreed in x by exactly this reserve. Live evidence: the gate refused
+#              with "unpermitted ['mid_right'], holdings none (reserve 0.356 m)" while
+#              the driver had just reported ConfirmClear success on the same robot.
+#              It is the reserve at the FASTEST speed the stop model was measured at,
+#              because a clearance proved at a slower speed is falsified by
+#              accelerating. See docs/DECISIONS.md D-P10-01.
+#
+#              The `pad_release_*` floor markers in warehouse.sdf moved with the
+#              nodes (4.2 -> 4.5): validate_traffic_geometry.py requires a node that
+#              names a pad to sit at that pad's centre, so the marker is not free to
+#              stay behind. The marker has no collision geometry, so the derived
+#              occupancy map does not change.
+#
+#              The reserve is the envelope at the fastest speed the stop model was
+#              MEASURED at. Monotonicity stops there: above that speed the refusal
+#              boundary is larger again, so `cleared` would stop implying `not refused`.
+#              That bound is only respected if the gate's own clamp is at or below the
+#              measured speed, and the two numbers live in different files (0.35 in
+#              robot.launch.py, 0.35 as the largest key of reported_stop_distance_m),
+#              so tests/test_p10_one_boundary.py is the only thing that can tie them.
+nodes:
+  wait_west:    {x: -2.5,  y:  1.4, yaw: 0.0}
+  wait_east:    {x:  2.5,  y:  1.4, yaw: 3.14159265}
+  # The align node is where the crossing leg starts and the second place a robot may
+  # open the handshake from. |x| = 2.40 until 2026-09-17, and that was INSIDE the
+  # gate's own refusal boundary: measured by `scripts/check_asking_points.py`, a robot
+  # ARRIVING at 2.40 is refused (`RESOURCE_UNKNOWN` on `mid`) while a robot STANDING
+  # there is allowed -- so the permit could never be requested, and because a stopped
+  # robot's stopping envelope never shrinks, the deadlock was permanent. The driver
+  # reported it as `nav2 status=6 Failed to make progress`, which reads as a
+  # navigation fault and is not one.
+  #
+  # |x| = 3.35 is DERIVED, not chosen. The refusal boundary reaches |x| = 2.523 at the
+  # fastest speed the stop model was measured at (max_measured_speed_mps), and a robot
+  # counted as "at" a node may be `node_reach_tolerance_m` = 0.80 m from it, so the
+  # whole legal asking ball must clear the boundary: 2.523 + 0.80 = 3.323, rounded out
+  # to 3.35 for a little room. Re-run `scripts/check_asking_points.py` -- and
+  # `tests/test_p11_asking_points.py`, which is the same check as a test -- after any
+  # change to the stop model, the margins, or the corridor rectangle.
+  align_west:   {x: -3.35, y:  0.0, yaw: 0.0}
+  align_east:   {x:  3.35, y:  0.0, yaw: 3.14159265}
+  exit_west:    {x: -2.5,  y: -1.4, yaw: -1.57079633}
+  exit_east:    {x:  2.5,  y: -1.4, yaw:  1.57079633}
+  release_west: {x: -4.5,  y: -1.4, yaw: -1.57079633}
+  release_east: {x:  4.5,  y: -1.4, yaw:  1.57079633}
+
+# Which node is the legal waiting point / alignment point / release point for a
+# direction of travel. Keeping this a mapping (rather than inferring it from
+# coordinates) means a mislabelled node is a config error, not a silent detour.
+directions:
+  west_to_east:
+    wait_node: wait_west
+    align_node: align_west
+    exit_node: exit_east
+    release_node: release_east
+    entry_rect: gap
+    approach_axis: x
+    approach_sign: 1.0
+  east_to_west:
+    wait_node: wait_east
+    align_node: align_east
+    exit_node: exit_west
+    release_node: release_west
+    entry_rect: gap
+    approach_axis: x
+    approach_sign: -1.0
+
+# --------------------------------------------------------------------------- #
+# tolerances and timing
+# --------------------------------------------------------------------------- #
+traffic:
+  # Added around the footprint before any containment test. Covers the localizer
+  # being a few centimetres out; it is NOT a claim about actual localization
+  # error (see docs/IMPLEMENTATION_STATUS.md for the measured AMCL numbers).
+  footprint_margin_m: 0.15
+
+  # How close a robot must be to a named node to count as being at it.
+  #
+  # 0.80 m, set from P2's MEASURED arrival error (worst case 0.5051 m on the
+  # ground-truth run for (-4.0, 0.0)) rather than chosen for convenience. The
+  # first P4.5 acceptance run used 0.35 m, which is below what this stack
+  # actually achieves: Nav2 reported SUCCEEDED and the robot was 0.515 m from
+  # the node, so every request was refused for being 16 cm too far away.
+  #
+  # This is NOT a safety threshold. The binding condition is the geometric one
+  # below: the whole footprint plus margin must be outside every rectangle. That
+  # check is independent of this number, so widening this cannot admit a robot
+  # into a region it has no permit for.
+  node_reach_tolerance_m: 0.80
+
+  # Permit timing. Wall clock, because CONTRACTS section 9 requires permit and
+  # heartbeat logic to keep running while the simulator is paused.
+  permit_ttl_s: 12.0
+  renew_before_s: 4.0
+
+  # Stop model, fed from the P2 ground-truth measurements.
+  #
+  # Measured worst-case stop distance through the gate, 3 passes, ground truth:
+  #   0.15 m/s -> 0.0292 m    0.25 m/s -> 0.0709 m    0.35 m/s -> 0.1381 m
+  # a_stop is derived from the worst point (0.35 m/s, 0.1381 m) as
+  # v^2 / (2 s) = 0.1225 / 0.2762 = 0.4436 m/s^2, then rounded DOWN to 0.40 so the
+  # envelope is pessimistic. `reported_stop_distance_m` below is recorded so a
+  # reader can see what the model was fitted to and re-derive it.
+  #
+  # latency_s is a placeholder until the gate's own command-to-odom delay is
+  # measured in P4; it is deliberately large (0.20 s) because being too small
+  # here means the gate authorises motion it cannot stop.
+  stop_model:
+    latency_s: 0.20
+    a_stop_mps2: 0.40
+    localization_margin_m: 0.10
+    turning_sweep_m: 0.0
+    reported_stop_distance_m: {0.15: 0.0292, 0.25: 0.0709, 0.35: 0.1381}

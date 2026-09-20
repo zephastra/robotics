@@ -1,0 +1,51 @@
+# N01 scenario: a single robot crosses the barrier, in both directions.
+#
+# The claim under test is the one the task layer could not make before: a task whose route
+# crosses the shared corridor is ACCEPTED and DRIVEN, through the P4 passage protocol, rather
+# than refused at submit.
+#
+# The two submissions are chosen so that both crossings are FIRST legs:
+#
+#   r01 spawns at x = -6.0 (west). Its first task picks at S_right_a (x = +5.0, EAST) and
+#   drops at S_right_b, so the very first leg of the plan is on the far side and there is no
+#   tagged leg to consult: the dispatcher works the crossing out from geometry. The second task
+#   picks at S_left_a (WEST, where the robot now is not) and drops at S_left_b, so the robot
+#   comes back through the corridor, again as its first leg. One passage east, one west.
+#
+# WHY THE HARDER PATH IS THE ONE WORTH RUNNING. A transfer that merely ENDS on the far side
+# (pick west, drop east) crosses at its SECOND leg, where the plan's own tag is available; that
+# shape ran clean in round 6. This shape is the one that used to die as `NAV_FAILED ... leg
+# exceeded 180s` and then, once the route filter existed, could not be assigned at all --
+# measured: 816 `ROUTE_REQUIRES_PERMIT`, the task stuck in `ACCEPTED`, `crossed_legs: []`. The
+# filter is now a preference over the candidate set (docs/LIMITATIONS.md), and this case is what
+# says whether that change reaches the field.
+#
+# Budgets: the crossing budget is stated here rather than left to the node's default, because a
+# crossing queues for a permit and a scenario that expects a queue should say how long it is
+# prepared to wait (CONTRACTS section 9 -- no budget added at runtime).
+schema_version: "1"
+name: n01_crossing
+description: >
+  One robot, two tasks, both requiring a corridor passage, in opposite directions. Prove that
+  the crossing is driven by the passage protocol and that the task reaches SUCCEEDED with the
+  robot on the far side of the barrier it was asked to reach.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 240.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 240.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0
+    crossing_timeout_s: 180.0
+
+robots:
+  r01:
+    start_battery_fraction: 1.0

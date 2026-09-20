@@ -1,0 +1,48 @@
+# N08: three robots, a short task stream, and a charger queue.
+#
+# The competition is arranged by BATTERY STATE, not by a fault: r01 and r03 start below the low
+# threshold (`config/fleet.yaml` battery.low_fraction = 0.20), so the task service refuses them
+# for CARRY work and generates a charge run for each. Both of them spawn west
+# (`config/spawns.yaml`), so both want `C_left`, and `charger_capacity: 1` means one of them has
+# to queue. That queue is what "充电位竞争" is about, and it is created by the real admission
+# rule rather than by making something fail.
+#
+# r02 is then the only robot that can serve, which is the other half of the claim: the stream has
+# to keep moving while the queue does not. The four submitted tasks are therefore east-half
+# transfers -- no corridor, so a queue advancing is not confused with a crossing being granted.
+#
+# `leg_timeout_s` is generous (180 s) because a station transfer that has to wait for a robot to
+# come back from a pad is not a fault.
+schema_version: "1"
+name: n08_three_robots_task_stream
+description: >
+  Three robots; two of them below the low threshold and queued for the one reachable charger;
+  a short stream of tasks that has to keep advancing while they wait, with charger capacity
+  never exceeded.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 180.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 180.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0
+    crossing_timeout_s: 300.0
+    crossing_queue_s: 90.0
+
+robots:
+  r01:
+    # Below `battery.low_fraction` (0.20) and above `critical_fraction` (0.08): the robot is
+    # told to charge rather than stopped, which is the ordinary competition this case is about.
+    start_battery_fraction: 0.18
+  r02:
+    start_battery_fraction: 1.0
+  r03:
+    start_battery_fraction: 0.18

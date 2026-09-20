@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<package format="3">
+  <!--
+    fleet_ros: the thin ROS layer. Nodes only; all policy lives in fleet_adapter.
+    Separate from fleet_adapter so the P1 invariant "the core runs with no ROS" can be
+    enforced by scanning fleet_core and fleet_adapter for rclpy and finding none.
+  -->
+  <name>fleet_ros</name>
+  <version>0.1.0</version>
+  <description>ROS 2 nodes for the 009 fleet: safety gate and stop distance calibration.</description>
+  <maintainer email="ziling@zephastra.local">ziling</maintainer>
+  <license>Apache-2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>lifecycle_msgs</depend>
+  <!-- bt_navigator/get_state: the adapter asks instead of assuming (D-P5-23) -->
+  <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>tf2_msgs</depend>
+  <depend>fleet_adapter</depend>
+  <depend>fleet_core</depend>
+  <depend>fleet_interfaces</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

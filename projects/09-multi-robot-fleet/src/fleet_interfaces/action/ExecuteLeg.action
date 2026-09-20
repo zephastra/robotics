@@ -1,0 +1,41 @@
+# CONTRACTS.md section 4. One leg, one command generation.
+#
+# The dispatcher resolves a leg into a goal pose and sends THAT; a task submitter
+# never gets to pass raw controller parameters. Everything the adapter needs in
+# order to refuse a stale instruction travels with the command, because the
+# adapter must be able to reject on its own without asking anyone.
+
+string schema_version
+string task_id
+uint32 assignment_revision
+string leg_id
+string command_id
+string expected_robot_boot_id
+uint32 dispatcher_epoch
+string goal_station
+float64 goal_x
+float64 goal_y
+float64 goal_yaw
+string route_segment_id
+string resource_bundle_id
+uint32 permit_generation
+float64 timeout_sim_s
+int32 allowed_retries
+string[] preconditions
+---
+# A boolean alone would not be a result: the caller has to be able to tell "did
+# not move" from "moved and stopped in the wrong place", and to know whether the
+# motion is confirmed over.
+bool ok
+string terminal_state
+string reason_code
+string message
+string final_state_json
+float64 elapsed_s
+string nav_state
+bool stopped_confirmed
+---
+string phase
+float64 distance_remaining_m
+float64 elapsed_s
+string nav_state

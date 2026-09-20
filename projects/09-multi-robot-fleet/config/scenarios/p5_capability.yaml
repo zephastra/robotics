@@ -1,0 +1,32 @@
+# P5 scenario: capability filtering.
+#
+# Claim under test: a task that requires a capability only one robot has is given
+# to that robot and to no other, and a robot without the capability is never even a
+# candidate. `r03` carries INSPECT in config/fleet.yaml; `r01` and `r02` do not.
+#
+# The budgets below are declared here rather than inherited, because CONTRACTS
+# section 9 asks a scenario to state its own budget up front and forbids adding one
+# at runtime. Before fleet.launch.py read this file, naming a budget here changed
+# nothing -- see scripts/check_scenario_budgets.py for the guard that now prevents
+# that from coming back.
+schema_version: "1"
+name: p5_capability
+description: >
+  An INSPECT-only task has exactly one eligible robot; prove the allocator picks it
+  and that the other two are refused, and that a CARRY task never goes to a robot
+  that lacks CARRY.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 240.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 240.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0

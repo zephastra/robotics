@@ -1,0 +1,17 @@
+schema_version: "1"
+description: >
+  N02 -- one robot performs a logical transfer away from home and back, entirely inside its own
+  half of the barrier. No corridor reservation is involved, so this case exercises the task
+  layer rather than the traffic layer: acceptance, allocation, the pick/deliver ledger
+  transaction, and two clean stops. It is the reference case every other N case is compared
+  against, which is why its budgets are the plain defaults and nothing is injected.
+budgets:
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 180.0
+  leg_executor:
+    leg_timeout_s: 180.0
+    max_retries: 2
+robots:
+  r01:
+    start_battery_fraction: 1.0

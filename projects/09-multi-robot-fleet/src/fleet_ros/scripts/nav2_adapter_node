@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+"""Entry point for the per-robot leg executor.
+
+Thin on purpose: all the policy is in fleet_ros.nav2_adapter_node, and this file
+exists only so colcon has something to install under lib/fleet_ros where `ros2 run`
+and launch files look for it.
+"""
+
+import sys
+
+from fleet_ros.nav2_adapter_node import main
+
+if __name__ == "__main__":
+    sys.exit(main() or 0)

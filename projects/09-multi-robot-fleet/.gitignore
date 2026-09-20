@@ -1,0 +1,34 @@
+# build / install / colcon
+build/
+install/
+log/
+
+# python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# runtime state (SQLite, PID, rendered configs) -- never committed
+runtime/
+
+# run outputs -- each run gets its own dir; large, machine-specific
+reports/
+
+# environment / secrets
+config/environment.env
+*.local.env
+
+# editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# never commit raw ground-truth dumps or rosbags
+*.db3
+*.mcap
+*.bag

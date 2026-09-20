@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<package format="3">
+  <!--
+    fleet_core: the pure Python coordination core from P1.
+    Contains no ROS import and is tested with no ROS present. Packaged as an
+    ament_python package so it can also be imported by ROS nodes in an installed
+    workspace without a second copy of the source.
+  -->
+  <name>fleet_core</name>
+  <version>0.1.0</version>
+  <description>009 fleet coordination core: domain, ledger, task machine, allocator, resources, clock.</description>
+  <maintainer email="ziling@zephastra.local">ziling</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

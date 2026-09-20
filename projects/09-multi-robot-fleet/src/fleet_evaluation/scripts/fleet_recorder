@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+"""Entry point for the recorder. Needs ROS; the judge does not."""
+
+import sys
+
+from fleet_evaluation.recorder import main
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,0 +1,25 @@
+# CONTRACTS.md section 2: one submission, idempotent by request_id.
+#
+# `accepted` in the response means RECEIVED. It is not, and must never be read
+# as, "the task will succeed" -- the contract says so twice, because the whole
+# point of the task layer is keeping receipt apart from completion.
+
+string schema_version
+string request_id
+string kind
+string pick_station
+string destination_station
+string required_capability
+string payload_mode
+string payload_id
+int32 priority
+float64 service_duration_s
+int32 max_attempts
+float64 timeout_sim_s
+---
+bool accepted
+string task_id
+string state
+string reason_code
+string message
+int64 event_seq

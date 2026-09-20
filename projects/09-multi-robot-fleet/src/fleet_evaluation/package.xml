@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<package format="3">
+  <!--
+    fleet_evaluation: independent judgement of a recorded run.
+
+    Exists because every verdict published before it was produced by the same process that
+    drove, or at least watched, the thing being judged. The ledger, the gate and the driver
+    reports are the SUBJECT of the test; they cannot also be its evidence.
+
+    judge.py is pure Python on purpose. A judge that needs the system it is judging in
+    order to run is not independent. recorder.py needs ROS and must never sit in the
+    control path: it subscribes, it does not publish.
+
+    (No double hyphen appears anywhere above: that is illegal inside an XML comment, and
+    check_xml_wellformed.py rejects the file. It has cost this project five runs.)
+  -->
+  <name>fleet_evaluation</name>
+  <version>0.1.0</version>
+  <description>Independent evaluation of a recorded 009 run: judges safety properties from the world's own pose stream and cross-checks the fleet's claims as claims.</description>
+  <maintainer email="ziling@zephastra.local">ziling</maintainer>
+  <license>Apache-2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf2_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>fleet_core</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

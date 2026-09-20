@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<package format="3">
+  <!--
+    fleet_bringup: launch files, robot description, Nav2 configuration and the
+    world for the 009 multi-robot fleet. Deliberately ament_cmake, not ament_python,
+    because it installs no Python modules: only launch/, config/, urdf/ and the
+    model template.
+  -->
+  <name>fleet_bringup</name>
+  <version>0.1.0</version>
+  <description>
+    009 multi-robot fleet bringup: Gazebo world, robot description, bridge and Nav2
+    launch files. Launch files only; all logic lives in fleet_core / fleet_adapter.
+  </description>
+  <maintainer email="ziling@zephastra.local">ziling</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>nav2_amcl</exec_depend>
+  <exec_depend>nav2_map_server</exec_depend>
+  <exec_depend>nav2_controller</exec_depend>
+  <exec_depend>nav2_planner</exec_depend>
+  <exec_depend>nav2_behaviors</exec_depend>
+  <exec_depend>nav2_bt_navigator</exec_depend>
+  <exec_depend>nav2_velocity_smoother</exec_depend>
+  <exec_depend>nav2_collision_monitor</exec_depend>
+  <exec_depend>nav2_lifecycle_manager</exec_depend>
+  <exec_depend>fleet_ros</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

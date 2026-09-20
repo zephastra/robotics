@@ -1,0 +1,10 @@
+* text=auto
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.xml text eol=lf
+*.sdf text eol=lf
+*.pgm binary
+*.png binary
+config/cyclonedds.xml -text

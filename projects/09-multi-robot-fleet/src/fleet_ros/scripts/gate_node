@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+"""Console entry point for the 009 safety gate.
+
+A thin wrapper rather than logic: the node lives in fleet_ros/gate_node.py so it stays
+importable and testable, and this file exists only to be the executable that
+`ros2 run fleet_ros gate_node` and `Node(package='fleet_ros', executable='gate_node')`
+resolve under lib/fleet_ros/.
+"""
+
+from fleet_ros.gate_node import main
+
+if __name__ == "__main__":
+    raise SystemExit(main())

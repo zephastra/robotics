@@ -1,0 +1,28 @@
+# Offer evidence that a robot has left the protected bundle. CONTRACTS section 8.
+#
+# The caller supplies a POSE, not a verdict. There is deliberately no `clear` bool:
+# a robot parked on the exit buffer is still inside the bundle, and "I am clear" is
+# exactly the claim a robot is least able to make about itself.
+#
+# As with AcquirePassage, the coordinator verifies against the pose it observed.
+
+string robot_id
+string boot_id
+int32 revision
+int32 generation
+int32 epoch
+
+string task_id
+string direction
+
+float64 x
+float64 y
+float64 yaw
+---
+bool cleared
+string reason_code
+string detail
+
+# Which rectangles the footprint (plus margin) still overlaps. Empty when cleared,
+# and the deciding evidence when it is not.
+string[] still_inside

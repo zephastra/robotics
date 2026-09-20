@@ -1,0 +1,37 @@
+# P5 scenario: low-battery admission.
+#
+# Claim under test: a robot below the low threshold is not given ordinary work and
+# is instead sent to charge, and the decision comes from the shipped battery model
+# rather than from a special case written for the test.
+#
+# r01 starts at 15% of a 100 Wh pack. `battery.low_fraction` is 0.20 and
+# `safety.low_battery_wh` is 15.0, so r01 is in the LOW band from the first tick
+# while r02 and r03 stay in OK. The fraction is declared here and applied through
+# the executor's own `start_battery_fraction` parameter -- the same path a real run
+# would use -- rather than by editing the model or relaxing a threshold.
+schema_version: "1"
+name: p5_low_battery
+description: >
+  One robot starts below the low threshold: prove (a) an ordinary CARRY task is
+  refused for it under INSUFFICIENT_BATTERY, (b) a system-generated
+  return_to_charge task is created and pinned to it, and (c) the healthy robots are
+  unaffected.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 240.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 240.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0
+
+robots:
+  r01:
+    start_battery_fraction: 0.15

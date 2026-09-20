@@ -1,0 +1,69 @@
+# 009 v1 fleet configuration.
+#
+# These numbers are a first design, NOT measured, optimised or frozen.
+# P2 calibrates real stop distances and then freezes footprint / speed / docking
+# thresholds. Until that happens nothing here may be quoted as a verified limit.
+#
+# Units are in the field names on purpose: a bare number with the wrong unit is
+# a silent safety bug.
+
+robots:
+  r01:
+    capabilities: [CARRY]
+    battery_capacity_wh: 100.0
+    discharge_wh_per_m: 0.5
+    discharge_wh_per_s: 0.01
+    max_speed_mps: 0.35
+    footprint_length_m: 0.60
+    footprint_width_m: 0.45
+  r02:
+    capabilities: [CARRY]
+    battery_capacity_wh: 100.0
+    discharge_wh_per_m: 0.5
+    discharge_wh_per_s: 0.01
+    max_speed_mps: 0.35
+    footprint_length_m: 0.60
+    footprint_width_m: 0.45
+  r03:
+    capabilities: [CARRY, INSPECT]
+    battery_capacity_wh: 100.0
+    discharge_wh_per_m: 0.5
+    discharge_wh_per_s: 0.01
+    max_speed_mps: 0.35
+    footprint_length_m: 0.60
+    footprint_width_m: 0.45
+
+stations:
+  S_left_a:  {x: -5.0, y:  2.5}
+  S_left_b:  {x: -5.0, y: -2.5}
+  S_right_a: {x:  5.0, y:  2.5}
+  S_right_b: {x:  5.0, y: -2.5}
+  C_left:    {x: -5.0, y: -3.8}
+  C_right:   {x:  5.0, y: -3.8}
+
+# The single shared corridor and its exit buffers. These MUST be reserved
+# together as one bundle, or a robot can enter a passage it cannot leave.
+corridor:
+  name: mid
+  exit_buffers:
+    left: mid_left
+    right: mid_right
+
+chargers:
+  C_left: {}
+  C_right: {}
+charger_capacity: 1
+
+safety:
+  permit_ttl_s: 30.0
+  battery_reserve_wh: 5.0
+  low_battery_wh: 15.0
+
+# Simulated energy model (CONTRACTS section 5). These are DEMO RULES, not a
+# battery protection model, and the section is deliberately not inside `safety:`
+# so it is never quoted as one. See docs/LIMITATIONS.md.
+battery:
+  charge_wh_per_s: 5.0
+  low_fraction: 0.20
+  critical_fraction: 0.08
+  resume_fraction: 0.80

@@ -1,0 +1,260 @@
+<?xml version="1.0" ?>
+<!--
+  009 warehouse: two work areas separated by a single narrow passage.
+
+  LAYOUT (first design; P2 verifies the swept path and re-freezes if a turning
+  wheel would clip a corner. See docs/ENVIRONMENT.md and MASTER_PLAN 7.1):
+
+    y
+    +5  +===================================+
+        |  N work area                      |
+    +1.4|   wait(-2.5,1.4)   wait(2.5,1.4)   |
+    +0.6|   ===========   GAP   =========== |   barrier on x = 0
+     0  |========== (-2.3,0) | (2.3,0) ======|   <- entry alignment
+    -0.6|   ===========   GAP   =========== |
+    -1.4|   exit(-2.5,-1.4) exit(2.5,-1.4)  |
+        |  S work area                      |
+    -5  +===================================+
+       -7                                  +7
+             barrier runs along x = 0
+
+  (Horizontal rules in this comment use '=' because XML forbids a double hyphen
+  inside a comment. libsdformat tolerates it, strict parsers do not.)
+
+  The barrier is a wall on x = 0 that spans everything EXCEPT |y| < 0.6. So the
+  only way between the left and right halves is a 1.2 m gap, and a 0.45 m robot
+  does not get around it. That is the property the asset validator checks by
+  flood-filling the map, not by eyeballing a picture.
+
+  The protected traversal zone is x in [-1.5, 1.5], y in [-0.6, 0.6]: 3.0 m deep
+  by 1.2 m wide. It is deliberately WIDER than the physical gap so that the zone
+  covers the approach, the gap and the exit together: a robot that has not yet
+  cleared x = +/-1.5 is still inside and still owns the reservation.
+
+  Waiting slots sit at y = +1.4, exit buffers at y = -1.4, both off the centreline
+  so a waiting robot never blocks the passage mouth. Cross traffic therefore uses
+  the buffer on the FAR side, which is why each side has one.
+
+  Pads (stations, chargers, wait/exit/release) are visual slabs with no collision.
+  They mark logical places; they are not obstacles and the evaluator does not
+  treat them as geometry.
+-->
+<sdf version="1.10">
+  <world name="warehouse">
+
+    <gravity>0 0 -9.8</gravity>
+
+    <!-- ======================= physics =======================
+         type="ode" and NOT type="ignored".
+
+         `ignored` means "do not override the defaults", which sounds harmless and is
+         not: the real_time_factor below is then discarded and gz runs the world as fast
+         as the CPU allows. On this machine that was roughly twenty times real time.
+
+         Why that silently breaks the safety layer rather than just making the demo
+         fast: the safety gate's permit expiry, its heartbeat watchdog and its command
+         input timeout are all expressed in WALL time, because a lease must expire while
+         the simulator is frozen (F10/I04). The gz DiffDrive plugin's <timeout> is
+         expressed in SIM time. Publish at 20 Hz wall and let sim time advance 20x
+         faster, and the plugin's 0.5 s command timeout elapses between two consecutive
+         commands: every command is zeroed almost immediately and the robot twitches
+         instead of driving. It looks exactly like a dead velocity bridge.
+
+         Throttling to real time keeps the two clocks comparable, which is what a stack
+         mixing wall-clock leases with sim-time physics requires. -->
+    <physics name="1ms" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-scene-broadcaster-system"
+            name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact"/>
+    <plugin filename="gz-sim-user-commands-system"
+            name="gz::sim::systems::UserCommands"/>
+
+    <!-- ======================= sensors =======================
+         Without this system a gpu_lidar is silently inert: it is created, it
+         appears in the topic list, and it never publishes a single scan. There is
+         no error message. The ugly way to discover this is to spend an afternoon
+         debugging AMCL's particle filter when the real problem is that the lidar
+         has never produced data.
+
+         render_engine is pinned to ogre2 rather than left to the default, so the
+         engine that produced any calibrated numbers is recorded in the asset. -->
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <scene>
+      <ambient>0.55 0.55 0.58 1</ambient>
+      <background>0.70 0.74 0.80 1</background>
+      <grid>false</grid>
+    </scene>
+
+    <!-- ======================= floor ======================= -->
+    <model name="floor">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>40 40</size></plane></geometry>
+          <surface><friction><ode><mu>0.9</mu><mu2>0.9</mu2></ode></friction></surface>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>40 40</size></plane></geometry>
+          <material><ambient>0.30 0.31 0.33 1</ambient><diffuse>0.34 0.35 0.37 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ======================= outer walls ======================= -->
+    <!-- 14 x 10 m enclosure, 0.2 m thick, 1.0 m tall -->
+    <model name="wall_north">
+      <static>true</static><pose>0 5.1 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>14.4 0.2 1.0</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>14.4 0.2 1.0</size></box></geometry>
+          <material><ambient>0.45 0.45 0.47 1</ambient><diffuse>0.5 0.5 0.52 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="wall_south">
+      <static>true</static><pose>0 -5.1 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>14.4 0.2 1.0</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>14.4 0.2 1.0</size></box></geometry>
+          <material><ambient>0.45 0.45 0.47 1</ambient><diffuse>0.5 0.5 0.52 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="wall_east">
+      <static>true</static><pose>7.1 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.2 10.4 1.0</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 10.4 1.0</size></box></geometry>
+          <material><ambient>0.45 0.45 0.47 1</ambient><diffuse>0.5 0.5 0.52 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="wall_west">
+      <static>true</static><pose>-7.1 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.2 10.4 1.0</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 10.4 1.0</size></box></geometry>
+          <material><ambient>0.45 0.45 0.47 1</ambient><diffuse>0.5 0.5 0.52 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- ======================= the barrier (x = 0) =======================
+         Two segments leave a 1.2 m gap at |y| < 0.6. The segments reach the outer
+         walls, so the gap is the ONLY route between the halves. -->
+    <model name="barrier_north">
+      <static>true</static><pose>0 2.8 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.2 4.4 1.0</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 4.4 1.0</size></box></geometry>
+          <material><ambient>0.52 0.42 0.30 1</ambient><diffuse>0.58 0.47 0.34 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="barrier_south">
+      <static>true</static><pose>0 -2.8 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.2 4.4 1.0</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 4.4 1.0</size></box></geometry>
+          <material><ambient>0.52 0.42 0.30 1</ambient><diffuse>0.58 0.47 0.34 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- ======================= protected traversal zone marker =======================
+         Visual only. The authoritative zone lives in config/resources.yaml and is
+         checked by the evaluator against ground truth - a slab on the floor is a
+         picture, not an enforcement mechanism. -->
+    <model name="corridor_marker">
+      <static>true</static><pose>0 0 0.006 0 0 0</pose>
+      <link name="link">
+        <visual name="v"><geometry><box><size>3.0 1.2 0.004</size></box></geometry>
+          <material><ambient>0.85 0.35 0.25 0.6</ambient><diffuse>0.90 0.40 0.28 0.6</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- ======================= logical pads ======================= -->
+    <!-- stations: (+/-5, +/-2.5) -->
+    <model name="pad_S_west_north"><static>true</static><pose>-5.0 2.5 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.9 0.9 0.004</size></box></geometry>
+        <material><ambient>0.20 0.55 0.30 1</ambient><diffuse>0.24 0.62 0.34 1</diffuse></material></visual></link></model>
+    <model name="pad_S_west_south"><static>true</static><pose>-5.0 -2.5 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.9 0.9 0.004</size></box></geometry>
+        <material><ambient>0.20 0.55 0.30 1</ambient><diffuse>0.24 0.62 0.34 1</diffuse></material></visual></link></model>
+    <model name="pad_S_east_north"><static>true</static><pose>5.0 2.5 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.9 0.9 0.004</size></box></geometry>
+        <material><ambient>0.20 0.55 0.30 1</ambient><diffuse>0.24 0.62 0.34 1</diffuse></material></visual></link></model>
+    <model name="pad_S_east_south"><static>true</static><pose>5.0 -2.5 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.9 0.9 0.004</size></box></geometry>
+        <material><ambient>0.20 0.55 0.30 1</ambient><diffuse>0.24 0.62 0.34 1</diffuse></material></visual></link></model>
+
+    <!-- chargers: (+/-5, -3.8) -->
+    <model name="pad_C_west"><static>true</static><pose>-5.0 -3.8 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.8 0.8 0.004</size></box></geometry>
+        <material><ambient>0.75 0.65 0.10 1</ambient><diffuse>0.82 0.70 0.12 1</diffuse></material></visual></link></model>
+    <model name="pad_C_east"><static>true</static><pose>5.0 -3.8 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.8 0.8 0.004</size></box></geometry>
+        <material><ambient>0.75 0.65 0.10 1</ambient><diffuse>0.82 0.70 0.12 1</diffuse></material></visual></link></model>
+
+    <!-- waiting slots: (+/-2.5, +1.4) -->
+    <model name="pad_wait_west"><static>true</static><pose>-2.5 1.4 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.7 0.7 0.004</size></box></geometry>
+        <material><ambient>0.25 0.40 0.70 1</ambient><diffuse>0.30 0.46 0.78 1</diffuse></material></visual></link></model>
+    <model name="pad_wait_east"><static>true</static><pose>2.5 1.4 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.7 0.7 0.004</size></box></geometry>
+        <material><ambient>0.25 0.40 0.70 1</ambient><diffuse>0.30 0.46 0.78 1</diffuse></material></visual></link></model>
+
+    <!-- exit buffers: (+/-2.5, -1.4) -->
+    <model name="pad_exit_west"><static>true</static><pose>-2.5 -1.4 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.7 0.7 0.004</size></box></geometry>
+        <material><ambient>0.60 0.30 0.60 1</ambient><diffuse>0.66 0.34 0.66 1</diffuse></material></visual></link></model>
+    <model name="pad_exit_east"><static>true</static><pose>2.5 -1.4 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.7 0.7 0.004</size></box></geometry>
+        <material><ambient>0.60 0.30 0.60 1</ambient><diffuse>0.66 0.34 0.66 1</diffuse></material></visual></link></model>
+
+    <!-- release nodes: (+/-4.5, -1.4). They moved out twice: 3.5 -> 4.2 for the arrival
+         tolerance (a release point that clears only for a PERFECT arrival is not a release
+         point), then 4.2 -> 4.5 for the stopping reserve, which is a term in the clearance
+         budget that the gate's own boundary has always had. See docs/DECISIONS.md D-P10-01
+         and config/resources.yaml. `validate_traffic_geometry.py` requires a node that names
+         a pad to sit at that pad's centre, so this marker is not free to stay behind. -->
+    <model name="pad_release_west"><static>true</static><pose>-4.5 -1.4 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.5 0.5 0.004</size></box></geometry>
+        <material><ambient>0.30 0.30 0.30 1</ambient><diffuse>0.36 0.36 0.36 1</diffuse></material></visual></link></model>
+    <model name="pad_release_east"><static>true</static><pose>4.5 -1.4 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.5 0.5 0.004</size></box></geometry>
+        <material><ambient>0.30 0.30 0.30 1</ambient><diffuse>0.36 0.36 0.36 1</diffuse></material></visual></link></model>
+
+    <!-- ======================= spares =======================
+         Spawn poses come from config/robots.yaml, not from the world, so a robot
+         can be added by configuration only (P5). These markers show where they go
+         and are clear of every pad, the corridor and the chargers. -->
+    <model name="pad_spawn_west"><static>true</static><pose>-6.0 -2.0 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.6 0.6 0.004</size></box></geometry>
+        <material><ambient>0.50 0.50 0.50 1</ambient><diffuse>0.56 0.56 0.56 1</diffuse></material></visual></link></model>
+    <model name="pad_spawn_east"><static>true</static><pose>6.0 -2.0 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.6 0.6 0.004</size></box></geometry>
+        <material><ambient>0.50 0.50 0.50 1</ambient><diffuse>0.56 0.56 0.56 1</diffuse></material></visual></link></model>
+    <model name="pad_spawn_west2"><static>true</static><pose>-6.0 0.6 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.6 0.6 0.004</size></box></geometry>
+        <material><ambient>0.50 0.50 0.50 1</ambient><diffuse>0.56 0.56 0.56 1</diffuse></material></visual></link></model>
+    <model name="pad_spawn_east2"><static>true</static><pose>6.0 0.6 0.004 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><box><size>0.6 0.6 0.004</size></box></geometry>
+        <material><ambient>0.50 0.50 0.50 1</ambient><diffuse>0.56 0.56 0.56 1</diffuse></material></visual></link></model>
+
+    <!-- ======================= ground truth =======================
+         Per-robot true pose is published by the PosePublisher inside
+         assets/models/amr_4wd/model.sdf, NOT here. A world-level PosePublisher is
+         rejected at load time ("should be attached to a model entity"), and a
+         per-model plugin gives each robot its own topic that the launch file can
+         remap per namespace.
+
+         Contact data comes from the contact system above:
+             /world/warehouse/contact
+         The evaluator consumes both and never feeds them back to control
+         (AGENTS.md rule 13). -->
+  </world>
+</sdf>

@@ -1,0 +1,36 @@
+# 009 spawn poses: the single source of truth for where each robot starts.
+#
+# Kept out of config/fleet.yaml on purpose. fleet.yaml is parsed by
+# fleet_core.validation for the scheduling domain (capabilities, battery, corridor
+# reservation) and a spawn pose is a simulation concern, not a scheduling one.
+# Mixing them would mean the scheduler has to ignore fields it has no use for.
+#
+# Consumer chain, all reading THIS file:
+#   scripts/validate_assets.py   proves each pose is clear of every pad, the walls,
+#                                the protected corridor and the chargers
+#   fleet_bringup/robot.launch.py spawns the robot here and seeds AMCL's initial
+#                                pose from the same numbers
+#   fleet_ros/stop_distance_calibrator.py uses it as the start of the straight run
+#
+# z is a small positive lift so the robot settles onto the floor instead of
+# starting interpenetrated with it, which shows up as a one-off jolt at t = 0.
+#
+# Poses are matched to the pad_spawn_* markers in assets/worlds/warehouse.sdf.
+# Both sides of that pair are checked by validate_assets.py.
+
+spawns:
+  r01:
+    x: -6.0
+    y: -2.0
+    z: 0.05
+    yaw: 0.0
+  r02:
+    x: 6.0
+    y: -2.0
+    z: 0.05
+    yaw: 3.14159265
+  r03:
+    x: -6.0
+    y: 0.6
+    z: 0.05
+    yaw: 0.0

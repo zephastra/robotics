@@ -1,0 +1,35 @@
+# P5 scenario: restart of the single writer.
+#
+# Claim under test: the task service may be killed mid-run and restarted, and the
+# fleet degrades into a *stated* state rather than a silent one. Per the node's own
+# policy, a restart does NOT resume in-flight work: every task left open is moved to
+# NEEDS_ATTENTION with the epoch mismatch recorded, a payload that is already HELD
+# stays with its holder, and the `coordinator_restart` event carries the report.
+# The alternative -- resuming work a dead process had started -- is what CONTRACTS
+# section 11 refuses.
+#
+# The budgets are declared here so the scenarios' runs are comparable, and the
+# orphan grace is deliberately longer than the default: the restart itself takes
+# several seconds, and a shorter grace would park tasks for the test's own outage
+# rather than for anything the system did.
+schema_version: "1"
+name: p5_restart
+description: >
+  Kill and restart the fleet task service mid-task: prove the open task is parked as
+  NEEDS_ATTENTION with a stated reason, nothing is silently resumed or re-homed, a
+  held payload stays with its holder, and the fleet accepts new work afterwards.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 240.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 240.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 45.0

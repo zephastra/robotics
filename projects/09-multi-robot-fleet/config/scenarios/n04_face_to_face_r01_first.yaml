@@ -1,0 +1,50 @@
+# N04 scenario: two robots facing each other, both wanting the same passage.
+#
+# r01 spawns west (x = -6.0) and r02 spawns east (x = +6.0). Each is given a task on the far
+# side, so each robot's FIRST leg is a crossing of the shared corridor -- r01 west_to_east,
+# r02 east_to_west. `mid` has capacity 1, so they cannot both hold it.
+#
+# WHERE THE ORDER LIVES. Not here. "r01 asks first" is a property of the case, not of the
+# world, so it is expressed in `config/scenarios/regression_v1.yaml` as `crossing_order:
+# [r01, r02]` plus a `wait_for: {robot_crossing: r01}` on r02's submission. The wait is a
+# predicate over the snapshot, never a sleep: a case that arranges its order with a sleep
+# passes or fails by how long something happened to take, and nothing in the record says
+# which. N05 is this same world with the two waiting roles swapped, which is what makes the
+# pair evidence -- the same scenario producing opposite orders means the order follows who
+# asked rather than a fixed robot priority.
+#
+# Budgets: the crossing budget is stated here rather than left to the node's default, because
+# a crossing queues for a permit and a scenario that expects a queue should say how long it is
+# prepared to wait (CONTRACTS section 9 -- no budget added at runtime).
+schema_version: "1"
+name: n04_face_to_face_r01_first
+description: >
+  Two robots on opposite sides of the barrier, each asked to reach a station on the far side.
+  Prove that the corridor is used in the order the requests arrived, that the second robot
+  waits for the first to release, and that the two are never inside together.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 240.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 240.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0
+    crossing_timeout_s: 300.0
+    # How long a robot may be queued for the permit before the wait counts against it.
+    # Declared here because this case EXPECTS a queue -- a scoped one costs the corridor
+    # one full crossing, and N04 quantifies it: r02 waited 42.9 s / 86 requests.
+    crossing_queue_s: 90.0
+
+robots:
+  r01:
+    start_battery_fraction: 1.0
+  r02:
+    start_battery_fraction: 1.0

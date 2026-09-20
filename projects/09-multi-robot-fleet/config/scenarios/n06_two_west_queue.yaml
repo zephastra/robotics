@@ -1,0 +1,49 @@
+# N06 scenario: two robots queued for the passage in the SAME direction.
+#
+# N04 and N05 put the two robots on opposite sides, so the corridor is used in both
+# directions. Here both start west -- r01 at (-6.0, -2.0) and r03 at (-6.0, +0.6), which is
+# why this case uses r03 rather than r02: r02 spawns east and could not queue for a
+# west-to-east passage without a crossing first. Both are asked to reach an east station and
+# come back, so each robot's first leg is a west_to_east crossing and the two compete for the
+# same direction of travel.
+#
+# The claim is section 5's "ordered use, no rear-ending", and it is checked from the event
+# stream rather than from the snapshot: `crossing_exclusive` in `regression_v1.yaml` requires
+# that no two occupancies of the corridor overlap, and `crossing_order` requires the first
+# entry to be r01's.
+#
+# The stations are chosen to match the spawn y-coordinates, because a task is assigned by
+# proximity: r01 at y = -2.0 is nearest S_right_b (y = -2.5) and r03 at y = +0.6 is nearest
+# S_right_a (y = +2.5). The case also PINS the robot it expects for each task, so an allocator
+# that crossed them over fails here rather than quietly producing a different experiment.
+schema_version: "1"
+name: n06_two_west_queue
+description: >
+  Two robots on the same side of the barrier, both asked to reach an east station and return.
+  Prove that the corridor is used in one direction at a time, in order, with no rear-ending.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 240.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 240.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0
+    crossing_timeout_s: 300.0
+    # How long a robot may be queued for the permit before the wait counts against it.
+    # Declared here because this case EXPECTS a queue -- a scoped one costs the corridor
+    # one full crossing, and N04 quantifies it: r02 waited 42.9 s / 86 requests.
+    crossing_queue_s: 90.0
+
+robots:
+  r01:
+    start_battery_fraction: 1.0
+  r03:
+    start_battery_fraction: 1.0

@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+"""Entry point for the independent evaluator.
+
+Deliberately no ROS import: this must run on a machine without ROS, on a run directory
+produced earlier, by someone who was not there when it ran.
+"""
+
+import sys
+
+from fleet_evaluation.judge import main
+
+if __name__ == "__main__":
+    sys.exit(main())

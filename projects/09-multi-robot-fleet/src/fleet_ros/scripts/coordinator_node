@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+"""Console entry point for the 009 fleet coordinator.
+
+Thin wrapper, same reason as scripts/gate_node: the node lives in
+fleet_ros/coordinator_node.py so it stays importable and reviewable, and this file
+exists to be the executable that `ros2 run` and `Node(executable=...)` resolve
+under lib/fleet_ros/.
+"""
+
+from fleet_ros.coordinator_node import main
+
+if __name__ == "__main__":
+    raise SystemExit(main())

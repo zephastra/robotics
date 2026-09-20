@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<package format="3">
+  <!--
+    fleet_adapter: backend neutral adapter contract, the safety gate policy and the
+    fake backend. Pure Python; fleet_ros is the layer that touches ROS.
+  -->
+  <name>fleet_adapter</name>
+  <version>0.1.0</version>
+  <description>009 adapter contract, safety gate policy and deterministic fake backend.</description>
+  <maintainer email="ziling@zephastra.local">ziling</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <exec_depend>fleet_core</exec_depend>
+
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

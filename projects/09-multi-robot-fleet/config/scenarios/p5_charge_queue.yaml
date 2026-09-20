@@ -1,0 +1,45 @@
+# P5 scenario: charge-pad capacity and queueing.
+#
+# Claim under test: there are two pads, `C_left` and `C_right`, each with capacity 1
+# (config/fleet.yaml). With three robots below the low threshold, at most two may
+# occupy a pad at a time, the third must queue rather than be dispatched to a pad
+# that is taken, and no pad may ever hold two robots. MASTER_PLAN section 9 (P5)
+# words this as "充电位有人时排队，不叠在一起", and the "not stacked" half is a
+# geometry claim as well as a scheduling one, so the run is checked against the
+# robots' own reported positions, not only against the allocator's bookkeeping.
+#
+# All three start in the LOW band and none in CRITICAL: `critical_fraction` is 0.08,
+# and a CRITICAL robot takes the reachability path instead, which is a different
+# claim and is not what this scenario is about.
+schema_version: "1"
+name: p5_charge_queue
+description: >
+  Three low robots, two pads: prove the third queues with a CHARGER_BUSY refusal
+  rather than being sent, that no pad ever holds two robots, and that the queue
+  head is admitted once a pad is released.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 240.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 240.0
+    # Long enough for a pad to be released and the queue head admitted within one
+    # run; the adapter's charge rate is 5 Wh/s against a 100 Wh pack, so a robot
+    # parked at 11% needs about 14 s of sim time to reach the 80% resume threshold.
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0
+
+robots:
+  r01:
+    start_battery_fraction: 0.15
+  r02:
+    start_battery_fraction: 0.13
+  r03:
+    start_battery_fraction: 0.11

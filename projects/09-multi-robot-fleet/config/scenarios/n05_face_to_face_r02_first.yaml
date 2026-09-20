@@ -1,0 +1,43 @@
+# N05 scenario: the same world as N04, with the asking order reversed.
+#
+# Read this next to `n04_face_to_face_r01_first.yaml`. The world is identical -- r01 west,
+# r02 east, each asked to reach the far side, one shared corridor with capacity 1. Only the
+# case's `crossing_order` and its `wait_for` swap, so the pair is evidence for section 5's
+# claim that the order follows who asked first rather than a fixed robot priority: the same
+# scenario has to be able to produce both orders.
+#
+# The scenario file is separate rather than shared with N04 on purpose. The two cases are
+# different experiments, and a manifest that pointed both at one file would make a change to
+# the world silently change two cases at once.
+schema_version: "1"
+name: n05_face_to_face_r02_first
+description: >
+  Two robots on opposite sides of the barrier, each asked to reach a station on the far side,
+  with the second robot asking first. Prove that the corridor's order follows the requests
+  rather than a fixed robot priority.
+
+budgets:
+  coordinator:
+    permit_rate_hz: 5.0
+    pose_timeout_s: 1.5
+    occupancy_settle_s: 5.0
+  leg_executor:
+    leg_timeout_s: 240.0
+    max_retries: 2
+    publish_hz: 10.0
+  task_service:
+    tick_hz: 2.0
+    leg_timeout_s: 240.0
+    cancel_confirm_s: 15.0
+    orphan_grace_s: 30.0
+    crossing_timeout_s: 300.0
+    # How long a robot may be queued for the permit before the wait counts against it.
+    # Declared here because this case EXPECTS a queue -- a scoped one costs the corridor
+    # one full crossing, and N04 quantifies it: r02 waited 42.9 s / 86 requests.
+    crossing_queue_s: 90.0
+
+robots:
+  r01:
+    start_battery_fraction: 1.0
+  r02:
+    start_battery_fraction: 1.0

@@ -1,0 +1,13 @@
+# Cancel is a request, not an outcome. `stopped` is the only field that may be
+# read as "the motion ended"; the contract keeps those two apart because the
+# difference is what stops a new task being handed to a robot that is still
+# moving. A cancel that cannot be confirmed leaves the payload and any resource
+# held by the old task alone.
+
+string task_id
+---
+bool accepted
+bool stopped
+string state
+string reason_code
+string message
