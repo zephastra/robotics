@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="workcell010_p3_nav">
+  <compiler angle="radian" autolimits="true" />
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast" />
+  <default>
+    <geom friction="0.9 0.005 0.0001" condim="3" />
+  </default>
+  <worldbody>
+    <geom name="cell_ground" size="5.51925 1.65028 0.1" pos="5.01925 0 0" type="plane" friction="0.25" />
+    <geom name="cell_wall_north" size="5.51925 0.025 0.3" pos="5.01925 1.65028 0.3" type="box" />
+    <geom name="cell_wall_south" size="5.51925 0.025 0.3" pos="5.01925 -1.65028 0.3" type="box" />
+    <geom name="cell_wall_east" size="0.025 1.65028 0.3" pos="10.5385 0 0.3" type="box" />
+    <geom name="cell_wall_west" size="0.025 1.65028 0.3" pos="-0.5 0 0.3" type="box" />
+    <geom name="nav_obstacle_h" type="box" pos="0.749878 -0.000000 0.852804" size="0.433236 0.521574 0.984746" friction="1.0 0.005 0.0001" />
+    <geom name="nav_obstacle_a" type="box" pos="3.265008 0.000000 0.379529" size="0.596269 0.353977 0.543506" friction="1.0 0.005 0.0001" />
+    <geom name="nav_obstacle_c" type="box" pos="6.328720 0.000000 0.375991" size="2.167438 0.335000 0.375991" friction="1.0 0.005 0.0001" />
+    <body name="base_link" pos="1.685000 0.0 0.040000">
+      <joint name="slide_x" type="slide" axis="1 0 0" damping="0.0" />
+      <joint name="slide_y" type="slide" axis="0 1 0" damping="0.0" />
+      <joint name="slide_z" type="slide" axis="0 0 1" damping="0.0" />
+      <joint name="yaw" type="hinge" axis="0 0 1" damping="0.02" armature="0.01" />
+      <geom name="chassis" type="box" pos="0 0 0.060" size="0.19 0.13 0.05" mass="6.0" rgba="0.20 0.45 0.75 1" />
+      <site name="lidar_site" pos="0.02 0 0.17" size="0.02" rgba="0.95 0.25 0.25 1" />
+      <body name="wheel_left" pos="0 0.15 0">
+        <joint name="wheel_left_joint" type="hinge" axis="0 1 0" damping="0.02" armature="0.004" />
+        <geom name="wheel_left_geom" type="cylinder" size="0.04 0.02" quat="0.70710678 0.70710678 0 0" mass="0.45" friction="1.6 0.01 0.0001" rgba="0.15 0.15 0.18 1" />
+      </body>
+      <body name="wheel_right" pos="0 -0.15 0">
+        <joint name="wheel_right_joint" type="hinge" axis="0 1 0" damping="0.02" armature="0.004" />
+        <geom name="wheel_right_geom" type="cylinder" size="0.04 0.02" quat="0.70710678 0.70710678 0 0" mass="0.45" friction="1.6 0.01 0.0001" rgba="0.15 0.15 0.18 1" />
+      </body>
+      <body name="nav_load" pos="0.0 0.0 0.240000">
+        <geom name="tray_floor" type="box" size="0.065 0.230 0.005" pos="0 0 -0.035" mass="0.030" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+        <geom name="tray_wall_xp" type="box" size="0.004 0.230 0.030" pos="0.061 0 -0.005" mass="0.008" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+        <geom name="tray_wall_xn" type="box" size="0.004 0.230 0.030" pos="-0.061 0 -0.005" mass="0.008" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+        <geom name="tray_wall_yp" type="box" size="0.057 0.004 0.030" pos="0 0.226 -0.005" mass="0.008" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+        <geom name="tray_wall_yn" type="box" size="0.057 0.004 0.030" pos="0 -0.226 -0.005" mass="0.008" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+        <geom name="tray_divider_1" type="box" size="0.057 0.003 0.024" pos="0 -0.0767 -0.011" mass="0.004" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+        <geom name="tray_divider_2" type="box" size="0.057 0.003 0.024" pos="0 0.0767 -0.011" mass="0.004" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+        <geom name="handle_-1" type="sphere" pos="0 -0.3 0" size="0.035" mass="0.012" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+        <geom name="handle_stem_-1" type="capsule" fromto="0 -0.22 0 0 -0.3 0" size=".009" mass="0.002" rgba="0.15 0.55 0.85 1" />
+        <geom name="handle_1" type="sphere" pos="0 0.3 0" size="0.035" mass="0.012" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+        <geom name="handle_stem_1" type="capsule" fromto="0 0.22 0 0 0.3 0" size=".009" mass="0.002" rgba="0.15 0.55 0.85 1" />
+        <geom name="visual_marker" type="box" pos="0 0 0.026" size=".045 .18 .001" rgba="1 .02 1 1" contype="0" conaffinity="0" mass="0" />
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="wheel_left_motor" joint="wheel_left_joint" ctrlrange="-8 8" />
+    <motor name="wheel_right_motor" joint="wheel_right_joint" ctrlrange="-8 8" />
+  </actuator>
+</mujoco>

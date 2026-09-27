@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="007_t800_baseline"><include file="scene.xml" /><worldbody><geom name="target_A" type="cylinder" size=".3 .002" pos="3 0 .003" rgba=".1 .8 .4 .6" contype="0" conaffinity="0" /><geom name="target_B" type="cylinder" size=".3 .002" pos="3 2 .003" rgba=".2 .6 1 .6" contype="0" conaffinity="0" /><geom name="target_HOME" type="cylinder" size=".3 .002" pos="0 0 .003" rgba=".9 .3 .7 .6" contype="0" conaffinity="0" /></worldbody></mujoco>

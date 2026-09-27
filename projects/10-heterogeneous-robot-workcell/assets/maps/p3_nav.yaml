@@ -1,0 +1,25 @@
+# P1-N static map of the N probe arena. GENERATED -- do not hand-edit.
+#
+# Regenerate:  .venv/bin/python experiments/make_map_n.py
+# Verify:      .venv/bin/python experiments/make_map_n.py --check
+#
+# It is a floor plan of a world 010 itself authors, i.e. an operator prior, NOT a
+# measurement and NOT SLAM output. N-07 therefore validates map -> AMCL -> planner ->
+# controller -> command gate; it says nothing about mapping.
+# source world: assets/worlds/world_p3_nav.xml
+# source world sha256: f535882aa0863afddea1ada0772ac492d51fe04d7ae3bffe619530a6b0d54d9b
+# generator sha256: f648ec1eb3639ce750637d013b70c51efc0128f2cd34bf250701bc0eed02b6ec
+# start pose used for the reachability fill, cell centre by construction: [1.685, 0.0]
+# scan height: 0.21 m
+# floor geoms (never obstacles): cell_ground
+# geoms mapped: cell_wall_north, cell_wall_south, cell_wall_east, cell_wall_west, nav_obstacle_h, nav_obstacle_a, nav_obstacle_c
+# geoms below/above the scan height (skipped): none
+# geoms inside a <body> (movable assemblies, skipped): chassis, wheel_left_geom, wheel_right_geom
+# cells: 12452 free, 117869 occupied, 0 unknown
+#
+image: p3_nav.pgm
+resolution: 0.05
+origin: [-7.34, -9.025, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

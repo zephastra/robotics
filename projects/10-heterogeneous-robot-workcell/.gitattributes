@@ -1,0 +1,5 @@
+* -text
+# Preserve snapshot bytes and source fingerprints; no checkout/index newline conversion.
+*.png binary
+*.jpg binary
+*.mp4 binary

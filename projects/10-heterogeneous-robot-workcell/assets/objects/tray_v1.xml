@@ -1,0 +1,36 @@
+<!--
+  010 V1 tray — light empty tray with grasping features.
+
+  Authored in project 010; not a copy of the carried-over 007 object. The body is still
+  named `payload` because that is the ROLE name the judges and the probe look up; which
+  model fills the role is recorded per run (report.object).
+
+  What is new versus the 007 tray:
+    * a container instead of a solid box: floor + four walls + two dividers forming
+      three separate pockets (PRECONDITIONS wants three part positions per tray);
+    * a declared mass of 0.098 kg against the 007 tray's 0.210 kg.
+
+  What is deliberately IDENTICAL: the grasp interface. The horizontal stems run to
+  y = +-0.30 with 35 mm knobs, exactly as before, because the reach anchors and the
+  hand-close preset were validated against that geometry. Changing the interface here
+  would confound "a new tray" with "a new reach plan", and this round is meant to change
+  only the object.
+
+  Masses are declared per geom rather than derived from density, so the total is a
+  statement the reader can check rather than a side effect of the meshes.
+-->
+<body name="payload" pos="0.23 0.0 0.85">
+  <freejoint name="payload_free" />
+  <geom name="tray_floor" type="box" size="0.065 0.230 0.005" pos="0 0 -0.035" mass="0.030" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+  <geom name="tray_wall_xp" type="box" size="0.004 0.230 0.030" pos="0.061 0 -0.005" mass="0.008" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+  <geom name="tray_wall_xn" type="box" size="0.004 0.230 0.030" pos="-0.061 0 -0.005" mass="0.008" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+  <geom name="tray_wall_yp" type="box" size="0.057 0.004 0.030" pos="0 0.226 -0.005" mass="0.008" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+  <geom name="tray_wall_yn" type="box" size="0.057 0.004 0.030" pos="0 -0.226 -0.005" mass="0.008" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+  <geom name="tray_divider_1" type="box" size="0.057 0.003 0.024" pos="0 -0.0767 -0.011" mass="0.004" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+  <geom name="tray_divider_2" type="box" size="0.057 0.003 0.024" pos="0 0.0767 -0.011" mass="0.004" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+  <geom name="handle_-1" type="sphere" pos="0 -0.3 0" size="0.035" mass="0.012" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+  <geom name="handle_stem_-1" type="capsule" fromto="0 -0.22 0 0 -0.3 0" size=".009" mass="0.002" rgba="0.15 0.55 0.85 1" />
+  <geom name="handle_1" type="sphere" pos="0 0.3 0" size="0.035" mass="0.012" condim="6" friction="1 .005 .001" rgba="0.15 0.55 0.85 1" />
+  <geom name="handle_stem_1" type="capsule" fromto="0 0.22 0 0 0.3 0" size=".009" mass="0.002" rgba="0.15 0.55 0.85 1" />
+  <geom name="visual_marker" type="box" pos="0 0 0.026" size=".045 .18 .001" rgba="1 .02 1 1" contype="0" conaffinity="0" mass="0" />
+</body>

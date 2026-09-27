@@ -1,0 +1,29 @@
+{
+  "source_manifest": "DEV_SNAPSHOT_MANIFEST.json",
+  "overrides": [
+    {
+      "path": "README.md",
+      "source_sha256": "74bb300755e2b10a5bbd7b7e12ad288fab6af471122c7761f4c040fbff40c00a",
+      "published_sha256": "52ed5c517659c2925a280b2eb094a8b696a1287ea36c496236f4a012db7d04ad",
+      "purpose": "Public development snapshot documentation or exact-byte attributes; source untouched."
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "source_sha256": "97b043ff04e5bb76bcfcb2c49f02602190a7ae2559f19770ea7ca44b812eeac6",
+      "published_sha256": "646cf87c7769a33ad7618d3677ade67921fb76a7a738fec9623959e0548f99e1",
+      "purpose": "Public development snapshot documentation or exact-byte attributes; source untouched."
+    },
+    {
+      "path": ".gitattributes",
+      "source_sha256": "0464fbc8b08f618bf24c35b0616837daf478c998a918df1fb2e574eacaa4ea43",
+      "published_sha256": "d6acfc99bf1af3527657390175dc0c4b141859e434bc7dd75978bce08bc74fce",
+      "purpose": "Public development snapshot documentation or exact-byte attributes; source untouched."
+    }
+  ],
+  "added": [
+    "DEV_CHECKPOINT.md",
+    "DEV_SNAPSHOT_MANIFEST.json",
+    "DEV_PUBLICATION_OVERRIDES.json",
+    "LICENSE"
+  ]
+}

@@ -1,0 +1,16 @@
+<!--
+  Object fragment extracted verbatim from assets/combined.xml by
+  experiments/make_world.py --extract. This is the 007 carried-over object.
+
+  Do not hand-edit: re-run the extractor instead, so the fragment cannot drift away from
+  the snapshot it is supposed to represent. combined.xml is not modified by this.
+-->
+<body name="payload" pos="0.23 0.0 0.85">
+      <freejoint name="payload_free" />
+      <geom name="payload_box" type="box" size="0.065 0.23 0.04" mass="0.15" rgba="1 .4 .04 1" condim="6" friction="1 .005 .001" />
+      <geom name="handle_-1" type="sphere" pos="0 -0.3 0" size="0.035" mass=".025" rgba="1 .4 .04 1" condim="6" friction="1 .005 .001" />
+      <geom name="handle_stem_-1" type="capsule" fromto="0 -0.22 0 0 -0.3 0" size=".009" mass=".005" rgba="1 .4 .04 1" />
+      <geom name="handle_1" type="sphere" pos="0 0.3 0" size="0.035" mass=".025" rgba="1 .4 .04 1" condim="6" friction="1 .005 .001" />
+      <geom name="handle_stem_1" type="capsule" fromto="0 0.22 0 0 0.3 0" size=".009" mass=".005" rgba="1 .4 .04 1" />
+      <geom name="visual_marker" type="box" pos="0 0 .041" size=".045 .18 .001" rgba="1 .02 1 1" contype="0" conaffinity="0" mass="0" />
+    </body>

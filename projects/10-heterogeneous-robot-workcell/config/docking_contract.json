@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "contract_id": "dock-station_c-v1",
+  "version": 1,
+  "frozen": true,
+  "_comment": "GENERATED-BY-HAND ONCE, THEN FROZEN. Every number cites a source in `sources`; nothing here is estimated. The geometry comes from roller_rig's own generator metadata and C's own sweep, because a copy of a generator's number is one copy too many. The observability verdict is the output of experiments/dock_observability.py and REFUSES to certify the tight side of the window, which is why `certifies_tight_side` is false: the contract is written and it says out loud that it cannot yet clear a dock by ranging alone.",
+  "stations": {
+    "station_c": {
+      "station_id": "station_c",
+      "role": "the C fixture: the fixed roller band (source) and the receiver band, with the vehicle's deck bridging them",
+      "frame_id": "world",
+      "trains_along": "+x",
+      "travel_sign": "+x",
+      "rotation_centre_m": [5.33372, 0.0, 0.485],
+      "declared_by": "assets/world_p3_cell.xml, crown plane from roller_rig CROWN_Z"
+    }
+  },
+  "axes": {
+    "x": {"x": 1.0, "y": 0.0, "z": 0.0},
+    "y": {"x": 0.0, "y": 1.0, "z": 0.0},
+    "z": {"x": 0.0, "y": 0.0, "z": 1.0}
+  },
+  "frames": {
+    "source_band": "world",
+    "receiver_band": "world",
+    "vehicle_dock": "base_link"
+  },
+  "tolerance": {
+    "longitudinal_gap_m": 0.07,
+    "lateral_error_m": 0.002,
+    "height_mismatch_m": 0.002,
+    "yaw_error_rad": 0.0035,
+    "window_m": 0.02,
+    "window_yaw_rad": 0.0035,
+    "measured_bracket": {
+      "largest_passing_dx_m": 0.02,
+      "first_failing_dx_m": 0.04,
+      "last_passing_negative_dx_m": -0.002,
+      "first_failing_negative_dx_m": -0.003,
+      "largest_passing_yaw_deg": 0.2,
+      "first_failing_yaw_deg": 0.5,
+      "note": "discrete sweep points, so the boundary is bracketed between the last pass and the first fail; the asymmetry (+20 mm against -2 mm) is a measured property, not a margin choice"
+    },
+    "budget": {
+      "measurement_error_m": {"value_m": 0.005, "source": "observability_gate",
+        "note": "the smallest longitudinal step whose scan change clears the declared 5 mm noise floor"},
+      "control_residual_m": {"value_m": 0.002, "source": "dock_sweep",
+        "note": "the tight side of C's own bracket, i.e. how far out the chassis was when the transfer last succeeded"},
+      "settling_drift_m": {"value_m": 0.002, "source": "not_measured",
+        "note": "NOT MEASURED for the dock stage. Set to the tight side of the bracket so the sum cannot understate the budget; a real measurement is an open item"}
+    }
+  },
+  "observability": {
+    "observable": ["longitudinal", "lateral", "yaw"],
+    "not_observable": ["any quantity below the 5 mm range resolution", "anything dynamic: the gate is a static fan at one pose"],
+    "sensor_ids": ["n_lidar_site"],
+    "method": "2D lidar fan through the assembled world; pose-to-scan map tested for injectivity over a 7x7x7 grid",
+    "resolution_m": 0.005,
+    "certifies_tight_side": false,
+    "verdict_source": "reports/w3-observability-04/report.json",
+    "why_not_certified": "the sensor's smallest detectable longitudinal step is 5 mm and the tight side of C's window is 2 mm, so a dock 2 mm out cannot be distinguished from one on centre by ranging alone; the honest outcomes are a guiding chamfer, a compliance mechanism, or a sensor that measures the interface itself"
+  },
+  "validity": {
+    "max_observation_age_s": 0.5,
+    "stopped_speed_mps": 0.01,
+    "settle_duration_s": 0.5,
+    "docked_validity_s": 2.0
+  },
+  "sources": {
+    "roller_rig_metadata": "roller_rig.build_model() meta: roller_pitch_m, recv_handoff_gap_m, CROWN_Z",
+    "dock_sweep": "reports/p2-c-dock-sweep-01/report.json: the measured passing/failing bracket",
+    "observability_gate": "reports/w3-observability-04/report.json: the sensor's own resolution",
+    "not_measured": "declared as unmeasured on purpose; a placeholder that cites itself would look like a measurement"
+  }
+}

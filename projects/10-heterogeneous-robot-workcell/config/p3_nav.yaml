@@ -1,0 +1,100 @@
+schema_version: 1
+
+# The single source of truth for both ends of the N probe. The two processes run under
+# different interpreters (MuJoCo is in the project .venv on Python 3.12, rclpy is the system
+# Python 3.14), so nothing else keeps them agreeing: a value that exists here and is
+# defaulted independently over there is exactly how 009's `robots:=` default came to
+# disagree with the case that declared three robots. Both scripts load this file and refuse
+# to start without it.
+
+ros:
+  # 009 pins domain 42 (measured: 009/scripts/env.sh:28). A different domain is what keeps
+  # `ros2 topic list` in either project from showing the other's graph.
+  domain_id: 43
+  rmw: rmw_cyclonedds_cpp
+  use_sim_time: true
+  topics:
+    clock: /clock
+    scan: /scan
+    odom: /odom
+    tf: /tf
+    tf_static: /tf_static
+    # P1-N-07: the localisation and command topics a Nav2 stack adds on top of the N-06 bridge.
+    # The checker and the orchestrator both read them from here rather than repeating strings.
+    map: /map
+    amcl_pose: /amcl_pose
+    cmd_vel: /cmd_vel
+    # The two hops between controller_server and the final writer, added after P1-N-07 run 02
+    # showed /cmd_vel carrying nothing at all: with three publishers declared on /cmd_vel
+    # (collision_monitor, docking_server, following_server) the interesting question is not
+    # "who writes /cmd_vel" but "which hop is silent".
+    cmd_vel_nav: /cmd_vel_nav
+    cmd_vel_smoothed: /cmd_vel_smoothed
+
+ipc:
+  # Loopback only. The plan's N scope says "no arbitrary network commands"; a command can
+  # only arrive from this host, into this port, in this schema.
+  host: 127.0.0.1
+  state_port: 46110        # sim -> ros
+  command_port: 46111      # ros -> sim
+  max_datagram_bytes: 65507
+  max_datagrams_per_tick: 32
+  socket_timeout_s: 0.05
+
+sim:
+  timestep_s: 0.002
+  state_rate_hz: 20.0
+  duration_s: 24.0
+  # Safety deadline, not an acceptance threshold. P1-N-06's scenario was 24 s of sim time, so
+  # 90 s of wall clock gave ~3.7x headroom. P1-N-07's run length is set by when a goal is
+  # reached and it includes a Nav2 bringup, so 90 s could cut a healthy run short -- which would
+  # read as a scenario failure rather than as a budget failure. Raised to 240 s for that reason.
+  wall_deadline_s: 240.0
+  wheel_kp: 2.0
+  wheel_torque_limit_nm: 8.0
+  # Sim seconds per wall second. Measured reason this exists: unpaced, the physics ran
+  # 24.002 sim seconds in 0.534 s (about 45x real time), finished while the ROS process was
+  # still importing rclpy, and sent 481 datagrams to nobody. 1.0 means the probe takes as long
+  # as the scenario says, which is also what makes /clock a clock rather than a counter.
+  # 1.0 IS THE WRONG TARGET FOR THIS CHAIN, and it took a run to find out.
+  # Measured on p3-nav-01: the simulator achieved realtime_factor 1.0 exactly
+  # (60.000 sim s in 58.898 wall s, stop_reason DURATION_ELAPSED), while the ROS side
+  # did not keep up -- /clock reached the orchestrator only to 23.420 s, the bridge
+  # relayed 56 commands in the whole run, and Nav2 published 57 messages on /cmd_vel.
+  # With the plant paced AT the wall clock, the controller ran out of wall time to
+  # look up a transform stamped in sim time and blocked; the goal then timed out.
+  # Pacing the PLANT below real time is the honest fix: the plant is the cheap part,
+  # and letting it outrun its own control loop is not a scenario, it is a race the
+  # plant always wins. 0.35 gives the ROS side ~2.9x the wall time per sim second.
+  realtime_factor: 0.35
+
+command:
+  # Command validity: a command younger than ttl_s is held; older is refused and the wheels
+  # fall back to zero. Silence (no accepted command for silence_s of sim time) also falls
+  # back to zero, so a dead ROS process stops the robot instead of leaving it driving.
+  ttl_s: 0.5
+  silence_s: 0.5
+  send_rate_hz: 20.0
+  v_max_mps: 0.60
+  w_max_radps: 1.20
+
+scan:
+  rays: 181
+  angle_min_deg: -90.0
+  angle_max_deg: 90.0
+  range_min_m: 0.12
+  range_max_m: 8.0
+
+odom:
+  # The ROS side integrates odometry from these wheel rates. It never sees the world pose:
+  # the state datagram has no pose field at all, which is what makes "odometry is not fed
+  # the truth" a structural property rather than a promise.
+  wheel_radius_m: 0.040
+  track_m: 0.300
+
+frames:
+  odom: odom
+  base: base_link
+  lidar: lidar_link
+
+world: assets/worlds/world_p3_nav.xml

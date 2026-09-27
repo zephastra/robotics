@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 010 DDS profile: pin discovery to loopback.
+
+     Reason (measured in 009, inherited as a conclusion rather than as a file): WSL2 exposes
+     several UP interfaces, and with default discovery the node graph is only PARTIALLY
+     visible, with which nodes are missing changing between runs. The symptom reads exactly
+     like a broken bridge -- a subscriber reports "does not appear to be published yet" while
+     the publisher is demonstrably alive -- so the failure gets attributed to the wrong
+     component.
+
+     Loopback is correct for a single-host simulation. It is WRONG for real multi-machine
+     operation: revisit this file before 010 spans more than one host.
+-->
+<CycloneDDS xmlns="https://cdds.io/config"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+  <Domain id="any">
+    <General>
+      <Interfaces>
+        <NetworkInterface name="lo" priority="default" multicast="default"/>
+      </Interfaces>
+      <AllowMulticast>default</AllowMulticast>
+    </General>
+    <Discovery>
+      <ParticipantIndex>auto</ParticipantIndex>
+      <MaxAutoParticipantIndex>100</MaxAutoParticipantIndex>
+      <Peers>
+        <Peer address="localhost"/>
+      </Peers>
+    </Discovery>
+    <Internal>
+      <Watermarks>
+        <WhcHigh>500kB</WhcHigh>
+      </Watermarks>
+    </Internal>
+  </Domain>
+</CycloneDDS>

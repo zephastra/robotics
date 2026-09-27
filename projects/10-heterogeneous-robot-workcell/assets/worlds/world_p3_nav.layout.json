@@ -1,0 +1,159 @@
+{
+  "bare": {
+    "loaded": false,
+    "load": null,
+    "start_x": 1.685,
+    "goal_x": 9.835,
+    "start": [
+      1.685,
+      0.0,
+      0.0
+    ],
+    "goal": [
+      9.835,
+      0.0,
+      0.0
+    ],
+    "pose_clearance_m": 0.45,
+    "obstacles": [
+      {
+        "name": "nav_obstacle_h",
+        "instance": "h",
+        "centre": [
+          0.749878,
+          -0.0,
+          0.852804
+        ],
+        "half": [
+          0.433236,
+          0.521574,
+          0.984746
+        ]
+      },
+      {
+        "name": "nav_obstacle_a",
+        "instance": "a",
+        "centre": [
+          3.265008,
+          0.0,
+          0.379529
+        ],
+        "half": [
+          0.596269,
+          0.353977,
+          0.543506
+        ]
+      },
+      {
+        "name": "nav_obstacle_c",
+        "instance": "c",
+        "centre": [
+          6.32872,
+          0.0,
+          0.375991
+        ],
+        "half": [
+          2.167438,
+          0.335,
+          0.375991
+        ]
+      }
+    ],
+    "room": [
+      -0.5,
+      10.5385,
+      -1.65028,
+      1.65028
+    ],
+    "cell_world": "world_p3_cell.xml",
+    "cell_world_sha256": "89ffeab89407e601fad3c0ee34d9ea0fc67d49199239a9546ae80596326ccaed",
+    "plant_world": "assets/worlds/world_n_probe.xml",
+    "plant_world_sha256": "5c611940e1c1e4ffbe75c132f2fa371e7bdf7f4a5b501ef8b5e062c5fdb48b87",
+    "xml": "world_p3_nav.xml",
+    "xml_sha256": "f535882aa0863afddea1ada0772ac492d51fe04d7ae3bffe619530a6b0d54d9b"
+  },
+  "loaded": {
+    "loaded": true,
+    "load": {
+      "mount_z_m": 0.24,
+      "chassis_top_m": 0.11,
+      "lidar_site_z_m": 0.17,
+      "lidar_load_clearance_m": 0.03,
+      "mount_reason": "raised clear of the lidar",
+      "mount_if_only_resting_m": 0.15,
+      "tray_lowest_local_m": -0.04,
+      "load_mass_kg": 0.098,
+      "tray_source": "assets/objects/tray_v1.xml",
+      "tray_source_sha256": "deb44400a36d20f069b99e1264e71dc7b3267f09da7d0afbe05bf2cbd2d699b9"
+    },
+    "start_x": 1.685,
+    "goal_x": 9.835,
+    "start": [
+      1.685,
+      0.0,
+      0.0
+    ],
+    "goal": [
+      9.835,
+      0.0,
+      0.0
+    ],
+    "pose_clearance_m": 0.45,
+    "obstacles": [
+      {
+        "name": "nav_obstacle_h",
+        "instance": "h",
+        "centre": [
+          0.749878,
+          -0.0,
+          0.852804
+        ],
+        "half": [
+          0.433236,
+          0.521574,
+          0.984746
+        ]
+      },
+      {
+        "name": "nav_obstacle_a",
+        "instance": "a",
+        "centre": [
+          3.265008,
+          0.0,
+          0.379529
+        ],
+        "half": [
+          0.596269,
+          0.353977,
+          0.543506
+        ]
+      },
+      {
+        "name": "nav_obstacle_c",
+        "instance": "c",
+        "centre": [
+          6.32872,
+          0.0,
+          0.375991
+        ],
+        "half": [
+          2.167438,
+          0.335,
+          0.375991
+        ]
+      }
+    ],
+    "room": [
+      -0.5,
+      10.5385,
+      -1.65028,
+      1.65028
+    ],
+    "cell_world": "world_p3_cell.xml",
+    "cell_world_sha256": "89ffeab89407e601fad3c0ee34d9ea0fc67d49199239a9546ae80596326ccaed",
+    "plant_world": "assets/worlds/world_n_probe.xml",
+    "plant_world_sha256": "5c611940e1c1e4ffbe75c132f2fa371e7bdf7f4a5b501ef8b5e062c5fdb48b87",
+    "xml": "world_p3_nav_loaded.xml",
+    "xml_sha256": "28256307e71d1d374c60a59801cc4319588c67e62ab4213846874007c57cb2bc"
+  }
+}

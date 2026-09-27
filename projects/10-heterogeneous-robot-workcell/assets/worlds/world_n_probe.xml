@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- P1-N probe world: an 8x8 m arena with two obstacles, and a 010-authored minimal
+     differential-drive chassis carrying a 2D lidar site.
+
+     This chassis is NOT the AMR. P1-ENV-01 recorded that the AMR model has not been
+     selected yet, and 010 does not download models without a separate authorisation, so the
+     N probe uses a purpose-built stand-in. It exists to exercise the thing N is about --
+     one clock owner, wheel odometry that is not fed the world pose, a scan produced by rays
+     through the actual scene, and a velocity command gate. When an AMR model is chosen, N's
+     acceptance has to be re-run on it; a pass here is not a pass for the AMR.
+
+     The base is a differential drive on two wheels, with x, y, z and yaw degrees of freedom.
+     Four measured versions got here, and each rejection is a number:
+
+     * Base constrained to the plane WITHOUT a vertical degree of freedom (slide x, slide y,
+       hinge yaw): the wheels spun at 13.7 rad/s while the body stayed at x = 0.0000. There
+       is no vertical DOF, so the contact carries no normal force, friction is zero, and the
+       wheels slip by construction. That would have made wheel odometry identical to the world
+       pose, which is exactly what N must not do.
+     * Two driven wheels + two caster SPHERES: 64% slip. The contact table says why -- the
+       solver splits load by contact stiffness, not by geometry, and the sphere-plane contacts
+       took 31.3 N each against 2.0 N for the cylinder-plane contacts: 89% of the weight on
+       the casters. Disabling the spheres fixed it (4.8%), which is the same finding from the
+       other side.
+     * Four driven wheels: 2.1% slip straight, but 0.842 rad of yaw in 2 s where 2.000 rad was
+       commanded. Four fixed wheels skid sideways, so a skid-steer plant cannot be commanded
+       in yaw without an IMU.
+     * Two driven wheels + two swivelling casters: the load split was indeterminate again
+       (casters 26.8 N each, wheels 8.5 N each -- 76% on the casters), and the turn produced
+       0.655 rad of 2.000. A caster with no trail cannot roll along the direction it is being
+       dragged, so it scrubs; real casters align because their contact trails the swivel axis.
+
+     So the vertical degree of freedom is kept (it is what loads the contacts) and pitch and
+     roll are removed instead. That is a declared simplification: this chassis cannot tip, so
+     it cannot be used to claim anything about tipping or about an AMR's suspension, and it
+     is not the AMR (P1-ENV-01 recorded that the AMR model is not chosen yet). Wheel odometry
+     is still a genuine estimate: the wheels slip, and the odometry is integrated from wheel
+     rates without ever seeing the world pose.
+-->
+<mujoco model="workcell010_n_probe">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast"/>
+  <default>
+    <geom friction="0.9 0.005 0.0001" condim="3"/>
+  </default>
+
+  <worldbody>
+    <geom name="floor" type="plane" size="12 12 0.05" rgba="0.32 0.33 0.36 1"
+          friction="1.2 0.01 0.0002"/>
+    <geom name="wall_north" type="box" pos="0  4.0 0.25" size="4.0 0.05 0.25" rgba="0.55 0.55 0.6 1"/>
+    <geom name="wall_south" type="box" pos="0 -4.0 0.25" size="4.0 0.05 0.25" rgba="0.55 0.55 0.6 1"/>
+    <geom name="wall_east"  type="box" pos=" 4.0 0 0.25" size="0.05 4.0 0.25" rgba="0.55 0.55 0.6 1"/>
+    <geom name="wall_west"  type="box" pos="-4.0 0 0.25" size="0.05 4.0 0.25" rgba="0.55 0.55 0.6 1"/>
+    <geom name="pillar_a" type="cylinder" pos=" 2.00  1.50 0.40" size="0.15 0.40" rgba="0.75 0.45 0.25 1"/>
+    <geom name="pillar_b" type="box"      pos="-1.60 -2.00 0.30" size="0.30 0.30 0.30" rgba="0.75 0.45 0.25 1"/>
+    <geom name="pillar_c" type="cylinder" pos="-2.60  2.20 0.35" size="0.20 0.35" rgba="0.75 0.45 0.25 1"/>
+
+    <body name="base_link" pos="0 0 0.040">
+      <joint name="slide_x" type="slide" axis="1 0 0" damping="0.0"/>
+      <joint name="slide_y" type="slide" axis="0 1 0" damping="0.0"/>
+      <joint name="slide_z" type="slide" axis="0 0 1" damping="0.0"/>
+      <joint name="yaw"     type="hinge" axis="0 0 1" damping="0.02" armature="0.01"/>
+      <geom name="chassis" type="box" pos="0 0 0.060" size="0.19 0.13 0.05"
+            mass="6.0" rgba="0.20 0.45 0.75 1"/>
+      <site name="lidar_site" pos="0.02 0 0.17" size="0.02" rgba="0.95 0.25 0.25 1"/>
+
+      <body name="wheel_left" pos="0 0.15 0">
+        <joint name="wheel_left_joint" type="hinge" axis="0 1 0" damping="0.02" armature="0.004"/>
+        <geom name="wheel_left_geom" type="cylinder" size="0.04 0.02"
+              quat="0.70710678 0.70710678 0 0" mass="0.45"
+              friction="1.6 0.01 0.0001" rgba="0.15 0.15 0.18 1"/>
+      </body>
+      <body name="wheel_right" pos="0 -0.15 0">
+        <joint name="wheel_right_joint" type="hinge" axis="0 1 0" damping="0.02" armature="0.004"/>
+        <geom name="wheel_right_geom" type="cylinder" size="0.04 0.02"
+              quat="0.70710678 0.70710678 0 0" mass="0.45"
+              friction="1.6 0.01 0.0001" rgba="0.15 0.15 0.18 1"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="wheel_left_motor"  joint="wheel_left_joint"  ctrlrange="-8 8"/>
+    <motor name="wheel_right_motor" joint="wheel_right_joint" ctrlrange="-8 8"/>
+  </actuator>
+</mujoco>

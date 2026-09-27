@@ -1,0 +1,853 @@
+{
+  "schema_version": 1,
+  "artefacts": [
+    {
+      "path": "assets/world_p3_cell.xml",
+      "sha256": "89ffeab89407e601fad3c0ee34d9ea0fc67d49199239a9546ae80596326ccaed",
+      "bytes": 113624
+    },
+    {
+      "path": "assets/world_w2_logistic.xml",
+      "sha256": "7aee7337ee0454c19568602135a9eae5e2d1433923a243298beaafe11134d65d",
+      "bytes": 115986
+    },
+    {
+      "path": "assets/worlds/world_p3_nav.xml",
+      "sha256": "f535882aa0863afddea1ada0772ac492d51fe04d7ae3bffe619530a6b0d54d9b",
+      "bytes": 2637
+    },
+    {
+      "path": "assets/worlds/world_p3_nav_loaded.xml",
+      "sha256": "28256307e71d1d374c60a59801cc4319588c67e62ab4213846874007c57cb2bc",
+      "bytes": 4552
+    },
+    {
+      "path": "assets/worlds/world_p3_nav.layout.json",
+      "sha256": "ef3fe32f0aa05b999f3a7c1b4f4e07e55c84ed2c959d6306b68e512cd9c10b98",
+      "bytes": 3397
+    },
+    {
+      "path": "assets/worlds/world_n_probe.xml",
+      "sha256": "5c611940e1c1e4ffbe75c132f2fa371e7bdf7f4a5b501ef8b5e062c5fdb48b87",
+      "bytes": 5407
+    },
+    {
+      "path": "assets/maps/p3_nav.yaml",
+      "sha256": "ab8e3d79e9e65aa8ae792e4eafad79888d8438b5d6674f8840b43d438574ebfd",
+      "bytes": 1246
+    },
+    {
+      "path": "assets/maps/p3_nav.pgm",
+      "sha256": "c7c49c5762ae67ef6df4ee890e31a6256f381da3c66144abbe4742453f7e9c3f",
+      "bytes": 130336
+    },
+    {
+      "path": "config/n_probe.yaml",
+      "sha256": "f0de61b6b4c3a3d5fab049a7b3e36fb41b0666b322058c777b1d428e01a62ce2",
+      "bytes": 3569
+    },
+    {
+      "path": "config/p3_nav.yaml",
+      "sha256": "16f6236da1261d157d74e6897d874ca7769b66250fcc962f053b04cee785dd53",
+      "bytes": 4394
+    },
+    {
+      "path": "config/p3_nav_loaded.yaml",
+      "sha256": "2e59efeda2b036b1c241ab9c58c172c9907550d3cbbe2b63f962f26e088b9aad",
+      "bytes": 4401
+    },
+    {
+      "path": "config/nav2_n_probe.yaml",
+      "sha256": "a7d9bd9577562bbfdbe0c5a055aec36ef4965448829e1ed6017a969aaf0b585a",
+      "bytes": 18570
+    },
+    {
+      "path": "config/nav2_p3_nav.yaml",
+      "sha256": "1662c06be206fee26fcdb9df9a30b09e0651bf8cbd2ca91e3494d87f6acd3eab",
+      "bytes": 18572
+    },
+    {
+      "path": "config/docking_contract.json",
+      "sha256": "7aa5104ec9dd14fd586b18e97ac00cebaa4c8bd90d3bf21bb5de7a79b73afe20",
+      "bytes": 3987
+    }
+  ],
+  "code": [
+    {
+      "path": "experiments/merge_world.py",
+      "sha256": "a54d31a5012bb0375372fe7e3f39c6e8a33310969f4d21837700bce7171783ce"
+    },
+    {
+      "path": "experiments/build_p3_world.py",
+      "sha256": "abf35253dd58601a25f34d07e26babfa1ab323454137747fadf0a2089ba99acf"
+    },
+    {
+      "path": "experiments/evaluate_p3_world.py",
+      "sha256": "d7e8d92bffaec4ecf90c43e730338ee6f30046b906d6d540480a0edd2cb82d0c"
+    },
+    {
+      "path": "experiments/build_p3_nav_world.py",
+      "sha256": "c3c59f2291fa849d7baf671c8e4f7d59da827b214ab1246a88f8b53f292ae438"
+    },
+    {
+      "path": "experiments/make_map_n.py",
+      "sha256": "f648ec1eb3639ce750637d013b70c51efc0128f2cd34bf250701bc0eed02b6ec"
+    },
+    {
+      "path": "experiments/make_nav2_params.py",
+      "sha256": "8f2af9857517d3e72b02e3ed820e910c8b43ebdfa1b583782afcbfe6839640b4"
+    },
+    {
+      "path": "experiments/probe_n_sim.py",
+      "sha256": "e78ccd663483e444c43a78e0b9fcd50148b69d1748cbddb04b0cef2850ef1b9e"
+    },
+    {
+      "path": "experiments/probe_n_ros.py",
+      "sha256": "6d5f7e1486519ca9a6081a7864005fe30ddb62db4130c0fa5b381e978a8d3476"
+    },
+    {
+      "path": "experiments/probe_n_nav.py",
+      "sha256": "a34bd30443e217b102cce7eaa1c2858b68ca1baf9289d8ae3239d75e8e109829"
+    },
+    {
+      "path": "experiments/check_n_nav.py",
+      "sha256": "d87688006963bf27317e7d09394399a920c4e3976811aa3e9ff877f5d2253d50"
+    },
+    {
+      "path": "experiments/evaluate_n_nav.py",
+      "sha256": "f27397268c791e5cf331294cc91cedea268c4945e4d198f3abe1800cbeed3f02"
+    },
+    {
+      "path": "experiments/evaluate_p3_nav.py",
+      "sha256": "ba966860bc2e7e73e714b3b1660cb5f09bed5dd61e66758bb410025e2d447a6c"
+    },
+    {
+      "path": "experiments/probe_p3_vision.py",
+      "sha256": "66732b640c744961d87f0b666f3e3716462c63d40ddf1e943a210b34083f411f"
+    },
+    {
+      "path": "experiments/build_w2_logistic_world.py",
+      "sha256": "335f784496bb15ef627c9b6ccf1d35da82d8d08b31279c83338c150e59b231cd"
+    },
+    {
+      "path": "experiments/probe_w2_baseline.py",
+      "sha256": "f1d03d8ac0f85038e1607acd1bf8758bea2381fab2655a004ad249bfc72d2a74"
+    },
+    {
+      "path": "experiments/dock_observability.py",
+      "sha256": "6bc338da7e656db27406b6c1fcdc32c2faa96147e571badc7ae7b60cf69e9633"
+    },
+    {
+      "path": "experiments/probe_w3_dock_mechanism.py",
+      "sha256": "b5d68ecb6fdaf29f8ae38b8e50dbf94f622fa19a6f85ae4bcab625042dc7edb2"
+    },
+    {
+      "path": "experiments/rejudge_w3.py",
+      "sha256": "45e1b1b3769648891c6ca1a3e4e3d0ca3dc5778b1e6deb7a5ff5546b45ef2582"
+    },
+    {
+      "path": "experiments/probe_w4_skills.py",
+      "sha256": "ae0d8dc67824e2498a0b4f08dc8427d2e02b9046d780d45b41df3403020253d8"
+    },
+    {
+      "path": "experiments/w4_plant.py",
+      "sha256": "9b8d82a0a5f06f9cb1c2e1962d0d9d6e63e0f68e45154ae481dc5b14e478c2ea"
+    },
+    {
+      "path": "experiments/w4_fake_plant.py",
+      "sha256": "23293c5571dea4c6c56936d658ea8388ba069dc9892d6563b9e482f4842a7402"
+    },
+    {
+      "path": "experiments/probe_w5_loop.py",
+      "sha256": "a629b61f49d7156cecb0e35428ceb725701f10a8d0a638b8da1751f468d7f6f7"
+    },
+    {
+      "path": "experiments/probe_h_selfclear.py",
+      "sha256": "e63fbcb893796ca2c08a7a6724943acb326a3f63bc47ea1b2a899cf1985ac926"
+    },
+    {
+      "path": "experiments/evaluate_n_arrival_dist.py",
+      "sha256": "692a9c31541fa776da7d452d06e1fb521891405828d39abb39aa250440c02e71"
+    },
+    {
+      "path": "experiments/probe_p4_reach.py",
+      "sha256": "8df8d545253dc053164942012c98133b448ca7778f26b86bb4710e276aab9c97"
+    },
+    {
+      "path": "experiments/build_p4_handover_world.py",
+      "sha256": "5cfc86e0eedf506a1a6f124c028f6223849a4c6e428abea09c1a177bfcf2813e"
+    },
+    {
+      "path": "experiments/probe_p4_crouch.py",
+      "sha256": "ae2cae10e7f0f160c8273ac668f0f6a82c81af9bf59f9e4f1201488131d51d55"
+    },
+    {
+      "path": "experiments/probe_p4_balance.py",
+      "sha256": "b38e749f5d36f7b4f5ea187fcb0fb7ec03efe07675b89e3c6ce85b1119939103"
+    },
+    {
+      "path": "experiments/probe_p4_clearance.py",
+      "sha256": "86b6d335122a9ba98921d62a09dd81ff57977405bb21d9a1707f3670a65bd5a1"
+    },
+    {
+      "path": "experiments/probe_p4_crouch2.py",
+      "sha256": "d3870368c6bbb697c864b2e1b48eebfc38ff99c8762f83945d89accecf9c142a"
+    },
+    {
+      "path": "experiments/probe_p4_ff.py",
+      "sha256": "c89d3ea27e85d906bc4a8e94af516c09375f4d81d99894189ecbf268122a2d1a"
+    },
+    {
+      "path": "experiments/probe_p4_holddepth.py",
+      "sha256": "33768b68e787cd283e18c74a0bb158649251e018e91ee704ece45fd5a9b35ab8"
+    },
+    {
+      "path": "experiments/probe_p4_ff2.py",
+      "sha256": "aae725ca5f24a948fa725668483144fd1f07eae0368288446ed2a6824e23cd1f"
+    },
+    {
+      "path": "experiments/probe_p4_stance.py",
+      "sha256": "b3d19aa2b522a700a827eebe27554b391d2d977ef2b1c3316ad8d6d256618ece"
+    }
+  ],
+  "code_coverage": {
+    "rows_read": 12,
+    "task_ids": [
+      "P3-ACCEPT-05",
+      "P3-FREEZE-04",
+      "P3-NAV-02",
+      "P3-VISION-03",
+      "P3-WORLD-01",
+      "P4-ARM-02",
+      "P4-BELT-03",
+      "P4-HUMAN-01",
+      "W2-LOGISTIC-01",
+      "W3-DOCK-01",
+      "W4-SKILL-01",
+      "W5-LOOP-01"
+    ],
+    "named_by_board": [
+      "experiments/build_p4_handover_world.py",
+      "experiments/build_w2_logistic_world.py",
+      "experiments/dock_observability.py",
+      "experiments/make_p3_freeze.py",
+      "experiments/probe_h_selfclear.py",
+      "experiments/probe_p3_vision.py",
+      "experiments/probe_p4_balance.py",
+      "experiments/probe_p4_crouch.py",
+      "experiments/probe_p4_crouch2.py",
+      "experiments/probe_p4_reach.py",
+      "experiments/probe_w2_baseline.py",
+      "experiments/probe_w3_dock_mechanism.py",
+      "experiments/probe_w5_loop.py",
+      "experiments/sniff_n_state.py"
+    ],
+    "judges": {
+      "P3-ACCEPT-05": "experiments/evaluate_p3_nav.py",
+      "P3-FREEZE-04": "experiments/make_p3_freeze.py",
+      "P3-NAV-02": "experiments/evaluate_p3_nav.py",
+      "P3-VISION-03": "experiments/probe_p3_vision.py",
+      "P3-WORLD-01": "experiments/evaluate_p3_world.py",
+      "P4-HUMAN-01": "experiments/probe_h_selfclear.py",
+      "W2-LOGISTIC-01": "experiments/probe_w2_baseline.py",
+      "W3-DOCK-01": "experiments/probe_w3_dock_mechanism.py",
+      "W4-SKILL-01": "experiments/probe_w4_skills.py",
+      "W5-LOOP-01": "experiments/probe_w5_loop.py"
+    },
+    "exempt": [
+      "experiments/make_p3_freeze.py",
+      "experiments/sniff_n_state.py"
+    ],
+    "not_started": {
+      "P4-ARM-02": "BLOCKED, and honestly so: it needs the visual grasping that `P3-VISION-03` deliberately makes no PCL claim for, and the point-cloud choice has to be frozen before P4 integrates it (MASTER_PLAN section 5)",
+      "P4-BELT-03": "BLOCKED behind P4-HUMAN-01: the conveyor / on-vehicle retention / receiving unload loop is the same physical interface the humanoid handover has to cross first, and doing both at once would change two variables in one round"
+    },
+    "duplicated_code_entries": [],
+    "code_entries_absent": [],
+    "missing_from_code": [],
+    "exempt_but_no_longer_named": []
+  },
+  "thresholds": [
+    {
+      "name": "command.v_max_mps",
+      "value": 0.6,
+      "unit": "m/s",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "command.w_max_radps",
+      "value": 1.2,
+      "unit": "rad/s",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "command.ttl_s",
+      "value": 0.5,
+      "unit": "s",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "command.silence_s",
+      "value": 0.5,
+      "unit": "s",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "command.send_rate_hz",
+      "value": 20.0,
+      "unit": "Hz",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "sim.timestep_s",
+      "value": 0.002,
+      "unit": "s",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "sim.realtime_factor",
+      "value": 0.35,
+      "unit": "-",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "sim.wall_deadline_s",
+      "value": 240.0,
+      "unit": "s",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "sim.wheel_kp",
+      "value": 2.0,
+      "unit": "-",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "sim.wheel_torque_limit_nm",
+      "value": 8.0,
+      "unit": "N.m",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "sim.duration_s",
+      "value": 24.0,
+      "unit": "s",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "scan.rays",
+      "value": 181,
+      "unit": "count",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "scan.range_min_m",
+      "value": 0.12,
+      "unit": "m",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "scan.range_max_m",
+      "value": 8.0,
+      "unit": "m",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "odom.wheel_radius_m",
+      "value": 0.04,
+      "unit": "m",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "odom.track_m",
+      "value": 0.3,
+      "unit": "m",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "ros.domain_id",
+      "value": 43,
+      "unit": "-",
+      "source": "config/p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "nav2.local_costmap.local_costmap.ros__parameters.robot_radius",
+      "value": 0.26,
+      "unit": "m",
+      "source": "config/nav2_p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "nav2.global_costmap.global_costmap.ros__parameters.robot_radius",
+      "value": 0.26,
+      "unit": "m",
+      "source": "config/nav2_p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "nav2.local_costmap.local_costmap.ros__parameters.inflation_layer.inflation_radius",
+      "value": 0.35,
+      "unit": "m",
+      "source": "config/nav2_p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "nav2.global_costmap.global_costmap.ros__parameters.inflation_layer.inflation_radius",
+      "value": 0.35,
+      "unit": "m",
+      "source": "config/nav2_p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "nav2.local_costmap.local_costmap.ros__parameters.inflation_layer.cost_scaling_factor",
+      "value": 3.0,
+      "unit": "-",
+      "source": "config/nav2_p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "nav2.global_costmap.global_costmap.ros__parameters.inflation_layer.cost_scaling_factor",
+      "value": 3.0,
+      "unit": "-",
+      "source": "config/nav2_p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "nav2.controller_server.ros__parameters.general_goal_checker.xy_goal_tolerance",
+      "value": 0.15,
+      "unit": "m",
+      "source": "config/nav2_p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "nav2.controller_server.ros__parameters.general_goal_checker.yaw_goal_tolerance",
+      "value": 0.2,
+      "unit": "rad",
+      "source": "config/nav2_p3_nav.yaml",
+      "kind": "declared"
+    },
+    {
+      "name": "room.x_min",
+      "value": -0.5,
+      "unit": "m",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "room.x_max",
+      "value": 10.5385,
+      "unit": "m",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "room.y_min",
+      "value": -1.65028,
+      "unit": "m",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "room.y_max",
+      "value": 1.65028,
+      "unit": "m",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "room.area_m2",
+      "value": 36.433232,
+      "unit": "m^2",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "room.wall_thickness_m",
+      "value": 0.05,
+      "unit": "m",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "room.wall_height_m",
+      "value": 0.6,
+      "unit": "m",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "room.ground_friction",
+      "value": 0.25,
+      "unit": "-",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "room.wall_friction",
+      "value": 1.0,
+      "unit": "-",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "room.wall_geoms",
+      "value": 4,
+      "unit": "count",
+      "source": "assets/world_p3_cell.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.start_x",
+      "value": 1.685,
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.goal_x",
+      "value": 9.835,
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.drive_m",
+      "value": 8.15,
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.pose_clearance_m",
+      "value": 0.45,
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "declared"
+    },
+    {
+      "name": "arena.loaded.same_start_x",
+      "value": true,
+      "unit": "-",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.loaded.same_goal_x",
+      "value": true,
+      "unit": "-",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.loaded.mount_z_m",
+      "value": 0.24,
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.loaded.load_mass_kg",
+      "value": 0.098,
+      "unit": "kg",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.loaded.chassis_top_m",
+      "value": 0.11,
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.loaded.tray_lowest_local_m",
+      "value": -0.04,
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.obstacle.nav_obstacle_h.half",
+      "value": [
+        0.433236,
+        0.521574,
+        0.984746
+      ],
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.obstacle.nav_obstacle_h.centre",
+      "value": [
+        0.749878,
+        -0.0,
+        0.852804
+      ],
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.obstacle.nav_obstacle_a.half",
+      "value": [
+        0.596269,
+        0.353977,
+        0.543506
+      ],
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.obstacle.nav_obstacle_a.centre",
+      "value": [
+        3.265008,
+        0.0,
+        0.379529
+      ],
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.obstacle.nav_obstacle_c.half",
+      "value": [
+        2.167438,
+        0.335,
+        0.375991
+      ],
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "arena.obstacle.nav_obstacle_c.centre",
+      "value": [
+        6.32872,
+        0.0,
+        0.375991
+      ],
+      "unit": "m",
+      "source": "assets/worlds/world_p3_nav.layout.json",
+      "kind": "derived"
+    },
+    {
+      "name": "evaluate_n_nav--arrival-limit-m",
+      "value": 0.25,
+      "unit": "-",
+      "source": "experiments/evaluate_n_nav.py",
+      "kind": "declared"
+    },
+    {
+      "name": "evaluate_n_nav--arrival-yaw-limit-rad",
+      "value": 0.3,
+      "unit": "-",
+      "source": "experiments/evaluate_n_nav.py",
+      "kind": "declared"
+    },
+    {
+      "name": "evaluate_n_nav--clearance-margin-m",
+      "value": 0.05,
+      "unit": "-",
+      "source": "experiments/evaluate_n_nav.py",
+      "kind": "declared"
+    },
+    {
+      "name": "evaluate_n_nav--map-scan-tolerance-m",
+      "value": 0.2,
+      "unit": "-",
+      "source": "experiments/evaluate_n_nav.py",
+      "kind": "declared"
+    },
+    {
+      "name": "make_map_n--resolution",
+      "value": 0.05,
+      "unit": "-",
+      "source": "experiments/make_map_n.py",
+      "kind": "declared"
+    },
+    {
+      "name": "make_map_n--half-extent-m",
+      "value": 4.5,
+      "unit": "-",
+      "source": "experiments/make_map_n.py",
+      "kind": "declared"
+    },
+    {
+      "name": "make_map_n--scan-height-m",
+      "value": 0.21,
+      "unit": "-",
+      "source": "experiments/make_map_n.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p3_vision.PART_CLEARANCE",
+      "value": 0.1,
+      "unit": "-",
+      "source": "experiments/probe_p3_vision.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p3_vision.CAM_BACK_OFF",
+      "value": 0.75,
+      "unit": "-",
+      "source": "experiments/probe_p3_vision.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p3_vision.CAM_HEIGHT",
+      "value": 0.7,
+      "unit": "-",
+      "source": "experiments/probe_p3_vision.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p3_vision.ON_BENCH_TOL",
+      "value": 0.025,
+      "unit": "-",
+      "source": "experiments/probe_p3_vision.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p3_vision.CHROMA_RATIO",
+      "value": 1.5,
+      "unit": "-",
+      "source": "experiments/probe_p3_vision.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p3_vision.MIN_PART_PIXELS",
+      "value": 50.0,
+      "unit": "-",
+      "source": "experiments/probe_p3_vision.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p3_vision.LOC_TOL",
+      "value": 0.02,
+      "unit": "-",
+      "source": "experiments/probe_p3_vision.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p3_vision.resolution_px",
+      "value": "320x240",
+      "unit": "-",
+      "source": "experiments/probe_p3_vision.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p3_vision.fovy_deg",
+      "value": 45.0,
+      "unit": "deg",
+      "source": "experiments/probe_p3_vision.py",
+      "kind": "declared"
+    },
+    {
+      "name": "w2_logistic.receiver_shift_m",
+      "value": 5.0,
+      "unit": "m",
+      "source": "builder_constant",
+      "kind": "declared"
+    },
+    {
+      "name": "w2_logistic.standby_offset_y_m",
+      "value": 1.15,
+      "unit": "m",
+      "source": "builder_constant",
+      "kind": "declared"
+    },
+    {
+      "name": "w3_dock.chamfer_catch_m",
+      "value": 0.035,
+      "unit": "m",
+      "source": "builder_constant",
+      "kind": "declared"
+    },
+    {
+      "name": "w3_dock.chamfer_angle_deg",
+      "value": 12.0,
+      "unit": "deg",
+      "source": "builder_constant",
+      "kind": "declared"
+    },
+    {
+      "name": "w3_dock.channel_length_m",
+      "value": 0.9,
+      "unit": "m",
+      "source": "builder_constant",
+      "kind": "declared"
+    },
+    {
+      "name": "w3_dock.residual_lateral_m",
+      "value": 0.001,
+      "unit": "m",
+      "source": "builder_constant",
+      "kind": "declared"
+    },
+    {
+      "name": "w3_dock.datum_offset_m",
+      "value": 0.002,
+      "unit": "m",
+      "source": "builder_constant",
+      "kind": "declared"
+    },
+    {
+      "name": "w3_dock.deck_lateral_range_m",
+      "value": 0.05,
+      "unit": "m",
+      "source": "builder_constant",
+      "kind": "declared"
+    },
+    {
+      "name": "w3_dock.deck_yaw_range_rad",
+      "value": 0.05,
+      "unit": "rad",
+      "source": "builder_constant",
+      "kind": "declared"
+    },
+    {
+      "name": "w2_logistic.transport_leg_m",
+      "value": 5.949979999999999,
+      "unit": "m",
+      "source": "assets/world_w2_logistic.xml",
+      "kind": "derived"
+    },
+    {
+      "name": "w2_logistic.chassis_x_at_home_m",
+      "value": 4.41372,
+      "unit": "m",
+      "source": "assets/world_w2_logistic.xml",
+      "kind": "derived"
+    }
+  ],
+  "not_frozen": [
+    "W5-LOOP-01 as a PRODUCTION capability -- it runs one sub-scenario, in one world, with declared stand-ins: a rig-mounted source station, a rig-mounted receiver five metres away, and a retention pusher taken from C own rig. It is NOT an order (no picking, no BOM, no inventory), and it covers neither the humanoid nor the arm",
+    "the docking mechanism as an INDUSTRIAL design -- it is a first-pass geometry whose catch envelope and residual are measured by experiments/probe_w3_dock_mechanism.py",
+    "the second chassis as a transporter -- it carries no deck, and in the logistics world it is parked off the lane as a declared standby",
+    "the AMR model -- not selected yet (P1-ENV-01); the chassis is a declared stand-in",
+    "C's mounting interface -- the deck sits at a stand-in offset (body_pos [1.92, 0, 0.445] ahead of the chassis origin); the nav arena therefore excludes it",
+    "the real-time factor under a load -- measured only for the loading gate (0.21 with the hold law), not for a navigating vehicle",
+    "SLAM -- the map is an operator prior generated from the world, not mapping output",
+    "docs/HANDOFF.md -- generated by experiments/make_handoff.py, which has its own --check; it is a document, not part of the P3 chain",
+    "docs/history/INTEGRATION_BASELINE_*.md -- generated by experiments/make_baseline.py, which has its own --check; a document snapshot, and it deliberately contains LIVE fingerprints so it goes red the moment anything it watches moves"
+  ]
+}
