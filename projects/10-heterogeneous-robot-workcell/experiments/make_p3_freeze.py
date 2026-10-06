@@ -47,8 +47,44 @@ OUT = ROOT / 'config' / 'p3_freeze.json'
 SCHEMA = 1
 
 ARTEFACTS = (
+    'assets/world_p5_candidate_v7_hinged_retainer.xml',
+    'assets/world_p5_candidate_v6_retainer.xml',
+    'config/nav2_joint_world_v5_retained.yaml',
+    'config/joint_world_v5_retained.profile.json',
+    'config/joint_world_v5_centered.profile.json',
+    'config/nav2_joint_world_v5_centered.yaml',
+    'config/nav2_joint_world_v5_loaded.yaml',
+    'config/joint_world_v5_loaded.profile.json',
+    'assets/maps/joint_world_v5.pgm',
+    'assets/maps/joint_world_v5.yaml',
+    'config/nav2_joint_world_v5.yaml',
+    'config/joint_world_v5.yaml',
+    'config/joint_world_v5.profile.json',
+    'assets/maps/joint_world_v7.pgm',
+    'assets/maps/joint_world_v7.yaml',
+    'config/nav2_joint_world_v7.yaml',
+    'config/joint_world_v7.yaml',
+    'config/joint_world_v7.profile.json',
+    'config/joint_world_v7_loaded.profile.json',
+    'config/nav2_joint_world_v7_retained.yaml',
+    'config/joint_world_v7_retained.profile.json',
+    'config/nav2_joint_world_v7_turn.yaml',
+    'config/joint_world_v7_turn.profile.json',
+    'assets/world_p5_candidate_v5.xml',
+    'assets/world_p5_candidate_v4.xml',
+    'assets/world_p5_candidate_v3.xml',
+    'assets/world_w2_support_v1.xml',
+    'assets/world_w2_support_v2.xml',
+    # Independent, user-approved integration candidate. Never replaces old world hashes.
+    'assets/world_p5_candidate.xml',
+    'assets/world_p5_candidate_v2.xml',
     'assets/world_p3_cell.xml',
+    'assets/world_p4_cell.xml',
     'assets/world_w2_logistic.xml',
+    #: candidate B (H1/H2's world) and the H3 integration world. Both were cited by H-chain
+    #: evidence while frozen nowhere; a world a report rests on has to be hashable.
+    'assets/world_w5_h085.xml',
+    'assets/world_w5_h085_loop.xml',
     'assets/worlds/world_p3_nav.xml',
     'assets/worlds/world_p3_nav_loaded.xml',
     'assets/worlds/world_p3_nav.layout.json',
@@ -64,6 +100,72 @@ ARTEFACTS = (
 )
 
 CODE = (
+    'experiments/build_hinged_retainer_candidate.py',
+    'experiments/probe_tray_retainer.py',
+    'experiments/build_tray_retainer_candidate.py',
+    'experiments/deck_support_forensics.py',
+    'experiments/contact_model_candidate.py',
+    'experiments/inspect_contact_flags.py',
+    'experiments/inspect_retained_nav.py',
+    'experiments/probe_cargo_rest.py',
+    'experiments/make_retained_motion_profile.py',
+    'experiments/state_publish_schedule.py',
+    'experiments/transport_posture_gate.py',
+    'experiments/evaluate_continuous_nav.py',
+    'experiments/continuous_nav_session.py',
+    'experiments/vehicle_rgbd_reader.py',
+    'experiments/probe_vehicle_rgbd.py',
+    'experiments/probe_vehicle_rgbd_motion.py',
+    'experiments/load_motion_gate.py',
+    'experiments/probe_vehicle_nav2.py',
+    'experiments/probe_loaded_clearance.py',
+    'experiments/make_centered_load_profile.py',
+    'experiments/loaded_nav_envelope.py',
+    'experiments/make_loaded_nav_profile.py',
+    'experiments/wheel_authority.py',
+    'experiments/evaluate_joint_nav.py',
+    'experiments/nav_geometry_inventory.py',
+    'experiments/make_joint_nav_profile.py',
+    'experiments/make_joint_nav_profile_v7.py',
+    'experiments/make_retained_motion_profile_v7.py',
+    'experiments/probe_g7a_source_xfer.py',
+    'experiments/probe_g6_deckyaw_diag.py',
+    'experiments/probe_g7d_failures.py',
+    'experiments/probe_g7c_transit_dial.py',
+    'experiments/probe_g7c_transit_slow.py',
+    'experiments/probe_g7_pair.py',
+    'experiments/joint_nav_worker.py',
+    'experiments/probe_joint_world_nav2.py',
+    'experiments/humanoid_posture_permit.py',
+    'experiments/dock_measurements.py',
+    'experiments/probe_humanoid_post_supply_hold.py',
+    'experiments/inspect_loading_snapshot.py',
+    'experiments/probe_wheel_calibration_loading.py',
+    'experiments/joint_world_nav_io.py',
+    'experiments/joint_world_ros_bridge.py',
+    'experiments/ros_command_lease.py',
+    'experiments/probe_joint_world_nav_io.py',
+    'experiments/probe_vehicle_heading.py',
+    'experiments/vehicle_heading.py',
+    'experiments/evaluate_supply_rejection.py',
+    'experiments/cargo_footprint_judge.py',
+    'experiments/humanoid_supply.py',
+    'experiments/source_staging.py',
+    'experiments/pcl_plane_reader.py',
+    'experiments/receiver_rgbd_reader.py',
+    'experiments/rgbd_geometry.py',
+    'experiments/probe_recorded_receiver.py',
+    'experiments/probe_pcl_receiver.py',
+    'experiments/pcl_receiver_plane.cpp',
+    'experiments/world_owner.py',
+    'experiments/probe_world_owner.py',
+    'experiments/tray_rgbd_reader.py',
+    'experiments/probe_candidate_arm_loading.py',
+    'experiments/probe_candidate_multi_loading.py',
+    'experiments/build_support_candidate.py',
+    'experiments/probe_stop_kinematics.py',
+    'experiments/build_p5_candidate_world.py',
+    'experiments/probe_p5_candidate_settle.py',
     'experiments/merge_world.py',
     'experiments/build_p3_world.py',
     'experiments/evaluate_p3_world.py',
@@ -98,7 +200,49 @@ CODE = (
     'experiments/probe_p4_holddepth.py',
     'experiments/probe_p4_ff2.py',
     'experiments/probe_p4_stance.py',
+    'experiments/probe_p4_armik.py',
+    'experiments/_p4_arm_ik.py',
+    'experiments/probe_h.py',
+    'experiments/build_w5_h085_world.py',
+    # --- src/ (added 2026-09-27): the H chain's own code. The freeze hashed only
+    # `experiments/*.py`, so the runtime that `reports/p1-h-seq-10` fingerprints could be edited
+    # with no frozen record anywhere. Same hole family as `D058`/`D060`/`D096`, new location.
+    'src/humanoid007/runtime.py',
+    'experiments/probe_h_w5.py',
+    'experiments/probe_h2_w5.py',
+    'experiments/w5_h085_plan.py',
+    'experiments/probe_h3_w5.py',
+    #: the scope checker `tests/test_h3_integration.py` runs, and which found the
+    #: `XFER` defect that cost a whole run (D114)
+    'experiments/check_globals.py',
+    #: P4-BELT-03's judge (added 2026-09-30). It drives the 11-skill chain to reach both dock
+    #: poses, then judges three arcs on the resulting plant: conveyance to a hard stop, receive
+    #: and unload, and the deck-slip criterion `tray_does_not_slide_on_the_deck` that G-2 demoted
+    #: from an assertion. Two of its rows are RED BY DESIGN (the ARC 3 finding and the ARC 2
+    #: repeated-unload runaway); both are the FAILURE evidence `MASTER_PLAN` line 65 requires.
+    'experiments/probe_p4_belt.py',
+    # P4's completed skill probes and their execution/fixture dependencies must
+    # be pinned too; naming only the primary arm judge left a live coverage hole.
+    'experiments/probe_p4_arm.py',
+    'experiments/probe_p4_count.py',
+    'experiments/probe_p4_interlock.py',
+    'experiments/probe_p4_vision.py',
+    'experiments/build_p4_cell_world.py',
+    'experiments/p4_fixture.py',
+    'experiments/arm_bridge.py',
+    'experiments/arm_rig.py',
+    'scripts/run_bounded.py',
+    'experiments/evaluate_belt_checkpoint.py',
+    'experiments/probe_loaded_retention.py',
+    'experiments/evaluate_receiver_envelope.py',
+    'experiments/probe_transfer_recovery.py',
+    'experiments/probe_stop_dynamics.py',
 )
+
+# The plant is only half the execution path. Pin the actual contract/adapter
+# modules, without importing them into the physics control path.
+CODE += tuple(sorted(str(p.relative_to(ROOT))
+                     for p in (ROOT / 'src' / 'workcell').rglob('*.py')))
 
 #: The row prefixes whose task ids this contract reads. DECLARED, because the literal
 #: `'P3-'` lived inside a regex and a new work package would have had to edit a regex to
@@ -136,10 +280,27 @@ TASK_JUDGES = {
     # sub-scenario in one continuous run and checks identity, teleport, weld, support and the
     # two P2 transfer transactions from the physical evidence.
     'W5-LOOP-01': 'experiments/probe_w5_loop.py',
-    # P4 begins, with the physics prerequisite the W5 round left BLOCKED. The judge is wired here
-    # BEFORE the handover exists: a row whose judge nothing hashes is the exact hole `D058`/`D060`
-    # kept finding, and it is cheaper to wire it now than to find it again.
-    'P4-HUMAN-01': 'experiments/probe_h_selfclear.py',
+    # P4 begins, with the physics prerequisite the W5 round left BLOCKED. The judge was wired here
+    # BEFORE the handover existed, against `probe_h_selfclear.py`; a row whose judge nothing hashes
+    # is the exact hole `D058`/`D060` kept finding, and it was cheaper to wire it then than to find
+    # it again.
+    #
+    # ★ IT NOW POINTS AT THE H3 PROBE, because the task's subject is the CROSS-ENTITY HANDOVER and
+    # that is what H3 judges. The chain's earlier links stay hashed in `CODE` --
+    # `probe_h_selfclear.py` (the self-contact prerequisite, still the judge for that clause),
+    # `probe_h_w5.py` (H1) and `probe_h2_w5.py` (H2) -- and the H3 probe IMPORTS H1's instruments
+    # and H2's stage driver rather than copying them, so a change to either still changes what H3
+    # measures. Repointing a judge is a change to the contract and is recorded in `D113`.
+    'P4-HUMAN-01': 'experiments/probe_h3_w5.py',
+    # P4-ARM-02: the arm's visual pick-and-place, judged by the two probes that own each half.
+    # `probe_p4_arm.py` is the grasping half and `probe_p4_count.py` the counting half; the
+    # contract takes the FIRST as the declared judge (one id, one judge) and the second is hashed
+    # via `CODE` by the round that added it.
+    'P4-ARM-02': 'experiments/probe_p4_arm.py',
+    # P4-BELT-03: conveyance to a hard stop, receive/unload, and the G-2 deck-slip criterion.
+    # Two of its rows are RED BY DESIGN and are the arc's FAILURE evidence, so a future round that
+    # "fixes" them must change this probe -- which is exactly what hashing it here enforces.
+    'P4-BELT-03': 'experiments/probe_p4_belt.py',
 }
 
 #: Scripts the task board names in a P3 row that are deliberately NOT frozen, with the reason.
@@ -153,16 +314,9 @@ TASK_JUDGES = {
 #: the contract goes red. Without it, a not-started task has only two options, and both are
 #: wrong: write a fake judge, or leave it off the board where nothing can see it.
 NOT_STARTED_TASKS = {
-    # Both are BLOCKED rows the P4 prefix now makes visible to this contract. They are declared
-    # here rather than given judges, because a judge written before the thing it judges is a script
-    # that always passes -- the reason this dict exists. The staleness check runs the other way too:
-    # if either row leaves the board, this entry goes stale and the contract goes red.
-    'P4-ARM-02': 'BLOCKED, and honestly so: it needs the visual grasping that `P3-VISION-03` '
-                 'deliberately makes no PCL claim for, and the point-cloud choice has to be frozen '
-                 'before P4 integrates it (MASTER_PLAN section 5)',
-    'P4-BELT-03': 'BLOCKED behind P4-HUMAN-01: the conveyor / on-vehicle retention / receiving '
-                  'unload loop is the same physical interface the humanoid handover has to cross '
-                  'first, and doing both at once would change two variables in one round',
+    # Having a judge is not having passed it: p4-belt-06 is FAIL, not DONE.
+    # P4-BELT-03 has started and owns a real judge, so it belongs in TASK_JUDGES,
+    # not here. The task board alone carries its current completion status.
 }
 
 COVERAGE_EXEMPT = {
@@ -172,12 +326,21 @@ COVERAGE_EXEMPT = {
 }
 
 NOT_FROZEN = (
+    'H3 as a PRODUCTION capability -- it runs the H chain and the W5 chain in one world, one '
+    'timeline and on one tray entity, but the humanoid SUPPLIES by placing the tray on the source '
+    'band and releasing it; the custody transfer is the chain\'s own TRANSFER transaction. It '
+    'covers no picking, no order, no inventory, and no visual perception (scope DIAGNOSTIC_ONLY)',
+    'the humanoid station as an INDUSTRIAL layout -- x 4.13 is H2\'s station, retained after a '
+    'runtime-driven contact test in `assets/world_w5_h085_loop.xml`; it is a declared fixed work '
+    'position and NOT the output of any layout optimisation, and the humanoid does not walk there',
+    'the CROUCH depth as a capability -- `D_MAX` is None after `reports/p4-armik-05` (every depth '
+    'fails the actual-state `tray_held` row), so the H chain works at the STANDING posture only',
     'W5-LOOP-01 as a PRODUCTION capability -- it runs one sub-scenario, in one world, with '
     'declared stand-ins: a rig-mounted source station, a rig-mounted receiver five metres '
     'away, and a retention pusher taken from C own rig. It is NOT an order (no picking, no '
     'BOM, no inventory), and it covers neither the humanoid nor the arm',
     'the docking mechanism as an INDUSTRIAL design -- it is a first-pass geometry whose catch envelope and residual are measured by experiments/probe_w3_dock_mechanism.py',
-    'the second chassis as a transporter -- it carries no deck, and in the logistics world it is parked off the lane as a declared standby',
+    'the second chassis as a commissioned transporter -- in the OLD P3/W2/H3 worlds it has no deck and is standby; the independent P5 candidate adds a complete c2 deck, but its transport/order/ROS command path is NOT_RUN',
     'the AMR model -- not selected yet (P1-ENV-01); the chassis is a declared stand-in',
     "C's mounting interface -- the deck sits at a stand-in offset (body_pos [1.92, 0, 0.445] "
     "ahead of the chassis origin); the nav arena therefore excludes it",
@@ -468,6 +631,36 @@ def derive():
     if m:
         add('p3_vision.fovy_deg', float(m.group(1)), 'deg', 'experiments/probe_p3_vision.py',
             'declared')
+
+    # ---- the P4 crouch/grip gates, read out of the probe by NAME -----------------------------
+    # `HAND_GAP_MAX_M` is the review's 2 mm grip gate and `TRAY_SHIFT_MAX_M` is the row that makes
+    # it mean anything; both are module constants, so an artefact hash cannot see their value.
+    atext = (ROOT / 'experiments' / 'probe_p4_armik.py').read_text(encoding='utf-8')
+    for name in ('HAND_GAP_MAX_M', 'TRAY_SHIFT_MAX_M'):
+        m = re.search(rf'^{name} = ([0-9.]+)', atext, re.M)
+        if m:
+            add(f'p4_armik.{name}', float(m.group(1)), 'm', 'experiments/probe_p4_armik.py',
+                'declared')
+
+    # ---- the H chain's declared thresholds, read out of the probes by NAME -------------------
+    # `tray_task.THRESHOLDS` is the FROZEN six-stage contract; `probe_h2_w5.H2_THRESHOLDS` and
+    # `probe_h3_w5.H3_THRESHOLDS` are DECLARED-and-submitted-for-review. All three are module
+    # constants, so an artefact hash cannot see that a threshold moved -- which is precisely the
+    # thing this contract exists to notice.
+    sys.path.insert(0, str(ROOT / 'src'))
+    from humanoid007 import tray_task as _tt
+    for name, value in _tt.THRESHOLDS.items():
+        add(f'tray_task.{name}', float(value), '-', 'src/humanoid007/tray_task.py', 'frozen')
+    import probe_h2_w5 as _h2
+    for name, value in _h2.H2_THRESHOLDS.items():
+        add(f'h2.{name}', float(value), '-', 'experiments/probe_h2_w5.py', 'declared')
+    import probe_h3_w5 as _h3
+    for name, value in _h3.H3_THRESHOLDS.items():
+        add(f'h3.{name}', float(value), '-', 'experiments/probe_h3_w5.py', 'declared')
+    add('h3.band_clearance_budget_m', float(_h3.BAND_CLEARANCE_BUDGET_M), 'm',
+        'experiments/probe_h3_w5.py', 'declared')
+    add('h3.humanoid_station_x_m', float(_h3.H2.DEFAULT_STATION_X), 'm',
+        'experiments/probe_h3_w5.py', 'declared')
 
     thresholds.extend(_w2_thresholds())
     return {

@@ -14,13 +14,40 @@ GRASP=np.array([-.2684,.7374,1.0586,1.0175,0.,.8488,.9083,.7839,
                 .2684,.7374,1.0586,1.0175,1.1135,.0672,1.544,.0487])
 
 
-def hand_sites_at(model, data, qa, arm_ids, joints):
+class Names:
+    """Resolve the humanoid's model names for whichever world is loaded.
+
+    `assets/combined.xml` (the carried-over snapshot) and the merged worlds name the SAME robot
+    differently -- `LINK_BASE` / `lh_grasp` / `J13_SHOULDER_PITCH_L` there, `h_LINK_BASE` /
+    `h_lh_grasp` / `h_J13_SHOULDER_PITCH_L` in `merge_world.py`'s output -- and the object body is
+    `payload` there and `c_payload` there.
+
+    THE DEFAULT IS THE IDENTITY, deliberately. Every existing call site, and the frozen
+    `reports/p1-h-seq-10` fingerprint of this file, describe the un-prefixed world; a mapping whose
+    default moved anything would silently reinterpret them. The merged world passes `prefix='h_'`.
+    """
+
+    def __init__(self, prefix='', object_body='payload'):
+        self.prefix = prefix
+        self.object_body = object_body
+
+    def n(self, name):
+        """A robot name in this world."""
+        return self.prefix + name
+
+    def obj(self):
+        """The object body's name in this world."""
+        return self.object_body
+
+
+def hand_sites_at(model, data, qa, arm_ids, joints, names=None):
     """Where the grasp sites sit when the arm joints are `joints`; scratch, no state change."""
+    names = names or Names()
     scratch = mujoco.MjData(model)
     scratch.qpos[:] = data.qpos
     scratch.qpos[qa[arm_ids]] = joints
     mujoco.mj_kinematics(model, scratch)
-    return {side: scratch.site(prefix + 'grasp').xpos.copy()
+    return {side: scratch.site(names.n(prefix + 'grasp')).xpos.copy()
             for side, prefix in [('left', 'lh_'), ('right', 'rh_')]}
 
 
@@ -90,7 +117,8 @@ class ExitPath:
         self.anchors = {s: np.asarray(v, dtype=float) for s, v in anchors.items()}
         self.default_arms = np.asarray(default_arms, dtype=float)
         self.default_hands = hand_sites_at(runtime.m, runtime.d, runtime.qa,
-                                           runtime.arm_ids, self.default_arms)
+                                           runtime.arm_ids, self.default_arms,
+                                           names=getattr(runtime, 'names', None))
         self.start_hands = None          # measured on the first tick of the exit stage
         self.previous_cart_goal = None
         self.joints_at_ramp_start = None
@@ -165,24 +193,42 @@ def forward_kinematics(model,data,cameras=False):
 
 
 class Runtime:
-    def __init__(self,world=None):
+    def __init__(self,world=None,prefix='',object_body='payload',model=None,data=None):
         """`world` picks the assembled world file; None means the carried-over snapshot.
 
         The object body keeps its role name (`payload`) whichever model fills it, so the
         judges do not change. Which model that was is recorded per run, so a result can
         never be read as being about the V1 tray when it was measured on the 007 one.
+
+        `model`/`data` let a caller hand in an ALREADY-LOADED world, so this runtime can share one
+        `MjModel`/`MjData` with another controller. H3 needs that: the humanoid and the W5
+        `LogisticsPlant` must act on the same world in the same continuous run, on the same tray,
+        and two separately-loaded models would be two worlds that merely look alike.
+
+        DEFAULTS UNCHANGED. With `model=None` this loads `world` itself and makes its own `MjData`,
+        exactly as before, so H1/H2 and every other existing run is bit-for-bit unaffected. The
+        runtime still writes its own arm/finger posture either way; it does NOT touch the free
+        bodies, so a caller that set the world's home state keeps it -- which is what makes the
+        station the WORLD's station rather than the probe's.
         """
         self.policy=T800Policy(ROOT)
-        path=ROOT/'assets/combined.xml' if world is None else Path(world)
-        self.m=mujoco.MjModel.from_xml_path(str(path))
-        self.d=mujoco.MjData(self.m)
+        #: How this world spells the robot's names. Identity by default -- see `Names`.
+        self.names=Names(prefix,object_body)
+        self.shared_world = model is not None
+        if self.shared_world:
+            self.m=model
+            self.d=mujoco.MjData(self.m) if data is None else data
+        else:
+            path=ROOT/'assets/combined.xml' if world is None else Path(world)
+            self.m=mujoco.MjModel.from_xml_path(str(path))
+            self.d=mujoco.MjData(self.m)
         self.m.vis.global_.offwidth,self.m.vis.global_.offheight=960,720
-        joints=np.array([self.m.joint(n).id for n in self.policy.joints])
+        joints=np.array([self.m.joint(self.names.n(n)).id for n in self.policy.joints])
         self.qa,self.va=self.m.jnt_qposadr[joints],self.m.jnt_dofadr[joints]
         self.body_act=np.array([self._actuator(j) for j in joints])
         self.arms={'left':np.arange(13,18),'right':np.arange(18,23)}
         self.arm_ids=np.arange(13,23)
-        self.hand_act={side:np.array([self.m.actuator(prefix+p+'a'+str(i)).id
+        self.hand_act={side:np.array([self.m.actuator(self.names.n(prefix+p+'a'+str(i))).id
                       for p in ('ff','mf','rf','th') for i in range(4)])
                       for side,prefix in [('left','lh_'),('right','rh_')]}
         self.d.qpos[self.qa]=self.policy.default
@@ -214,12 +260,19 @@ class Runtime:
             geoms=[int(contact.geom1),int(contact.geom2)]
             for g,other in (geoms,geoms[::-1]):
                 name=self.m.body(int(self.m.geom_bodyid[g])).name
-                if name in ('LINK_FOOT_L','LINK_FOOT_R','LINK_ANKLE_ROLL_L','LINK_ANKLE_ROLL_R') and self.m.geom_type[other]==mujoco.mjtGeom.mjGEOM_PLANE:
+                if name in tuple(self.names.n(f) for f in ('LINK_FOOT_L','LINK_FOOT_R',
+                                                           'LINK_ANKLE_ROLL_L','LINK_ANKLE_ROLL_R')) and self.m.geom_type[other]==mujoco.mjtGeom.mjGEOM_PLANE:
                     force=np.zeros(6);mujoco.mj_contactForce(self.m,self.d,i,force)
                     forces[name[-1]]+=max(0.,float(force[0]))
         return min(forces.values())>10.
 
-    def step(self,command,arms=None,hands=None,head=None,stationary=False,stopping=False):
+    def control(self,command,arms=None,hands=None,head=None,stationary=False,stopping=False,
+                base_control=None):
+        """Produce a composed vector without writing ctrl or advancing physics.
+
+        A candidate world owner may refuse before/after this computation. Internal
+        policy state is not a physical command and cannot bypass the final writer.
+        """
         if self.tick%5==0:
             if stationary and self.stand_target is None:
                 self.stand_ready=self.stand_ready+.01 if self.feet_loaded() else 0.
@@ -250,13 +303,29 @@ class Runtime:
             torque[:13]=(1-self.stand_weight)*torque[:13]+self.stand_weight*posture
         torque[self.arm_ids]+=self.arm_weight*(self.d.qfrc_bias[self.va[self.arm_ids]]-3*self.d.qvel[self.va[self.arm_ids]])
         limits=self.m.jnt_actfrcrange[self.m.actuator_trnid[self.body_act,0]]
-        self.d.ctrl[self.body_act]=np.clip(torque,limits[:,0],limits[:,1])
-        for side,act in self.hand_act.items(): self.d.ctrl[act]=self.hand_target[side]
-        mujoco.mj_step(self.m,self.d)
+        ctrl=np.array(self.d.ctrl if base_control is None else base_control,dtype=float,copy=True)
+        ctrl[self.body_act]=np.clip(torque,limits[:,0],limits[:,1])
+        for side,act in self.hand_act.items(): ctrl[act]=self.hand_target[side]
+        return ctrl
+
+    def step(self,command,arms=None,hands=None,head=None,stationary=False,stopping=False):
+        owner=getattr(self,'step_owner',None)
+        def produce():
+            background=getattr(self,'background_control',None)
+            base=None if background is None else background()
+            return self.control(command,arms,hands,head,stationary,stopping,base_control=base)
+        if owner is None:
+            self.d.ctrl[:]=produce()
+            mujoco.mj_step(self.m,self.d)
+        else:
+            if owner.model is not self.m or owner.data is not self.d:
+                raise ValueError('humanoid must share final writer model and data')
+            owner.step(produce)
         self.tick+=1
 
     def support_midpoint(self):
-        return np.mean([self.d.body('LINK_FOOT_L').xpos,self.d.body('LINK_FOOT_R').xpos],axis=0)
+        return np.mean([self.d.body(self.names.n('LINK_FOOT_L')).xpos,
+                        self.d.body(self.names.n('LINK_FOOT_R')).xpos],axis=0)
 
     def hold_command(self,goal,precise=False,brake=False,alignment=False,position=None):
         yaw,_=orientation(self.d.qpos[3:7])
@@ -293,10 +362,11 @@ class Runtime:
                 scratch.qpos[self.qa[ids]]=np.clip(scratch.qpos[self.qa[ids]],limits[:,0],limits[:,1])
             for _ in range(80 if safeguarded else 30):
                 forward_kinematics(self.m,scratch)
-                error=np.asarray(targets[side])-scratch.site(prefix+'grasp').xpos
+                error=np.asarray(targets[side])-scratch.site(self.names.n(prefix+'grasp')).xpos
                 if np.linalg.norm(error)<.001: break
                 jac=np.zeros((3,self.m.nv))
-                mujoco.mj_jacSite(self.m,scratch,jac,None,self.m.site(prefix+'grasp').id)
+                mujoco.mj_jacSite(self.m,scratch,jac,None,
+                                  self.m.site(self.names.n(prefix+'grasp')).id)
                 J=jac[:,self.va[ids]]
                 dq=J.T@np.linalg.solve(J@J.T+np.eye(3)*.001,error)
                 if not safeguarded:
@@ -315,7 +385,7 @@ class Runtime:
                     for scale in (1.,.5,.25,.125):
                         scratch.qpos[self.qa[ids]]=np.clip(before+scale*step,limits[:,0],limits[:,1])
                         forward_kinematics(self.m,scratch)
-                        residual=np.asarray(targets[side])-scratch.site(prefix+'grasp').xpos
+                        residual=np.asarray(targets[side])-scratch.site(self.names.n(prefix+'grasp')).xpos
                         if np.linalg.norm(residual)<np.linalg.norm(error)-1e-10:
                             accepted=True;break
                     if accepted:break
@@ -331,7 +401,7 @@ class Runtime:
         scratch.qpos[:]=self.d.qpos
         scratch.qpos[self.qa[self.arm_ids]]=joints
         forward_kinematics(self.m,scratch)
-        return max(float(np.linalg.norm(scratch.site(prefix+'grasp').xpos-targets[side]))
+        return max(float(np.linalg.norm(scratch.site(self.names.n(prefix+'grasp')).xpos-targets[side]))
                    for side,prefix in [('left','lh_'),('right','rh_')])
 
     def gaze(self,point):
@@ -344,7 +414,7 @@ class Runtime:
         limits=self.m.jnt_range[self.m.actuator_trnid[self.body_act[23:25],0]]
         def residual():
             forward_kinematics(self.m,scratch,cameras=True)
-            camera=scratch.camera('eyes')
+            camera=scratch.camera(self.names.n('eyes'))
             direction=np.asarray(point)-camera.xpos
             direction/=max(np.linalg.norm(direction),1e-9)
             return -camera.xmat.reshape(3,3)[:,2]-direction
@@ -370,7 +440,8 @@ class Runtime:
                     arm_command=self.arm_target.tolist(),
                     arm_tracking_error=float(np.max(np.abs(self.arm_target-self.d.qpos[self.qa[self.arm_ids]]))),
                     head=self.d.qpos[self.qa[23:25]].tolist(),
-                    hands={s:self.d.site(p+'grasp').xpos.tolist() for s,p in [('left','lh_'),('right','rh_')]})
+                    hands={s:self.d.site(self.names.n(p+'grasp')).xpos.tolist()
+                           for s,p in [('left','lh_'),('right','rh_')]})
 
 
 # Manifest entries 010 deliberately did NOT carry over from project 007, with the

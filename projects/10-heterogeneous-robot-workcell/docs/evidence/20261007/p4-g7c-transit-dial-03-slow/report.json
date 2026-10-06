@@ -1,0 +1,20 @@
+{
+ "scope": "G7C_TRANSIT_SLOW_VARIANT",
+ "status": "RUN",
+ "start_y": 0.0023,
+ "slow_speed": 0.02,
+ "slow_from_err": 1.15,
+ "end_chassis_x": 9.6237,
+ "end_tray_x": 10.2949,
+ "end_tray_z": 0.035,
+ "end_offset": 0.6712,
+ "per_step_rows": 28877,
+ "first_step_without_ride": 6233,
+ "tray_on_ground": true,
+ "final_contacts": [
+  "cell_ground~c_tray_wall_xn d=-0.00000 f=0.017",
+  "cell_ground~c_tray_wall_xn d=-0.00000 f=0.017",
+  "cell_ground~c_handle_-1 d=-0.00000 f=0.464",
+  "cell_ground~c_handle_1 d=-0.00000 f=0.464"
+ ]
+}

@@ -1,0 +1,68 @@
+{
+  "kind": "DERIVED_SUMMARY_ONLY",
+  "source_path": "reports/p4-nav2-v7-06-turn/report.json",
+  "original_sha256": "18590d32fa002610095d7c778f97167865cf7cf8004c085a6cb7503f7587dba1",
+  "original_bytes": 3387472,
+  "omitted": "full time series and large arrays; not a complete original report",
+  "selected_original_fields": {
+    "scope": "INITIALIZED_LOAD_SHARED_WORLD_NAV2",
+    "status": "COMPLETED",
+    "world_sha256": "ad6a6fa98a8c83d3c4b6dc94b026398cfdfe8b379bb85f5ec603948f8a347f47",
+    "source_sha256": "4dc8fb3e10ca0c9bf843f1eabc6435637f5fe5755bc1eb7779b0705f9125db74",
+    "commissioning_result": "FAIL",
+    "loaded_navigation": "FAIL",
+    "full_order": "NOT_RUN",
+    "v1_complete": false,
+    "checks": {
+      "nav2_succeeded": "PASS",
+      "fresh_motion_command": "PASS",
+      "independent_arrival": "PASS",
+      "physical_motion": "PASS",
+      "physical_stop": "PASS",
+      "shared_world": "PASS",
+      "no_safety_freeze": "PASS",
+      "load_motion_authorized": "PASS",
+      "transport_posture_authorized": "PASS",
+      "all_cargo_stopped": "FAIL",
+      "tray_retained": "FAIL",
+      "final_visual_quantity": "PASS",
+      "final_deck_support": "PASS"
+    },
+    "wall_s": 189.18071798700112,
+    "motion_refusal": null,
+    "posture_motion_refusal": null,
+    "arrival_error_m": 0.1545392767068468,
+    "processes": {
+      "bridge": {
+        "pid": 740,
+        "cmd": [
+          "bash",
+          "-lc",
+          "source scripts/env.sh\nexec /usr/bin/python3 experiments/joint_world_ros_bridge.py --run-id p4-nav2-v7-06-turn --config config/joint_world_v7.yaml --command-source cmd_vel --duration 70.0 --wait-for-state 30"
+        ],
+        "log": "bridge.log",
+        "started_wall": 9794.373,
+        "stop": "signalled",
+        "signals": [
+          {
+            "signal": "SIGINT",
+            "timeout_s": 12.0
+          }
+        ],
+        "exit_code": -2
+      },
+      "worker": {
+        "pid": 741,
+        "cmd": [
+          "bash",
+          "-lc",
+          "source scripts/env.sh\nexec /usr/bin/python3 experiments/joint_nav_worker.py --run-id p4-nav2-v7-06-turn --loaded --wall-budget 300 --turn-conservative --candidate v7"
+        ],
+        "log": "worker.log",
+        "started_wall": 9794.374,
+        "stop": "already exited",
+        "exit_code": 0
+      }
+    }
+  }
+}

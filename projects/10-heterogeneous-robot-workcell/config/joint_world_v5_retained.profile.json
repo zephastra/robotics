@@ -1,0 +1,16 @@
+{
+  "scope": "UNQUALIFIED_LOADED_MOTION_CONTROL_CANDIDATE",
+  "parent": "config/nav2_joint_world_v5_centered.yaml",
+  "parent_sha256": "cdb02a3aeb7262325e420dec4a17acbfeb4ec93fa703a3c20ff4d62dbe72e082",
+  "generator_sha256": "469d82369fd3bb8cf839526fa3c0df63ba2ca16086a10ed22b871cba6e02e58e",
+  "params": "config/nav2_joint_world_v5_retained.yaml",
+  "params_sha256": "9f8ddd30d4a5c1825e5e9ab810b4bb82b2e5332f0344e42916863fbbb4a6a02a",
+  "acceptance_changes": [],
+  "qualified": false,
+  "hypothesis": "lower linear/angular command acceleration reduces slip and deck yaw; MUST be physically tested",
+  "limitations": [
+    "not an emergency brake guarantee",
+    "no 3D swept-volume guard",
+    "not a full order"
+  ]
+}

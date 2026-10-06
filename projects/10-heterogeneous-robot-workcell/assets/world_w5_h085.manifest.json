@@ -1,0 +1,18 @@
+{
+  "output": "world_w5_h085.xml",
+  "source": "world_w2_logistic.xml",
+  "source_sha256": "7aee7337ee0454c19568602135a9eae5e2d1433923a243298beaafe11134d65d",
+  "dz_m": 0.325,
+  "anchors_changed": 47,
+  "removed_bodies": [
+    "h_payload"
+  ],
+  "station_shift_m": 3.4184,
+  "tray_station_x": 4.343532,
+  "table_top_z": 0.81,
+  "compiled_nq": 151,
+  "roller_half_length_m": 0.2,
+  "roller_geoms_narrowed": 24,
+  "roller_scope": "SOURCE band only (c_fixed_roller_*). The deck rollers and the receiver rollers are untouched: the humanoid never reaches them, and narrowing them would change the tray support the AMT chain verifies.",
+  "note": "candidate B: one uniform interface height, duplicate tray removed, presentation station added so the tray is within the humanoid's proven reach, and the source band's rollers narrowed so the hand clears their ends. A candidate world cannot cite the source world's PASS."
+}

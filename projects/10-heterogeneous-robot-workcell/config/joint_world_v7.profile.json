@@ -1,0 +1,209 @@
+{
+  "scope": "V7_CANDIDATE_TRANSPORT_IDENTITY_NOT_ORDER",
+  "start": [
+    4.41372,
+    0.0
+  ],
+  "goal": [
+    5.013719999999999,
+    0.0,
+    0.0
+  ],
+  "footprint": [
+    [
+      -0.622673459589369,
+      -0.340673459589369
+    ],
+    [
+      2.942673459589369,
+      -0.340673459589369
+    ],
+    [
+      2.942673459589369,
+      0.340673459589369
+    ],
+    [
+      -0.622673459589369,
+      0.340673459589369
+    ]
+  ],
+  "transport_posture": {
+    "c_deck_slide": [
+      -0.01,
+      0.01
+    ],
+    "c_deck_slide_y": [
+      -0.01,
+      0.01
+    ],
+    "c_deck_yaw": [
+      -0.01,
+      0.01
+    ],
+    "c_pusher_slide_joint": [
+      -0.001,
+      0.391
+    ],
+    "c_pusher_lift_joint": [
+      -0.001,
+      0.002
+    ],
+    "c_retainer_-1_joint": [
+      -0.08,
+      0.05
+    ],
+    "c_retainer_1_joint": [
+      -0.08,
+      0.05
+    ]
+  },
+  "initialized_posture": {
+    "allowed": false,
+    "reason_code": "TRANSPORT_POSTURE_UNCONFIRMED",
+    "failures": [
+      {
+        "joint": "c_retainer_-1_joint",
+        "value": 1.5707963267948966,
+        "allowed": [
+          -0.08,
+          0.05
+        ]
+      },
+      {
+        "joint": "c_retainer_1_joint",
+        "value": 1.5707963267948966,
+        "allowed": [
+          -0.08,
+          0.05
+        ]
+      }
+    ]
+  },
+  "initialized_posture_note": "allowed=false at scene start is CORRECT, not a defect: shoes are OPEN at home (ctrl 1.5708) and the tray is on the band; transport posture is reached only after deck loading and shoe closing in the chain. The posture gate is a transport-time gate.",
+  "retention_identity": {
+    "joints": [
+      "c_retainer_-1_joint",
+      "c_retainer_1_joint"
+    ],
+    "closed_rad": -0.08,
+    "open_rad": 1.5707963267948966,
+    "home_ctrl_rad": 1.5707963267948966,
+    "home_state": "OPEN: geometric proof, shoe tip 25 mm clear of tray wall at open extreme",
+    "closed_band_rad": [
+      -0.08,
+      0.05
+    ],
+    "closed_band_derivation": "WORKING-REGION band, not a single-scene steady state: G1 measured closed settle -0.000636 rad (probe_tray_retainer, declared PRELOAD_ANGLE -0.025), first v7 nav run measured -0.033530 rad symmetric under the same command with tray on deck (p4-nav2-v7-02) -- the working point varies with load/contact. Band spans the closed side: lower = joint hard limit -0.08, upper = +0.05 (31x below OPEN 1.5708; any real opening runs toward +1.5708). History: G5 mint v1 [-0.08,-0.079] (hard limit mistaken for working point) and v2 centre -0.000636 (single-fact) were each caught fail-closed by runs 01/02.",
+    "footprint_effect": "NONE: offline FK sweep, assembly AABB identical at both range extremes",
+    "fk_sweep_bounds": {
+      "c_retainer_-1_joint@-0.08": [
+        [
+          -0.19,
+          -0.3,
+          -0.04
+        ],
+        [
+          2.51,
+          0.3,
+          0.876
+        ]
+      ],
+      "c_retainer_-1_joint@1.5707963267948966": [
+        [
+          -0.19,
+          -0.3,
+          -0.04
+        ],
+        [
+          2.51,
+          0.3,
+          0.876
+        ]
+      ],
+      "c_retainer_1_joint@-0.08": [
+        [
+          -0.19,
+          -0.3,
+          -0.04
+        ],
+        [
+          2.51,
+          0.3,
+          0.876
+        ]
+      ],
+      "c_retainer_1_joint@1.5707963267948966": [
+        [
+          -0.19,
+          -0.3,
+          -0.04
+        ],
+        [
+          2.51,
+          0.3,
+          0.876
+        ]
+      ]
+    }
+  },
+  "footprint_basis": {
+    "home_assembly_aabb": [
+      [
+        -0.19,
+        -0.3,
+        -0.04
+      ],
+      [
+        2.51,
+        0.3,
+        0.876
+      ]
+    ],
+    "deck_offset_note": "deck frame parks 2.21 m ahead of the wheels at home; this offset is inside the home AABB and IS covered",
+    "deck_slide_stroke_excluded": [
+      -0.5,
+      1.5
+    ],
+    "deck_slide_exclusion_reason": "declared transport posture keeps the deck parked; sliding while driving is unqualified"
+  },
+  "planner_constraints": {
+    "rotate_to_heading_disabled": true,
+    "reason": "0.95 m corridor cannot contain an in-place rotation of the 3.565 x 0.681 m footprint (G5 leg audit); the straight leg starts yaw-aligned",
+    "spin_recovery_risk": "stock BT recovery may still request Spin; declared risk for the first run, run evidence will decide"
+  },
+  "cargo_envelope": {
+    "note": "tray initialized on the band front at home keyframe, NOT on the deck; deck loading happens later in the chain",
+    "half_extents_m": [
+      0.06500000000000039,
+      0.33499999999999996,
+      0.03750000000000003
+    ],
+    "world_aabb": [
+      [
+        4.278531999999999,
+        -0.33499999999999996,
+        0.8099999999999999
+      ],
+      [
+        4.408532,
+        0.33499999999999996,
+        0.885
+      ]
+    ]
+  },
+  "map_source": "INITIAL_FIXED_GEOMETRY_SURVEY_NOT_SLAM",
+  "mapped_geoms": [
+    "cell_wall_north",
+    "cell_wall_south",
+    "cell_wall_east",
+    "cell_wall_west",
+    "h_source_leg",
+    "h_destination_leg",
+    "h_destination_marker_post",
+    "p5_arm_pedestal_geom"
+  ],
+  "static_map_approximation": "scan-height AABB, not 3D collision avoidance",
+  "world_sha256": "ad6a6fa98a8c83d3c4b6dc94b026398cfdfe8b379bb85f5ec603948f8a347f47",
+  "parent_nav_params_sha256": "ca99574aae2e52767351e222c819cf27d8c371caa8c3f1b633530094451177ad",
+  "generator_sha256": "6321cbab2c9476e508fc44cb36201716ed15e84f02a3dbc26bd8b99ce885b77f"
+}

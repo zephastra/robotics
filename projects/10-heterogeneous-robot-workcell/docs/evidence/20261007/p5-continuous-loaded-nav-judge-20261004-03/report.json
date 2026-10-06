@@ -1,0 +1,39 @@
+{
+  "scope": "INDEPENDENT_CONTINUOUS_LOADING_NAV2_NOT_FULL_ORDER",
+  "checks": {
+    "execution_completed": "FAIL",
+    "actual_supply": "PASS",
+    "actual_loading": "PASS",
+    "action_succeeded": "FAIL",
+    "all_nodes_active": "FAIL",
+    "single_command_producer": "FAIL",
+    "actual_commands": "FAIL",
+    "arrival": "FAIL",
+    "actual_transport": "PASS",
+    "vehicle_stopped": "PASS",
+    "all_cargo_stopped": "FAIL",
+    "tray_retention": "FAIL",
+    "load_evidence": "PASS",
+    "transport_posture_authorized": "FAIL",
+    "authority_returned": "FAIL",
+    "no_runtime_pose_write": "PASS"
+  },
+  "measurements": {
+    "arrival_error_m": 0.4147403235035459,
+    "travel_m": 4.2096589838004865,
+    "peak_tray_relative_to_base_m": 0.030228704687550657,
+    "peak_tray_relative_slip_m": 0.029816131837029133,
+    "vehicle_speed_mps": 5.234082719863207e-06,
+    "vehicle_drift_m": 6.457232567993677e-07,
+    "cargo_speed_mps": 0.03987738139213015,
+    "cargo_drift_m": 0.004368381996404616
+  },
+  "integration_result": "FAIL",
+  "full_order": "NOT_RUN",
+  "three_dimensional_safety": "NOT_RUN",
+  "v1_complete": false,
+  "inputs": {
+    "reports/p5-continuous-loaded-nav-v5-20261004-03/report.json": "0e837ae063c09c5d9b88b4e3d28de3017bdb8e38c89cac91d63c3d66acc79cc8",
+    "reports/p5-continuous-loaded-nav-v5-20261004-03/continuous_nav.json": "eb2fb1878903ad0dca52e6a47698d54a15933fd8d63d3e508e8a32cadf21cb8b"
+  }
+}

@@ -7,15 +7,15 @@
 > criterion, no test, and nobody is hurt when it is false). Regenerate with
 > `./.venv/bin/python experiments/make_handoff.py`; verify with `--check`.
 
-> Derived from `docs/TASK_BOARD.md` (sha256 384c3d53dea9cb55), the runs' own `acceptance.json`, and `config/p3_freeze.json`.
+> Derived from `docs/TASK_BOARD.md` (sha256 45c0b97dd653e566), the runs' own `acceptance.json`, and `config/p3_freeze.json`.
 
 ## ACTIVE_TASK -- read from `docs/CLAIMS.md`, not derived
 
-- **`P4-HUMAN-01 — 人形自交的物理前置 + 跨实体交接的第一步`** -- claimed by assistant（WorkBuddy 会话，用户授权"解锁并领取 P4-ARM-02 或 P4-HUMAN-01 … 展开跨实体的真实物理交接"） at 2026-09-26; **进行中，未完成，而且它"未完成"的部分是明确写在这里的。** 已完成：① **推翻既有的"人形自穿透"结论** —— A/B 判别证明 58.543 mm 属于**把 `ctrl` 当常量**的那一臂，而那一臂里人形底座从 1.030 m 掉到 0.553 m（`D078`）；② 新的物理前置判据 `experiments/probe_h_selfclear.py`（含可失败性臂与实测补救，`reports/p4-human-sc-01/`）；③ 试验并**回退**了肩外展修正（`D079`：它让 `P3-WORLD-01` 的 settle 行翻红，而回退让三个世界哈希逐位复原）。**未开始：人形把托盘真的放到源工位上、车辆取走它 —— 也就是跨实体物理交接本身。** **下一步（最多三项）**：⑴ 量人形手臂能否到达源工位托盘并给出关节轨迹；⑵ 人形放盘 → 车辆取走的连续运行；⑶ `P4-ARM-02`（视觉抓放与数量核验）。
+**none** -- no unreleased claim is recorded. A claim is a fact about who has started, and it cannot be derived from the board.
 
 ## NEXT_ELIGIBLE_TASKS -- recommendations, and NOT claims
 
-Derived: 29 of 38 board rows are DONE; 9 are open, of which 2 have their declared dependency satisfied. The list below says which tasks COULD be claimed. It does not say anybody has.
+Derived: 31 of 38 board rows are DONE; 7 are open, of which 2 have their declared dependency satisfied. The list below says which tasks COULD be claimed. It does not say anybody has.
 
 - `P1-N-09` (board status `PARTIAL`, dependency `N-07` satisfied)
 - `P3-NAV-02` (board status `DONE（已重定性）`, dependency `WORLD-01` satisfied)
@@ -55,9 +55,9 @@ Derived: 29 of 38 board rows are DONE; 9 are open, of which 2 have their declare
 | `P3-ACCEPT-05` | DONE | P3-NAV-02 | DONE |
 | `P3-VISION-03` | DONE | WORLD-01 | DONE |
 | `P3-FREEZE-04` | DONE | WORLD-01（已满足） | DONE |
-| `P4-HUMAN-01` | PARTIAL | P3（已满足） | no |
-| `P4-ARM-02` | BLOCKED | P3 | no |
-| `P4-BELT-03` | BLOCKED | P3 | no |
+| `P4-HUMAN-01` | DONE | P3（已满足） | DONE |
+| `P4-ARM-02` | DONE | P3 | DONE |
+| `P4-BELT-03` | PARTIAL | P3 | no |
 | `P5-E2E-01` | BLOCKED | P4 | no |
 | `P6-FLEET-01` | BLOCKED | P5 | no |
 | `P6-FAULT-02` | BLOCKED | FLEET-01 | no |
@@ -67,6 +67,73 @@ Derived: 29 of 38 board rows are DONE; 9 are open, of which 2 have their declare
 
 | stage | what | run | state | verdict | checks | file | sha256 |
 |---|---|---|---|---|---|---|---|
+| P4 initialized retainer positive | v7 actual bilateral edge pressure/release/RGBD/stop PASS; NOT transport/order | `reports/p4-hinged-retainer-current-positive-20261004-01` | OK | **PASS** | 6 | `report.json` | `2e2e1a5914200d2d` |
+| P4 retainer held-open negative | expected absent closed contact, no transport authorization; NOT hardware jam certification | `reports/p4-hinged-retainer-current-negative-20261004-01` | OK | **PASS** | 6 | `report.json` | `a9c1f425b3f61d5d` |
+| P4 rejected retainer candidate | v6 misses bilateral contact, causes slip and occludes RGBD; do NOT integrate | `reports/p4-edge-retainer-close-release-20261004-01` | OK | **FAIL** | 6 | `report.json` | `95a1b72250f84d73` |
+| P4 initialized loaded Nav2 candidate | multi-contact + lower acceleration: 14 checks PASS; NOT actual supply/loading/full order | `reports/p4-retained-multiccd-short-20261004-01` | OK | **COMPLETED** | 14 | `report.json` | `2da5ff3a9e49252c` |
+| P4 initialized rest candidate | MuJoCo 3.3.6 multi-contact opt-in; all cargo resting speed PASS, NOT motion/order | `reports/p4-cargo-rest-multiccd-20261004-01` | OK | **COMPLETED** | ? | `report.json` | `3819426dbad84e97` |
+| P4 actual continuous navigation judgment | actual supply/loading/transport and vehicle brake PASS; cargo stop/retention/posture FAIL; retained resources | `reports/p5-continuous-loaded-nav-judge-20261004-03` | NO_VERDICT | -- | -- | `report.json` | `91e305baf5de02a1` |
+| P4 expected failure judgment | strict supply failed safely; actual physical trace, no loading/transport/custody; SIM freeze only | `reports/p5-policy-supply-rejected-judge-20261003-01` | NO_VERDICT | -- | -- | `acceptance.json` | `0b37a79f388827e3` |
+| P4 continuous supply loading logistics diagnostic | actual H supply, RGB-D/PCL three-part loading, 11 skills, custody/receiver checks PASS; Nav2/order/fleet NOT_RUN | `reports/p5-continuous-policy-transactions-v5-20261003-01` | OK | **PASS** | 12 | `acceptance.json` | `c1d7a52f07928ab1` |
+| P4 standing candidate diagnostic | original zero-speed policy after supply; 90s hold completed, NOT loading/Nav2/order | `reports/p4-post-supply-policy-hold-20261003-01` | OK | **COMPLETED** | ? | `report.json` | `0d16ae1610456115` |
+| P4 physical expected failure | post-supply static hold trips original BODY_FALL in actual run; SIM freeze, no mechanical stop | `reports/p4-post-supply-static-hold-20261003-01` | OK | **FAILED** | ? | `report.json` | `247ca029f934f6ee` |
+| P5 prerequisite diagnostic | loading-scene wheel/contact snapshot exposes post-supply humanoid fall; execution FAIL | `reports/p5-loaded-control-contact-diagnostic-v5-20261003-01` | OK | **FAIL** | 13 | `acceptance.json` | `61eaa7648da2d1bc` |
+| P4 independent snapshot diagnostic | recorded foot/chassis contacts and fall; ZERO physics steps, not new execution | `reports/p5-loading-contact-snapshot-judge-20261003-01` | NO_VERDICT | -- | -- | `report.json` | `5a532166fd9efeff` |
+| P4 shared world IPC diagnostic | same model/data; actual clock/scan/wheel odometry stream only; Nav2 NOT_RUN | `reports/p4-shared-world-ros-io-20261003-01` | OK | **COMPLETED** | ? | `report.json` | `9df70f79e707e676` |
+| P4 heading diagnostic | small initial yaw servo torque/contact trace; no loading or order claim | `reports/p4-heading-small-yaw-contact-20261003-01` | NO_VERDICT | -- | -- | `report.json` | `9fe707203b4d93e9` |
+| P4 calibration diagnostic | loading stock initial condition; measured wheel sign trace only | `reports/p4-loading-wheel-calibration-home-20261003-01` | NO_VERDICT | -- | -- | `report.json` | `e3091c5455e4d039` |
+| P5 prerequisite diagnostic | stricter H supply and full loading pass; heading candidate still refused at dock, NOT shipment | `reports/p5-continuous-heading-transactions-v5-20261003-01` | OK | **FAIL** | 13 | `acceptance.json` | `61eaa7648da2d1bc` |
+| P4 expected failure | physical failed supply; no loading/transport/custody; restricted simulation freeze | `reports/p5-supply-rejected-heading-v5-20261003-01` | OK | **FAIL** | 13 | `acceptance.json` | `c0103a467dcf4c98` |
+| P4 expected failure judgment | same actual record independently judged; task FAILED, mechanical stop NOT_RUN | `reports/p5-supply-rejected-heading-judge-20261003-02` | NO_VERDICT | -- | -- | `acceptance.json` | `d6217f42323e15e3` |
+| P4 invalid instrument retained | first judgment falsely expected freeze bool; original report preserved | `reports/p5-supply-rejected-heading-judge-20261003-01` | NO_VERDICT | -- | -- | `acceptance.json` | `45c5b3b6d04af5ee` |
+| P5 prerequisite diagnostic | H physical supply and 10 loading checks pass; docking yaw refused, NOT completed shipment | `reports/p5-continuous-geometry-transactions-v5-20261003-01` | OK | **FAIL** | 13 | `acceptance.json` | `61eaa7648da2d1bc` |
+| P4 heading diagnostic | initial yaw parking with original wheel brake; measured heading only, NOT acceptance | `reports/p4-heading-hold-baseline-20261003-01` | NO_VERDICT | -- | -- | `report.json` | `8492f5db945be2b2` |
+| P4 heading diagnostic | differential heading recovery on initial yaw; NOT loaded shipment or Nav2 | `reports/p4-heading-hold-feedback-20261003-01` | NO_VERDICT | -- | -- | `report.json` | `47ac0f98f0142dca` |
+| P4 heading diagnostic | installed candidate servo parking; NOT full supply/shipment | `reports/p4-heading-installed-feedback-20261003-01` | NO_VERDICT | -- | -- | `report.json` | `af74a2c3c9538c79` |
+| P5 prerequisite diagnostic | continuous supply/loading reached first station but owned 900s wall watchdog expired; NOT completed chain | `reports/p5-humanoid-loaded-transactions-v5-20261003-01` | OK | **WALL_TIMEOUT** | ? | `run_manifest.json` | `113e5eac1c77c16a` |
+| P5 prerequisite diagnostic | H supply and loading physical subchecks pass; initial empty vision UNKNOWN; overall FAIL | `reports/p5-humanoid-visual-loading-v5-20261003-01` | OK | **FAIL** | 10 | `acceptance.json` | `93b5de618d410a14` |
+| P4 loaded custody prerequisite | v5 live PCL physical loading and two transfers with independent count/stop; NOT H/Nav2/full order | `reports/p4-loaded-transactions-pcl-v5-20261003-02` | OK | **PASS** | 10 | `acceptance.json` | `a60bc82ad642c170` |
+| P4 diagnostic | v5 live PCL and two custody transfers physically confirmed; visual count FAIL preserved | `reports/p4-loaded-transactions-pcl-v5-20261003-01` | OK | **FAIL** | 10 | `acceptance.json` | `17b6473d497925de` |
+| P4 sensor reanalysis | recorded v5 handle-excluded rim fit/count; NOT new physical execution | `reports/p4-receiver-recorded-v5-handles-20261003-01` | OK | **PASS** | 5 | `acceptance.json` | `2e908b20f17aa69c` |
+| P4 diagnostic | v4 occupied-source custody chain fails loaded deck stop; locks retained | `reports/p4-loaded-transactions-v4-20261003-02` | OK | **FAIL** | 11 | `acceptance.json` | `de10af7f90b5f93e` |
+| P4 diagnostic | v4 real loaded shipment and independent receiver count/stop; NOT H/transaction order | `reports/p4-loaded-receiver-v4-20261003-02` | OK | **PASS** | 10 | `acceptance.json` | `a60bc82ad642c170` |
+| P4 native perception probe | PCL actual native build and recorded plane extraction; NOT live order | `reports/p4-pcl-recorded-floor-20261003-01` | OK | **PASS** | 2 | `acceptance.json` | `5488cf4c31e4dfab` |
+| P4 candidate | v5 independent deck passive supports static feasibility only | `reports/p5-deck-support-v5-build-20261003-01` | OK | **STATIC_ONLY** | ? | `report.json` | `d3413a5219d460d9` |
+| P4 candidate | v5 original whole-world settling positive and negative cases | `reports/p5-deck-support-v5-settle-20261003-01` | OK | **PASS** | 2 | `acceptance.json` | `4a770d752169520b` |
+| P4 diagnostic | v4 loaded receiver stop passes; visual template unresolved; execution FAIL preserved | `reports/p4-loaded-receiver-v4-20261003-01` | OK | **FAIL** | 10 | `acceptance.json` | `17b6473d497925de` |
+| P4 sensor reanalysis | recorded RGB-D independent rotated tray/part count; NOT execution | `reports/p4-receiver-recorded-rim-20261003-02` | OK | **PASS** | 5 | `acceptance.json` | `2e908b20f17aa69c` |
+| P4 diagnostic | v3 loaded receiver stop fails; NOT accepted delivery | `reports/p4-loaded-receiver-20261003-01` | OK | **FAIL** | 10 | `acceptance.json` | `17b6473d497925de` |
+| P4 safety diagnostic | actual transfer entry plus five role entries refuse all four faults; SIM freeze only | `reports/p4-global-transfer-writer-20261003-01` | OK | **PASS** | 24 | `acceptance.json` | `ca6951125b7bceab` |
+| P4 candidate | v4 receiver support static audit; NOT dynamic acceptance | `reports/p5-receiver-support-v4-build-20261003-02` | OK | **STATIC_ONLY** | ? | `report.json` | `3a7fa814f9f145ab` |
+| P4 candidate | v4 original world settling positive/negative gate; NOT mechanical stop | `reports/p5-receiver-support-v4-settle-20261003-01` | OK | **PASS** | 2 | `acceptance.json` | `4e795c9c80e82723` |
+| P4/P5 prerequisite | two red boxes + blue cylinder actual loading and RGB-D count; NOT order | `reports/p4-multi-loading-bias-comp-20261003-01` | OK | **PASS** | 9 | `acceptance.json` | `51ea7ee92bdc8f93` |
+| P4/P5 prerequisite | real tray red part cell 0 RGB-D loading/count; NOT order | `reports/p4-real-tray-cell0-20261003-01` | OK | **PASS** | 13 | `acceptance.json` | `ad654f4996e51781` |
+| P4/P5 prerequisite | real tray red part cell 2 RGB-D loading/count; NOT order | `reports/p4-real-tray-cell2-20261003-01` | OK | **PASS** | 13 | `acceptance.json` | `ad654f4996e51781` |
+| P4/P5 prerequisite | real humanoid final-writer faults; simulation freeze ONLY | `reports/p4-real-humanoid-writer-20261003-01` | OK | **PASS** | 24 | `acceptance.json` | `ca6951125b7bceab` |
+| P4/P5 prerequisite | candidate one red part RGB-D loading/count into REAL tray; NOT order | `reports/p4-real-tray-count-20261003-03` | OK | **PASS** | 13 | `acceptance.json` | `ad654f4996e51781` |
+| P4/P5 prerequisite | global final writer simulation freeze ONLY; NOT mechanical stop | `reports/p4-global-writer-20261003-01` | OK | **PASS** | 24 | `acceptance.json` | `ca6951125b7bceab` |
+| P4/P5 prerequisite | v3 source support: high-interface initialized loaded cancel | `reports/p5-support-v3-loaded-stop-20261002-03` | OK | **RECORDED** | ? | `report.json` | `ecce6fcfff67ef3b` |
+| P4/P5 prerequisite | v3 source support: original whole-world settling gate | `reports/p5-support-v3-settle-20261002-01` | OK | **PASS** | 2 | `acceptance.json` | `023b50991aecb349` |
+| P4/P5 prerequisite | v3 source support: physical build/static audit; NOT an order | `reports/p5-support-v3-build-20261002-01` | OK | **STATIC_ONLY** | ? | `report.json` | `846f1c1eb6c50aa7` |
+| P4 diagnostic | split passive support: loaded cancel; NOT arm loading/order | `reports/p4-support-v2-loaded-stop-20261002-01` | OK | **RECORDED** | ? | `report.json` | `0d1966a0719e2d1e` |
+| P4 diagnostic | split passive support: shifted initial support phase | `reports/p4-support-v2-offset-stop-20261002-01` | OK | **RECORDED** | ? | `report.json` | `10b069c4b9fddcf5` |
+| P4 diagnostic | split passive support: four faults and explicit recovery | `reports/p4-support-v2-recovery-20261002-01` | OK | **PASS** | 27 | `acceptance.json` | `e3bd34697a52f965` |
+| P4 diagnostic | actual point motion matches finite differences; NOT acceptance | `reports/p4-stop-kinematics-20261002-01` | OK | **RECORDED** | ? | `report.json` | `1566a80293259fff` |
+| P4 diagnostic | two-crown initial position still fails mechanical stop | `reports/p4-stop-midpoint-20261002-01` | OK | **RECORDED** | ? | `report.json` | `4485c2648980e2f9` |
+| P4 diagnostic | 40mm initial offset worsens stop; NOT a redesign proof | `reports/p4-stop-crown-20261002-01` | OK | **RECORDED** | ? | `report.json` | `e7d9efc7b0ab7f07` |
+| P4 diagnostic | smaller timestep does not fix moving-tray cancellation | `reports/p4-stop-fine-cancel-20261002-01` | OK | **RECORDED** | ? | `report.json` | `5d6c22dbef6ac658` |
+| P4/P5 prerequisite | v2 candidate static geometry only; stock-table interference fixed | `reports/p5-candidate-v2-static-20261002-01` | OK | **PASS** | 12 | `acceptance.json` | `44d8da73dab1d85c` |
+| P4/P5 prerequisite | v2 candidate settling requalification; NOT stop/order acceptance | `reports/p5-candidate-v2-settle-20261002-01` | OK | **PASS** | 2 | `acceptance.json` | `d00eb1b4e99bf004` |
+| P4/P5 prerequisite | candidate static reach/decks/buffer only; NOT execution/order | `reports/p5-candidate-static-20261002-04` | OK | **PASS** | 12 | `acceptance.json` | `37890e0d231039d4` |
+| P4/P5 prerequisite | candidate settling requalification; NOT mechanical-stop/order | `reports/p5-candidate-settle-20261002-01` | OK | **FAIL** | 2 | `acceptance.json` | `2ff66df9cce6bb76` |
+| P4 | runtime interruption diagnostic FAIL; explicit simulation hold PASS only | `reports/p4-runtime-recovery-20261002-03` | OK | **FAIL** | 27 | `acceptance.json` | `360db87aee402c7c` |
+| P4 | three free parts retention with sliding fault; NOT arm loading/order | `reports/p4-loaded-retention-20261002-01` | OK | **PASS** | 11 | `acceptance.json` | `5648cf70ad6d2787` |
+| P4 | final longitudinal envelope recheck; NOT lateral/loaded/order acceptance | `reports/p4-receiver-envelope-20261002-02` | OK | **PASS** | 8 | `acceptance.json` | `d7824adb4746dc4e` |
+| P4 | old H3 PASS rejected by actual final longitudinal envelope | `reports/p4-receiver-envelope-20261002-01` | OK | **FAIL** | 8 | `acceptance.json` | `293a7f79f7e45b50` |
+| P4 | current-code H3 negative safety diagnostic, NOT successful delivery | `reports/p4-h3-codex-20261002-negative-v2` | OK | **PASS: all 13 judged H3 rows [negative arm], 6 NOT_RUN in this arm (tray_on_source_band_at_handoff, downstream_waits_for_release, tray_still_between_release_and_the_chain, chain_reached_receiver, custody_transferred_by_the_ledger, each_leg_destination_matched_by_contacts)** | ? | `report.json` | `bd64361d3fec0907` |
+| P4 | current-code H3 positive diagnostic, NOT an order | `reports/p4-h3-codex-20261002-positive-v2` | OK | **PASS: all 18 judged H3 rows [positive arm], 1 NOT_RUN in this arm (downstream_gated_on_handoff)** | ? | `report.json` | `1f38dbf4380f8eca` |
+| P4 | limited empty-tray belt checkpoint; NOT a P4 exit gate | `reports/p4-belt-checkpoint-20261002-02` | OK | **PASS** | 11 | `acceptance.json` | `af7803875829a479` |
+| P4 | tilted-delivery negative judgment; expected rejection | `reports/p4-belt-tilt-negative-20261002` | OK | **INCOMPLETE_OR_FAIL** | 11 | `acceptance.json` | `583e92da47032761` |
 | P1 | the shared world gate | `reports/p1-gate-08` | OK | **PASS** | 15 | `gate.json` | `6034a896181eb4f1` |
 | P1 | H, the humanoid tray sequence | `reports/p1-h-seq-08` | OK | **DIAGNOSTIC_COMPLETED** | ? | `report.json` | `cd3f839e2e3d4eef` |
 | P1 | A, the fixed arm pick and place | `reports/p1-a-p05` | OK | **PASS** | 14 | `acceptance.json` | `f46731f5475edb24` |
@@ -83,13 +150,23 @@ Derived: 29 of 38 board rows are DONE; 9 are open, of which 2 have their declare
 
 ### Evidence that is not a clean verdict
 
+- **NO_VERDICT** `reports/p5-continuous-loaded-nav-judge-20261004-03` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
+- **NO_VERDICT** `reports/p5-policy-supply-rejected-judge-20261003-01` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
+- **NO_VERDICT** `reports/p5-loading-contact-snapshot-judge-20261003-01` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
+- **NO_VERDICT** `reports/p4-heading-small-yaw-contact-20261003-01` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
+- **NO_VERDICT** `reports/p4-loading-wheel-calibration-home-20261003-01` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
+- **NO_VERDICT** `reports/p5-supply-rejected-heading-judge-20261003-02` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
+- **NO_VERDICT** `reports/p5-supply-rejected-heading-judge-20261003-01` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
+- **NO_VERDICT** `reports/p4-heading-hold-baseline-20261003-01` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
+- **NO_VERDICT** `reports/p4-heading-hold-feedback-20261003-01` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
+- **NO_VERDICT** `reports/p4-heading-installed-feedback-20261003-01` -- no verdict or h3_overall or diagnostic_result or status field: this file is diagnostic data, and a verdict must not be invented from it
 - **INDEX** `reports/p1-n-arrival-01` -- an index over cases rather than a single run; the per-case verdicts are in `cases/<run>/`
 - **INDEX** `reports/p3-nav-requal-01` -- an index over cases rather than a single run; the per-case verdicts are in `cases/<run>/`; it records that 1 of 2 cases changed identity or verdict: ['p3-nav-06']
 
 ## Freeze
 
-- `config/p3_freeze.json`: **14 artefacts**, **24 scripts**, **78 thresholds**.
-- Script coverage: 9 scripts named by a `P3-` board row; missing from the freeze: none.
+- `config/p3_freeze.json`: **47 artefacts**, **143 scripts**, **110 thresholds**.
+- Script coverage: 20 scripts named by a `P3-` board row; missing from the freeze: none.
 - **A manifest cannot notice what is missing from it.** Coverage is derived from the board rather than typed (`D058`). Verify with `./.venv/bin/python experiments/make_p3_freeze.py --check`.
 
 ## Before you cite anything: what the evidence does NOT support

@@ -1,0 +1,115 @@
+{
+  "scope": "INITIALIZED_LOAD_SHARED_WORLD_NAV2",
+  "status": "ERROR",
+  "world_sha256": "ad6a6fa98a8c83d3c4b6dc94b026398cfdfe8b379bb85f5ec603948f8a347f47",
+  "source_sha256": "137f1117d6c9f5eb2107c5638eafd2a956d1438759eb59cbd1221be4047c3c97",
+  "linear_speed_candidate_mps": null,
+  "runtime_qpos_writes": 0,
+  "loaded_navigation": "NOT_RUN",
+  "full_order": "NOT_RUN",
+  "v1_complete": false,
+  "assumptions": [
+    "initialized cargo, NOT continuous H supply/arm loading",
+    "vehicle RGBD and ideal deck touch; static map prior NOT SLAM",
+    "shadows/reflections/multisampling off in camera, NOT physics",
+    "no 3D swept-volume guard; bounded short straight commissioning only",
+    "v7: shoes closed at scene start by declared initialization, NOT runtime loading evidence",
+    "v7: deck parked; slide stroke excluded from footprint and posture-gated",
+    "v7: rotate-to-heading disabled in nav2_joint_world_v7.yaml (corridor cannot contain in-place rotation)",
+    "v7: stock BT recovery may still request Spin; declared risk, run evidence will decide",
+    "v7 source-load: tray initialized on the source band; real source->deck transfer runs before Nav2; retainer starts OPEN"
+  ],
+  "loaded_profile": "joint_world_v7_loaded.profile.json",
+  "loaded_profile_sha256": "fc8cae1f0a1ea2ee1f89f13a08dca26a27b3daa5eb276456ded5951abea2bf4f",
+  "retainer_close_command": {
+    "target_rad": -0.025,
+    "source": "build_hinged_retainer_candidate.PRELOAD_ANGLE (G1)",
+    "applied": "every control step via compose()"
+  },
+  "source_transfer_pre_support": [
+    "source_band"
+  ],
+  "source_transfer_support": [
+    "deck"
+  ],
+  "source_transfer_end_sim_s": 97.56199999995403,
+  "g7c_landing_offset_m": 1.9503,
+  "g7c_pretransport_close": {
+    "confirmed_sim_s": 99.51399999994948,
+    "settle_qpos": [
+      -0.03352987732211681,
+      -0.0014749299487448457
+    ],
+    "band": [
+      -0.08,
+      0.05
+    ],
+    "budget_sim_s": 109.56199999995403,
+    "hold_s": 1.0,
+    "hold_drift_max_rad": 0.005,
+    "tray_offset_at_close_m": 1.9517
+  },
+  "g7c_shoe_engagement": {
+    "predicted_catch_offset_m": 1.9412,
+    "window_m": 0.03,
+    "engaged_offset_m": 1.9519,
+    "confirmed_sim_s": 100.0179999999483,
+    "landing_offset_m": 1.9503,
+    "offset_at_close_m": 1.9517,
+    "pre_catch_slide_m": 0.0016,
+    "basis": "shoe -x face minus tray front-wall reach, live model geometry"
+  },
+  "g7c_nudge_retention": {
+    "rows": 8,
+    "offset_first_m": 1.9414,
+    "baseline_m": "first nudge row (srcl3 definition)",
+    "offset_max_drift_m": 0.8461,
+    "shoe_escape_guard_m": -0.8459,
+    "shoe_escape_limit_m": -0.005,
+    "retention_limit_m": 0.015,
+    "retention_note": "drift from first row (15 mm = G6 slip family 11.4 mm + margin; srcl4 measured the pre-transport rest up to 13 mm ahead of the face, so the onset approach may consume most of the budget); PLUS escape guard: every row must satisfy offset >= catch - 5 mm - past the face the shoe no longer holds (srcl3 escape signature was 0.254)",
+    "shoes": "CLOSED+ENGAGED (angle + position evidence)"
+  },
+  "g7c_dock": {
+    "chassis_x_m": 9.624169809831306,
+    "target_m": 9.643699999999999,
+    "stopped": true
+  },
+  "g7c_shoes_open_qpos": [
+    1.570796326794895,
+    1.570796326794895
+  ],
+  "error": "RuntimeError: G7C_UNLOAD_TIMEOUT: support [] at sim 443.78",
+  "exception_chain": [
+    "RuntimeError: G7C_UNLOAD_TIMEOUT: support [] at sim 443.78"
+  ],
+  "exception_traceback": "Traceback (most recent call last):\n  File \"/home/ziling/projects/010_heterogeneous_robot_workcell/experiments/probe_vehicle_nav2.py\", line 499, in main\n    raise RuntimeError('G7C_UNLOAD_TIMEOUT: support %r at sim %.2f'\nRuntimeError: G7C_UNLOAD_TIMEOUT: support [] at sim 443.78\n",
+  "commissioning_result": "FAIL",
+  "processes": {
+    "worker": {
+      "stop": "never started"
+    },
+    "bridge": {
+      "stop": "never started"
+    }
+  },
+  "wall_s": 1438.8734621250005,
+  "timing_peaks_wall_s": {},
+  "truth_judge_only": [],
+  "stopping_at_sim_s": null,
+  "sensor_frames": [],
+  "simulation_frozen": null,
+  "deck_support_judge_only": {
+    "samples": 0,
+    "episodes": [],
+    "completed_episodes": 0,
+    "last_sample_sim_s": null,
+    "permission_output": false,
+    "first_missing": null,
+    "max_gap_record": null,
+    "instrument": "cached_solver_state_2ms",
+    "timing": "post-mj_step contacts/transforms labelled time minus timestep",
+    "distance": "episodes use analytic plane clearance; raw convex distance separately preserved/unqualified",
+    "scope": "JUDGE_ONLY; no control or acceptance threshold changes"
+  }
+}

@@ -1,0 +1,47 @@
+{
+ "scope": "G7C_FUNNEL_TRANSIT_MICRO_DIAL",
+ "status": "RUN",
+ "declarations": [
+  "teleported start x=%.2f and tray at catch offset %.4f (diagnostic init)",
+  "approach law = probe_vehicle_nav2 dock law verbatim",
+  "shoe close re-asserted every step (srcl6 fix present)"
+ ],
+ "dock_x": 9.643699999999999,
+ "end_chassis_x": 9.6238,
+ "windows": 5,
+ "stall_marks": [],
+ "tray_ride": {
+  "first_step_without_roller_contact": 3,
+  "window_at": 21.004
+ },
+ "final": {
+  "tag": "final",
+  "sim_s": 28.574,
+  "chassis_x": 9.6238,
+  "chassis_y": 0.00174,
+  "yaw": -0.000589,
+  "deck_x": -0.0,
+  "deck_y": 0.0,
+  "deck_yaw": -0.0,
+  "ret": [
+   -0.0335,
+   -0.0335
+  ],
+  "tray": [
+   10.7486,
+   0.0173,
+   0.035
+  ],
+  "tray_qvel": [
+   -0.0,
+   0.0,
+   -0.0
+  ],
+  "contacts": [
+   "cell_ground~c_tray_wall_xn d=-0.00000 f=0.017",
+   "cell_ground~c_tray_wall_xn d=-0.00000 f=0.017",
+   "cell_ground~c_handle_-1 d=-0.00000 f=0.464",
+   "cell_ground~c_handle_1 d=-0.00000 f=0.464"
+  ]
+ }
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "CONTINUOUS_HUMANOID_SUPPLY_LOADING_LOGISTICS_DIAGNOSTIC",
+  "checks": {
+    "initial_observed_empty": "PASS",
+    "three_physical_lifts": "PASS",
+    "three_actual_cells": "PASS",
+    "all_parts_touch_real_tray": "PASS",
+    "final_visual_counts": "PASS",
+    "final_visual_cells": "PASS",
+    "missing_depth_unknown": "PASS",
+    "no_runtime_qpos_write": "PASS",
+    "one_world_writer": "PASS",
+    "all_collision_geometry_in_cells": "PASS",
+    "continuous_loaded_transport": "PASS",
+    "continuous_humanoid_supply": "PASS"
+  },
+  "diagnostic_result": "PASS",
+  "continuous_handover": "PASS",
+  "transport": "PASS",
+  "full_order": "NOT_RUN",
+  "v1_complete": false
+}

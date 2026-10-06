@@ -1,0 +1,69 @@
+{
+  "kind": "DERIVED_SUMMARY_ONLY",
+  "source_path": "reports/p4-retained-separation-analytic-20261004-01/report.json",
+  "original_sha256": "ef08632bec88f2c7cc1f11c921348d8606772abacff8602cb5f7c496bc0e4fea",
+  "original_bytes": 10466976,
+  "omitted": "full time series and large arrays; not a complete original report",
+  "selected_original_fields": {
+    "scope": "INITIALIZED_LOAD_SHARED_WORLD_NAV2",
+    "status": "COMPLETED",
+    "world_sha256": "aa3e9085bf08236193537418f5cb1d32d6254f5cf0b2b7991f4796e82a2a8ac5",
+    "source_sha256": "83ce926870ba317dc2df486ae2a341a0ddccd78b9bafa94edb68e4a3f1b40150",
+    "commissioning_result": "FAIL",
+    "loaded_navigation": "FAIL",
+    "full_order": "NOT_RUN",
+    "v1_complete": false,
+    "checks": {
+      "nav2_succeeded": "FAIL",
+      "fresh_motion_command": "PASS",
+      "independent_arrival": "FAIL",
+      "physical_motion": "PASS",
+      "physical_stop": "PASS",
+      "shared_world": "PASS",
+      "no_safety_freeze": "PASS",
+      "load_motion_authorized": "PASS",
+      "transport_posture_authorized": "FAIL",
+      "all_cargo_stopped": "PASS",
+      "tray_retained": "FAIL",
+      "final_visual_quantity": "PASS",
+      "final_deck_support": "PASS",
+      "parking_authority_returned": "PASS"
+    },
+    "wall_s": 368.1333335830004,
+    "motion_refusal": null,
+    "posture_motion_refusal": "TRANSPORT_POSTURE_UNCONFIRMED",
+    "arrival_error_m": 0.45535797466628897,
+    "processes": {
+      "bridge": {
+        "pid": 644,
+        "cmd": [
+          "bash",
+          "-lc",
+          "source scripts/env.sh\nexec /usr/bin/python3 experiments/joint_world_ros_bridge.py --run-id p4-retained-separation-analytic-20261004-01 --config config/joint_world_v5.yaml --command-source cmd_vel --duration 100.0 --wait-for-state 30"
+        ],
+        "log": "bridge.log",
+        "started_wall": 14853.402,
+        "stop": "already exited",
+        "exit_code": 1
+      },
+      "worker": {
+        "pid": 645,
+        "cmd": [
+          "bash",
+          "-lc",
+          "source scripts/env.sh\nexec /usr/bin/python3 experiments/joint_nav_worker.py --run-id p4-retained-separation-analytic-20261004-01 --loaded --wall-budget 600 --centered-load --retained-motion --linear-speed 0.08 --goal 9.0437 0.0 0.0"
+        ],
+        "log": "worker.log",
+        "started_wall": 14853.402,
+        "stop": "already exited",
+        "signals": [
+          {
+            "signal": "SIGINT",
+            "timeout_s": 12.0
+          }
+        ],
+        "exit_code": 1
+      }
+    }
+  }
+}

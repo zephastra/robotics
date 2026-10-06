@@ -1,0 +1,68 @@
+{
+  "kind": "DERIVED_SUMMARY_ONLY",
+  "source_path": "reports/p4-nav2-v7-05-receiver/report.json",
+  "original_sha256": "a62faa1dcd50a0d3c18d560a345542c69bc28810cf48138fb26205ae3cbcf81f",
+  "original_bytes": 5707744,
+  "omitted": "full time series and large arrays; not a complete original report",
+  "selected_original_fields": {
+    "scope": "INITIALIZED_LOAD_SHARED_WORLD_NAV2",
+    "status": "COMPLETED",
+    "world_sha256": "ad6a6fa98a8c83d3c4b6dc94b026398cfdfe8b379bb85f5ec603948f8a347f47",
+    "source_sha256": "dc4e6daa5e14335a1f2ba3505c04f3da7d392d2728746bc2aa3b5e830cbbff75",
+    "commissioning_result": "FAIL",
+    "loaded_navigation": "FAIL",
+    "full_order": "NOT_RUN",
+    "v1_complete": false,
+    "checks": {
+      "nav2_succeeded": "FAIL",
+      "fresh_motion_command": "PASS",
+      "independent_arrival": "FAIL",
+      "physical_motion": "PASS",
+      "physical_stop": "PASS",
+      "shared_world": "PASS",
+      "no_safety_freeze": "PASS",
+      "load_motion_authorized": "PASS",
+      "transport_posture_authorized": "FAIL",
+      "all_cargo_stopped": "FAIL",
+      "tray_retained": "FAIL",
+      "final_visual_quantity": "PASS",
+      "final_deck_support": "PASS"
+    },
+    "wall_s": 274.4395653899992,
+    "motion_refusal": null,
+    "posture_motion_refusal": "TRANSPORT_POSTURE_UNCONFIRMED",
+    "arrival_error_m": 0.6076733418938361,
+    "processes": {
+      "bridge": {
+        "pid": 853,
+        "cmd": [
+          "bash",
+          "-lc",
+          "source scripts/env.sh\nexec /usr/bin/python3 experiments/joint_world_ros_bridge.py --run-id p4-nav2-v7-05-receiver --config config/joint_world_v7.yaml --command-source cmd_vel --duration 70.0 --wait-for-state 30"
+        ],
+        "log": "bridge.log",
+        "started_wall": 4665.168,
+        "stop": "already exited",
+        "exit_code": 1
+      },
+      "worker": {
+        "pid": 854,
+        "cmd": [
+          "bash",
+          "-lc",
+          "source scripts/env.sh\nexec /usr/bin/python3 experiments/joint_nav_worker.py --run-id p4-nav2-v7-05-receiver --loaded --wall-budget 600 --goal 9.0437 0.0 0.0 --candidate v7"
+        ],
+        "log": "worker.log",
+        "started_wall": 4665.169,
+        "stop": "already exited",
+        "signals": [
+          {
+            "signal": "SIGINT",
+            "timeout_s": 12.0
+          }
+        ],
+        "exit_code": 1
+      }
+    }
+  }
+}

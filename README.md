@@ -27,6 +27,12 @@ robotics/
 - [文档目录说明](docs/README.md)
 - [项目目录说明](projects/README.md)
 
+## Development checkpoints — dev branch only
+
+- [010 异构机器人协同备料与配送](projects/10-heterogeneous-robot-workcell/README.md) — **未完成的开发备份，2026-10-07 更新**。保留源码、资产、测试、文档及精选成功/失败证据；带载保持和接收卸盘仍未通过，不是 V1 发布，不承诺克隆即完整运行。
+
+这些检查点用于保存开发工作，不代表已验收产品，也没有合并到 main。
+
 ## Naming rules
 
 - 可运行项目放在 `projects/NN-project-name/`。

@@ -2,14 +2,179 @@
   "schema_version": 1,
   "artefacts": [
     {
+      "path": "assets/world_p5_candidate_v7_hinged_retainer.xml",
+      "sha256": "ad6a6fa98a8c83d3c4b6dc94b026398cfdfe8b379bb85f5ec603948f8a347f47",
+      "bytes": 159659
+    },
+    {
+      "path": "assets/world_p5_candidate_v6_retainer.xml",
+      "sha256": "d11525b76ed966110c08ebb5709542bc83a7ffc74f4655884c2f264a2ea7899b",
+      "bytes": 159403
+    },
+    {
+      "path": "config/nav2_joint_world_v5_retained.yaml",
+      "sha256": "9f8ddd30d4a5c1825e5e9ab810b4bb82b2e5332f0344e42916863fbbb4a6a02a",
+      "bytes": 14283
+    },
+    {
+      "path": "config/joint_world_v5_retained.profile.json",
+      "sha256": "1dc8bc64de78241eb30667be64819f5620b0726a8a9b140320d8ac55340edd31",
+      "bytes": 720
+    },
+    {
+      "path": "config/joint_world_v5_centered.profile.json",
+      "sha256": "15a02bc456d405c20bcb53ae30a6c4a983d03e0709db1571e237f5f478fd4ae3",
+      "bytes": 1457
+    },
+    {
+      "path": "config/nav2_joint_world_v5_centered.yaml",
+      "sha256": "cdb02a3aeb7262325e420dec4a17acbfeb4ec93fa703a3c20ff4d62dbe72e082",
+      "bytes": 14272
+    },
+    {
+      "path": "config/nav2_joint_world_v5_loaded.yaml",
+      "sha256": "05ad5d98579c8be7907665601eac3ce56fbba17b178aa5b91fc1996bab61836f",
+      "bytes": 14272
+    },
+    {
+      "path": "config/joint_world_v5_loaded.profile.json",
+      "sha256": "c4a548e3e9abf0134e6346b1fc101c83e3a3c8c0f5f0ea8ca347275d200fdc28",
+      "bytes": 1253
+    },
+    {
+      "path": "assets/maps/joint_world_v5.pgm",
+      "sha256": "6f780b840f05ae6e2434b67a1a6daf698e39b6aeb01999add9e5ef866303d414",
+      "bytes": 39219
+    },
+    {
+      "path": "assets/maps/joint_world_v5.yaml",
+      "sha256": "23d211fdc74def693a9310d7f3fb6b493df4d81176eff3208c6cb68ec64482e9",
+      "bytes": 123
+    },
+    {
+      "path": "config/nav2_joint_world_v5.yaml",
+      "sha256": "ca99574aae2e52767351e222c819cf27d8c371caa8c3f1b633530094451177ad",
+      "bytes": 14248
+    },
+    {
+      "path": "config/joint_world_v5.yaml",
+      "sha256": "2c1fadc814fc10af0e5d236e50d298871e55bd96d976972fb0b8375a1a181802",
+      "bytes": 964
+    },
+    {
+      "path": "config/joint_world_v5.profile.json",
+      "sha256": "4f9942fcda2ce4901554acd86f673e9b44c6629f8623df5d59aac0c0680b3b17",
+      "bytes": 1564
+    },
+    {
+      "path": "assets/maps/joint_world_v7.pgm",
+      "sha256": "6f780b840f05ae6e2434b67a1a6daf698e39b6aeb01999add9e5ef866303d414",
+      "bytes": 39219
+    },
+    {
+      "path": "assets/maps/joint_world_v7.yaml",
+      "sha256": "b83a49db9f8debaaf01ff4f0fac9402251957b5d79fd6ae5b3e2c409d1fd0061",
+      "bytes": 123
+    },
+    {
+      "path": "config/nav2_joint_world_v7.yaml",
+      "sha256": "727435a3f8172e936bbd48bb96b3efe94862371caa2e14957bfcefe6ffabcdc3",
+      "bytes": 14249
+    },
+    {
+      "path": "config/joint_world_v7.yaml",
+      "sha256": "6b93a2e353b08d66d42be9801161e1d9349c604ea8f923f54322113dbe57e6e6",
+      "bytes": 980
+    },
+    {
+      "path": "config/joint_world_v7.profile.json",
+      "sha256": "5b922513f8331ac0f51c2eeb79e0917a3a1dd8898fe8e15047739796f7bce9e3",
+      "bytes": 5409
+    },
+    {
+      "path": "config/joint_world_v7_loaded.profile.json",
+      "sha256": "fc8cae1f0a1ea2ee1f89f13a08dca26a27b3daa5eb276456ded5951abea2bf4f",
+      "bytes": 1292
+    },
+    {
+      "path": "config/nav2_joint_world_v7_retained.yaml",
+      "sha256": "bbb7761fc5f4f67da1afb20b19435b0e7785c1b8d490a3bb4a0a86441ad79c71",
+      "bytes": 14260
+    },
+    {
+      "path": "config/joint_world_v7_retained.profile.json",
+      "sha256": "aef2f4486c621fe9ebfa6366f0054cb7502cca8f5525d38b945b87fe7aabf77e",
+      "bytes": 902
+    },
+    {
+      "path": "config/nav2_joint_world_v7_turn.yaml",
+      "sha256": "756e3671b38bf5962c264cc79ee6f89ff22aaf4d04daaa72a4764a8c07e5be52",
+      "bytes": 14250
+    },
+    {
+      "path": "config/joint_world_v7_turn.profile.json",
+      "sha256": "6cb10468a0a76a4d436e901042ae333ad614bbee9d937407c3d9a7ddf0b8e337",
+      "bytes": 901
+    },
+    {
+      "path": "assets/world_p5_candidate_v5.xml",
+      "sha256": "aa3e9085bf08236193537418f5cb1d32d6254f5cf0b2b7991f4796e82a2a8ac5",
+      "bytes": 157098
+    },
+    {
+      "path": "assets/world_p5_candidate_v4.xml",
+      "sha256": "642192d7ff8552fa5c6593994c0650d8708237ed159f65c76d8d7bb33c2f5717",
+      "bytes": 152352
+    },
+    {
+      "path": "assets/world_p5_candidate_v3.xml",
+      "sha256": "568a31060d6fd82b1bf345e6dd1ec1a9c78766b371ca18c6276229b47e5d9f30",
+      "bytes": 139378
+    },
+    {
+      "path": "assets/world_w2_support_v1.xml",
+      "sha256": "65d59c63cc2e48b1b7e9f2c6469ee83857ea122ed188196655e03d2ae503dcfb",
+      "bytes": 121798
+    },
+    {
+      "path": "assets/world_w2_support_v2.xml",
+      "sha256": "2dcadbf2070c23a4195226607426915274b4473d9d5240c25e9dd2a400e47a62",
+      "bytes": 130301
+    },
+    {
+      "path": "assets/world_p5_candidate.xml",
+      "sha256": "0b5c7f3bc77d1f9ff3a18efae3a2e725cffedb926cf5ee9e9fcecc3c43485e29",
+      "bytes": 122926
+    },
+    {
+      "path": "assets/world_p5_candidate_v2.xml",
+      "sha256": "e39ae68d1dcb1cc071a22e760d7afb8e587c336a2c394194985120b71a0cc806",
+      "bytes": 122916
+    },
+    {
       "path": "assets/world_p3_cell.xml",
       "sha256": "89ffeab89407e601fad3c0ee34d9ea0fc67d49199239a9546ae80596326ccaed",
       "bytes": 113624
     },
     {
+      "path": "assets/world_p4_cell.xml",
+      "sha256": "d44db89876f48fb89be9c8b2130d13cebd5e4b40466c31eec91f084a02148dae",
+      "bytes": 115559
+    },
+    {
       "path": "assets/world_w2_logistic.xml",
       "sha256": "7aee7337ee0454c19568602135a9eae5e2d1433923a243298beaafe11134d65d",
       "bytes": 115986
+    },
+    {
+      "path": "assets/world_w5_h085.xml",
+      "sha256": "702e22a6bbfb08984171f3a2e0829e1547761b029fc7902e0ff6b5a740818a12",
+      "bytes": 114386
+    },
+    {
+      "path": "assets/world_w5_h085_loop.xml",
+      "sha256": "f964477fb8c2ffdaf383c613a6f9f9f2b40561b703e7fb040a9c6fb11cb95941",
+      "bytes": 114380
     },
     {
       "path": "assets/worlds/world_p3_nav.xml",
@@ -73,6 +238,270 @@
     }
   ],
   "code": [
+    {
+      "path": "experiments/build_hinged_retainer_candidate.py",
+      "sha256": "f7640529af99c7a5d0e59076a328409bb15e3e05fa5a0af099fd8fe0590f2054"
+    },
+    {
+      "path": "experiments/probe_tray_retainer.py",
+      "sha256": "61885f733bdc430e792bb5049831bf86aa4d6f2d6cc5b099b7760f4b7a785e06"
+    },
+    {
+      "path": "experiments/build_tray_retainer_candidate.py",
+      "sha256": "6ad3cd39c97ebb1118afb3ae5a3170c0ebac75ddcc239ad94d9ac2d3f76b52f2"
+    },
+    {
+      "path": "experiments/deck_support_forensics.py",
+      "sha256": "eb38cf62ab9141118dfe2d1c86301bdba10b9b1a0692cd075ba541ac2440e25d"
+    },
+    {
+      "path": "experiments/contact_model_candidate.py",
+      "sha256": "1ed67bcb8343fcaa942e4bac8ce58d3e89b3f58e6743a0b576b3bba16c2f1f65"
+    },
+    {
+      "path": "experiments/inspect_contact_flags.py",
+      "sha256": "5050322826c2b637c53b2051e07af22f6245d783a6bbbc6fb2ed137e77a9a1af"
+    },
+    {
+      "path": "experiments/inspect_retained_nav.py",
+      "sha256": "21a6e685597b30eab5e9ec284e1fbe64a6781a4bfe060a9e655a5e978f528d9f"
+    },
+    {
+      "path": "experiments/probe_cargo_rest.py",
+      "sha256": "b7185f99d1b31f1faa8c6b3fa3c1421c666bfc9a9b0658998632f8b059c09f8e"
+    },
+    {
+      "path": "experiments/make_retained_motion_profile.py",
+      "sha256": "469d82369fd3bb8cf839526fa3c0df63ba2ca16086a10ed22b871cba6e02e58e"
+    },
+    {
+      "path": "experiments/state_publish_schedule.py",
+      "sha256": "83bb5b79135818e023e78da05932b830593a2f7f488b6e8548707310702d4e8f"
+    },
+    {
+      "path": "experiments/transport_posture_gate.py",
+      "sha256": "be8da8564c19843af65022e116f34557a49f9be1fd2838d1138e8975f2d417ba"
+    },
+    {
+      "path": "experiments/evaluate_continuous_nav.py",
+      "sha256": "e3494e5b510f4d0070c60bf5d98acc8d4be0cf17e8bbaa578934e3a630694680"
+    },
+    {
+      "path": "experiments/continuous_nav_session.py",
+      "sha256": "ddbe55d4a2c3a5c3ea5860a832c076b28c84886446f990488a05134c51a0481a"
+    },
+    {
+      "path": "experiments/vehicle_rgbd_reader.py",
+      "sha256": "80b515fa8a220e54305b49fcccff58374011f5c8476cbcf85c4936baac8bd0b9"
+    },
+    {
+      "path": "experiments/probe_vehicle_rgbd.py",
+      "sha256": "9161da719b5ed093af9daa101bc8dbcdf9c3652ad180af4dc8ea3304937f9c11"
+    },
+    {
+      "path": "experiments/probe_vehicle_rgbd_motion.py",
+      "sha256": "a1a3bdd51505f299a288ae519fe0b081c5d98a62eaa5fed6c00697ec7a1659c6"
+    },
+    {
+      "path": "experiments/load_motion_gate.py",
+      "sha256": "145bedf972d9537328b70989c1a989e4cd00407c463b34ed843a3c18c46769ad"
+    },
+    {
+      "path": "experiments/probe_vehicle_nav2.py",
+      "sha256": "74584feb7506d210d5725e394ed6ce71d08137edc3b1f17fb132a34fb643d99f"
+    },
+    {
+      "path": "experiments/probe_loaded_clearance.py",
+      "sha256": "d105e02e8597ef85eaee6072048dbbbb5a0a3da406723a03a29b28f552ac4f9f"
+    },
+    {
+      "path": "experiments/make_centered_load_profile.py",
+      "sha256": "56360dc21ccc262b7bdf530bebbecbbfc365022f0c8bacc3f9e22deafc8a0458"
+    },
+    {
+      "path": "experiments/loaded_nav_envelope.py",
+      "sha256": "b6640c7b7fc754d809b3d95d6ebbf2c85c13f5063714aad4e414bea6ca6f7f29"
+    },
+    {
+      "path": "experiments/make_loaded_nav_profile.py",
+      "sha256": "fc4745ccd22015299d03d2f06e045d16f7bad52618d782e5dc03d89fe815eb4f"
+    },
+    {
+      "path": "experiments/wheel_authority.py",
+      "sha256": "5d8da78416a2bf24342cc4049297fe16a95ae013c46d7cebacca9bbc0c257e69"
+    },
+    {
+      "path": "experiments/evaluate_joint_nav.py",
+      "sha256": "d43036c9c25b292b6e6153c6339d075281807d787796985c48ced5380262207a"
+    },
+    {
+      "path": "experiments/nav_geometry_inventory.py",
+      "sha256": "8fb3e3eda70d0520b6506d0be1938f4f4d7be29722c5b1cf2b139b9903b8c1dc"
+    },
+    {
+      "path": "experiments/make_joint_nav_profile.py",
+      "sha256": "5ba6b8bda3e7c0d71f1b8f872784daa46c2e465349904a41f46dad1a360f475b"
+    },
+    {
+      "path": "experiments/make_joint_nav_profile_v7.py",
+      "sha256": "6321cbab2c9476e508fc44cb36201716ed15e84f02a3dbc26bd8b99ce885b77f"
+    },
+    {
+      "path": "experiments/make_retained_motion_profile_v7.py",
+      "sha256": "3bb8be478f1ea28a1e6136a90f1dadf4ac664c46c17259da3d023ee00966f620"
+    },
+    {
+      "path": "experiments/probe_g7a_source_xfer.py",
+      "sha256": "4480bfac82324acdb6aaac1718c3fbef3688493e5ba7e5196eebc21a8f6b4ac5"
+    },
+    {
+      "path": "experiments/probe_g6_deckyaw_diag.py",
+      "sha256": "5361a070bc37852de92a170b1910df65e4d7f188002237ea915a3e64aa17529e"
+    },
+    {
+      "path": "experiments/probe_g7d_failures.py",
+      "sha256": "fd16b90ee1484ce8c40fa470eea1706db1f45b4c1c72eee52f4531bb83a211bc"
+    },
+    {
+      "path": "experiments/probe_g7c_transit_dial.py",
+      "sha256": "901f7a831d99713d8da5fcc9d9226ea1e2d4f612a45467e5872132fd66fa08e2"
+    },
+    {
+      "path": "experiments/probe_g7c_transit_slow.py",
+      "sha256": "fd2eb07b70258ae4b2c761e67d4494c1cc660c3d1d9078f95651c750e112bc45"
+    },
+    {
+      "path": "experiments/probe_g7_pair.py",
+      "sha256": "a1cf8ed48252a3e01ab1374dc3ca9bbc8749a4564eb4c70317eeb49747fe8237"
+    },
+    {
+      "path": "experiments/joint_nav_worker.py",
+      "sha256": "a735121beb559b6c6dcde7e5d009650b68aa5fe1f20639a934ff5373b25e7d60"
+    },
+    {
+      "path": "experiments/probe_joint_world_nav2.py",
+      "sha256": "5483f8731d4cc92f57ddef24d4ef6182c909ad3ce8dcea5f934f1caa36e8afba"
+    },
+    {
+      "path": "experiments/humanoid_posture_permit.py",
+      "sha256": "d3a1af11b6c0787af514baf6409e7c710d9fde3fbe244fd8e08333ac130e368f"
+    },
+    {
+      "path": "experiments/dock_measurements.py",
+      "sha256": "7d81c45acc00b6e81ac422c1cd1fac20b383940aeca7531d68d7c3e6f85cbb8d"
+    },
+    {
+      "path": "experiments/probe_humanoid_post_supply_hold.py",
+      "sha256": "3cd6cc96ddde16621aaa7e9fe9cab71215c031a77a7fef103adf92c318fc5e67"
+    },
+    {
+      "path": "experiments/inspect_loading_snapshot.py",
+      "sha256": "e228cdf2136fb48ef60943d96d78e0d286daad4668e29e20109aeb8682205f44"
+    },
+    {
+      "path": "experiments/probe_wheel_calibration_loading.py",
+      "sha256": "0ea45be7e7e8c45bcbe5ccf22c75a6bc3f50860f57b7caa909d81ce94e57875a"
+    },
+    {
+      "path": "experiments/joint_world_nav_io.py",
+      "sha256": "92279e266841bf5ecd08ccce3317556948d67b7fe1a060dc4d31da23ab1f5453"
+    },
+    {
+      "path": "experiments/joint_world_ros_bridge.py",
+      "sha256": "60cb55727d97bc64a2a31ea86fd1ab1249d0941c631d8f49bb6e34fb0b051651"
+    },
+    {
+      "path": "experiments/ros_command_lease.py",
+      "sha256": "a1f5e21a1bf4dd440bbc180685e5ccad9812503d1f99f936a3960ef2a20db168"
+    },
+    {
+      "path": "experiments/probe_joint_world_nav_io.py",
+      "sha256": "c9a61f67c4633f598dd3238addd62ad75f4f4a18c088c1c4ea7d1732a63e3baf"
+    },
+    {
+      "path": "experiments/probe_vehicle_heading.py",
+      "sha256": "fd8dbc3ce6473b9317db7a2809b479aad2fbd13b8d3d826170ad516381323b09"
+    },
+    {
+      "path": "experiments/vehicle_heading.py",
+      "sha256": "71825bb96abaa59aef48c4c2a90b7837193a3cf5e653095be11ee346737d915e"
+    },
+    {
+      "path": "experiments/evaluate_supply_rejection.py",
+      "sha256": "7adb8268026e3bfb9b06228ab840a7422e8a29a1278eb4fcf857cf60bb413d9d"
+    },
+    {
+      "path": "experiments/cargo_footprint_judge.py",
+      "sha256": "077bb90d084813f9d51957181755748220db9731e98c07378cb4435570f45aa7"
+    },
+    {
+      "path": "experiments/humanoid_supply.py",
+      "sha256": "fb14f001eb0cc8bbf42107e89844948db623bc31bb9f6be586a450fc835e1b98"
+    },
+    {
+      "path": "experiments/source_staging.py",
+      "sha256": "42931a3934489d118941536828700993a4e53ae0b7ec2793fb56e199f2339442"
+    },
+    {
+      "path": "experiments/pcl_plane_reader.py",
+      "sha256": "fc1611eff1a30a0c00df3b3042cb3b0e4d8e5cbcfdd17f8091d9bd0cd2086479"
+    },
+    {
+      "path": "experiments/receiver_rgbd_reader.py",
+      "sha256": "7a94ea4828c64e5f0a7c83068e55327b2699566f8ea6834dfcf4139eaf57ee51"
+    },
+    {
+      "path": "experiments/rgbd_geometry.py",
+      "sha256": "d8415cbf648b464d3187547ec7bf8daa76dc098df2419507e4a4e998bf96cfeb"
+    },
+    {
+      "path": "experiments/probe_recorded_receiver.py",
+      "sha256": "876e81226e533019b0c3569385bc70dc65f7d3fa5ad82d64e4e57f4c79d5e770"
+    },
+    {
+      "path": "experiments/probe_pcl_receiver.py",
+      "sha256": "5e926cfd65994f65a01333a00d84952c36a3adec26cf903c9e9da940f1c469e3"
+    },
+    {
+      "path": "experiments/pcl_receiver_plane.cpp",
+      "sha256": "fe146a5d621591ea1c5b20e6920ca1069b49c7f5c2d1c185a1d1392b11527e1a"
+    },
+    {
+      "path": "experiments/world_owner.py",
+      "sha256": "cead0052bb28c694e5f3e651f087190642e3172012405187edc3f6c09de06f97"
+    },
+    {
+      "path": "experiments/probe_world_owner.py",
+      "sha256": "60c66401f59441b29f568c76c016df1c03ffea1a40a88513004472bf9cec48a6"
+    },
+    {
+      "path": "experiments/tray_rgbd_reader.py",
+      "sha256": "9d7cf520d3658aba105b2e032b76c3698bcc155cef16e67659556b86d3894d03"
+    },
+    {
+      "path": "experiments/probe_candidate_arm_loading.py",
+      "sha256": "603a0195262c8f74c7abc6b1516aae2cdd46f19663385eaf94bbe395e74637f2"
+    },
+    {
+      "path": "experiments/probe_candidate_multi_loading.py",
+      "sha256": "fafad837ab86e6aa4becaa3954f66691052619cc0bf0da27826456407e8f31a3"
+    },
+    {
+      "path": "experiments/build_support_candidate.py",
+      "sha256": "40b6bcdf338509a8e99ba8c8688bff2477dabb1f21d1aa3645604ca23e4be022"
+    },
+    {
+      "path": "experiments/probe_stop_kinematics.py",
+      "sha256": "5a0b3796e39aa2c62da8f317ffa1b0c3b398f6dc36f4e80ba076568883fa478f"
+    },
+    {
+      "path": "experiments/build_p5_candidate_world.py",
+      "sha256": "c9493ce4b959158e55443d66c277e50a1c03b704654f830fbcbd5b7153ae2752"
+    },
+    {
+      "path": "experiments/probe_p5_candidate_settle.py",
+      "sha256": "0e17ea294e89f1be2503cc4ccf0dee59110ebded302f6b7a7bdc441806659f13"
+    },
     {
       "path": "experiments/merge_world.py",
       "sha256": "a54d31a5012bb0375372fe7e3f39c6e8a33310969f4d21837700bce7171783ce"
@@ -151,7 +580,7 @@
     },
     {
       "path": "experiments/w4_plant.py",
-      "sha256": "9b8d82a0a5f06f9cb1c2e1962d0d9d6e63e0f68e45154ae481dc5b14e478c2ea"
+      "sha256": "aca6c4fae29cea236f22fa1db731431be39fb589367e8deeff679dace16dad0e"
     },
     {
       "path": "experiments/w4_fake_plant.py",
@@ -175,7 +604,7 @@
     },
     {
       "path": "experiments/build_p4_handover_world.py",
-      "sha256": "5cfc86e0eedf506a1a6f124c028f6223849a4c6e428abea09c1a177bfcf2813e"
+      "sha256": "1e738a941278f0064816e29127dde8dc3429b6b295e013be829b16204c72e7f8"
     },
     {
       "path": "experiments/probe_p4_crouch.py",
@@ -208,6 +637,182 @@
     {
       "path": "experiments/probe_p4_stance.py",
       "sha256": "b3d19aa2b522a700a827eebe27554b391d2d977ef2b1c3316ad8d6d256618ece"
+    },
+    {
+      "path": "experiments/probe_p4_armik.py",
+      "sha256": "4407103b6bac3fcafa5db4fe689d5efd55661af1a2d1696ff9108c2130133fa0"
+    },
+    {
+      "path": "experiments/_p4_arm_ik.py",
+      "sha256": "cc235be7fa975a399a56c31205409341e0f138730ffc321b4ae0359a42e2b153"
+    },
+    {
+      "path": "experiments/probe_h.py",
+      "sha256": "bae53040fcfe3020c15125ef8d8b711050ff3ff4b43184874f8916c075d9dfa5"
+    },
+    {
+      "path": "experiments/build_w5_h085_world.py",
+      "sha256": "0f3eaa319347db79dbce1fb4a1cd501a01ad55e50bac76d26c8284ca4db72300"
+    },
+    {
+      "path": "src/humanoid007/runtime.py",
+      "sha256": "1f6dda5d7096d3940335f0ca4d45eb3ab8c49c1525d51a349b406241bd3c611f"
+    },
+    {
+      "path": "experiments/probe_h_w5.py",
+      "sha256": "69965340e94f92d9bec90c1616132cd2b36fc05a901aace0d77f4eeba7d4de7e"
+    },
+    {
+      "path": "experiments/probe_h2_w5.py",
+      "sha256": "8e81baaa91c3e5b2ec86f4b4e7f18952f647619f05b273c2977c984f4894f00f"
+    },
+    {
+      "path": "experiments/w5_h085_plan.py",
+      "sha256": "c3917668c0b6da9539df76157ccbec59d0bcb30f9f02d085606d2e4db8735802"
+    },
+    {
+      "path": "experiments/probe_h3_w5.py",
+      "sha256": "7c68d54c2c14154c398336c647b3f48e7d2f35b5b3a184d006d01986d82bb7d1"
+    },
+    {
+      "path": "experiments/check_globals.py",
+      "sha256": "974148b44f79f396f4214c9e644ae06b6377628c7e64f3f244791b24435f5be4"
+    },
+    {
+      "path": "experiments/probe_p4_belt.py",
+      "sha256": "eb70c98c57376f1f1b83e6d1e553a8a943f99b2ed20f64965aef1bfeac4b1edf"
+    },
+    {
+      "path": "experiments/probe_p4_arm.py",
+      "sha256": "77c15b763fca7a6cebdc87267149a245d11cd1fdb76b586498c56e88e506337c"
+    },
+    {
+      "path": "experiments/probe_p4_count.py",
+      "sha256": "d76ce75c71ca0376d044f0c1991198fd742d0162f0b352280dd41a538a03bb8c"
+    },
+    {
+      "path": "experiments/probe_p4_interlock.py",
+      "sha256": "20f62c7e737b75925c31ecf7d790acdd3ab2a4acee47d7aa013b006a843002a7"
+    },
+    {
+      "path": "experiments/probe_p4_vision.py",
+      "sha256": "6b740e97d4bb4c98cbf52330a38a97363d671555f84c931541f4f914694febe1"
+    },
+    {
+      "path": "experiments/build_p4_cell_world.py",
+      "sha256": "c7ee21e504b1a42f76e51d62af5f43785a324e53690a69e3ee4c8ba51e5adf7c"
+    },
+    {
+      "path": "experiments/p4_fixture.py",
+      "sha256": "83b282655b118b7b99cf2ce444744d4c346feb90278229dfc863186cc1fdb381"
+    },
+    {
+      "path": "experiments/arm_bridge.py",
+      "sha256": "310193e58fb7e75031f870ac5bb47fc1f3a0a44ceb4fa802d552d768b834940c"
+    },
+    {
+      "path": "experiments/arm_rig.py",
+      "sha256": "c741fc071e657fd08703a3301b0a79473318d38a56a46e35acf0d4bc44edb6bc"
+    },
+    {
+      "path": "scripts/run_bounded.py",
+      "sha256": "af754a1d40f111fac65f12453cf984c6a56762ef8dd509b9adc6ba27130bf5c8"
+    },
+    {
+      "path": "experiments/evaluate_belt_checkpoint.py",
+      "sha256": "3c5eef757c878c1088e05c23c8b4a222826813460ec9a296e2284e6a800aa374"
+    },
+    {
+      "path": "experiments/probe_loaded_retention.py",
+      "sha256": "90bd939985f6735c74173d9d868ff95ad1bbd6ff818060c46a7c22fd4d6dc1be"
+    },
+    {
+      "path": "experiments/evaluate_receiver_envelope.py",
+      "sha256": "de66feead2b2ad0b3a64017151e38a84a574542625a0d470f86ec97b30442670"
+    },
+    {
+      "path": "experiments/probe_transfer_recovery.py",
+      "sha256": "2b1d18e714b736b23b9756376c2afd5b24312943966aafc1fe7b758553318e4c"
+    },
+    {
+      "path": "experiments/probe_stop_dynamics.py",
+      "sha256": "9380d2580daa0794cc18ce3caca01cbb230818bb9e485efab7a6c6b043f9c0ad"
+    },
+    {
+      "path": "src/workcell/__init__.py",
+      "sha256": "e0955e16956c47f00ec4b8f3e118d9bb37a32d1f650396c3c48f354a0f402bef"
+    },
+    {
+      "path": "src/workcell/adapters/__init__.py",
+      "sha256": "742db80b946cf87d2862ae3e1136f155b419c1667bc7062c3c43e2d52a32d668"
+    },
+    {
+      "path": "src/workcell/adapters/sim.py",
+      "sha256": "7888586cb3ae0f19a413ed90dc6421b0480fadfa1169adfabfb37420d5e57b1d"
+    },
+    {
+      "path": "src/workcell/docking/__init__.py",
+      "sha256": "b664878ee4ddb178c3820280fe5092c6562cb841f4a743c06ff54a67a659371a"
+    },
+    {
+      "path": "src/workcell/docking/contract.py",
+      "sha256": "23cc6bcc01e5d96deb23843a40d5d7dc9043fcdb2247daba333b7d9f940a0842"
+    },
+    {
+      "path": "src/workcell/docking/machine.py",
+      "sha256": "7aada0a9b5595509e27e7f632fc07f8996e200486efddd87e9beb3c55de2c3d4"
+    },
+    {
+      "path": "src/workcell/docking/observations.py",
+      "sha256": "3f448eda600462741c6fcedf9f887f0dbda0e9b18273c34317824fc5833d4a27"
+    },
+    {
+      "path": "src/workcell/interlock.py",
+      "sha256": "a9cabf696cca6bfced78f662b169437853b90aa7ba989c7b985b16b35f4685cf"
+    },
+    {
+      "path": "src/workcell/ledger.py",
+      "sha256": "116691291f65388cb2ae74aa064c703e550c995104ceb81b08c8c2da1cf124bf"
+    },
+    {
+      "path": "src/workcell/orchestration/__init__.py",
+      "sha256": "f01b37e982967aef53ba780f6c7079779ba7225113590b235d96d6c62d54f3d8"
+    },
+    {
+      "path": "src/workcell/orchestration/sequence.py",
+      "sha256": "dcd8cbefd333e18c02d2c64e7b2204bd9eaa64653bd099a8f74f1150a9fbfb6a"
+    },
+    {
+      "path": "src/workcell/physical_transfer_session.py",
+      "sha256": "634f367d02c2b8964d04f0757b671960c264b93af4488f062899c0cca8a6a6fb"
+    },
+    {
+      "path": "src/workcell/resources.py",
+      "sha256": "fc6ec9bc8d7ff6f1981e995251266565c1c51153031ea165e7106bf507648a48"
+    },
+    {
+      "path": "src/workcell/retainer_supervision.py",
+      "sha256": "e6e457715ab21d9b5390aef752dc406e7a07dfa1da4245d0113f36d04e0e88c3"
+    },
+    {
+      "path": "src/workcell/runtime_permit.py",
+      "sha256": "ee6948797ec036ae7d61df22adb3e5dc5b6327ec93c5ecb1e4bc56fab1c12927"
+    },
+    {
+      "path": "src/workcell/safety.py",
+      "sha256": "6248020a2d3be25231008d3a22798dfd465c3ad192ae091e76a3e19632cdaa9c"
+    },
+    {
+      "path": "src/workcell/schema.py",
+      "sha256": "23d4dc458d9e4d3d70a17f2c7a33f21c995f1d8fc2ce5d53a4d3820b50e35ab2"
+    },
+    {
+      "path": "src/workcell/transfer.py",
+      "sha256": "444b407b98b8b9b000a572322ec3fc1434028d4ffc2bcdc210091e61e76b2279"
+    },
+    {
+      "path": "src/workcell/tray.py",
+      "sha256": "6952eeb799f7d33270cfe1d1ab6b2b0544e2d03132e1939b018f5569d28d8160"
     }
   ],
   "code_coverage": {
@@ -229,10 +834,15 @@
     "named_by_board": [
       "experiments/build_p4_handover_world.py",
       "experiments/build_w2_logistic_world.py",
+      "experiments/build_w5_h085_world.py",
       "experiments/dock_observability.py",
       "experiments/make_p3_freeze.py",
+      "experiments/probe_h.py",
+      "experiments/probe_h2_w5.py",
+      "experiments/probe_h3_w5.py",
       "experiments/probe_h_selfclear.py",
       "experiments/probe_p3_vision.py",
+      "experiments/probe_p4_armik.py",
       "experiments/probe_p4_balance.py",
       "experiments/probe_p4_crouch.py",
       "experiments/probe_p4_crouch2.py",
@@ -240,7 +850,8 @@
       "experiments/probe_w2_baseline.py",
       "experiments/probe_w3_dock_mechanism.py",
       "experiments/probe_w5_loop.py",
-      "experiments/sniff_n_state.py"
+      "experiments/sniff_n_state.py",
+      "experiments/w5_h085_plan.py"
     ],
     "judges": {
       "P3-ACCEPT-05": "experiments/evaluate_p3_nav.py",
@@ -248,7 +859,9 @@
       "P3-NAV-02": "experiments/evaluate_p3_nav.py",
       "P3-VISION-03": "experiments/probe_p3_vision.py",
       "P3-WORLD-01": "experiments/evaluate_p3_world.py",
-      "P4-HUMAN-01": "experiments/probe_h_selfclear.py",
+      "P4-ARM-02": "experiments/probe_p4_arm.py",
+      "P4-BELT-03": "experiments/probe_p4_belt.py",
+      "P4-HUMAN-01": "experiments/probe_h3_w5.py",
       "W2-LOGISTIC-01": "experiments/probe_w2_baseline.py",
       "W3-DOCK-01": "experiments/probe_w3_dock_mechanism.py",
       "W4-SKILL-01": "experiments/probe_w4_skills.py",
@@ -258,10 +871,7 @@
       "experiments/make_p3_freeze.py",
       "experiments/sniff_n_state.py"
     ],
-    "not_started": {
-      "P4-ARM-02": "BLOCKED, and honestly so: it needs the visual grasping that `P3-VISION-03` deliberately makes no PCL claim for, and the point-cloud choice has to be frozen before P4 integrates it (MASTER_PLAN section 5)",
-      "P4-BELT-03": "BLOCKED behind P4-HUMAN-01: the conveyor / on-vehicle retention / receiving unload loop is the same physical interface the humanoid handover has to cross first, and doing both at once would change two variables in one round"
-    },
+    "not_started": {},
     "duplicated_code_entries": [],
     "code_entries_absent": [],
     "missing_from_code": [],
@@ -762,6 +1372,230 @@
       "kind": "declared"
     },
     {
+      "name": "p4_armik.HAND_GAP_MAX_M",
+      "value": 0.002,
+      "unit": "m",
+      "source": "experiments/probe_p4_armik.py",
+      "kind": "declared"
+    },
+    {
+      "name": "p4_armik.TRAY_SHIFT_MAX_M",
+      "value": 0.002,
+      "unit": "m",
+      "source": "experiments/probe_p4_armik.py",
+      "kind": "declared"
+    },
+    {
+      "name": "tray_task.lift_clearance_m",
+      "value": 0.05,
+      "unit": "-",
+      "source": "src/humanoid007/tray_task.py",
+      "kind": "frozen"
+    },
+    {
+      "name": "tray_task.hold_seconds",
+      "value": 2.0,
+      "unit": "-",
+      "source": "src/humanoid007/tray_task.py",
+      "kind": "frozen"
+    },
+    {
+      "name": "tray_task.hand_contact_min",
+      "value": 1.0,
+      "unit": "-",
+      "source": "src/humanoid007/tray_task.py",
+      "kind": "frozen"
+    },
+    {
+      "name": "tray_task.place_band_m",
+      "value": 0.01,
+      "unit": "-",
+      "source": "src/humanoid007/tray_task.py",
+      "kind": "frozen"
+    },
+    {
+      "name": "tray_task.rest_speed_mps",
+      "value": 0.01,
+      "unit": "-",
+      "source": "src/humanoid007/tray_task.py",
+      "kind": "frozen"
+    },
+    {
+      "name": "tray_task.rest_seconds",
+      "value": 0.5,
+      "unit": "-",
+      "source": "src/humanoid007/tray_task.py",
+      "kind": "frozen"
+    },
+    {
+      "name": "tray_task.exit_arm_rad",
+      "value": 0.15,
+      "unit": "-",
+      "source": "src/humanoid007/tray_task.py",
+      "kind": "frozen"
+    },
+    {
+      "name": "tray_task.exit_tray_travel_m",
+      "value": 0.005,
+      "unit": "-",
+      "source": "src/humanoid007/tray_task.py",
+      "kind": "frozen"
+    },
+    {
+      "name": "tray_task.exit_tray_speed_mps",
+      "value": 0.02,
+      "unit": "-",
+      "source": "src/humanoid007/tray_task.py",
+      "kind": "frozen"
+    },
+    {
+      "name": "h2.place_window_x_m",
+      "value": 0.02,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h2.place_window_y_m",
+      "value": 0.02,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h2.tray_tilt_max_deg",
+      "value": 5.0,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h2.support_contact_min_samples",
+      "value": 1.0,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h2.fixture_contact_max_samples",
+      "value": 0.0,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h2.hand_clear_m",
+      "value": 0.02,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h2.band_clear_m",
+      "value": 0.05,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h2.still_seconds",
+      "value": 1.0,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h2.rest_speed_mps",
+      "value": 0.01,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h2.band_carry_m",
+      "value": 0.005,
+      "unit": "-",
+      "source": "experiments/probe_h2_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.release_to_chain_gap_s",
+      "value": 0.5,
+      "unit": "-",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.handoff_drift_m",
+      "value": 0.01,
+      "unit": "-",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.custody_on_source_rollers",
+      "value": 1.0,
+      "unit": "-",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.chain_reaches_receiver",
+      "value": 1.0,
+      "unit": "-",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.max_equalities_on_tray",
+      "value": 0.0,
+      "unit": "-",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.max_runtime_qpos_writes",
+      "value": 0.0,
+      "unit": "-",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.dock_longitudinal_m_max",
+      "value": 0.02,
+      "unit": "-",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.dock_lateral_m_max",
+      "value": 0.002,
+      "unit": "-",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.chassis_parked_drift_max_m",
+      "value": 0.01,
+      "unit": "-",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.band_clearance_budget_m",
+      "value": 0.5,
+      "unit": "m",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
+      "name": "h3.humanoid_station_x_m",
+      "value": 4.13,
+      "unit": "m",
+      "source": "experiments/probe_h3_w5.py",
+      "kind": "declared"
+    },
+    {
       "name": "w2_logistic.receiver_shift_m",
       "value": 5.0,
       "unit": "m",
@@ -840,9 +1674,12 @@
     }
   ],
   "not_frozen": [
+    "H3 as a PRODUCTION capability -- it runs the H chain and the W5 chain in one world, one timeline and on one tray entity, but the humanoid SUPPLIES by placing the tray on the source band and releasing it; the custody transfer is the chain's own TRANSFER transaction. It covers no picking, no order, no inventory, and no visual perception (scope DIAGNOSTIC_ONLY)",
+    "the humanoid station as an INDUSTRIAL layout -- x 4.13 is H2's station, retained after a runtime-driven contact test in `assets/world_w5_h085_loop.xml`; it is a declared fixed work position and NOT the output of any layout optimisation, and the humanoid does not walk there",
+    "the CROUCH depth as a capability -- `D_MAX` is None after `reports/p4-armik-05` (every depth fails the actual-state `tray_held` row), so the H chain works at the STANDING posture only",
     "W5-LOOP-01 as a PRODUCTION capability -- it runs one sub-scenario, in one world, with declared stand-ins: a rig-mounted source station, a rig-mounted receiver five metres away, and a retention pusher taken from C own rig. It is NOT an order (no picking, no BOM, no inventory), and it covers neither the humanoid nor the arm",
     "the docking mechanism as an INDUSTRIAL design -- it is a first-pass geometry whose catch envelope and residual are measured by experiments/probe_w3_dock_mechanism.py",
-    "the second chassis as a transporter -- it carries no deck, and in the logistics world it is parked off the lane as a declared standby",
+    "the second chassis as a commissioned transporter -- in the OLD P3/W2/H3 worlds it has no deck and is standby; the independent P5 candidate adds a complete c2 deck, but its transport/order/ROS command path is NOT_RUN",
     "the AMR model -- not selected yet (P1-ENV-01); the chassis is a declared stand-in",
     "C's mounting interface -- the deck sits at a stand-in offset (body_pos [1.92, 0, 0.445] ahead of the chassis origin); the nav arena therefore excludes it",
     "the real-time factor under a load -- measured only for the loading gate (0.21 with the hold law), not for a navigating vehicle",

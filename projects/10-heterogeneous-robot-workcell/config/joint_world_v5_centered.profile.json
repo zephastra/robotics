@@ -1,0 +1,49 @@
+{
+  "scope": "RESTRICTED_CENTRED_LOAD_CANDIDATE_NOT_FULL_ORDER",
+  "world_sha256": "aa3e9085bf08236193537418f5cb1d32d6254f5cf0b2b7991f4796e82a2a8ac5",
+  "parent_profile_sha256": "4f9942fcda2ce4901554acd86f673e9b44c6629f8623df5d59aac0c0680b3b17",
+  "generator_sha256": "56360dc21ccc262b7bdf530bebbecbbfc365022f0c8bacc3f9e22deafc8a0458",
+  "footprint": [
+    [
+      -0.622673459589369,
+      -0.4371921356237309
+    ],
+    [
+      2.942673459589369,
+      -0.4371921356237309
+    ],
+    [
+      2.942673459589369,
+      0.4371921356237309
+    ],
+    [
+      -0.622673459589369,
+      0.4371921356237309
+    ]
+  ],
+  "cargo_radius_m": 0.33499999999999996,
+  "mechanism_allowance_m": 0.04219213562373095,
+  "observation_contract": {
+    "centre_low": [
+      1.9100000000000001,
+      -0.06
+    ],
+    "centre_high": [
+      2.4699999999999998,
+      0.06
+    ],
+    "max_sim_age_s": 0.5,
+    "max_wall_age_s": 0.5
+  },
+  "catalog": [
+    "50mm red box: half-size .02/.015/.025 m",
+    "blue cylinder: radius .015, half-height .025 m"
+  ],
+  "runtime_gate": "vehicle RGBD/quantity/ideal deck contact; wired only in initialized probe_vehicle_nav2",
+  "retention": "NOT_RUN",
+  "loaded_navigation": "NOT_RUN",
+  "full_order": "NOT_RUN",
+  "v1_complete": false,
+  "parent_loaded_profile_sha256": "c4a548e3e9abf0134e6346b1fc101c83e3a3c8c0f5f0ea8ca347275d200fdc28",
+  "restriction": "centre y +/-60mm INCLUDING measurement uncertainty; not broad-load acceptance"
+}

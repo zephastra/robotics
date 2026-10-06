@@ -4,26 +4,65 @@
     {
       "path": "README.md",
       "source_sha256": "74bb300755e2b10a5bbd7b7e12ad288fab6af471122c7761f4c040fbff40c00a",
-      "published_sha256": "52ed5c517659c2925a280b2eb094a8b696a1287ea36c496236f4a012db7d04ad",
-      "purpose": "Public development snapshot documentation or exact-byte attributes; source untouched."
+      "published_sha256": "2e0216477ebaad86ff57adc6d69303a31f138c6bfa01412c23f7a1d878570d3c",
+      "purpose": "Public development snapshot documentation, complete upstream notices, or exact-byte attributes; WSL source unchanged."
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
       "source_sha256": "97b043ff04e5bb76bcfcb2c49f02602190a7ae2559f19770ea7ca44b812eeac6",
       "published_sha256": "646cf87c7769a33ad7618d3677ade67921fb76a7a738fec9623959e0548f99e1",
-      "purpose": "Public development snapshot documentation or exact-byte attributes; source untouched."
+      "purpose": "Public development snapshot documentation, complete upstream notices, or exact-byte attributes; WSL source unchanged."
     },
     {
       "path": ".gitattributes",
       "source_sha256": "0464fbc8b08f618bf24c35b0616837daf478c998a918df1fb2e574eacaa4ea43",
       "published_sha256": "d6acfc99bf1af3527657390175dc0c4b141859e434bc7dd75978bce08bc74fce",
-      "purpose": "Public development snapshot documentation or exact-byte attributes; source untouched."
+      "purpose": "Public development snapshot documentation, complete upstream notices, or exact-byte attributes; WSL source unchanged."
     }
   ],
   "added": [
     "DEV_CHECKPOINT.md",
     "DEV_SNAPSHOT_MANIFEST.json",
     "DEV_PUBLICATION_OVERRIDES.json",
-    "LICENSE"
-  ]
+    "LICENSE",
+    "docs/evidence/20261007/README.md"
+  ],
+  "derived_evidence": [
+    {
+      "path": "docs/evidence/20261007/p4-retained-separation-analytic-20261004-01/REPORT_SUMMARY.json",
+      "source_path": "reports/p4-retained-separation-analytic-20261004-01/report.json",
+      "source_sha256": "ef08632bec88f2c7cc1f11c921348d8606772abacff8602cb5f7c496bc0e4fea",
+      "published_sha256": "3a5916cc2c19685179d58b1e0fe32c791dfb75cb7a2d773b3dd0841388cc5dc4",
+      "kind": "DERIVED_SUMMARY_ONLY"
+    },
+    {
+      "path": "docs/evidence/20261007/p4-nav2-v7-03/REPORT_SUMMARY.json",
+      "source_path": "reports/p4-nav2-v7-03/report.json",
+      "source_sha256": "a091f6d5f9a6f537f7f3fc47d29f1d1f97df284479e11c7d10116fd982385944",
+      "published_sha256": "38a260afd483858bbdbf4600b67053c628d4e8e2f5a8c2544102b88fc87220f8",
+      "kind": "DERIVED_SUMMARY_ONLY"
+    },
+    {
+      "path": "docs/evidence/20261007/p4-nav2-v7-04-retained/REPORT_SUMMARY.json",
+      "source_path": "reports/p4-nav2-v7-04-retained/report.json",
+      "source_sha256": "f516d7df451a4a3c12e226ae32e2f23c72ad904d6b41f73d348c466d724913c1",
+      "published_sha256": "a94a550766ec3a9b124693aafe52785f3f6dec475be74d514c9c40b67e9f554d",
+      "kind": "DERIVED_SUMMARY_ONLY"
+    },
+    {
+      "path": "docs/evidence/20261007/p4-nav2-v7-05-receiver/REPORT_SUMMARY.json",
+      "source_path": "reports/p4-nav2-v7-05-receiver/report.json",
+      "source_sha256": "a62faa1dcd50a0d3c18d560a345542c69bc28810cf48138fb26205ae3cbcf81f",
+      "published_sha256": "0fed872095a772ca56948673f79cb3611f14e95dfb3ffbe22dc60d76f8506e01",
+      "kind": "DERIVED_SUMMARY_ONLY"
+    },
+    {
+      "path": "docs/evidence/20261007/p4-nav2-v7-06-turn/REPORT_SUMMARY.json",
+      "source_path": "reports/p4-nav2-v7-06-turn/report.json",
+      "source_sha256": "18590d32fa002610095d7c778f97167865cf7cf8004c085a6cb7503f7587dba1",
+      "published_sha256": "fc6a01abcbea39ab38a5b9a6c0feab8a06ba2b6648897ad5311d3f5aeb707cb9",
+      "kind": "DERIVED_SUMMARY_ONLY"
+    }
+  ],
+  "inherited_files_note": "Any retained file not in the current source manifest is a prior public snapshot asset, not newly verified current-source content."
 }

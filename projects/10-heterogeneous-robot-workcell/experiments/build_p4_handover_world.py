@@ -13,10 +13,17 @@ THE THREE CHANGES, AND WHERE EACH NUMBER COMES FROM
 `reports/p4-reach-01` measured the humanoid's arm envelope against the tray's grip interface and
 left two constraints it did not choose:
 
-  1. **THE STATION SHIFT, +3.4184 m in x.** The arm needs at least +3.4134 m -- the tray must
-     travel 0.13 m (its own length) to clear the presentation table, against 0.140 m of measured
-     carry -- and the table permits at most +3.4234 m, because the tray cannot be lowered past the
-     table's east edge and the band's first roller is at x 4.4137. The window is 10 mm wide.
+  1. **THE STATION SHIFT, +3.4184 m in x.** STALE JUSTIFICATION -- kept as history only, and it
+     must not be quoted as a constraint. It read: "the arm needs at least +3.4134 m ... the table
+     permits at most +3.4234 m ... the window is 10 mm wide." That window came from a
+     ONE-DIMENSIONAL assumption about the table, and **`D087` negated it**: the three-dimensional
+     re-check (`experiments/probe_p4_clearance.py`, `reports/p4-clearance-01`) measured the
+     table-to-band clearance as a CONSTANT 311.04 mm, so the table is never the binding
+     constraint. The real obstruction it found is **the humanoid's own knees against the fixed
+     rollers** (-81.3 / -104.9 / -83.2 mm at -0.26 / -0.36 / -0.40 m couched, 1632 live contact
+     pairs). So this station is NOT justified by a 10 mm window. It is retained because it is what
+     the built world contains; the station question is reopened by `assets/world_w5_h085.xml`
+     (candidate B, `D101`), and the knee-vs-roller collision is the check to run there.
   2. **THE TRAY'S START POSE**, on that table, flush with its EAST edge. Flush, not centred: from
      the centre the tray would have to travel 0.100 + 0.065 = 0.165 m, beyond the measured
      0.140 m, so a centred start can never reach the band.
@@ -49,7 +56,10 @@ sys.path.insert(0, str(ROOT / 'src'))
 SOURCE = ROOT / 'assets' / 'world_w2_logistic.xml'
 OUT = ROOT / 'assets' / 'world_p4_handover.xml'
 
-#: `reports/p4-reach-01`: the midpoint of the 10 mm window the reach and the table leave.
+#: The built world's station shift. STALE JUSTIFICATION (`D087` negated it): it was the midpoint
+#: of a "10 mm window" the reach and the table were said to leave. There is no such window -- the
+#: table-to-band clearance is a constant 311.04 mm -- and the binding obstruction is the knees
+#: against the rollers. The value is what the built world contains; do not quote the window.
 STATION_SHIFT_M = 3.4184
 HUMANOID_BASE_NAME = 'h_LINK_BASE'
 TABLE_GEOM_NAME = 'h_source_table'

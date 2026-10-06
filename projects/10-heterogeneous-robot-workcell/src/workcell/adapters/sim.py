@@ -27,8 +27,11 @@ from workcell import schema as S
 class SkillAdapter:
     """Executes one skill against a plant. One instance per device boot."""
 
-    def __init__(self, *, plant, boot_id, stations, envelope, transfers=None):
+    def __init__(self, *, plant, boot_id, stations, envelope, transfers=None, navigation_move=None):
         self.plant = plant
+        # Optional guest navigator; DOCK/UNDOCK remain distinct physical skills.
+        # It must report actual stop evidence, not just action acceptance.
+        self.navigation_move = navigation_move
         self.boot_id = S._identifier(boot_id, 'boot_id')
         self.stations = dict(stations)
         #: transfer_id -> {direction, source, destination, source_zone, destination_zone}. The
@@ -87,9 +90,11 @@ class SkillAdapter:
 
     def _skill_move_to_station(self, request, arguments, start):
         station = self._station('MOVE_TO_STATION', arguments)
-        outcome = self.plant.drive_to(station['approach_x_m'], speed=station['approach_speed_mps'],
-                                      timeout_s=station['approach_timeout_s'])
-        inside = abs(outcome['error_x_m']) <= self.envelope['approach_m']
+        outcome = (self.navigation_move(station) if self.navigation_move is not None
+                   else self.plant.drive_to(station['approach_x_m'], speed=station['approach_speed_mps'],
+                                           timeout_s=station['approach_timeout_s']))
+        inside = (abs(outcome['error_x_m']) <= self.envelope['approach_m']
+                  and outcome.get('navigation_succeeded', True) is True)
         if not outcome.get('stopped_confirmed'):
             return self._result(request, status='FAILED', reason='NO_PROGRESS',
                                 evidence=['runs/move.json'], start_s=start,
@@ -155,6 +160,15 @@ class SkillAdapter:
                                                                 'source row'})
         outcome = self.plant.transfer(direction=declared['direction'],
                                       timeout_s=self.envelope['transfer_timeout_s'])
+        if outcome.get('interrupted'):
+            # A runtime refusal is not delivery, even if the tray touches its
+            # destination while braking. Custody requires later fresh evidence.
+            return self._result(request, status='FAILED',
+                                reason=(outcome['reason_code']
+                                        if outcome['brake']['stopped_confirmed']
+                                        else 'CANCEL_UNCONFIRMED'),
+                                evidence=['runs/transfer.json'], start_s=start,
+                                end_s=outcome['end_s'], final_state=outcome)
         if outcome['state'] == 'TRANSFERRING':
             return self._result(request, status='FAILED', reason='TRANSFER_TIMEOUT',
                                 evidence=['runs/transfer.json'], start_s=start,

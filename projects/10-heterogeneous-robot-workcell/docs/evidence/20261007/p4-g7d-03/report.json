@@ -1,0 +1,196 @@
+{
+  "probe": "G7-D FAILURES: five refusal/interruption tests on v7",
+  "scope": "G7D_FAILURE_TESTS",
+  "world": "world_p5_candidate_v7_hinged_retainer.xml",
+  "world_sha256": "ad6a6fa98a8c83d3c4b6dc94b026398cfdfe8b379bb85f5ec603948f8a347f47",
+  "source_sha256": "fd16b90ee1484ce8c40fa470eea1706db1f45b4c1c72eee52f4531bb83a211bc",
+  "status": "COMPLETED",
+  "tests": {
+    "T1": {
+      "pre_source_state": "OCCUPIED",
+      "pre_receiver": {
+        "resource_id": "receiver_band",
+        "state": "FREE",
+        "generation": 2,
+        "epoch": 14,
+        "owner": null,
+        "expires_at_s": null,
+        "remaining_s": null
+      },
+      "refused_by": "SchemaRefused: REFUSED_PRECONDITION_UNKNOWN[source_capacity_free]: launch precondition 'source_capacity_free' is not satisfied",
+      "post_receiver": {
+        "resource_id": "receiver_band",
+        "state": "FREE",
+        "generation": 2,
+        "epoch": 14,
+        "owner": null,
+        "expires_at_s": null,
+        "remaining_s": null
+      }
+    },
+    "T4": {
+      "pre_receiver": {
+        "resource_id": "receiver_band",
+        "state": "OCCUPIED",
+        "generation": 2,
+        "epoch": 14,
+        "owner": "other_order_999",
+        "expires_at_s": 18761.812258143,
+        "remaining_s": null
+      },
+      "refused_by": "SchemaRefused: REFUSED_PRECONDITION_UNKNOWN[receiver_capacity_free]: launch precondition 'receiver_capacity_free' is not satisfied"
+    },
+    "T2": {
+      "drive_raised": "RuntimeError: DRIVE_LOST_MID_TRANSFER",
+      "stage_after": "NEEDS_ATTENTION",
+      "release_refused_by": "SchemaRefused: REFUSED_PRECONDITION_UNKNOWN: resource release requires measured clearance after commit",
+      "retry_refused_by": "SchemaRefused: REFUSED_CONFLICT[transfer_id]: transfer 'g7d-t2' already exists",
+      "resource_owners_after": {
+        "source_band_fixture": "g7d-t2",
+        "vehicle_deck": null,
+        "receiver_band": "g7d-t2"
+      }
+    },
+    "T5": {
+      "shoes_open_qpos": [
+        1.5708,
+        1.5708
+      ],
+      "support_after": [
+        "deck"
+      ],
+      "tray_dx_m": 0.005107,
+      "confirm_refused_by": "RuntimeError: TRANSFER_CONFIRMATION_UNKNOWN_OR_FAILED",
+      "stage_after": "NEEDS_ATTENTION"
+    },
+    "T3": {
+      "shoes": "driven CLOSED -0.0250",
+      "rollers": "unload ids 28 driven at UNLOAD_ROLLER_SPEED",
+      "support_after": [],
+      "tray_dx_m": 0.750559,
+      "tray_z_before_m": 0.8492,
+      "tray_z_after_m": 0.065,
+      "mechanism_note": "runtime-loaded deck: the tray free-slides (0.098 kg, damping-0 rollers) to a vehicle rest at offset ~0.254 held by the n_chassis face (srcl3 contact evidence); the hinged shoe is one-sided (0.8 mm lip blocks rearward slide only) so dx over the window measures slide-to-rest + fault injection, not shoe hold",
+      "confirm_refused_by": "RuntimeError: TRANSFER_CONFIRMATION_UNKNOWN_OR_FAILED",
+      "stage_after": "NEEDS_ATTENTION",
+      "receiver_owner_after": "g7d-t3"
+    }
+  },
+  "settle_stop": {
+    "stopped_confirmed": true,
+    "chassis_x_m": 9.03174
+  },
+  "measured_post_setup": {
+    "support": [
+      "deck"
+    ],
+    "tray_x": 6.641910530221168,
+    "source_empty": true,
+    "deck_loaded": true
+  },
+  "final_support": [],
+  "final_tray_x_m": 7.397834051235718,
+  "rows": [
+    {
+      "name": "tray starts on the source band",
+      "status": "PASS",
+      "detail": "support ['source_band']"
+    },
+    {
+      "name": "setup MOVE_TO_STATION",
+      "status": "PASS",
+      "detail": "accepted True status 'SUCCEEDED' reason None"
+    },
+    {
+      "name": "setup DOCK",
+      "status": "PASS",
+      "detail": "accepted True status 'SUCCEEDED' reason None"
+    },
+    {
+      "name": "setup START_TRANSFER",
+      "status": "PASS",
+      "detail": "accepted True status 'SUCCEEDED' reason None"
+    },
+    {
+      "name": "setup VERIFY_TRANSFER",
+      "status": "PASS",
+      "detail": "accepted True status 'SUCCEEDED' reason None"
+    },
+    {
+      "name": "setup: tray ends on the deck",
+      "status": "PASS",
+      "detail": "support ['deck']"
+    },
+    {
+      "name": "T1 source-occupied request refused",
+      "status": "PASS",
+      "detail": "raised \"SchemaRefused: REFUSED_PRECONDITION_UNKNOWN[source_capacity_free]: launch precondition 'source_capacity_free' is not satisfied\""
+    },
+    {
+      "name": "T1 receiver untouched by the refusal",
+      "status": "PASS",
+      "detail": "pre 'FREE'/None post 'FREE'/None"
+    },
+    {
+      "name": "T4 busy-receiver request refused",
+      "status": "PASS",
+      "detail": "raised \"SchemaRefused: REFUSED_PRECONDITION_UNKNOWN[receiver_capacity_free]: launch precondition 'receiver_capacity_free' is not satisfied\""
+    },
+    {
+      "name": "T4 refusal names the receiver precondition",
+      "status": "PASS",
+      "detail": "raised \"SchemaRefused: REFUSED_PRECONDITION_UNKNOWN[receiver_capacity_free]: launch precondition 'receiver_capacity_free' is not satisfied\""
+    },
+    {
+      "name": "T2 mid-transfer drive death interrupted the transfer",
+      "status": "PASS",
+      "detail": "raised 'RuntimeError: DRIVE_LOST_MID_TRANSFER' stage 'NEEDS_ATTENTION'"
+    },
+    {
+      "name": "T2 release without commit refuses",
+      "status": "PASS",
+      "detail": "refused 'SchemaRefused: REFUSED_PRECONDITION_UNKNOWN: resource release requires measured clearance after commit'"
+    },
+    {
+      "name": "T2 retry with the same id refuses",
+      "status": "PASS",
+      "detail": "refused \"SchemaRefused: REFUSED_CONFLICT[transfer_id]: transfer 'g7d-t2' already exists\""
+    },
+    {
+      "name": "T2 attention locks retained on both ends",
+      "status": "PASS",
+      "detail": "owners {'source_band_fixture': 'g7d-t2', 'vehicle_deck': None, 'receiver_band': 'g7d-t2'}"
+    },
+    {
+      "name": "T5 shoes measured open",
+      "status": "PASS",
+      "detail": "qpos [1.5708, 1.5708]"
+    },
+    {
+      "name": "T5 undriven tray stayed on the deck",
+      "status": "FAIL",
+      "detail": "support ['deck'] dx 0.005107 m"
+    },
+    {
+      "name": "T5 lying drive caught by measured confirmation (no COMMIT)",
+      "status": "PASS",
+      "detail": "raised 'RuntimeError: TRANSFER_CONFIRMATION_UNKNOWN_OR_FAILED' stage 'NEEDS_ATTENTION'"
+    },
+    {
+      "name": "T3 premature unload does not eject the tray from the deck",
+      "status": "FAIL",
+      "detail": "support [] dx 0.750559 m dz -0.7842 m"
+    },
+    {
+      "name": "T3 confirmation refuses the unload (no COMMIT)",
+      "status": "PASS",
+      "detail": "raised 'RuntimeError: TRANSFER_CONFIRMATION_UNKNOWN_OR_FAILED' stage 'NEEDS_ATTENTION'"
+    },
+    {
+      "name": "T3 receiver lock retained for attention",
+      "status": "PASS",
+      "detail": "owner 'g7d-t3'"
+    }
+  ],
+  "wall_s": 321.0186428549987
+}

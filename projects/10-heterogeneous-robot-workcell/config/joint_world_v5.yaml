@@ -1,0 +1,51 @@
+schema_version: 1
+ros:
+  domain_id: 43
+  rmw: rmw_cyclonedds_cpp
+  use_sim_time: true
+  topics:
+    clock: /clock
+    scan: /scan
+    odom: /odom
+    tf: /tf
+    tf_static: /tf_static
+    map: /map
+    amcl_pose: /amcl_pose
+    cmd_vel: /cmd_vel
+    cmd_vel_nav: /cmd_vel_nav
+    cmd_vel_smoothed: /cmd_vel_smoothed
+ipc:
+  host: 127.0.0.1
+  state_port: 46110
+  command_port: 46111
+  max_datagram_bytes: 65507
+  max_datagrams_per_tick: 32
+  socket_timeout_s: 0.05
+sim:
+  timestep_s: 0.002
+  state_rate_hz: 20.0
+  duration_s: 24.0
+  wall_deadline_s: 240.0
+  wheel_kp: 2.0
+  wheel_torque_limit_nm: 8.0
+  realtime_factor: 0.25
+command:
+  ttl_s: 0.5
+  silence_s: 0.5
+  send_rate_hz: 20.0
+  v_max_mps: 0.6
+  w_max_radps: 1.2
+scan:
+  rays: 181
+  angle_min_deg: -90.0
+  angle_max_deg: 90.0
+  range_min_m: 0.12
+  range_max_m: 8.0
+odom:
+  wheel_radius_m: 0.04
+  track_m: 0.3
+frames:
+  odom: odom
+  base: base_link
+  lidar: lidar_link
+world: assets/world_p5_candidate_v5.xml

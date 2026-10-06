@@ -1,0 +1,47 @@
+{
+  "scope": "DECLARED_LOADED_NAV_CANDIDATE_NOT_PHYSICAL_ACCEPTANCE",
+  "world_sha256": "aa3e9085bf08236193537418f5cb1d32d6254f5cf0b2b7991f4796e82a2a8ac5",
+  "parent_profile_sha256": "4f9942fcda2ce4901554acd86f673e9b44c6629f8623df5d59aac0c0680b3b17",
+  "generator_sha256": "fc4745ccd22015299d03d2f06e045d16f7bad52618d782e5dc03d89fe815eb4f",
+  "footprint": [
+    [
+      -0.622673459589369,
+      -0.5021921356237309
+    ],
+    [
+      2.942673459589369,
+      -0.5021921356237309
+    ],
+    [
+      2.942673459589369,
+      0.5021921356237309
+    ],
+    [
+      -0.622673459589369,
+      0.5021921356237309
+    ]
+  ],
+  "cargo_radius_m": 0.33499999999999996,
+  "mechanism_allowance_m": 0.04219213562373095,
+  "observation_contract": {
+    "centre_low": [
+      1.9100000000000001,
+      -0.125
+    ],
+    "centre_high": [
+      2.4699999999999998,
+      0.125
+    ],
+    "max_sim_age_s": 0.5,
+    "max_wall_age_s": 0.5
+  },
+  "catalog": [
+    "50mm red box: half-size .02/.015/.025 m",
+    "blue cylinder: radius .015, half-height .025 m"
+  ],
+  "runtime_gate": "RGBD measured tray pose + verified quantity + ideal deck contact; NOT_WIRED",
+  "retention": "NOT_RUN",
+  "loaded_navigation": "NOT_RUN",
+  "full_order": "NOT_RUN",
+  "v1_complete": false
+}

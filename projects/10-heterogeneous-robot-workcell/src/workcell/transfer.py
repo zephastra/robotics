@@ -23,6 +23,14 @@ way that looks like success:
   the only custody changes this machine makes are `AT_SOURCE → TRANSFERRING → AT_DESTINATION`,
   and every one of them is gated on the stage that authorises it.
 
+* **Custody never reaches `AT_DESTINATION` without the receiver having confirmed it.** This is
+  the rule that makes the three above enforceable rather than merely stated. `COMMITTED` moves
+  custody, and it is refused unless `RECEIVER_CONFIRMED` was entered in THIS transaction with
+  evidence. A transaction walked forward without a confirmation cannot commit, so "the ledger
+  says the tray arrived" always has a confirmation behind it. The failure this prevents is not
+  a crash: it is a ledger that reports a delivery while the tray is still on the source band,
+  which then propagates into every downstream report that reads the ledger.
+
 * **`ABORTED` means "I have proven no transfer happened"; `NEEDS_ATTENTION` means "I cannot
   prove either way".** Getting this backwards is how a system writes off a tray that is
   physically half way between two machines. The contract's parenthetical -- 仅证明未发生转移时
@@ -208,7 +216,7 @@ class TransferLedger:
 
     # -- launch ------------------------------------------------------------
 
-    def request(self, raw, *, resources, now_s):
+    def request(self, raw, *, resources, now_s, source_grant=None):
         """Open a transfer, or refuse it and say which launch condition failed.
 
         The nine conditions are checked in the order that fails fastest and most specifically,
@@ -301,9 +309,19 @@ class TransferLedger:
         ttl_s = S._number_in(pre.get('ttl_s'), 'ttl_s', 0.0, S.MAX_DURATION_S)
         reserved = []
         try:
-            for resource in (source, receiver):
-                resources.reserve(resource, owner=owner, ttl_s=ttl_s, now_s=now_s)
-                reserved.append(resource)
+            if source_grant is not None:
+                S._mapping(source_grant,'source grant')
+                S._exact_keys(source_grant,'source grant',('owner','generation','epoch','evidence'))
+                # Reserve the empty receiver BEFORE changing the occupied source
+                # owner. On refusal the old cargo holder stays unchanged.
+                resources.reserve(receiver,owner=owner,ttl_s=ttl_s,now_s=now_s)
+                reserved.append(receiver)
+                resources.handover_occupied(source,new_owner=owner,ttl_s=ttl_s,
+                                             now_s=now_s,**source_grant)
+            else:
+                for resource in (source, receiver):
+                    resources.reserve(resource, owner=owner, ttl_s=ttl_s, now_s=now_s)
+                    reserved.append(resource)
         except SchemaRefused as refusal:
             for resource in reserved:
                 resources.release(resource, owner=owner,
@@ -356,8 +374,23 @@ class TransferLedger:
                 raise SchemaRefused('REFUSED_MISSING_FIELD',
                                     'RECEIVER_CONFIRMED requires evidence', field='evidence')
             record.evidence['receiver_confirmed'] = list(evidence)
-        elif evidence:
-            record.evidence[target.lower()] = list(evidence)
+        elif target == 'COMMITTED':
+            # ★ THE RULE THAT MAKES CUSTODY MEAN SOMETHING. `COMMITTED` is the only stage that
+            #   moves custody to AT_DESTINATION, so it may only be entered on the strength of the
+            #   receiver's own confirmation -- recorded in THIS transaction, with evidence, at the
+            #   stage that exists to carry it. Without this the machine committed custody for a
+            #   transfer whose receiver was never heard from: the H3 negative arm recorded
+            #   RELEASED / AT_DESTINATION for a leg whose tray never left the source band.
+            confirmation = record.evidence.get('receiver_confirmed')
+            if not confirmation:
+                raise SchemaRefused(
+                    'REFUSED_MISSING_FIELD',
+                    'COMMITTED requires the receiver to have confirmed at RECEIVER_CONFIRMED '
+                    'first; this transfer has no receiver confirmation, so its custody cannot '
+                    'move to AT_DESTINATION', field='receiver_confirmed')
+            record.evidence.setdefault('committed_on', list(confirmation))
+        if evidence and target != 'RECEIVER_CONFIRMED':
+            record.evidence.setdefault(target.lower(), list(evidence))
         self._enter(record, target)
         if target == 'COMMITTED':
             self.committed += 1

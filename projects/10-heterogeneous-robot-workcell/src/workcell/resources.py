@@ -175,6 +175,56 @@ class ResourceTable:
         self.generation[resource_id] += 1
         self.grant[resource_id] = None
 
+    def initialise_occupied(self, resource_id, *, owner, ttl_s, now_s, evidence):
+        """Measured loaded initial state; never claim a loaded source was cleared."""
+        self._require(resource_id)
+        owner=S._identifier(owner,'owner')
+        ttl_s=S._number_in(ttl_s,'ttl_s',0.,S.MAX_DURATION_S)
+        now_s=S._number_in(now_s,'now_s',0.,S.MAX_DURATION_S)
+        if ttl_s<=0:raise SchemaRefused('REFUSED_OUT_OF_RANGE','positive ttl required')
+        if not isinstance(evidence,list) or not evidence:
+            raise SchemaRefused('REFUSED_MISSING_FIELD','occupied initialization requires evidence')
+        for i,ref in enumerate(evidence):S._evidence_ref(ref,f'evidence[{i}]')
+        if self.state[resource_id]!='UNKNOWN' or self.grant[resource_id] is not None:
+            self._refuse(resource_id,'REFUSED_CONFLICT')
+        self.generation[resource_id]+=1
+        self.state[resource_id]='OCCUPIED'
+        self.grant[resource_id]=Grant(resource_id,owner,self.generation[resource_id],
+                                     self.epoch,ttl_s,now_s,'OCCUPIED')
+        return self.snapshot(resource_id,now_s=now_s)
+
+    def handover_occupied(self, resource_id, *, owner, generation, epoch,
+                          new_owner, ttl_s, now_s, evidence):
+        """Authorized atomic owner change, NEVER a FREE interval or new cargo pose.
+
+        The caller supplies fresh physical launch/receiver evidence and the
+        existing owner's grant token. Expired tokens cannot resurrect control.
+        """
+        self._require(resource_id)
+        owner=S._identifier(owner,'owner');new_owner=S._identifier(new_owner,'new_owner')
+        generation=S._int_in(generation,'generation',0,2**62)
+        epoch=S._int_in(epoch,'epoch',0,2**62)
+        ttl_s=S._number_in(ttl_s,'ttl_s',0.,S.MAX_DURATION_S)
+        now_s=S._number_in(now_s,'now_s',0.,S.MAX_DURATION_S)
+        if ttl_s<=0:raise SchemaRefused('REFUSED_OUT_OF_RANGE','positive ttl required')
+        if not isinstance(evidence,list) or not evidence:
+            raise SchemaRefused('REFUSED_MISSING_FIELD','handover requires physical evidence')
+        for i,ref in enumerate(evidence):S._evidence_ref(ref,f'evidence[{i}]')
+        held=self.grant[resource_id]
+        if epoch!=self.epoch:self._refuse(resource_id,'REFUSED_STALE_EPOCH')
+        if held is None:self._refuse(resource_id,'REFUSED_NO_LIVE_GRANT')
+        if held.owner!=owner:self._refuse(resource_id,'REFUSED_GRANT_OWNED_BY_OTHER')
+        if held.generation!=generation:self._refuse(resource_id,'REFUSED_STALE_GENERATION')
+        if self.state[resource_id]!='OCCUPIED' or held.state!='OCCUPIED':
+            self._refuse(resource_id,'REFUSED_RESOURCE_NOT_CLEARABLE')
+        if now_s<held.granted_at_s or now_s>held.expires_at_s:
+            self._refuse(resource_id,'REFUSED_GRANT_EXPIRED')
+        if owner==new_owner:self._refuse(resource_id,'REFUSED_CONFLICT')
+        self.generation[resource_id]+=1
+        self.grant[resource_id]=Grant(resource_id,new_owner,self.generation[resource_id],
+                                     self.epoch,ttl_s,now_s,'OCCUPIED')
+        return self.snapshot(resource_id,now_s=now_s)
+
     # -- reservation -------------------------------------------------------
 
     def reserve(self, resource_id, *, owner, ttl_s, now_s, want_state='RESERVED'):

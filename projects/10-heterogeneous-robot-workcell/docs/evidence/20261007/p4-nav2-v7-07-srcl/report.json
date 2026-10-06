@@ -1,0 +1,69 @@
+{
+  "scope": "INITIALIZED_LOAD_SHARED_WORLD_NAV2",
+  "status": "ERROR",
+  "world_sha256": "ad6a6fa98a8c83d3c4b6dc94b026398cfdfe8b379bb85f5ec603948f8a347f47",
+  "source_sha256": "50e1d2be24c57f625ab88df66d82f28b5ed02afffe9c2809c747295dedc5a040",
+  "linear_speed_candidate_mps": null,
+  "runtime_qpos_writes": 0,
+  "loaded_navigation": "NOT_RUN",
+  "full_order": "NOT_RUN",
+  "v1_complete": false,
+  "assumptions": [
+    "initialized cargo, NOT continuous H supply/arm loading",
+    "vehicle RGBD and ideal deck touch; static map prior NOT SLAM",
+    "shadows/reflections/multisampling off in camera, NOT physics",
+    "no 3D swept-volume guard; bounded short straight commissioning only",
+    "v7: shoes closed at scene start by declared initialization, NOT runtime loading evidence",
+    "v7: deck parked; slide stroke excluded from footprint and posture-gated",
+    "v7: rotate-to-heading disabled in nav2_joint_world_v7.yaml (corridor cannot contain in-place rotation)",
+    "v7: stock BT recovery may still request Spin; declared risk, run evidence will decide",
+    "v7 source-load: tray initialized on the source band; real source->deck transfer runs before Nav2; retainer starts OPEN"
+  ],
+  "loaded_profile": "joint_world_v7_loaded.profile.json",
+  "loaded_profile_sha256": "fc8cae1f0a1ea2ee1f89f13a08dca26a27b3daa5eb276456ded5951abea2bf4f",
+  "retainer_close_command": {
+    "target_rad": -0.025,
+    "source": "build_hinged_retainer_candidate.PRELOAD_ANGLE (G1)",
+    "applied": "every control step via compose()"
+  },
+  "source_transfer_pre_support": [
+    "source_band"
+  ],
+  "source_transfer_support": [
+    "deck"
+  ],
+  "source_transfer_end_sim_s": 97.56199999995403,
+  "error": "RuntimeError: G7C_DOCK_NUDGE_TIMEOUT: x=7.9637 target=9.6437",
+  "exception_chain": [
+    "RuntimeError: G7C_DOCK_NUDGE_TIMEOUT: x=7.9637 target=9.6437"
+  ],
+  "exception_traceback": "Traceback (most recent call last):\n  File \"/home/ziling/projects/010_heterogeneous_robot_workcell/experiments/probe_vehicle_nav2.py\", line 241, in main\n    raise RuntimeError('G7C_DOCK_NUDGE_TIMEOUT: x=%.4f target=%.4f'\nRuntimeError: G7C_DOCK_NUDGE_TIMEOUT: x=7.9637 target=9.6437\n",
+  "commissioning_result": "FAIL",
+  "processes": {
+    "worker": {
+      "stop": "never started"
+    },
+    "bridge": {
+      "stop": "never started"
+    }
+  },
+  "wall_s": 682.2468430080044,
+  "timing_peaks_wall_s": {},
+  "truth_judge_only": [],
+  "stopping_at_sim_s": null,
+  "sensor_frames": [],
+  "simulation_frozen": null,
+  "deck_support_judge_only": {
+    "samples": 0,
+    "episodes": [],
+    "completed_episodes": 0,
+    "last_sample_sim_s": null,
+    "permission_output": false,
+    "first_missing": null,
+    "max_gap_record": null,
+    "instrument": "cached_solver_state_2ms",
+    "timing": "post-mj_step contacts/transforms labelled time minus timestep",
+    "distance": "episodes use analytic plane clearance; raw convex distance separately preserved/unqualified",
+    "scope": "JUDGE_ONLY; no control or acceptance threshold changes"
+  }
+}

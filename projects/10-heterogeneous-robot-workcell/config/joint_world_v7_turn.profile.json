@@ -1,0 +1,18 @@
+{
+  "scope": "UNQUALIFIED_LOADED_MOTION_CONTROL_CANDIDATE",
+  "parent": "config/nav2_joint_world_v7.yaml",
+  "parent_sha256": "727435a3f8172e936bbd48bb96b3efe94862371caa2e14957bfcefe6ffabcdc3",
+  "generator_sha256": "3bb8be478f1ea28a1e6136a90f1dadf4ac664c46c17259da3d023ee00966f620",
+  "params": "config/nav2_joint_world_v7_turn.yaml",
+  "params_sha256": "756e3671b38bf5962c264cc79ee6f89ff22aaf4d04daaa72a4764a8c07e5be52",
+  "acceptance_changes": [],
+  "qualified": false,
+  "hypothesis": "angular-axis-only lowering returns deck yaw inside the band and cuts tray ratchet slip; MUST be physically tested",
+  "limitations": [
+    "not an emergency brake guarantee",
+    "no 3D swept-volume guard",
+    "not a full order",
+    "v7: use_rotate_to_heading remains false (corridor cannot contain in-place rotation)",
+    "v7: scene is the base loaded transport identity; centered load is v5 lineage"
+  ]
+}

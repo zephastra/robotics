@@ -1,0 +1,73 @@
+{
+  "scope": "EMPTY_SHARED_WORLD_NAV2_COMMISSIONING_NOT_ORDER",
+  "start": [
+    4.41372,
+    0.0
+  ],
+  "goal": [
+    5.013719999999999,
+    0.0,
+    0.0
+  ],
+  "footprint": [
+    [
+      -0.622673459589369,
+      -0.340673459589369
+    ],
+    [
+      2.942673459589369,
+      -0.340673459589369
+    ],
+    [
+      2.942673459589369,
+      0.340673459589369
+    ],
+    [
+      -0.622673459589369,
+      0.340673459589369
+    ]
+  ],
+  "transport_posture": {
+    "c_deck_slide": [
+      -0.01,
+      0.01
+    ],
+    "c_deck_slide_y": [
+      -0.01,
+      0.01
+    ],
+    "c_deck_yaw": [
+      -0.01,
+      0.01
+    ],
+    "c_pusher_slide_joint": [
+      -0.001,
+      0.391
+    ],
+    "c_pusher_lift_joint": [
+      -0.001,
+      0.002
+    ]
+  },
+  "initialized_posture": {
+    "allowed": true,
+    "reason_code": null,
+    "failures": []
+  },
+  "cargo_envelope": "NOT_COMMISSIONED: empty first, loaded requires catalog containment",
+  "map_source": "INITIAL_FIXED_GEOMETRY_SURVEY_NOT_SLAM",
+  "mapped_geoms": [
+    "cell_wall_north",
+    "cell_wall_south",
+    "cell_wall_east",
+    "cell_wall_west",
+    "h_source_leg",
+    "h_destination_leg",
+    "h_destination_marker_post",
+    "p5_arm_pedestal_geom"
+  ],
+  "static_map_approximation": "scan-height AABB, not 3D collision avoidance",
+  "world_sha256": "aa3e9085bf08236193537418f5cb1d32d6254f5cf0b2b7991f4796e82a2a8ac5",
+  "parent_nav_params_sha256": "a7d9bd9577562bbfdbe0c5a055aec36ef4965448829e1ed6017a969aaf0b585a",
+  "generator_sha256": "5ba6b8bda3e7c0d71f1b8f872784daa46c2e465349904a41f46dad1a360f475b"
+}

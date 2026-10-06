@@ -1,0 +1,371 @@
+{
+  "probe": "G7-A SMOKE: source->deck transfer on v7 via the existing chain skills",
+  "scope": "G7A_SOURCE_TO_DECK_SMOKE",
+  "world": "world_p5_candidate_v7_hinged_retainer.xml",
+  "world_sha256": "ad6a6fa98a8c83d3c4b6dc94b026398cfdfe8b379bb85f5ec603948f8a347f47",
+  "source_sha256": "4480bfac82324acdb6aaac1718c3fbef3688493e5ba7e5196eebc21a8f6b4ac5",
+  "slice": [
+    "MOVE_TO_STATION(station_c)",
+    "DOCK(station_c)",
+    "START_TRANSFER(xfer_source_to_deck)",
+    "VERIFY_TRANSFER(xfer_source_to_deck)"
+  ],
+  "ledger_integration": "mirrored transaction only; full integration is G7-b/c",
+  "status": "COMPLETED",
+  "settle_stop": {
+    "stopped_confirmed": true,
+    "chassis_x_m": 9.03174
+  },
+  "stations": {
+    "station_c": {
+      "dock_x_m": 4.42372,
+      "approach_x_m": 4.42372,
+      "approach_leg_m": 0.0
+    },
+    "station_b": {
+      "dock_x_m": 9.643699999999999,
+      "approach_x_m": 9.0437,
+      "approach_leg_m": 0.6
+    }
+  },
+  "tray_start": {
+    "zone": "source_band",
+    "supported_by": [
+      "source_band"
+    ],
+    "x_m": 4.362679014416284
+  },
+  "envelope_override": {
+    "transfer_timeout_s": 75.0,
+    "inherited": 20.0
+  },
+  "preconditions_measured": {
+    "residuals": {
+      "lateral_m": -6.964771629226205e-17,
+      "longitudinal_m": -0.002887717815820423,
+      "yaw_rad": 1.1025237288006952e-16
+    },
+    "band_last_crown_z": 0.775,
+    "deck_first_crown_z": 0.7742441109062881,
+    "height_residual_m": 0.0007558890937119367,
+    "chassis_speed_mps": 2.457197942266212e-13,
+    "support_at_launch": [
+      "source_band"
+    ],
+    "conditions": {
+      "source_capacity_free": true,
+      "receiver_capacity_free": true,
+      "height_within_tolerance": true,
+      "lateral_within_tolerance": true,
+      "yaw_within_tolerance": true,
+      "clearance_ok": true,
+      "amr_at_rest": true,
+      "source_has_tray": true,
+      "receiver_empty": true,
+      "arms_retracted": true,
+      "stop_chain_healthy": true,
+      "evidence_age_s": 119.17276881199905,
+      "max_evidence_age_s": 300.0,
+      "ttl_s": 3600.0
+    }
+  },
+  "tray_end": {
+    "zone": "deck",
+    "supported_by": [
+      "deck"
+    ],
+    "x_m": 6.641910530221168
+  },
+  "ledger": [
+    {
+      "event": "reserved_before_motion",
+      "transaction": {
+        "transfer_id": "g7a-smoke-001",
+        "order_id": "p4-belt-03",
+        "epoch": 14,
+        "source": "source_band_fixture",
+        "receiver": "vehicle_deck",
+        "tray_id": "c_payload",
+        "stage": "BOTH_RESERVED",
+        "custody": "AT_SOURCE",
+        "history": [
+          "REQUESTED",
+          "BOTH_RESERVED"
+        ],
+        "reason_code": null,
+        "return_to": null,
+        "stopped_confirmed": null,
+        "evidence": {
+          "launch": {
+            "evidence_age_s": 119.17276881199905,
+            "max_evidence_age_s": 300.0,
+            "ttl_s": 3600.0
+          }
+        }
+      },
+      "resources": {
+        "source_band_fixture": {
+          "resource_id": "source_band_fixture",
+          "state": "RESERVED",
+          "generation": 3,
+          "epoch": 14,
+          "owner": "g7a-smoke-001",
+          "expires_at_s": 19488.437062273,
+          "remaining_s": null
+        },
+        "vehicle_deck": {
+          "resource_id": "vehicle_deck",
+          "state": "RESERVED",
+          "generation": 3,
+          "epoch": 14,
+          "owner": "g7a-smoke-001",
+          "expires_at_s": 19488.437062273,
+          "remaining_s": null
+        }
+      }
+    },
+    {
+      "event": "transferring_before_motion",
+      "transaction": {
+        "transfer_id": "g7a-smoke-001",
+        "order_id": "p4-belt-03",
+        "epoch": 14,
+        "source": "source_band_fixture",
+        "receiver": "vehicle_deck",
+        "tray_id": "c_payload",
+        "stage": "TRANSFERRING",
+        "custody": "TRANSFERRING",
+        "history": [
+          "REQUESTED",
+          "BOTH_RESERVED",
+          "DOCK_VERIFIED",
+          "BOTH_READY",
+          "TRANSFERRING"
+        ],
+        "reason_code": null,
+        "return_to": null,
+        "stopped_confirmed": null,
+        "evidence": {
+          "both_ready": [
+            "runs/g7a/skill_transfer_succeeded.json"
+          ],
+          "custody_changes": [
+            {
+              "at_stage": "TRANSFERRING",
+              "to": "TRANSFERRING"
+            },
+            {
+              "at_stage": "COMMITTED",
+              "to": "AT_DESTINATION"
+            }
+          ],
+          "dock_verified": [
+            "runs/g7a/skill_transfer_succeeded.json"
+          ],
+          "launch": {
+            "evidence_age_s": 119.17276881199905,
+            "max_evidence_age_s": 300.0,
+            "ttl_s": 3600.0
+          },
+          "transferring": [
+            "runs/g7a/skill_transfer_succeeded.json"
+          ]
+        }
+      },
+      "resources": {
+        "source_band_fixture": {
+          "resource_id": "source_band_fixture",
+          "state": "OCCUPIED",
+          "generation": 3,
+          "epoch": 14,
+          "owner": "g7a-smoke-001",
+          "expires_at_s": 19488.437062273,
+          "remaining_s": null
+        },
+        "vehicle_deck": {
+          "resource_id": "vehicle_deck",
+          "state": "OCCUPIED",
+          "generation": 3,
+          "epoch": 14,
+          "owner": "g7a-smoke-001",
+          "expires_at_s": 19488.437062273,
+          "remaining_s": null
+        }
+      }
+    },
+    {
+      "event": "committed_on_measured_confirmation",
+      "transaction": {
+        "transfer_id": "g7a-smoke-001",
+        "order_id": "p4-belt-03",
+        "epoch": 14,
+        "source": "source_band_fixture",
+        "receiver": "vehicle_deck",
+        "tray_id": "c_payload",
+        "stage": "COMMITTED",
+        "custody": "AT_DESTINATION",
+        "history": [
+          "REQUESTED",
+          "BOTH_RESERVED",
+          "DOCK_VERIFIED",
+          "BOTH_READY",
+          "TRANSFERRING",
+          "RECEIVER_CONFIRMED",
+          "COMMITTED"
+        ],
+        "reason_code": null,
+        "return_to": null,
+        "stopped_confirmed": null,
+        "evidence": {
+          "both_ready": [
+            "runs/g7a/skill_transfer_succeeded.json"
+          ],
+          "committed": [
+            "runs/g7a/post_transfer_support.json"
+          ],
+          "committed_on": [
+            "runs/g7a/post_transfer_support.json"
+          ],
+          "custody_changes": [
+            {
+              "at_stage": "TRANSFERRING",
+              "to": "TRANSFERRING"
+            },
+            {
+              "at_stage": "COMMITTED",
+              "to": "AT_DESTINATION"
+            }
+          ],
+          "dock_verified": [
+            "runs/g7a/skill_transfer_succeeded.json"
+          ],
+          "launch": {
+            "evidence_age_s": 119.17276881199905,
+            "max_evidence_age_s": 300.0,
+            "ttl_s": 3600.0
+          },
+          "receiver_confirmed": [
+            "runs/g7a/post_transfer_support.json"
+          ],
+          "transferring": [
+            "runs/g7a/skill_transfer_succeeded.json"
+          ]
+        }
+      },
+      "resources": {
+        "source_band_fixture": {
+          "resource_id": "source_band_fixture",
+          "state": "OCCUPIED",
+          "generation": 3,
+          "epoch": 14,
+          "owner": "g7a-smoke-001",
+          "expires_at_s": 19488.437062273,
+          "remaining_s": null
+        },
+        "vehicle_deck": {
+          "resource_id": "vehicle_deck",
+          "state": "OCCUPIED",
+          "generation": 3,
+          "epoch": 14,
+          "owner": "g7a-smoke-001",
+          "expires_at_s": 19488.437062273,
+          "remaining_s": null
+        }
+      }
+    },
+    {
+      "ledger_summary": {
+        "epoch": 14,
+        "transfers": 1,
+        "started": 1,
+        "committed": 1,
+        "aborted": 0,
+        "needs_attention": 0,
+        "refusals": {}
+      },
+      "resources": {
+        "source_band_fixture": {
+          "resource_id": "source_band_fixture",
+          "state": "OCCUPIED",
+          "generation": 3,
+          "epoch": 14,
+          "owner": "g7a-smoke-001",
+          "expires_at_s": 19488.437062273,
+          "remaining_s": null
+        },
+        "vehicle_deck": {
+          "resource_id": "vehicle_deck",
+          "state": "OCCUPIED",
+          "generation": 3,
+          "epoch": 14,
+          "owner": "g7a-smoke-001",
+          "expires_at_s": 19488.437062273,
+          "remaining_s": null
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "name": "tray starts on the source band",
+      "status": "PASS",
+      "detail": "zone 'source_band' supported_by ['source_band']"
+    },
+    {
+      "name": "skill MOVE_TO_STATION",
+      "status": "PASS",
+      "detail": "SUCCEEDED"
+    },
+    {
+      "name": "skill DOCK",
+      "status": "PASS",
+      "detail": "SUCCEEDED"
+    },
+    {
+      "name": "skill START_TRANSFER",
+      "status": "PASS",
+      "detail": "SUCCEEDED"
+    },
+    {
+      "name": "skill VERIFY_TRANSFER",
+      "status": "PASS",
+      "detail": "SUCCEEDED"
+    },
+    {
+      "name": "tray ends supported by the deck",
+      "status": "PASS",
+      "detail": "zone 'deck' supported_by ['deck']"
+    }
+  ],
+  "answers": [
+    {
+      "skill": "MOVE_TO_STATION",
+      "accepted": true,
+      "status": "SUCCEEDED",
+      "reason": null,
+      "refusal": null
+    },
+    {
+      "skill": "DOCK",
+      "accepted": true,
+      "status": "SUCCEEDED",
+      "reason": null,
+      "refusal": null
+    },
+    {
+      "skill": "START_TRANSFER",
+      "accepted": true,
+      "status": "SUCCEEDED",
+      "reason": null,
+      "refusal": null
+    },
+    {
+      "skill": "VERIFY_TRANSFER",
+      "accepted": true,
+      "status": "SUCCEEDED",
+      "reason": null,
+      "refusal": null
+    }
+  ],
+  "wall_s": 190.58493271399857
+}

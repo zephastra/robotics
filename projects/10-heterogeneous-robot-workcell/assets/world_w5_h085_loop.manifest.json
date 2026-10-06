@@ -1,0 +1,88 @@
+{
+  "source": "world_w5_h085.xml",
+  "source_sha256": "702e22a6bbfb08984171f3a2e0829e1547761b029fc7902e0ff6b5a740818a12",
+  "reference": "world_w2_logistic.xml",
+  "output": "world_w5_h085_loop.xml",
+  "output_sha256": "f964477fb8c2ffdaf383c613a6f9f9f2b40561b703e7fb040a9c6fb11cb95941",
+  "station_x_m": 4.13,
+  "station_provenance": "H2 station, retained after a contact test in THIS world. Two earlier measurements suggested moving it and both were artefacts: mj_geomDistance reads visual contype=0 geoms (this robot reports 272 self-penetrations at home, including h_LINK_BASE against itself at -0.1674 m), and a free settle measures the absence of a balance controller. The runtime-driven stand test -- how H3 actually drives the robot -- shows it standing and touching only the ground.",
+  "humanoid_base_pos_before": [
+    0.660132,
+    0.0,
+    1.03
+  ],
+  "humanoid_base_pos_after": [
+    4.13,
+    0.0,
+    1.03
+  ],
+  "keyframe_base_qpos_before": [
+    0.660132,
+    0.0,
+    1.03,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "keyframe_base_qpos_after": [
+    4.13,
+    0.0,
+    1.03,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "stand_test": {
+    "station_x_m": 4.13,
+    "drift_xyz_m": [
+      0.004083,
+      0.003587,
+      -0.018548
+    ],
+    "drift_x_m": 0.004083,
+    "settle_z_m": -0.018548,
+    "base_z_m": 1.011452,
+    "ncon": 33,
+    "cross_entity_contacts": [
+      {
+        "pair": [
+          "world/cell_ground",
+          "h_LINK_FOOT_L/?"
+        ],
+        "count": 8
+      },
+      {
+        "pair": [
+          "world/cell_ground",
+          "h_LINK_FOOT_R/?"
+        ],
+        "count": 8
+      }
+    ],
+    "cross_entity_bodies": [
+      "world"
+    ]
+  },
+  "stand_tolerances": {
+    "drift_x_m": 0.03,
+    "settle_z_m": 0.03,
+    "allowed_contact_bodies": [
+      "world"
+    ],
+    "ticks": 400
+  },
+  "lines_introduced": [
+    555
+  ],
+  "lines_shared_with_candidate_b": [
+    1501
+  ],
+  "nq": 151,
+  "nbody": 149,
+  "ngeom": 309,
+  "compiled_before_write": true,
+  "plant_requirements_present": true,
+  "note": "candidate B with the humanoid PLACED in it. Candidate B raised the interface and built the presentation table but left the robot at x 0.660132, so H2 supplied its station from inside its own probe. H3 shares one MjData between the humanoid runtime and the W5 plant, so the station has to be the world\u2019s own home pose. Nothing else is touched: the tray, rollers, deck, receiver and chassis stay exactly where candidate B put them, because correcting an overlap by moving the CHASSIS would re-decide where the W5 loop docks -- the thing H3 integrates with, not re-negotiates."
+}
